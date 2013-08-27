@@ -43,7 +43,7 @@ What do I mean? Let's use some friendly bullet points:
   content from anyone in the world. We're not there yet, but we *are* working
   with some really smart people (`Brent Shaffer (OAuth)`_, `Saša Stamenković (Sylius)`_)
   on new content. If you've got a topic you know a little bit about, then
-  we want to work with you too (email me: hello@knpuniversity.com).
+  we want to work with you too (email us: hello@knpuniversity.com).
 
 Like when we started, we don't know where this will all lead, but we *do* know
 that we're *really* *silly* excited! It means we get to share more and collaborate
