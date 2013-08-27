@@ -1,0 +1,12 @@
+blogs:
+    "hello-world":
+        title: Hallo World!
+        published: 2013-08-28
+        preview: |
+            We started KnpUniversity way back in December 2011 to prove that
+            combining Symfony screencasts with corny humor was a rather silly
+            idea. But somehow, you're still here! Now it's time for us to
+            grow up, open up, and change the whole process of creating and
+            releasing tutorials!
+        author: weaverryan
+        category: news
