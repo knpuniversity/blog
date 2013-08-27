@@ -24,7 +24,7 @@ warmly invited.
 
 What do I mean? Let's use some friendly bullet points:
 
-* **Opening up on GitHub** - Until now, the the script and code have been
+* **Opening up on GitHub** - Until now, the script and code have been
   totally closed. That means that if you find a typo or thought something
   could be explained better, making the change was impossible. That's silly,
   so we're changing that. You can peak at [our GitHub](https://github.com/knpuniversity).
