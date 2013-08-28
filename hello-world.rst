@@ -30,48 +30,42 @@ finding out how we can work together.
 What do I mean? Let's use some friendly bullet points:
 
 * **Opening up on GitHub** - Until now, the script and code have been
-  totally closed. That means that if you find a typo or thought something
-  could be explained better, making the change was impossible. That's silly,
-  so we're changing that. You can peak at `our GitHub`_. We're also going
-  to open source more code and parts of the KnpUniversity site itself. In
-  fact, this blog is `sourced from GitHub`_
+  totally closed. It was a model of "us the write" and "you the reader".
+  That's silly, so we're now in the process of releasing 100% of the script
+  and code from every screencast (you can already peak at `our GitHub`_).
+  We're also going to open source more code and parts of the KnpUniversity
+  site itself and share experiences (e.g. server stuff). In fact, this blog
+  is `sourced from GitHub`_.
 
-* **Coding Activities** - We believe that learning should always be example
-  based, which in the coding world means building tutorials. We also think
-  that actually coding (not just watching) is *really* important to truly
-  learning this stuff. So, we decided to poke that box by adding activities
-  to our :doc:`/screencast/twig/basics` course, with PHP activities coming
-  very soon! We're still figuring out how this should all look and work, so
-  give us some feedback!
+* **Everyone is an Author** - Wherever good tutorials live, it *must* be
+  possible for anyone to update or even create new, high-quality coding stories.
+  We're not there yet, but we *are* working with some really smart people
+  (`Brent Shaffer (OAuth)`_, `Saša Stamenković (Sylius)`_) on new content.
+  If you've got a topic you know a little bit about, then we'd love to open
+  this site up for your tutorial as well (email us: hello@knpuniversity.com).
+  We need to be even more open than this and that's in the works.
 
-* **Everyone is an Author** - We've always wanted to open up KnpU to have
-  content from anyone in the world. We're not there yet, but we *are* working
-  with some really smart people (`Brent Shaffer (OAuth)`_, `Saša Stamenković (Sylius)`_)
-  on new content. If you've got a topic you know a little bit about, then
-  we want to work with you too (email us: hello@knpuniversity.com).
+* **Coding Activities** - Watching a complete tutorials is better than reading
+  a book. But nothing is better than actually coding yourself! We're poking that
+  box by adding activities to our :doc:`/screencast/twig/basics` course, with
+  PHP activities coming very soon! This is something that we'll offer on every
+  tutorial so that we can make learning these techy things as potent as possible.
+  We're still figuring out how this should all look and work, so give us
+  some feedback!
+
+* **Transpareny Screencast and Coding Process** - Instead of working on screencasts
+  and new site features like we're a cold war-era country, it's time to open up!
+  This is still a WIP, but we *will* post new tutorials on GitHub as we're working
+  on themand use the blog to discuss new features and progress. If we can do
+  something to be more transparent, we'll try it!
 
 Like when we started, we don't know where this will all lead, but we *do* know
 that we're *really* *silly* excited! It means we get to share more and collaborate
 with really smart people. And it's a challenge to us to open up as much of our code,
 scripts and processes as possible.
 
-A Geeky, Philosophical Thought
-------------------------------
-
-We - the dev community - have a *huge* amount of knowledge and many people
-who are awesome enough to try to share what they know. This comes in the form
-of blog posts, writing open source software, answering questions in a forum,
-etc. If we lack anything, it's tutorials, written by the experts, that tackle
-real problems from beginning to end. Writing a blog post is pretty easy, but
-creating a 5 part tutorial, releasing the code, and then keeping it all up
-to date over time is a big pain. We know this because we face it every day :).
-
-That's why our goal is to make **creating and maintaining high-quality tutorials easy**.
-Nothing beats learning something new with a great tutorial, we just need
-to make writing them simpler.
-
-Thank you 
-------------
+Thank you!
+----------
 
 We started KnpUniversity way back in December 2011 to prove that combining
 Symfony screencasts with corny humor was a rather silly idea. To make sure
