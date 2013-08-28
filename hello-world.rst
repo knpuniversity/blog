@@ -1,26 +1,31 @@
-Hallo World!
-============
-
-We started KnpUniversity way back in December 2011 to prove that combining
-Symfony screencasts with corny humor was a rather silly idea. To make sure
-we failed, we originally forced you to download a huge video file (no streaming),
-didn't give you a script, and spread out releases over a long period of time.
-
-But somehow, you're still here, reading this. And for that, we're embarrassingly
-thankful :).
-
 The Next Phase: Opening it up, working with you!
-------------------------------------------------
+================================================
 
-Since you showed us love, we found time to nurture KnpU out of diapers and
-into young childhood. We added video streaming, broke the screencasts down
-into chapters, started adding interactive coding activities, and moved the
-tutorials into a legitimate CDN (CloudFront). Heck, we even got a big geeky poster
-and showed ourselves around DrupalCon Portland in May.
+For the past few weeks, I've been *scouring* the web to learn everything I
+can about REST. I've spent hours watching presentations, reading blog posts,
+scanning RFCs (scary!) and bothering smart people directly. And after all
+that time and effort, I'm still putting the pieces together.
 
-And now we're excited to enter our next phase, our rebellious, hyper-social,
-experimental college years if you will. We're about to poke the box, and you're 
-warmly invited.
+Sometimes, learning something technical is just plain hard. Information is scattered,
+opinions vary, and best-practices are buried. Nothing tells the whole, realistic
+story of how something (fill in any tech topic, REST, Symfony2, Testing, etc) looks
+in a real world application.
+
+And **all the information is out there**! It's in blog posts, presentations and the
+brains of smart people. So why can't we put it all together into one complete example
+of how to do something correctly? We work together on open source libraries we all
+use, but why not on real-life tutorials?
+
+Opening up and Collaboration
+----------------------------
+
+And even though we're really proud of our tutorials, until now, we've worked on
+them in isolation. In fact, almost everyone on the web operates around this old
+idea of writing and releasing content in isolation.
+
+So now, we're excited to enter our next phase, our rebellious, hyper-social,
+experimental college years if you will. It's less about us, and a lot more about
+finding out how we can work together.
 
 What do I mean? Let's use some friendly bullet points:
 
@@ -64,6 +69,17 @@ to date over time is a big pain. We know this because we face it every day :).
 That's why our goal is to make **creating and maintaining high-quality tutorials easy**.
 Nothing beats learning something new with a great tutorial, we just need
 to make writing them simpler.
+
+Thank you 
+------------
+
+We started KnpUniversity way back in December 2011 to prove that combining
+Symfony screencasts with corny humor was a rather silly idea. To make sure
+we failed, we originally forced you to download a huge video file (no streaming),
+didn't give you a script, and spread out releases over a long period of time.
+
+But somehow, you're still here, reading this. And for that, we're embarrassingly
+thankful :).
 
 Cheers!
 
