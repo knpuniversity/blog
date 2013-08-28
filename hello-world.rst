@@ -35,9 +35,9 @@ What do I mean? Let's use some friendly bullet points:
   based, which in the coding world means building tutorials. We also think
   that actually coding (not just watching) is *really* important to truly
   learning this stuff. So, we decided to poke that box by adding activities
-  to our :doc:`/screencast/twig` course, with PHP activities coming very soon!
-  We're still figuring out how this should all look and work, so give us
-  some feedback!
+  to our :doc:`/screencast/twig/basics` course, with PHP activities coming
+  very soon! We're still figuring out how this should all look and work, so
+  give us some feedback!
 
 * **Everyone is an Author** - We've always wanted to open up KnpU to have
   content from anyone in the world. We're not there yet, but we *are* working
