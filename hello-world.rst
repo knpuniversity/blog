@@ -27,9 +27,9 @@ What do I mean? Let's use some friendly bullet points:
 * **Opening up on GitHub** - Until now, the script and code have been
   totally closed. That means that if you find a typo or thought something
   could be explained better, making the change was impossible. That's silly,
-  so we're changing that. You can peak at [our GitHub](https://github.com/knpuniversity).
-  We're also going to open source more code and parts of the KnpUniversity 
-  site itself.
+  so we're changing that. You can peak at `our GitHub`_. We're also going
+  to open source more code and parts of the KnpUniversity site itself. In
+  fact, this blog is `sourced from GitHub`_
 
 * **Coding Activities** - We believe that learning should always be example
   based, which in the coding world means building tutorials. We also think
@@ -69,3 +69,5 @@ Cheers!
 
 .. _`Brent Shaffer (OAuth)`: https://github.com/bshaffer
 .. _`Saša Stamenković (Sylius)`: https://github.com/umpirsky
+.. _`our GitHub`: https://github.com/knpuniversity
+.. _`sourced from GitHub`: https://github.com/knpuniversity/blog
