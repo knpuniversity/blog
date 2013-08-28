@@ -1,5 +1,5 @@
-The Next Phase: Opening it up, working with you!
-================================================
+KnpYou
+======
 
 For the past few weeks, I've been *scouring* the web to learn everything I
 can about REST. I've spent hours watching presentations, reading blog posts,
@@ -21,7 +21,7 @@ Opening up and Collaboration
 
 And even though we're really proud of our tutorials, until now, we've worked on
 them in isolation. In fact, almost everyone on the web operates around this old
-idea of writing and releasing content in isolation.
+idea of writing and releasing content in their own little silos.
 
 So now, we're excited to enter our next phase, our rebellious, hyper-social,
 experimental college years if you will. It's less about us, and a lot more about
@@ -30,7 +30,7 @@ finding out how we can work together.
 What do I mean? Let's use some friendly bullet points:
 
 * **Opening up on GitHub** - Until now, the script and code have been
-  totally closed. It was a model of "us the write" and "you the reader".
+  totally closed. It was a model of "us the writer" and "you the reader".
   That's silly, so we're now in the process of releasing 100% of the script
   and code from every screencast (you can already peak at `our GitHub`_).
   We're also going to open source more code and parts of the KnpUniversity
@@ -43,20 +43,20 @@ What do I mean? Let's use some friendly bullet points:
   (`Brent Shaffer (OAuth)`_, `Saša Stamenković (Sylius)`_) on new content.
   If you've got a topic you know a little bit about, then we'd love to open
   this site up for your tutorial as well (email us: hello@knpuniversity.com).
-  We need to be even more open than this and that's in the works.
+  We need to be even more open and that's in the works.
 
-* **Coding Activities** - Watching a complete tutorials is better than reading
+* **Coding Activities** - Watching a complete tutorial is better than reading
   a book. But nothing is better than actually coding yourself! We're poking that
-  box by adding activities to our :doc:`/screencast/twig/basics` course, with
+  box by adding activities to our :doc:`Twig</screencast/twig/basics>` course, with
   PHP activities coming very soon! This is something that we'll offer on every
-  tutorial so that we can make learning these techy things as potent as possible.
+  tutorial so that we can make learning these techy things as easy as possible.
   We're still figuring out how this should all look and work, so give us
   some feedback!
 
-* **Transpareny Screencast and Coding Process** - Instead of working on screencasts
+* **Transparent Tutorial and Coding Process** - Instead of working on tutorials
   and new site features like we're a cold war-era country, it's time to open up!
   This is still a WIP, but we *will* post new tutorials on GitHub as we're working
-  on themand use the blog to discuss new features and progress. If we can do
+  on them and use the blog to discuss new features and progress. If we can do
   something to be more transparent, we'll try it!
 
 Like when we started, we don't know where this will all lead, but we *do* know
