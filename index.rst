@@ -4,4 +4,4 @@ The Blog
 .. toctree::
     :hidden:
 
-    hello-world
+    knp-you
