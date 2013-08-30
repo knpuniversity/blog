@@ -1,207 +1,301 @@
-OMG REST! Questions and thoughts on our upcoming Course
-=======================================================
+What the REST?
+==============
 
-Great news! We're already well-underway on our next screencast/course, which
-is all about REST. Bad news! This stuff is *really* tough, and no amount
-of hours reading blog posts, watching videos, reading CFPs or talking with
-some smart people (thanks to `Luke Stokes`_ `Lukas Smith`_) seems to totally
-clear things up. In light of how complex this stuff is, we'll actually have
-at least 2 courses, one for REST basics (and a project built in Silex) and
-another one about doing all of this in Symfony2.
+When I talked recently about :doc:`being collaborative and open</blog/knp-you>`,
+I mentioned that I was a few weeks into hardcore search into building RESTful
+API's. If you've tried building a RESTful API, or even done some learning
+about it, then you might know what I mean when I say that *REST is as deep
+as the `rabbit hole`_, with varied approaches, undefined best-practices, and
+flamewars along the way. Should I use custom hypermedia types or something
+like `HAL`_ or `JSON-LD`? Should I implement OPTIONS, and if so, should it
+have a response body and what would that look like? What should the API documentation
+cover and what should be self-describing in the API itself? How do custom
+verbs (non-CRUD actions) like banning a user or linking to a friend look?
 
-RFC on some RESTful Statements
-------------------------------
+.. tip::
 
-But this blog post is actually more for the experts in REST: those of you
-who have been in the trenches, writing a REST API for your application. My
-hope is that I can write some bold and direct statements here, and you can
-tell me where I might be wrong or misdirected. There are *a lot* of options
-in REST and a lot of strong opinions. But in a tutorial, we have to pick
-one *really good* path and recommend it.
+    I owe a big hat-tip especially to `Luke Stokes`_ and his team's WIP API
+    for `FoxyCart`_, which I'll bring up in this post. Luke let me bother
+    him with questions (repeatedly) and was awesome about it.
 
-Everything we need to know about a Resource
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Eventually, the best-practices will rise to the surface and finding at least
+one really nice path will be a lot more clear. But I (and a lot of people)
+want to create a high-quality, but pragmatic "REST" API right now. 
 
-Imagine you're working with an API. At each stage ("application state"),
-you need to know what to do next. With HATEOAS, we somehow have links to
-other resources, which explain to us what we can do next. Since these links
-are URIs, they point to a resource (e.g. ``/users/weaverryan``). But before
-we *really* know what to do next, we need to know several things about that
-resource:
+In this post, I'll probably say some wrong things about REST and possibly
+(hopefully) be corrected. And that's exactly what I'm hoping for: I'll pour
+out my RESTful heart, and invite you all to crush it and build it back up.
+By the end, I hope to have *one*, *good*, well-defined path that can be
+written up and shared openly.
 
-.. _blog-rest-resource-questions:
+HATEOAS: What you can do next
+-----------------------------
 
-1) What HTTP methods does the resource support?
+When I get a response from a RESTful API, it should contain links. Like on
+a webpage, these tell me what I might do next (i.e. what actions I can take).
 
-2) What fields should be in the request body for each method? If I send a
-   PUT request, what fields do I need?
+Links versus Resources
+~~~~~~~~~~~~~~~~~~~~~~
 
-3) What format can those fields be in (e.g. ``application/json``, ``application/x-www-form-urlencoded``)?
+As I understand it, it's not exactly correct to say that links are to resources.
+Of course a link has a URI, and each URI is an address to a resource, but
+you could (I believe), have multiple links to the same resource, simply because
+there are multiple actions I can take on that resource. Suppose that we go
+to the homepage of our API and it returns the following links (I'm using
+HAL to represent the links, but that's not important):
 
-4) Are there some non-standard actions (e.g. "publishing a user")? If so,
-   what should the request body look like for them? Are they POST, something
-   else?
-
-5) What response media types are supported?
-
-The big question is, where does this information live? And are we missing
-anything?
-
-In an "old-school" API, it would be in the external documentation. 
-
-In a "new-school" API (in theory), it could live entirely in the API itself,
-making it "self-describing".
-
-I'm curious about a "new-school", but pragmatic approach, where this information
-is probably spread between external documentation and the API itself. Of
-course, any information kept external should be pointed at by the API, but
-we'll get to that.
-
-A Proposed HAL-based RESTful API
---------------------------------
-
-I've chosen `HAL`_ as the hypermedia type of the API in our course because
-it's one of the easiest, leading to a (hopefully) pragmatic, but still nice
-API. I've looked at `JSON-LD`_ and `Siren`_ as well, and find these to be
-really interesting, and potential candidates for a future addition to the
-course.
-
-A lot of the approach taken here is thanks to the still-WIP API being built
-by `Foxycart`_. They use the `HAL Browser`_, which is helpful to see what
-we're talking about.
-
-In the `HAL Browser`_, you can clearly see hypermedia links to other resources
-at each step. Again, one of my biggest questions is, how should my API client
-know :ref:`what to do with that resource<blog-rest-resource-questions>`.
-Largely, the answer is by using real URLs as the "rel" of the links, which
-leads to real documentation.
-
-The Homepage
-~~~~~~~~~~~~
-
-First, I'll propose a homepage to the API, complete with nothing but links
-and a friendly message:
+.. _blog-what-the-rest-original-links:
 
 .. code-block:: json
 
     {
       "_links": {
-        "self": {
-          "href": "https://example.com/",
-          "title": "Your API starting point."
-        },
-        "http://api.example.com/rels/user": {
-          "href": "https://example.com/users",
+        "self": { "href": "/" },
+        "http://api.example.com/rels/users": {
+          "href": "http://api.example.com/users",
           "title": "Users in the system"
-        }
-      },
-      "message": "Well hallo there! Please check out our docs at http://api.example.com/docs"
-    }
-
-The "users" relation tells me where the users collection resource is located
-and the ``rel`` value (``http://api.example.com/rels/user``) should be a real
-URL that the client can follow to get human-readable information about this
-relation. Like FoxyCart's documentation (`user example`_), the ``rel`` docs
-*must* contain at least:
-
-* A human description of the relation
-* Supported HTTP methods
-* The properties/fields expected
-
-With that information, I could, for example, construct the ``POST`` request
-needed to create a new use (I have the URI from the hypermedia link and the
-fields from the ``rel`` API docs).
-
-
-The Users Collection Resource
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If we instead made a GET request to the users resource (i.e. ``/users``),
-then we would get back something that looks like this (similar to `Foxycart Stores`_):
-
-.. code-block:: json
-
-    {
-      "_links": {
-        "self": {
-          "href": "http://example.com/users",
-          "title": "This Collection"
         },
-        "first": {
-          "href": "http://example.com/users?offset=0",
-          "title": "First Page of this Collection"
-        }
+        "http://api.example.com/rels/users_reinvite": {
+          "href": "http://api.example.com/users",
+          "title": "Re-invite unregistered users to the system"
+        },
       },
-      "_embedded": {
-        "users": [
-          {
-            "_links": {
-              "self": {
-                "href": "http://example.com/users/weaverryan",
-                "title": "This user"
-              }
-            },
-            "username": "weaverryan",
-            "published": false
-          }
-        ]
-      }
+      "...": "... other stuff ..."
     }
+
+In this case, we have 2 different links (actions) but in this case, each
+link points to the same resource. This is simply because there are 2 actions
+that can be taken on that resource. This is my understanding of links versus
+resources, but I could be wrong :).
 
 .. note::
 
-    I've left of some details - like ``prev``, ``next``, ``last`` links.
+    I recommend using the `HAL Browser`_ for the FoxyCart API if you want
+    to see how this really looks for an API.
 
-->> how the hell do I know what to do with the user link? There is no rel
-    on it???
+We don't know exactly what to do with those links yet, but that's next.
 
-- roll up CRUD operations into one
-- hypermedia versus rel
-- OPTIONS
+Hypermedia Links: What they tell Us
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Exactly how these links look depends on your hypermedia type (e.g. ``HAL``
+something custom, etc), but a link has the following information:
 
+1. A URI;
+2. A ``rel`` to explain the significance of this link;
+3. (optional) A ``type``, which defines the hypermedia type to be returned
+   by the link;
+4. (optional) A nice human title for the link;
 
-A RESTful API is designed around the idea of a resource and allowing the
-client to change the state of that resource.
+.. note::
 
-- where can I go from here?
-- what methods does a relation support? How should I know that?
-- what custom actions does a relation support? How should I know that?
-- what fields does each action support? Where are the docs?
-- what formats does it support in the request body?
-- what should a custom action look like? POST with a different body?
-- should OPTIONS be used? Should it return links?
+    In the links in the block above, the ``rel`` is the key (e.g. ``http://api.example.com/rels/users_reinvite``)
+    and there's no ``type``, since it's HAL, so you assume that the link will
+    also be HAL.
 
-- list of the thins that you need to know at each decision point
-- where is the documentation?
-- custom actions
-- LSmith and Foxycart
+In a browser, we click links (i.e. GET) or submit a form (i.e. POST, where
+the fields to send are defined right inside the link/form). But in an API,
+we need more information than we have from the link, which I'll call:
 
+.. _blog-what-the-rest-4-missing:
 
+The 4 Missing Pieces of a Link
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- /users (CRUD)
-- /users/{username} (CRUD)
-- /users/{username} (report as spam) -> /users/{username}/report? Custom POST body? Same/different controllers?
-- /users/{username}/statuses (CRUD)
-- /users/{username}/following -> the LINK of user to user (UNLINK?)
+1. What HTTP methods can I use with this link?
+2. What fields should I send if I'm POST'ing/PUT'ing?
+3. How should I encode that data in the request (e.g. ``application/json``, ``application/x-www-form-urlencoded``, etc)?
+4. What media type(s) should I expect back from the response?
 
-- think about how the custom actions would work
-- think about how we'd document all of the link relations for each resource
-    and the fields+methods for each, etc
-- If I POST to create a new resource and I get back the Location header,
-    how do I know what the rel is for the new resource? How can I look
-    up its docs?
-- if you had a custom media type on each link, then that *would* answer
-    what fields are needed on that LINK. With an OPTIONS, you could see
-    if it supports POST. A custom action would be another link with another
-    media-type (and thus, different documented fields)
+HATEOAS tells us to use these links to determine what our next step, or
+action is (they `induce application flow`_). In the HTTP world, they should
+tell us what possible HTTP *requests* we can take next.
 
+So if this information isn't found in the hyperlinks, where does it live?
+Where can an API client find these details and how did she know to look there?
+
+.. note::
+
+    Some hypermedia formats like `JSON-LD`_ seem to have a more sophisticated
+    method where "link data" is exposed that answers some or all of these
+    questions. I'm very interested in this, but first I want to know how
+    this should look in simpler cases, like when using HAL. If people are
+    using HAL, then surely there is a place to define this information.
+
+Finding the Missing Pieces to make the next Request
+---------------------------------------------------
+
+Your API also needs to choose how its hypermedia type(s) will look. Will
+each link have its own type (e.g. ``application/vnd.com.users+xml``) or
+will you use one one hypermedia type like HAL?
+
+Right now, we're missing :ref:`4 pieces of information<blog-what-the-rest-4-missing>`_
+before we can really make the next request. In REST, you often read that
+the only thing you should need to document are your hypermedia types. In
+that model, does *every* link have its own hypermedia type? And do the docs
+for that type really tell us what HTTP methods can be used and what fields
+can be POST'ed, even though we're not POST'ing with that hypermedia type
+(we're probably POST'ing with something simple like ``application/json``)?
+
+So let's look at the 2 approaches (custom hypermedia type versus HAL) and
+try to see how a client would answer the :ref:`4 questions<blog-what-the-rest-4-missing>`_
+standing between us and the next API request:
+
++--------------+-------------------------------------------+--------------------------------------+
+|              | Custom hypermedia type                    | HAL (or similar)                     |
++--------------+-------------------------------------------+--------------------------------------+
+| HTTP Methods | Find docs based on the hypermedia type??  | Find docs based on the link ``rel``  |
++--------------+-------------------------------------------+--------------------------------------+
+| Fields       | Find docs based on the hypermedia type??  | Find docs based on the link ``rel``  |
++--------------+-------------------------------------------+--------------------------------------+
+| Request      | Find docs based on the hypermedia type??  | Find docs based on the link ``rel``  |
+| encoding     |                                           |                                      |
++--------------+-------------------------------------------+--------------------------------------+
+| Response     | Read the link ``type`` attribute          | Assume HAL                           |
+| media type   |                                           |                                      |
++--------------+-------------------------------------------+--------------------------------------+
+
+.. note::
+
+    The ``rel`` could literally be a URL to the documentation. FoxyCart uses
+    this (e.g. `https://api.foxycart.com/rels/users`_).
+
+It *seems* that both methods will probably rely on some external documentation.
+This is known as "out of band information", which we maybe shouldn't need
+in theory and isn't RESTful. But I'd argue that creating an API that's fully
+self-describing is still very hard, and quite possibly not worth it.
+
+Some pieces of information could just be answered globally for your API (e.g.
+Request encoding), like on the HTML API homepage. Very literally, you might
+just say that all endpoints support ``application/json`` perhaps ````application/x-www-form-urlencoded``.
+
+But usually, we will need to look up a specific API docs page. For a custom
+hypermedia approach, the docs *seem* to be for each hypermedia type (right?, wrong?).
+For HAL, since we only have one hypermedia type, we rely entirely on the
+link ``rel``. This could all totally be wrong, but if it is, then how should
+the client be answering our :ref:`4 questions<blog-what-the-rest-4-missing>`_
+for each link?
+
+Value in OPTIONS?
+-----------------
+
+What if we made an ``OPTIONS`` request to ``/users``? This actually seems
+very unhelpful, as the ``OPTIONS`` is for a single URI, which could actually
+have multiple links to it. The ``OPTIONS`` response may saw we can POST,
+but how would a client know what to POST? In our :ref:`example<blog-what-the-rest-original-links>`,
+there will be 2 POST actions (one for creating a new user resource and another
+for "re-inviting" users), each which has its own documentation on how the
+fields should look.
+
+The ``OPTIONS`` may be helpful if it returns the links that I would receive
+if I made a ``GET`` request to the resource. In our example, we'd have:
+
+.. include:: includes/what-the-rest/_users_hal_links.rst.inc
+
+Of course, I could just make a ``GET`` for this information. So is there
+value in ``OPTIONS``?
+
+Problems: When I have only a URI
+----------------------
+
+One important consequence about a REST API is that we're not really supposed
+to start/bookmark a URI. In fact, with just a URI, we don't really have enough
+information to know how to use it.
+
+.. note::
+
+    In this section, I'll look only at HAL. If you're using a custom hypermedia
+    type, then you don't really even know what ``Accept`` header to use if
+    you only have the URI, nor would you know really how to process the response,
+    since you don't know what hypermedia type you'll get back.
+
+For example, if I know nothing about ``/users`` and I make a ``GET`` request,
+I get back these 2 links (among other things):
+
+.. include:: includes/what-the-rest/_users_hal_links.rst.inc
+
+Notice ``self``, which is a standard `IANA Link Relation`_, but which no
+longer includes the helpful ``http://api.example.com/rels/users`` "rel".
+If the rel is the key to finding the docs, we're stuck.
+
+Of course, according to the rules, we shouldn't be hardcoding URIs', we should
+always start back on the homepage and follow the link, with its nice rel.
+DHH famously argues against this (`Getting hyper about hypermedia APIs`_),
+but we'll leave that for now.
+
+But this scenario *does* show up legally in 2 places:
+
+1. After POST'ing to create a new resource, the ``location`` header gives
+  us the URI to the resource, but without a ``rel``;
+
+2. When GET'ing a collection resource, the embedded children don't have a
+  specific rel value (they have ``self``):
+
+.. code-block:: json
+
+    {
+      "_embedded": {
+        "users": [
+          {
+            "username": "weaverryan",
+            "_links": {
+              "self": {
+                "href": "http://api.example.com/user/weaverryan",
+                "title": "Users in the system"
+              },
+              "...": "... other links ..."
+            }
+          },
+          "... other users ..."
+        ]
+      },
+      "...": "... other stuff, links, data, etc ..."
+    }
+
+In both cases, we can GET the resource, but we're never given the pointer
+(``rel`` in HAL) to the docs, which answer our questions. At the very least,
+I need some "in-band" information that tells me where to "out of the band"
+for this information. Don't we?
+
+FoxyCart's solution - which I quite like, in part because there seems like
+no other solution - is to include this information in the "originating" docs.
+In the 2 scenarios above, I'm POST'ing and GET'ing the ``/users`` and we have
+its rel (``http://api.example.com/users``) and therefore its docs. In those
+docs, the documentation from ``http://api.example.com/user`` (the "rel" for
+the new resource) is embedded.
+
+Is there a better way? How should the API client know what to do with this
+new resource? What can be safely assumed?
+
+Opinions, Experiences, Please!
+------------------------------
+
+Again, a huge thanks to `Luke Stokes`_ and `FoxyCart`_ for pioneering so
+much of this and answering my questions. If you're someone who's been in
+the trenches with REST, your comments are greatly appreciated. One way or
+another, this will all turn into code, a script (both of which will be available
+publicly) and a screencast. In other words, your help will get shared on!
+
+In closing, the further in get into REST, the more rules I see. Things like
+hypermedia (linking to what I can do next) seem very pragmatic and wonderful.
+But immediately after, I find myself (as a client) having a difficult time
+navigating a RESTful API and knowing where to find the docs (whether those
+docs are part of the API or externally). I want to be able to leverage all
+the great ideas behind REST, but not be constrained by them. At the end of
+the day, we need an API that I (or you) can build and that our friendly API
+client can understand fairly quickly. In some ways, then, the path of DHH
+(`Getting hyper about hypermedia APIs`_) does make sense: use what's good,
+leave what's complex, break some rules, and move forward.
+
+Thoughts? Thanks!
+
+.. _`rabbit hole`: http://www.urbandictionary.com/define.php?term=rabbit%20hole
 .. _`Luke Stokes`: https://github.com/lukestokes
-.. _`Lukas Smith`: https://github.com/lsmith77
 .. _`HAL`: http://stateless.co/hal_specification.html
 .. _`JSON-LD`: http://json-ld.org/
-.. _`Siren`: https://github.com/kevinswiber/siren
-.. _`Foxycart`: http://wiki.foxycart.com/v/0.0.0/hypermedia_api
 .. _`HAL Browser`: https://api-sandbox.foxycart.com/hal-browser/hal_browser.html#/
-.. _`user example`: https://api.foxycart.com/rels/user
-.. _`Foxycart stores`: https://api-sandbox.foxycart.com/hal-browser/hal_browser.html#https://api-sandbox.foxycart.com/users/2/stores
+.. _`Foxycart`: http://wiki.foxycart.com/v/0.0.0/hypermedia_api
+.. _`induce application flow`: http://amundsen.com/hypermedia/
+.. _`https://api.foxycart.com/rels/users`: https://api.foxycart.com/rels/users
+.. _`IANA Link Relation`: http://www.iana.org/assignments/link-relations/link-relations.xhtml
+.. _`Getting hyper about hypermedia APIs`: http://37signals.com/svn/posts/3373-getting-hyper-about-hypermedia-apis
