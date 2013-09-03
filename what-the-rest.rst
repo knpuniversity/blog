@@ -39,7 +39,7 @@ a webpage, these tell me what I might do next (i.e. what actions I can take).
 Links versus Resources
 ~~~~~~~~~~~~~~~~~~~~~~
 
-As I understand it, it's not exactly correct to say that links are to resources.
+As I understand it, it's not exactly correct to say that links are links to resources.
 Of course a link has a URI, and each URI is an address to a resource, but
 you could (I believe), have multiple hyperlinks to the same URI, simply because
 there are multiple actions I can take on that resource. Suppose that we go
@@ -124,8 +124,7 @@ tell us what possible HTTP *requests* we can take next.
 
 So if this information isn't found in the hyperlinks, where does it live?
 Where can an API client find these details and how did she know to look there?
-This is at the heart of the trouble I have in understanding truly RESTful
-APIs.
+This is at the heart of the trouble I have in understanding RESTful APIs.
 
 .. note::
 
@@ -138,7 +137,7 @@ APIs.
 Finding the Missing Pieces to make the next Request
 ---------------------------------------------------
 
-Your API also needs to choose how its hypermedia type(s) will look. Will
+Your API also needs to choose how its hypermedia type(s) look like. Will
 each link have its own type (e.g. ``application/vnd.com.users+xml``) or
 will you use one hypermedia type like HAL?
 
@@ -147,8 +146,9 @@ before we can really make the next request. In REST, you often read that
 the only thing you should need to document is your hypermedia types. In
 that model, does *every* link have its own hypermedia type? And do the docs
 for that hypermedia type really tell us what HTTP methods can be used and
-what fields can be POST'ed, even though we're not POST'ing with that hypermedia
-type (we're probably POST'ing with something simple like ``application/json``)?
+what fields can be POST'ed? That would seem odd, as data is not sent (e.g. POST'ed)
+using the hypermedia type, but instead usually with something simpler like
+``application/json``.
 
 So let's look at the 2 approaches (custom hypermedia type versus HAL) and
 try to see how a client would answer the :ref:`4 questions<blog-what-the-rest-4-missing>`_
@@ -242,7 +242,8 @@ always start back on the homepage and follow the link, with its nice rel.
     A lot of people strongly disagree with him, but as someone on the "outside"
     of REST trying to get in, he makes a lot of sense.
 
-But this scenario *does* show up legally in 2 places:
+But this scenario *does* show up during normal client-server interaction in
+at least two places:
 
 1. After POST'ing to create a new resource, the ``location`` header gives
   us the URI to the resource, but without a ``rel``;
@@ -277,8 +278,7 @@ information that tells me where to find ("out-of-band") the API documentation.
 Said more simply, if I'm presented with a link to this user, how should our
 client know what to do with it?
 
-FoxyCart's solution - which I quite like, in part because there seems like
-no other solution - is to include this information in the "originating" docs.
+FoxyCart's solution is to include this information in the "originating" docs.
 In the 2 scenarios above, I'm POST'ing and GET'ing to ``/users`` and we already
 have its rel (``http://api.example.com/users``) and so also its docs. In those
 docs, the documentation from ``http://api.example.com/user`` (the "rel" for
@@ -296,7 +296,7 @@ the trenches with REST, your comments are greatly appreciated. One way or
 another, this will all turn into code, a script (both of which will be available
 publicly) and a screencast. In other words, your help will get shared on!
 
-But one more thought! The further in get into REST, the more rules I see.
+But one more thought! The further I get into REST, the more rules I see.
 Things like hypermedia (linking to what I can do next) seem very pragmatic
 and wonderful. But immediately after, I find myself (as a client) having a
 difficult time navigating a RESTful API and knowing where to find the docs
