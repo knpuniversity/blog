@@ -2,32 +2,41 @@ What the REST?
 ==============
 
 When I talked recently about :doc:`being collaborative and open</blog/knp-you>`,
-I mentioned that I was a few weeks into serious research around building RESTful
-API's. If you've tried building a RESTful API, or even done some learning
-about it, then you might know what I mean when I say that *REST is as deep
-as the `rabbit hole`_, with varied approaches, undefined best-practices, and
-flamewars along the way. Should I use custom hypermedia types or something
-like `HAL`_ or `JSON-LD`? Should I implement OPTIONS, and if so, should it
-have a response body and what would that look like? What should the API documentation
-cover and what should be self-describing in the API itself? How do custom
-verbs (non-CRUD actions) like banning a user or linking to a friend look?
+I mentioned that I was weeks into research around building RESTful API's.
+I've been like Luke training on Dadobah, except replace Jedi powers with
+REST and Yoda with the Internet, RFCs and dozens of blog posts. And despite
+everything, my mind is clouded. When it comes to new tech, sometimes the more
+you learn about the pieces, the less you can see how they could ever fit together.
+This post is an experiment to see if we can fix that.
+
+*REST is as deep as the `rabbit hole`_, with varied approaches, undefined
+best-practices, and flamewars along the way. Should I use custom hypermedia
+types or something like `HAL`_ or `JSON-LD`_? Should I implement OPTIONS,
+and if so, should it tell me only what methods to use or much more? What role
+should the API documentation play and what information should be described
+inside the API itself? How do custom verbs like banning a user or linking
+to a friend look?
 
 .. tip::
 
-    I owe a big hat-tip especially to `Luke Stokes`_ and his team's WIP API
-    for `FoxyCart`_, which I'll bring up in this post. Luke let me bother
-    him with questions (repeatedly) and was awesome about it.
+    I owe a big thanks to `Luke Stokes`_ and his team's WIP API for `FoxyCart`_,
+    which I'll bring up in this post. Luke let me bother him with questions
+    (repeatedly) and was wonderful about it.
 
-Eventually, the best-practices will rise to the surface and finding at least
-one really nice path will be a lot more clear. But I (and a lot of people)
-want to create a high-quality, but pragmatic "REST" API right now. So far,
-HATEOAS (which has led to the desire to read RFCs and "get it right") have
-felt like a hindrance on both the client and server side.
+Eventually, best-practices will rise to the surface. But I (and maybe you)
+want to build a high-quality "REST" API right now. Curiously, HATEOAS - the
+missing RESTful piece for many APIs - has made things more difficult for me
+so far. The idea is beautiful: return links in your API to help the client know
+what to do next. But links, which are basically a URL with a "rel", only
+tell part of the story. What methods does that link support? What fields
+should I send to it? And where should all this information live?
 
-In this post, I'll probably say some wrong things about REST and possibly
-(hopefully) be corrected. And that's exactly what I want: I'll pour out my
-RESTful heart, and invite you all to crush it and build it back up. By the
-end, I hope to have *one*, *good*, well-defined path that can be written
+In the next sections, I'll say some things about REST that are just wrong.
+And hopefully, I'll be corrected. I'll pour out my RESTful heart, and invite
+you all to crush it and build it back up. I've heard that the Internet is
+good at correcting people, so I thought, why not tap into that? :).
+
+By the end, I hope to have *one*, *good*, well-defined path that can be written
 up and shared openly.
 
 HATEOAS: What you can do next?
@@ -41,9 +50,9 @@ Links versus Resources
 
 As I understand it, it's not exactly correct to say that links are links to resources.
 Of course a link has a URI, and each URI is an address to a resource, but
-you could (I believe), have multiple hyperlinks to the same URI, simply because
-there are multiple actions I can take on that resource. Suppose that we go
-to the homepage of our API and it returns the following links (I'm using
+you could have multiple hyperlinks to the same URI. For example, imagine
+there are multiple actions I can take on that resource. Suppose that when
+we go to the homepage of our API it returns the following links (I'm using
 HAL to represent the links, but that's not important):
 
 .. _blog-what-the-rest-original-links:
@@ -52,7 +61,9 @@ HAL to represent the links, but that's not important):
 
     {
       "_links": {
-        "self": { "href": "/" },
+        "self": {
+          "href": "/"
+        },
         "http://api.example.com/rels/users": {
           "href": "http://api.example.com/users",
           "title": "Users in the system"
@@ -66,9 +77,9 @@ HAL to represent the links, but that's not important):
     }
 
 In this case, we have 2 different links (actions) but each link points to
-the same resource. This is simply because there are 2 actions that can be
-taken on that resource. This is my understanding of links versus resources,
-but I could be wrong :).
+the same resource. This is because there are 2 actions that can be taken on
+that resource. This is my understanding of links versus resources, a distinction
+which is important because it means that a link is much more than just a URI.
 
 .. note::
 
@@ -79,10 +90,10 @@ but I could be wrong :).
 
     It also *seems* to be safe that the "main" link to the user resource is
     *probably* being used for CRUD operations. Luke suggested that some APIs
-    break each operation down into its own link (1 link for the read/GET, 1
-    link for create/POST, 1 link for the update/PUT and 1 link for the delete/DELETE).
-    As I understand links, that seems to fit logically, but also feels like
-    overkill. Again, resources versus links feel tricky.
+    break each operation into its own link (1 link for the read/GET, 1 for
+    create/POST, 1 for the update/PUT and 1 for the delete/DELETE). This
+    fits exactly with my understanding above. But it also feels like overkill.
+    Resources versus links feel tricky.
 
 We don't know exactly what to do with those links yet, but that's next.
 
@@ -100,13 +111,18 @@ something custom, etc), but a link has the following information:
 
 .. note::
 
-    In the links in the block above, the ``rel`` is the key (e.g. ``http://api.example.com/rels/users_reinvite``)
-    and there is no ``type``, since it's HAL, so you assume that the link will
-    also be HAL.
+    In the links above, the ``rel`` is the key (e.g. ``http://api.example.com/rels/users_reinvite``)
+    and there is no ``type``, since it's HAL and you assume that the link
+    will also be able to return HAL.
 
-In a browser, we click links (i.e. GET) or submit a form (i.e. POST, where
-the fields to send are defined right inside the link/form). But in an API,
-we need more information than we have from the link, which I'll call:
+In a browser, we click links (i.e. GET) or submit a form (i.e. POST). The
+form contains the fields we need to send right inside of it and there's an
+web-wide standard of sending that data in a certain format (i.e. ``application/x-www-form-urlencoded``).
+So when we're using a browser, each link contains all the information needed
+to follow it.
+
+But that's not true at all with an API. We need more information than we
+have from simply looking at the link, which I'll call:
 
 .. _blog-what-the-rest-4-missing:
 
@@ -123,7 +139,7 @@ action is (they `induce application flow`_). In the HTTP world, they should
 tell us what possible HTTP *requests* we can take next.
 
 So if this information isn't found in the hyperlinks, where does it live?
-Where can an API client find these details and how did she know to look there?
+Where can an API client find these details and how does she know to look there?
 This is at the heart of the trouble I have in understanding RESTful APIs.
 
 .. note::
@@ -146,9 +162,10 @@ before we can really make the next request. In REST, you often read that
 the only thing you should need to document is your hypermedia types. In
 that model, does *every* link have its own hypermedia type? And do the docs
 for that hypermedia type really tell us what HTTP methods can be used and
-what fields can be POST'ed? That would seem odd, as data is not sent (e.g. POST'ed)
-using the hypermedia type, but instead usually with something simpler like
-``application/json``.
+what fields can be POST'ed? That would seem odd, especially because the data
+is not sent (e.g. POST'ed) using the hypermedia type. Usually data is sent
+with something simpler like ``application/json``, and the special hypermedia
+is only used in the response.
 
 So let's look at the 2 approaches (custom hypermedia type versus HAL) and
 try to see how a client would answer the :ref:`4 questions<blog-what-the-rest-4-missing>`_
@@ -174,19 +191,19 @@ standing between us and the next API request:
     this (e.g. `https://api.foxycart.com/rels/users`_).
 
 It *seems* that both methods will probably rely on some external documentation.
-This is known as "out-of-band information", which we maybe shouldn't need
-in theory and isn't RESTful. But I'd argue that creating an API that's fully
-self-describing is still very hard, and quite possibly not worth it.
+This is known as "out-of-band information", which we shouldn't need in theory.
+But I'd argue that creating an API that's fully self-describing is still
+very hard, and quite possibly not worth it.
 
 Some pieces of information could probably be answered globally for your API (e.g.
-Request encoding), like on the HTML API homepage. Very literally, you might
-just say that all endpoints support ``application/json`` perhaps ````application/x-www-form-urlencoded``.
+Request encoding). Very literally, you might just say on the homepage of your
+docs that all endpoints support ``application/json`` and ``application/x-www-form-urlencoded``.
 
-But usually, we will need to look up a specific API docs page. For a custom
-hypermedia approach, the docs *seem* to be for each hypermedia type (right?, wrong?).
-For HAL, since we only have one hypermedia type, we rely entirely on the
-link ``rel``. This could all totally be wrong, but if it is, then how should
-the client be answering our :ref:`4 questions<blog-what-the-rest-4-missing>`_
+But usually, we will need to look up a specific API docs page for each link.
+For a custom hypermedia approach, the docs *seem* to be for each hypermedia
+type (right?, wrong?). For HAL, since we only have one hypermedia type, we
+rely entirely on the link ``rel``. This could all totally be wrong, but if
+it is, then how should the client be answering our :ref:`4 questions<blog-what-the-rest-4-missing>`_
 for each link? If we have docs, how do they know which doc to look at for
 each link?
 
@@ -201,7 +218,7 @@ there will be 2 POST actions (one for creating a new user resource and another
 for "re-inviting" users), each which has its own documentation on how the
 fields should look.
 
-The ``OPTIONS`` may be helpful if it returns the links that I would receive
+``OPTIONS`` may be helpful if it returns the links that I would receive
 if I made a ``GET`` request to the resource. In our example, we'd have:
 
 .. include:: includes/what-the-rest/_users_hal_links.rst.inc
@@ -219,10 +236,10 @@ have enough information to know what to do with it.
 .. note::
 
     In this section, I'll look only at HAL. If you're using a custom hypermedia
-    type, then I think you also have a problem, since you don't really know
-    what ``Accept`` header to use in your request if you only have the URI,
-    nor would you know really how to process the response, since you don't
-    know what hypermedia type you'll get back.
+    type, then I think you also have a problem. If you only have the URI,
+    you don't know what ``Accept`` header to use in your request nor would
+    you know really how to process the response. You simply don't know what
+    hypermedia type you'll get back.
 
 For example, if I know nothing about ``/users`` and I make a ``GET`` request,
 I get back these 2 links (among other things):
@@ -238,9 +255,10 @@ always start back on the homepage and follow the link, with its nice rel.
 
 .. note::
 
-    DHH famously argues against this (`Getting hyper about hypermedia APIs`_).
-    A lot of people strongly disagree with him, but as someone on the "outside"
-    of REST trying to get in, he makes a lot of sense.
+    DHH famously argues against this idea that an API client would always
+    start from the homepage and dynamically crawl instead of hardcoding
+    URLs (`Getting hyper about hypermedia APIs`_). I'm pretty sure this
+    pissed a lot of people off, but I think he makes a lot of sense.
 
 But this scenario *does* show up during normal client-server interaction in
 at least two places:
@@ -280,9 +298,10 @@ client know what to do with it?
 
 FoxyCart's solution is to include this information in the "originating" docs.
 In the 2 scenarios above, I'm POST'ing and GET'ing to ``/users`` and we already
-have its rel (``http://api.example.com/users``) and so also its docs. In those
-docs, the documentation from ``http://api.example.com/user`` (the "rel" for
-the new resource) could be embedded (see "Embedded Resource: user" at `https://api.foxycart.com/rels/users`_).
+have its rel (``http://api.example.com/users``). This means we also have its
+docs. On that page, the documentation from ``http://api.example.com/user``
+(the "rel" for the new resource) could be embedded (see "Embedded Resource: user"
+at `https://api.foxycart.com/rels/users`_).
 
 Is there a better way? How should the API client know what to do with this
 new resource? What can be safely assumed?
@@ -292,9 +311,9 @@ Opinions, Experiences, Please!
 
 Again, a huge thanks to `Luke Stokes`_ and `FoxyCart`_ for pioneering so
 much of this and answering my questions. If you're someone who's been in
-the trenches with REST, your comments are greatly appreciated. One way or
-another, this will all turn into code, a script (both of which will be available
-publicly) and a screencast. In other words, your help will get shared on!
+the trenches with REST, comment, enlighten and correct me please! Anything
+we accomplish here will ultimately turn into code, a script (both of which
+will be available publicly) and a screencast.
 
 But one more thought! The further I get into REST, the more rules I see.
 Things like hypermedia (linking to what I can do next) seem very pragmatic
@@ -302,15 +321,15 @@ and wonderful. But immediately after, I find myself (as a client) having a
 difficult time navigating a RESTful API and knowing where to find the docs
 (whether those docs are part of the API or externally). I want to be able
 to leverage all the great ideas behind REST, but not be constrained by them.
-At the end of the day, we need an API that I (or you) can build and that our
-friendly API client can understand quickly. In some ways, then, the path of
-DHH (`Getting hyper about hypermedia APIs`_) does make sense: use what's good,
+At the end of the day, we need an API that I can build and that our friendly
+API client can understand quickly. In some ways, then, the path of DHH
+(`Getting hyper about hypermedia APIs`_) does make sense: use what's good,
 leave what's complex, break some rules, and move forward.
 
-But, maybe I'm just missing a few, final, beautiful pieces to get to blissful
-RESTland.
+But, maybe I'm just missing a few, final, beautiful pieces to get out of
+the swamp and up to blissful RESTland.
 
-Thoughts? Thanks!
+Thanks!
 
 .. _`rabbit hole`: http://www.urbandictionary.com/define.php?term=rabbit%20hole
 .. _`Luke Stokes`: https://github.com/lukestokes
