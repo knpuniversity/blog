@@ -3,7 +3,7 @@ What the REST?
 
 When I talked recently about :doc:`being collaborative and open</blog/knp-you>`,
 I mentioned that I was weeks into research around building RESTful API's.
-I've been like Luke training on Dadobah, except replace Jedi powers with
+I've been like Luke training on Dagobah, except replace Jedi powers with
 REST and Yoda with the Internet, RFCs and dozens of blog posts. And despite
 everything, my mind is clouded. When it comes to new tech, sometimes the more
 you learn about the pieces, the less you can see how they could ever fit together.
