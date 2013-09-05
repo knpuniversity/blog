@@ -9,7 +9,7 @@ everything, my mind is clouded. When it comes to new tech, sometimes the more
 you learn about the pieces, the less you can see how they could ever fit together.
 This post is an experiment to see if we can fix that.
 
-*REST is as deep as the `rabbit hole`_, with varied approaches, undefined
+REST is as deep as the `rabbit hole`_, with varied approaches, undefined
 best-practices, and flamewars along the way. Should I use custom hypermedia
 types or something like `HAL`_ or `JSON-LD`_? Should I implement OPTIONS,
 and if so, should it tell me only what methods to use or much more? What role
@@ -157,7 +157,7 @@ Your API also needs to choose how its hypermedia type(s) look like. Will
 each link have its own type (e.g. ``application/vnd.com.users+xml``) or
 will you use one hypermedia type like HAL?
 
-Right now, we're missing :ref:`4 pieces of information<blog-what-the-rest-4-missing>`_
+Right now, we're missing :ref:`4 pieces of information<blog-what-the-rest-4-missing>`
 before we can really make the next request. In REST, you often read that
 the only thing you should need to document is your hypermedia types. In
 that model, does *every* link have its own hypermedia type? And do the docs
@@ -168,7 +168,7 @@ with something simpler like ``application/json``, and the special hypermedia
 is only used in the response.
 
 So let's look at the 2 approaches (custom hypermedia type versus HAL) and
-try to see how a client would answer the :ref:`4 questions<blog-what-the-rest-4-missing>`_
+try to see how a client would answer the :ref:`4 questions<blog-what-the-rest-4-missing>`
 standing between us and the next API request:
 
 +--------------+-------------------------------------------+--------------------------------------+
@@ -203,7 +203,7 @@ But usually, we will need to look up a specific API docs page for each link.
 For a custom hypermedia approach, the docs *seem* to be for each hypermedia
 type (right?, wrong?). For HAL, since we only have one hypermedia type, we
 rely entirely on the link ``rel``. This could all totally be wrong, but if
-it is, then how should the client be answering our :ref:`4 questions<blog-what-the-rest-4-missing>`_
+it is, then how should the client be answering our :ref:`4 questions<blog-what-the-rest-4-missing>`
 for each link? If we have docs, how do they know which doc to look at for
 each link?
 
@@ -264,10 +264,10 @@ But this scenario *does* show up during normal client-server interaction in
 at least two places:
 
 1. After POST'ing to create a new resource, the ``location`` header gives
-  us the URI to the resource, but without a ``rel``;
+   us the URI to the resource, but without a ``rel``;
 
 2. When GET'ing a collection resource, the embedded children don't have a
-  specific rel value (they have ``self``):
+   specific rel value (they have ``self``):
 
 .. code-block:: json
 
