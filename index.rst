@@ -5,3 +5,4 @@ The Blog
     :hidden:
 
     knp-you
+    what-the-rest
