@@ -9,7 +9,7 @@ package (screencast + in-browser coding activities) while still giving away
 good content to everyone.
 
 But we want to go further by making the content available on GitHub (`done!`_),
-which means figuring out how to license them. Of course, this is where things
+which means figuring out how to license it. Of course, this is where things
 get legal, which means complicated... and boring -_- zzzz.
 
 If you're not too familiar with licenses, I'll give a brief background.
@@ -21,7 +21,7 @@ Creative Commons to the Rescue
 ------------------------------
 
 GitHub has a great site (`choosealicense.com`_) to help you license your
-*code*, but not necessarily your content. But if you peak at the footer,
+*code*, but not necessarily your content. If you peak at the footer,
 you'll see that the site itself is licensed as "Creative Commons Attribution 3.0
 Unported License". In fact, this is also the license used for
 `Symfony's documentation`_  and Creative Commons is the go-to provider of
@@ -31,8 +31,8 @@ post.
 
 .. _blog-license-choosing:
 
-But which License for Us?
--------------------------
+But which License is for Us?
+---------------------------
 
 There are basically two big decision points to selecting the license:
 
