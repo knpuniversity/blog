@@ -24,3 +24,13 @@ blogs:
             inside the API itself? In this post, I'm asking for help.
         author: weaverryan
         category: tech
+
+    "licenses"
+        title: Finding our OS Content License
+        published: 2013-09-13
+        preview: |
+            We're releasing the content of our screencasts and we want to get the
+            license right. In this post, we give a little background and ask for
+            your thoughts.
+        author: weaverryan
+        category: tech
