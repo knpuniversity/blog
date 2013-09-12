@@ -6,3 +6,4 @@ The Blog
 
     knp-you
     what-the-rest
+    licenses
