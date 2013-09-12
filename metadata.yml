@@ -25,7 +25,7 @@ blogs:
         author: weaverryan
         category: tech
 
-    "licenses"
+    "licenses":
         title: Finding our OS Content License
         published: 2013-09-13
         preview: |
