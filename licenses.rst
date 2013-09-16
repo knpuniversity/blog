@@ -68,3 +68,4 @@ So what do you think?
 .. _`done!`: https://github.com/knpuniversity
 .. _`choosealicense.com`: http://choosealicense.com/
 .. _`license "wizard"`: http://creativecommons.org/choose/
+.. _`Symfony's documentation`: http://symfony.com/doc/current/contributing/code/license.html
