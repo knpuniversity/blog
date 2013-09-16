@@ -32,7 +32,7 @@ post.
 .. _blog-license-choosing:
 
 But which License is for Us?
----------------------------
+----------------------------
 
 There are basically two big decision points to selecting the license:
 
