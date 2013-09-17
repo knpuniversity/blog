@@ -1,6 +1,11 @@
 What the REST?
 ==============
 
+.. note::
+
+    See the follow-up post called :doc:`/blog/rest-revisited` that talks
+    about the key things we learned from this.
+
 When I talked recently about :doc:`being collaborative and open</blog/knp-you>`,
 I mentioned that I was weeks into research around building RESTful API's.
 I've been like Luke training on Dagobah, except replace Jedi powers with
@@ -44,6 +49,8 @@ HATEOAS: What you can do next?
 
 When I get a response from a RESTful API, it should contain links. Like on
 a webpage, these tell me what I might do next (i.e. what actions I can take).
+
+.. _blog-what-the-rest-links-resources:
 
 Links versus Resources
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -226,6 +233,8 @@ if I made a ``GET`` request to the resource. In our example, we'd have:
 Of course, I could just make a ``GET`` for this information. So is there
 value in ``OPTIONS``?
 
+.. _blog-what-the-rest-only-uri:
+
 Problems: When I have only a URI
 --------------------------------
 
@@ -265,6 +274,8 @@ at least two places:
 
 1. After POST'ing to create a new resource, the ``location`` header gives
    us the URI to the resource, but without a ``rel``;
+
+.. _blog-what-the-rest-collection-missing-rel:
 
 2. When GET'ing a collection resource, the embedded children don't have a
    specific rel value (they have ``self``):
