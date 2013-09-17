@@ -302,7 +302,7 @@ Cheers!
 .. _`Luke Stokes`: https://twitter.com/lukestokes
 .. _`Larry Garfield`: http://knpuniversity.com/blog/what-the-rest#comment-1038006806
 .. _`JSON-LD`: http://json-ld.org/
-.. _`Raul Fraile`: http://knpuniversity.com/blog/what-the-rest#comment-1032280776
+.. _`Raul Fraile from ServerGrove`: http://knpuniversity.com/blog/what-the-rest#comment-1032280776
 .. _`Larry helped here`: http://knpuniversity.com/blog/what-the-rest#comment-1039347270
 .. _`his comment`: http://knpuniversity.com/blog/what-the-rest#comment-1039347270
 .. _`GitHub`: https://github.com/knpuniversity/rest
