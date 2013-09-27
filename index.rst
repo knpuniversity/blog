@@ -8,3 +8,4 @@ The Blog
     what-the-rest
     licenses
     rest-revisited
+    rss

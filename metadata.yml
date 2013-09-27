@@ -45,3 +45,14 @@ blogs:
             questions remain before we release our REST tutorial.
         author: weaverryan
         category: tech
+
+    "rss":
+        title: We can has RSS?
+        published: 2013-09-27
+        preview: |
+            We have an RSS feed! Ok, that's not earth-shattering, but we
+            we will be sharing tech experiences, updates, and other tech
+            topics and we don't want you to miss out. We also talk about
+            the code behind the RSS.
+        author: weaverryan
+        category: news
