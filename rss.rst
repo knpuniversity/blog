@@ -30,4 +30,4 @@ Cheers!
 .. _`RSS feed`: http://feeds.feedburner.com/knpuniversity
 .. _`\Suin\RSSWriter`: https://github.com/suin/php-rss-writer
 .. _`tested in Travis`: https://travis-ci.org/suin/php-rss-writer
-.. _`RSS 2.0`_: http://en.wikipedia.org/wiki/RSS#RSS_Compared_to_Atom
+.. _`RSS 2.0`: http://en.wikipedia.org/wiki/RSS#RSS_Compared_to_Atom
