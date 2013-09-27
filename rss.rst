@@ -10,10 +10,10 @@ you'll show up in the future.
 
 http://feeds.feedburner.com/knpuniversity
 
-Simple Tech: \Suin\RSSWriter
-----------------------------
+Simple Tech: \\Suin\\RSSWriter
+------------------------------
 
-Creating an RSS feed is simple and was made even easier by `\Suin\RSSWriter`_.
+Creating an RSS feed is simple and was made even easier by `\\Suin\\RSSWriter`_.
 It's built with PHP namespaces, us `tested in Travis`_, is all setup with
 Composer and does nothing more than help dump RSS. There are also some Symfony2
 bundles for RSS, but creating a feed is so simple that these seem like overkill.
@@ -28,6 +28,6 @@ Like something better? Let us know :).
 Cheers!
 
 .. _`RSS feed`: http://feeds.feedburner.com/knpuniversity
-.. _`\Suin\RSSWriter`: https://github.com/suin/php-rss-writer
+.. _`\\Suin\\RSSWriter`: https://github.com/suin/php-rss-writer
 .. _`tested in Travis`: https://travis-ci.org/suin/php-rss-writer
 .. _`RSS 2.0`: http://en.wikipedia.org/wiki/RSS#RSS_Compared_to_Atom
