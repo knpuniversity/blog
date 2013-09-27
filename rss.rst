@@ -14,7 +14,7 @@ Simple Tech: \\Suin\\RSSWriter
 ------------------------------
 
 Creating an RSS feed is simple and was made even easier by `\\Suin\\RSSWriter`_.
-It's built with PHP namespaces, us `tested in Travis`_, is all setup with
+It's built with PHP namespaces, is `tested in Travis`_, is all setup with
 Composer and does nothing more than help dump RSS. There are also some Symfony2
 bundles for RSS, but creating a feed is so simple that these seem like overkill.
 
