@@ -56,3 +56,13 @@ blogs:
             the code behind the RSS.
         author: weaverryan
         category: news
+
+     "requirejs-bower-grunt":
+        title: "Evolving RequireJS, Bower and Grunt"
+        published: 2013-12-24
+        preview: |
+            At SymfonyCon Warsaw, I talked about RequireJS, Bower and Grunt
+            in your PHP project. In this post, we'll go a bit further and
+            check out a way to organize things that may be even better!
+        author: weaverryan
+        category: tech

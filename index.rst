@@ -9,3 +9,5 @@ The Blog
     licenses
     rest-revisited
     rss
+    requirejs-bower-grunt
+    
