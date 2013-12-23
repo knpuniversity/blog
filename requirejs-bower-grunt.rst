@@ -8,7 +8,7 @@ pleasure to meet a lot of new friends!
 
 I also gave a Christmas-themed talk on a *really* neat subject:
 "`Cool like a Frontend Developer`_", renamed to "Deck the Halls with Grunt, RequireJS & Bower".
-And because examples our best, an example project from the presentation
+And because examples are best, an example project from the presentation
 lives on GitHub: `knpuniversity/symfonycon-frontend`_
 
 If you're curious about this stuff and couldn't be there for my talk, go
