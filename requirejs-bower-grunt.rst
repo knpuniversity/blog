@@ -150,6 +150,8 @@ directory at the root of our project, since that's where we edit files. But
 before running ``jshint`` or ``compass``, each will call ``copy`` first, to
 copy things into ``web/assets``:
 
+.. code-block:: javascript
+
     // Gruntfile.js
     // ...
 
@@ -177,8 +179,8 @@ we only feel that complexity when we're first getting things configured.
 Cleaning up SASS and old Files
 ------------------------------
 
-I've also been talking with a [Matt Davis](https://twitter.com/mdavis1982),
-we brought up some more potential improvements/problems:
+I've also been talking with a `Matt Davis`_, we brought up some more potential
+improvements/problems:
 
 #. The SASS files no longer live in ``web/``, but are still copied to ``web/``
 when Grunt runs. If you really want to hide these files, you'll need to omit
@@ -256,3 +258,4 @@ Have fun!
 .. _`knpuniversity/symfonycon-frontend`: https://github.com/knpuniversity/symfonycon-frontend
 .. _`assets-in-root`: https://github.com/knpuniversity/symfonycon-frontend/tree/assets-in-root
 .. _`grunt-contrib-copy`: https://github.com/gruntjs/grunt-contrib-copy
+.. _`Matt Davis`: https://twitter.com/mdavis1982
