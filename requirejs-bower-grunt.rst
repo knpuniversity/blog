@@ -191,7 +191,7 @@ old files.
 The answer to both of these is the `grunt-contrib-clean`_ plugin. First,
 install it like any Grunt plugins:
 
-.. code-block:: text::
+.. code-block:: text
 
     $ npm install grunt-contrib-clean --save-dev
 
