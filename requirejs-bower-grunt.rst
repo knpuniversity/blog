@@ -209,7 +209,7 @@ Then activate its tasks in ``Gruntfile.js``:
     };
 
 We'll create 2 subtasks: one for cleaning out ``web/assets`` before copying
-and another for cleaning out the ``web/assets/sass`` directory *after copying:
+and another for cleaning out the ``web/assets/sass`` directory *after* copying:
 
 .. code-block:: javascript
 
@@ -258,4 +258,5 @@ Have fun!
 .. _`knpuniversity/symfonycon-frontend`: https://github.com/knpuniversity/symfonycon-frontend
 .. _`assets-in-root`: https://github.com/knpuniversity/symfonycon-frontend/tree/assets-in-root
 .. _`grunt-contrib-copy`: https://github.com/gruntjs/grunt-contrib-copy
+.. _`grunt-contrib-clean`: https://github.com/gruntjs/grunt-contrib-clean
 .. _`Matt Davis`: https://twitter.com/mdavis1982
