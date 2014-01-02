@@ -57,7 +57,7 @@ blogs:
         author: weaverryan
         category: news
 
-     "requirejs-bower-grunt":
+    "requirejs-bower-grunt":
         title: "Evolving RequireJS, Bower and Grunt"
         published: 2013-01-02
         preview: |
