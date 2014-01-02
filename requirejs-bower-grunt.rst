@@ -174,6 +174,73 @@ of complexity, since you must copy files every time any change is made, even
 while developing. But since this is all handled in Grunt and ``grunt watch``,
 we only feel that complexity when we're first getting things configured.
 
+Cleaning up SASS and old Files
+------------------------------
+
+I've also been talking with a [Matt Davis](https://twitter.com/mdavis1982),
+we brought up some more potential improvements/problems:
+
+#. The SASS files no longer live in ``web/``, but are still copied to ``web/``
+when Grunt runs. If you really want to hide these files, you'll need to omit
+them from the ``copy`` task, or remove them afterwards.
+
+#. If you delete a file from ``assets/``, it will still live in ``web/assets/``,
+because the ``copy`` task copies new files, but nothing ever removes the
+old files.
+
+The answer to both of these is the `grunt-contrib-clean`_ plugin. First,
+install it like any Grunt plugins:
+
+.. code-block:: text::
+
+    $ npm install grunt-contrib-clean --save-dev
+
+Then activate its tasks in ``Gruntfile.js``:
+
+.. code-block:: javascript
+
+    // Gruntfile.js
+    module.exports = function (grunt) {
+        // ...
+        grunt.loadNpmTasks('grunt-contrib-clean');
+        // ...
+    };
+
+We'll create 2 subtasks: one for cleaning out ``web/assets`` before copying
+and another for cleaning out the ``web/assets/sass`` directory *after copying:
+
+.. code-block:: javascript
+
+    // Gruntfile.js
+    // ...
+
+    grunt.initConfig({
+        clean: {
+            build: {
+                src: ['<%= targetDir %>/**']
+            },
+            sass: {
+                src: ['<%= targetDir %>/sass']
+            }
+        },
+    });
+
+    // ...
+    // sub-task that copies assets to web/assets, and also cleans some things
+    grunt.registerTask('copy:assets', ['clean:build', 'copy', 'clean:sass']);
+
+    // the "default" task (e.g. simply "Grunt") runs tasks for development
+    grunt.registerTask('default', ['copy:assets', 'jshint', 'compass:dev']);
+
+    // register a "production" task that sets everything up before deployment
+    grunt.registerTask('production', ['copy:assets', 'jshint', 'requirejs', 'uglify', 'compass:dist']);
+
+We've also created a new convenience task: ``copy:assets``, which cleans
+``web/assets``, copies ``assets/`` to ``web/assets/``, then removes ``web/assets/sass``.
+Phew! Just make sure that this new ``copy:assets`` is the first step
+in our ``default`` and ``production`` tasks. Now, when we run ``grunt`` or
+``grunt production``, all the copying and cleaning will happen first.
+
 Other Improvements?
 -------------------
 
