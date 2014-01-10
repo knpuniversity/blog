@@ -66,3 +66,13 @@ blogs:
             check out a way to organize things that may be even better!
         author: weaverryan
         category: tech
+
+    "symfony-debugging-form-errors":
+        title: Accessing and Debugging Symfony Form Errors
+        published: 2014-01-10
+        preview: |
+            Inspired by an old StackOverflow post, we'll investigate why
+            it's so hard to get *all* of the errors of a form and unlock
+            some new tricks by understanding the form hierarchy.
+        author: weaverryan
+        category: tech
