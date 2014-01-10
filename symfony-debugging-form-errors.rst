@@ -204,9 +204,16 @@ level ``Form`` has children, each which is also a ``Form`` object (or a
 about a field (is it required? what are its errors?), you need to first get
 access to the *child* form and go from there.
 
+Learn More
+----------
+
+Stuck on other Symfony topics or want to learn Symfony from the context of an actual project?
+Check out our Getting Started with `Symfony Series`_ and cut down on your learning curve!
+
 .. _`How to get form validation errors after binding the request to the form`: http://stackoverflow.com/questions/6978723/symfony2-how-to-get-form-validation-errors-after-binding-the-request-to-the-fo
 .. _`Form panel`: http://symfony.com/blog/new-in-symfony-2-4-great-form-panel-in-the-web-profiler
 .. _`Stack Overflow`: http://stackoverflow.com/a/8216192/805814
 .. _`Episode 4`: http://knpuniversity.com/screencast/symfony2-ep4/form-customizations
 .. _`Episode 2`: http://knpuniversity.com/screencast/symfony2-ep2/registration-form
 .. _`form theming`: http://knpuniversity.com/screencast/symfony2-ep4/form-customizations
+.. _`Symfony Series`: http://knpuniversity.com/screencast/tag/symfony
