@@ -15,7 +15,7 @@ way :).
 Debugging
 ---------
 
-First, if you're trying to figure out what errors you have and which fields
+First, if you're trying to figure out what errors you have and which field
 each is attached to, you should use the
 :symfonymethod:`Form::getErrorsAsString() <Symfony\\Component\\Form\\Form::getErrorsAsString>`
 method that was introduced in Symfony 2.1 (so a long time ago!). Use it temporarily
@@ -64,10 +64,10 @@ Raise your hand virtually if you've tried doing this to debug a form::
     }
 
 What do you get? Almost definitely an empty array, even when the form has
-lots of errors.
+lots of errors. Yea, I've been there too.
 
 The reason is that a form is actually more than just one ``Form`` object:
-it's a tree of ``Form`` object. Each field is represented by its *own* ``Form``
+it's a tree of ``Form`` objects. Each field is represented by its *own* ``Form``
 object and the errors for that field are stored on it.
 
 Assuming the form has ``name`` and ``price`` fields, how can we get the errors
@@ -83,7 +83,7 @@ By saying ``$form['name']``, we get the ``Form`` object that represents *just*
 the ``name`` field, which gives us access to *just* the errors attached to
 that field. This means that there's no *one* spot to get *all* of the errors
 on your entire form. Saying ``$form->getErrors()`` gives you only "global"
-errors: errors that aren't attached to any specific field (e.g. a CSRF token
+errors, i.e. errors that aren't attached to any specific field (e.g. a CSRF token
 failure).
 
 Render all the Errors at the Top of your Form
@@ -91,41 +91,49 @@ Render all the Errors at the Top of your Form
 
 One common question is how you might render all of your errors in one big
 list at the top of your form. Again, there's no *one* spot where you can
-get a big array of *all* of the fields, so you'd need to build it yourself::
+get a big array of *all* of the errors, so you'd need to build it yourself::
 
-    // a simple, but incomplete way to collect all errors
+    // a simple, but incomplete (see below) way to collect all errors
     $errors = array();
     foreach ($form as $fieldName => $formField) {
+        // each field has an array of errors
         $errors[$fieldName] = $formField->getErrors();
     }
 
-Hopefully you understand the idea of going over each field to collect all
-of the errors together. In reality, since a form can be many-levels deep,
-this solution isn't good enough. Fortunately, someone already posted a more
-complete on on `Stack Overflow`_ (see the 2.1 version).
+We can iterate over ``$form`` (a ``Form`` object) to get all of its fields.
+And again, remember that each field (``$formField`` here), is also a ``Form``
+object, which is why we can call
+:symfonymethod:`Form::getErrors() <Symfony\\Component\\Form\\Form::getErrors>`
+on each.
+
+In reality, since a form can be many-levels deep, this solution isn't good
+enough. Fortunately, someone already posted a more complete one on
+`Stack Overflow`_ (see the 2.1 version).
 
 From here, you can pass these into your template and render each. Of course,
-you'll need to make sure that you don't call ``form_errors`` on any of your
-fields, since you're printing the errors manually (``form_row`` calls ``form_errors``
-automatically normally).
+you'll need to make sure that you don't call ``{{ form_errors() }}`` on any
+of your fields, since you're printing the errors manually (and remember that
+``form_row`` calls ``form_errors`` automatically).
 
 .. note::
 
-    Each field also has a ``error_bubbling`` option. If this is set to ``true``
+    Each field also has an `error_bubbling`_ option. If this is set to ``true``
     (it defaults to ``false`` for most fields), then the error will "bubble"
     and attach itself to the parent form. This means that if you set this
-    option to ``true`` for *every* field, all errors would be rendered at
-    the top by calling ``form_errors(form)``.
+    option to ``true`` for *every* field, all errors would be attached to
+    the top-level Form object and could be rendered by calling ``{{ form_errors(form) }}``
+    in Twig.
 
 Accessing Errors Inside Twig
 ----------------------------
 
-We can also do some magic in Twig with errors using form variables, an idea
-that's *absolutely fundamental* to customizing how your forms render.
+We can also do some magic in Twig with errors using magical things called
+*form variables*. These guys are *absolutely fundamental* to customizing
+how your forms render.
 
 .. note::
 
-    If you're new to form theming and variables and want to master them,
+    If you're new to form theming and variables and need to master them,
     check out `Episode 4`_ of our Symfony series.
 
 Normally, field errors are rendered in Twig by calling ``form_errors`` on
@@ -150,7 +158,7 @@ name field.
 
 .. tip::
 
-    Once you're in Twig, each field ``form``, ``form.name`` is an instance
+    Once you're in Twig, each field (e.g. ``form``, ``form.name``) is an instance
     of :symfonyclass:`Symfony\\Component\\Form\\FormView`.
 
 If you need to customize how the errors are rendered, you can always use
@@ -198,17 +206,18 @@ To find out what variables a field has, just dump them:
 Takeaways
 ---------
 
-The most important thing to remember is that a form is a big tree. The top
-level ``Form`` has children, each which is also a ``Form`` object (or a 
-``FormView`` object when you're in Twig). If you want to access information
-about a field (is it required? what are its errors?), you need to first get
-access to the *child* form and go from there.
+The key lesson is this: **each form is a big tree**. The top level ``Form`` has
+children, each which is also a ``Form`` object (or a ``FormView`` object
+when you're in Twig). If you want to access information about a field (is
+it required? what are its errors?), you need to first get access to the *child*
+form and go from there.
 
 Learn More
 ----------
 
-Stuck on other Symfony topics or want to learn Symfony from the context of an actual project?
-Check out our Getting Started with `Symfony Series`_ and cut down on your learning curve!
+Stuck on other Symfony topics or want to learn Symfony from the context of
+an actual project? Check out our Getting Started with `Symfony Series`_ and
+cut down on your learning curve!
 
 .. _`How to get form validation errors after binding the request to the form`: http://stackoverflow.com/questions/6978723/symfony2-how-to-get-form-validation-errors-after-binding-the-request-to-the-fo
 .. _`Form panel`: http://symfony.com/blog/new-in-symfony-2-4-great-form-panel-in-the-web-profiler
@@ -217,3 +226,4 @@ Check out our Getting Started with `Symfony Series`_ and cut down on your learni
 .. _`Episode 2`: http://knpuniversity.com/screencast/symfony2-ep2/registration-form
 .. _`form theming`: http://knpuniversity.com/screencast/symfony2-ep4/form-customizations
 .. _`Symfony Series`: http://knpuniversity.com/screencast/tag/symfony
+.. _`error_bubbling`: http://symfony.com/doc/current/reference/forms/types/text.html#error-bubbling
