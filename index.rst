@@ -10,4 +10,4 @@ The Blog
     rest-revisited
     rss
     requirejs-bower-grunt
-    
+    symfony-debugging-form-errors
