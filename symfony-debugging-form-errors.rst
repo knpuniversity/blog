@@ -19,7 +19,7 @@ First, if you're trying to figure out what errors you have and which fields
 each is attached to, you should use the
 :symfonymethod:`Form::getErrorsAsString() <Symfony\\Component\\Form\\Form::getErrorsAsString>`
 method that was introduced in Symfony 2.1 (so a long time ago!). Use it temporarily
-in a controller to see what's going on:
+in a controller to see what's going on::
 
     public function formAction(Request $request)
     {
@@ -73,7 +73,7 @@ object and the errors for that field are stored on it.
 Assuming the form has ``name`` and ``price`` fields, how can we get the errors
 for each field?
 
-.. code-block::
+.. code-block:: php
 
     $globalErrors = $form->getErrors()
     $nameErrors = $form['name']->getErrors();
@@ -155,6 +155,8 @@ name field.
 
 If you need to customize how the errors are rendered, you can always use
 `form theming`_. But you can also do it by leverage form variables:
+
+.. code-block:: html+jinja
 
     {{ form_errors(form) }}
     
