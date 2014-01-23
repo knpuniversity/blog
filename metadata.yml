@@ -65,7 +65,7 @@ blogs:
             in your PHP project. In this post, we'll go a bit further and
             check out a way to organize things that may be even better!
         author: weaverryan
-        category: tech
+        category: symfony
 
     "symfony-debugging-form-errors":
         title: Accessing and Debugging Symfony Form Errors
@@ -75,4 +75,4 @@ blogs:
             it's so hard to get *all* of the errors of a form and unlock
             some new tricks by understanding the form hierarchy.
         author: weaverryan
-        category: tech
+        category: symfony
