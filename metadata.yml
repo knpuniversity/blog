@@ -76,3 +76,14 @@ blogs:
             some new tricks by understanding the form hierarchy.
         author: weaverryan
         category: symfony
+
+    "collaboration":
+        title: Collaboration in the world of Tutorials
+        published: 2014-01-27
+        preview: |
+            I love writing and recording tutorials. But I'm a lot more excited
+            about the possibility of collaborating with a big community. We
+            work together on our open source software, and it's 'inevitable
+            that we'll do the same with tutorials. That's what gets me excited.
+        author: weaverryan
+        category: news
