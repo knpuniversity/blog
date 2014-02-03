@@ -5,7 +5,7 @@ You love open source software, right?
 
 What about open source content?
 
-The software Rennaisance is well upon is. Open Source Software and tools like
+We're now in a software Rennaisance. Open Source Software and tools like
 GitHub let us work together brilliantly. The result is huge gains in quality
 and innovation. That's really important.
 
@@ -44,7 +44,7 @@ What else?
 
 Our screencast and blog content is also open source and lives up on `GitHub`_.
 That's actually not new, but the "Edit" button at the top of this page and
-the contributers on the right *is* new. Do us all a favor and get your face
+the contributors on the right *is* new. Do us all a favor and get your face
 up on the site. I even left a typo in this paragraph (though there's probably
 on the page). Find it!
 
