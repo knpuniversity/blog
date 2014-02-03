@@ -47,7 +47,7 @@ What do I mean? Let's use some friendly bullet points:
 
 * **Coding Activities** - Watching a complete tutorial is better than reading
   a book. But nothing is better than actually coding yourself! We're poking that
-  box by adding activities to our :doc:`Twig</screencast/twig/basics>` course, with
+  box by adding activities to our `Twig`_ course, with
   PHP activities coming very soon! This is something that we'll offer on every
   tutorial so that we can make learning these techy things as easy as possible.
   We're still figuring out how this should all look and work, so give us
@@ -81,3 +81,4 @@ Cheers!
 .. _`Saša Stamenković (Sylius)`: https://github.com/umpirsky
 .. _`our GitHub`: https://github.com/knpuniversity
 .. _`sourced from GitHub`: https://github.com/knpuniversity/blog
+.. _`Twig`: github.com/knpuniversity/twig
