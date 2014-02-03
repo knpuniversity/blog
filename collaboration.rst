@@ -85,3 +85,11 @@ process.
 <3 Ryan
 
 .. _`@WouterJ`: https://twitter.com/wouterjnl
+.. _`Symfony documentation`: https://github.com/symfony/symfony-docs
+.. _`GitHub`: https://github.com/knpuniversity
+.. _`Brent Shaffer`: https://twitter.com/bshaffer
+.. _`OAuth 2.0 in 8 Steps`: http://knpuniversity.com/screencast/oauth
+.. _`ridiculous farming pictures`: https://twitter.com/KnpUniversity/status/426043460160720896/photo/1
+.. _`William Durand`: https://twitter.com/couac
+.. _`REST tutorial`: http://knpuniversity.com/screencast/rest
+.. _`Twitter`: https://twitter.com/knpuniversity
