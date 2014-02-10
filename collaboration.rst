@@ -12,7 +12,7 @@ But content - the documentation, tutorials and books that teach us about all
 of this tech - is behind the curve. Yes, official documentation is usually
 on a GitHub repository and we see a **huge** community effort with the
 `Symfony documentation`_ (nod to `@WouterJ`_ - pronounced Wow!ter). Even
-StackOverlow is an example of crowd-sourcing the information-side of tech.
+StackOverflow is an example of crowd-sourcing the information-side of tech.
 But mostly, books, blog posts and everything in between are still written
 by one person. They sit, slowly rot with time, and are eventually forgotten.
 New books are written by new authors from scratch. The cycle continues. We're
@@ -79,7 +79,7 @@ Here are some reasons *I* think, which could be totally wrong:
 Right? Wrong? What stops you from writing a tutorial?
 
 Code collaboration blew up when GitHub made the process easy and rewarding.
-I hope we can help do the same for tutorials... and include everone on the
+I hope we can help do the same for tutorials... and include everyone on the
 process.
 
 <3 Ryan
