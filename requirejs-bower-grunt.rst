@@ -82,7 +82,7 @@ Before:
     <script src="{{ asset('{{ assetsPath }}/vendor/requirejs/require.js') }}"></script>
     <script>
         requirejs.config({
-            baseUrl: '/{{ assetsPath }}/js'
+            baseUrl: '{{ app.request.basePath }}/{{ assetsPath }}/js'
         });
         // ...
     </script>
@@ -94,7 +94,7 @@ After:
     <script src="{{ asset('assets/vendor/requirejs/require.js') }}"></script>
     <script>
         requirejs.config({
-            baseUrl: '/assets/js'
+            baseUrl: '{{ app.request.basePath }}/assets/js'
         });
         // ...
     </script>
