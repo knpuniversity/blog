@@ -67,7 +67,7 @@ things will be much the same. The container (and good use of object-oriented
 principles) allows you to modify *any* part of the Drupal core without - as
 Larry Garfield puts it - killing any kittens (see `D8FTW: Hacking Core Without Killing Kittens`_).
 
-Get into Symfony and you'll get right to the container. We even intro it
+Get into Symfony and you'll get right into the container. We even intro it
 early in our Symfony series (`Rendering a Template`_) cause it's just so
 darn important.
 
