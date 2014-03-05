@@ -2,8 +2,9 @@ Want to be a Drupal 8 Expert? Learn Symfony
 ===========================================
 
 I'm not a Drupal developer, but I *do* know **a lot** about Drupal 8. I know
-how the event system works, what a service is and how to work with them,
-and how the deepest and darkest of Drupal's request-response workflow looks.
+how the event system works, what a service is, how it relates to a dependency
+injection container and how the deepest and darkest of Drupal's request-response
+workflow looks.
 
 How?
 
@@ -21,8 +22,8 @@ How about a list?
 1) Code
 ~~~~~~~
 
-Simply put: Drupal 8 and Symfony share a lot of code called components (think,
-little PHP libraries). You can see these right inside the `Drupal core on GitHub`_
+Simply put: Drupal 8 and Symfony share *a lot* of code, called components
+(think, little PHP libraries). You can see these right inside the `Drupal core on GitHub`_
 and Symfony documents these individually (`Symfony Components`_). If you
 use Symfony right now, you're using a lot of code from Drupal 8.
 
@@ -30,11 +31,11 @@ use Symfony right now, you're using a lot of code from Drupal 8.
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Symfony isn't always the right tool for a job, and neither is Drupal. But
-when you learn Symfony, you're doubling the number of tools that you can
-throw at any problem.
+when you learn Symfony, you're doubling the arsenal that you can throw at
+any problem.
 
-And because so much is share, you get these 2 tools at a discounted learning
-price. Nice!
+And because so much is shared, you get these 2 tools at a discounted learning
+price. Value!
 
 3) PHP Namespaces
 ~~~~~~~~~~~~~~~~~
@@ -43,7 +44,7 @@ Drupal 8 uses PHP namespaces. But great news! These aren't that hard, and
 after using Symfony for a bit (or any modern PHP framework or library), this
 learning curve will be a thing of the past.
 
-And if you have 2 minutes, we have a screencast for you: `PHP Namespaces in 120 Seconds`_
+Bonus: if you have 2 minutes, we have a screencast for you: `PHP Namespaces in 120 Seconds`_.
 
 4) Object-Oriented-ness
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,7 +52,7 @@ And if you have 2 minutes, we have a screencast for you: `PHP Namespaces in 120 
 Yay, objects! Interfaces! Flexibility!
 
 Objects are everywhere in Symfony and Drupal (and again, in almost every PHP
-library these days). Use Symfony for a day and you'll be *way* ahead on this.
+library these days). Use Symfony for a day to get *way* ahead on this.
 
 5) The Container
 ~~~~~~~~~~~~~~~~
@@ -62,10 +63,9 @@ dependency injection and containers: `Dependency Injection and the art of servic
 I'll wait.
 
 In Symfony, everything stops and starts with the container. And in Drupal 8,
-things will be much the same. Without going too far, the container (and good
-use of object-oriented principles) allows you to modify *any* part of the
-Drupal core without - as Larry Garfield puts it - killing any kittens (see
-`D8FTW: Hacking Core Without Killing Kittens`_).
+things will be much the same. The container (and good use of object-oriented
+principles) allows you to modify *any* part of the Drupal core without - as
+Larry Garfield puts it - killing any kittens (see `D8FTW: Hacking Core Without Killing Kittens`_).
 
 Get into Symfony and you'll get right to the container. We even intro it
 early in our Symfony series (`Rendering a Template`_) cause it's just so
@@ -74,27 +74,27 @@ darn important.
 6) HttpKernel
 ~~~~~~~~~~~~~
 
-This is the beating heart of Symfony2 and Drupal 8.
+HttpKernel: the beating heart of Symfony2 and Drupal 8.
 
 It's a Symfony component (little PHP library!) and I'd tell you what it does,
-but then I'd have to kill you.
+but then I'd have to kill you, or at least dive you into a bunch of deep
+code over coffee.
 
-Actually, it's just a bit complex: it's the code that starts with request
-information and transforms it into a response. It involves dispatching Symfony
-events (another concept!), executing a controller and returning a Response.
-Geek out here: `The HttpKernel Component`_.
+But basically: it's the code that starts with request information and transforms
+it into a response. It involves dispatching Symfony events (another concept!),
+executing a controller and returning a Response. Geek out here: `The HttpKernel Component`_.
 
-The code-sharing between Symfony and Drupal 8 doesn't include frivolous pieces:
-they share the most fundamental code that makes things go. No matter how
-different 2 different cars are, under the hood, they move using the same
+So the code-sharing between Symfony and Drupal 8 doesn't include frivolous
+pieces: they share the most fundamental code that makes things go. No matter
+how different 2 different cars are, under the hood, they move using the same
 basic mechanics. (Bad pun:) So take Symfony for a drive.
 
 Start using Symfony!
 --------------------
 
-If you want to step through a real project, I of course highly recommend
-our Symfony2 series. I've listed the 4 episodes, with highlights that directly
-affect Drupalers:
+If you want to step through a real project, do yourself a favor and go through
+our Symfony2 series and then build something. I've listed the 4 episodes,
+with highlights that directly affect Drupalers:
 
 * `Symfony2 Ep1`_ (install, bundles, routing, controller, services, Composer)
 * `Symfony2 Ep2`_ (a lot more controllers)
@@ -113,8 +113,8 @@ And for an even lower barrier to entry, try `Silex`_! Here's a Silex app::
 
     $app->run(); 
 
-That's it. And this *still* uses all the most important components used in
-Drupal 8 - HttpKernel, EventDispatcher and a dependency injection container.
+And this *still* uses all the most important components used in Drupal 8 -
+HttpKernel, EventDispatcher and a dependency injection container.
 
 So start kicking butt in Drupal 8 right now and add another tool to your
 arsenal.
