@@ -132,3 +132,9 @@ Happy Drupal-Symfonying!
 .. _`D8FTW: Hacking Core Without Killing Kittens`: http://www.palantir.net/blog/d8ftw-hacking-core-without-killing-kittens
 .. _`The HttpKernel Component`: http://symfony.com/doc/current/components/http_kernel/introduction.html
 .. _`Ekino`: http://www.ekino.com/drupal-and-symfony2-dont-wait-for-drupal8/
+.. _`Rendering a Template`: http://knpuniversity.com/screencast/symfony2-ep1/controller#rendering-a-template
+.. _`Symfony2 Ep1`: http://knpuniversity.com/screencast/symfony2-ep1
+.. _`Symfony2 Ep2`: http://knpuniversity.com/screencast/symfony2-ep2
+.. _`Symfony2 Ep3`: http://knpuniversity.com/screencast/symfony2-ep3
+.. _`Symfony2 Ep4`: http://knpuniversity.com/screencast/symfony2-ep4
+.. _`Silex`: http://silex.sensiolabs.org/
