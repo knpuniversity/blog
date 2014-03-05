@@ -1,6 +1,10 @@
 Want to be a Drupal 8 Expert? Learn Symfony
 ===========================================
 
+.. note::
+
+    Image courtesy of `Ekino`_, who has a bundle for using Drupal in Symfony.
+
 I'm not a Drupal developer, but I *do* know **a lot** about Drupal 8. I know
 how the event system works, what a service is, how it relates to a dependency
 injection container and how the deepest and darkest of Drupal's request-response
@@ -127,3 +131,4 @@ Happy Drupal-Symfonying!
 .. _`Dependency Injection and the art of services and containers`: http://knpuniversity.com/screencast/dependency-injection
 .. _`D8FTW: Hacking Core Without Killing Kittens`: http://www.palantir.net/blog/d8ftw-hacking-core-without-killing-kittens
 .. _`The HttpKernel Component`: http://symfony.com/doc/current/components/http_kernel/introduction.html
+.. _`Ekino`: http://www.ekino.com/drupal-and-symfony2-dont-wait-for-drupal8/
