@@ -112,7 +112,7 @@ And for an even lower barrier to entry, try `Silex`_! Here's a Silex app::
     $app = new Silex\Application(); 
 
     $app->get('/drupal/{version}', function($version) use($app) { 
-        return 'You\'re using Drupal '.$name; 
+        return 'You\'re using Drupal '.$version; 
     });
 
     $app->run(); 
