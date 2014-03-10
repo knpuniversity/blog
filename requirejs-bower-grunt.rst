@@ -82,7 +82,7 @@ Before:
     <script src="{{ asset(assetsPath~'/vendor/requirejs/require.js') }}"></script>
     <script>
         requirejs.config({
-            baseUrl: '{{ asset(assetsPath~'/js) }}'
+            baseUrl: '{{ asset(assetsPath~'/js') }}'
         });
         // ...
     </script>
