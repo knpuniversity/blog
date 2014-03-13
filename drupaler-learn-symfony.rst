@@ -127,7 +127,7 @@ Happy Drupal-Symfonying!
 
 .. _`Drupal core on GitHub`: https://github.com/drupal/drupal/tree/8.x/core/vendor/symfony
 .. _`Symfony Components`: http://symfony.com/doc/current/components/index.html
-.. _`PHP Namespaces in 120 Seconds`: knpuniversity.com/screencast/php-namespaces-in-120-seconds
+.. _`PHP Namespaces in 120 Seconds`: http://knpuniversity.com/screencast/php-namespaces-in-120-seconds
 .. _`Dependency Injection and the art of services and containers`: http://knpuniversity.com/screencast/dependency-injection
 .. _`D8FTW: Hacking Core Without Killing Kittens`: http://www.palantir.net/blog/d8ftw-hacking-core-without-killing-kittens
 .. _`The HttpKernel Component`: http://symfony.com/doc/current/components/http_kernel/introduction.html
