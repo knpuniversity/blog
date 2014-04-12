@@ -190,8 +190,16 @@ them from the ``copy`` task, or remove them afterwards.
 because the ``copy`` task copies new files, but nothing ever removes the
 old files.
 
-The answer to both of these is the `grunt-contrib-clean`_ plugin. First,
-install it like any Grunt plugins:
+The answer to both of these is the `grunt-contrib-clean`_ plugin.
+
+.. tip::
+
+    The solution to this has been even *further* evolved to never copy the
+    sass files at all. Just check out the `assets-in-root`_ branch on GitHub
+    or `pull request #7`_ for more details. Thanks to `Daniel Paschke`_ for
+    the tips.
+
+First, install it like any Grunt plugins:
 
 .. code-block:: text
 
@@ -260,3 +268,5 @@ Have fun!
 .. _`grunt-contrib-copy`: https://github.com/gruntjs/grunt-contrib-copy
 .. _`grunt-contrib-clean`: https://github.com/gruntjs/grunt-contrib-clean
 .. _`Matt Davis`: https://twitter.com/mdavis1982
+.. _`pull request #7`: https://github.com/knpuniversity/symfonycon-frontend/pull/7
+.. _`Daniel Paschke`: https://github.com/paschdan
