@@ -44,6 +44,11 @@ the web debug toolbar in Symfony 2.4. So, debugging form errors
 Why $form->getErrors() doesn't Work
 -----------------------------------
 
+.. caution::
+
+    As of Symfony 2.5, we have a new tool! ``$form->getErrors(true)`` *will*
+    return *all* of the errors from *all* of the fields on your form.
+
 Raise your hand virtually if you've tried doing this to debug a form::
 
     public function formAction(Request $request)
@@ -88,6 +93,11 @@ failure).
 
 Render all the Errors at the Top of your Form
 ---------------------------------------------
+
+.. caution::
+
+    As of Symfony 2.5, you can use ``$form->getErrors(true)`` to get an array
+    of *all* the errors in your form. Yay!
 
 One common question is how you might render all of your errors in one big
 list at the top of your form. Again, there's no *one* spot where you can
