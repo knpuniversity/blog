@@ -81,4 +81,4 @@ Cheers!
 .. _`Saša Stamenković (Sylius)`: https://github.com/umpirsky
 .. _`our GitHub`: https://github.com/knpuniversity
 .. _`sourced from GitHub`: https://github.com/knpuniversity/blog
-.. _`Twig`: github.com/knpuniversity/twig
+.. _`Twig`: https://github.com/knpuniversity/twig
