@@ -1,4 +1,4 @@
-Update your Docs for "composer require", then celebrate with a Sandwich
+Update your Docs for "composer require", then Celebrate with a Sandwich
 =======================================================================
 
 Pretty much every package manager works the same: run the executable (``apt-get``),
