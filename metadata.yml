@@ -99,3 +99,13 @@ blogs:
             Symfony. 
         author: weaverryan
         category: news
+
+    "composer-require":
+        title: 'Update your Docs for "composer require", then Celebrate with a Sandwich'
+        published: 2014-10-02
+        preview: |
+            Composer's require command just learned how to guess the best
+            version for you. So update your library docs to have a one-line
+            installation! And then have a sandwich.
+        author: weaverryan
+        category: tech
