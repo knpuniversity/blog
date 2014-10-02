@@ -42,7 +42,7 @@ One Step Installation
 ---------------------
 
 Thanks to some help from `Jordi`_ (friends call him "Mr Composer"), we merged
-a `update to Composer`_ on Sep 23rd to make Composer's ``require`` command
+an `update to Composer`_ on Sep 23rd to make Composer's ``require`` command
 automatically select the latest version constraint for you.
 
 This means I can update my installation docs to say this:
