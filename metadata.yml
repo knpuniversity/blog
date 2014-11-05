@@ -109,3 +109,12 @@ blogs:
             installation! And then have a sandwich.
         author: weaverryan
         category: tech
+
+    "all-access-subscription":
+        title: 'All About the All Access Subscription Pass'
+        published: 2014-11-06
+        preview: |
+            The KnpU All Access Pass ... ooohhh ahhhh. Introducing binge-watching
+            and more frequent content. Build something amazing!
+        author: weaverryan
+        category: tech
