@@ -34,6 +34,11 @@ Q: What if I already own some tutorials? Do I get to keep access to them?
 
 Yes! You will continue to have access to the content you have already purchased, just the same as before.
 
+Q: Why should I get an all access pass?
+
+Well, funny you should ask, tons of smaller tutorials will be added soon making 
+the all access pass the easiest way to gain access.
+
 Q: When can I start a subscription?
 
 November 10th!
