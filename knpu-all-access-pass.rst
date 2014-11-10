@@ -53,4 +53,4 @@ If you think of anything else, send a contact message or leave a comment.
 .. _`Symfony Best Practices`: http://knpuniversity.com/screencast/symfony-best-practices
 .. _`Symfony Voters`: http://knpuniversity.com/screencast/symfony-voters
 .. _`Enjoy Fixtures with Alice and Faker`: http://knpuniversity.com/screencast/alice-fixtures
-.._`Episode 2 of REST in the Real World`: http://knpuniversity.com/screencast/rest-ep2
+.. _`Episode 2 of REST in the Real World`: http://knpuniversity.com/screencast/rest-ep2
