@@ -27,7 +27,8 @@ Coming up next is:
 
 `Episode 2 of REST in the Real World`_
 
-A few questions you may have if you already own Tutorials from KnpU:
+A few questions you may have if you already own Tutorials from KnpU
+--------------------------------------------------------------------
 
 **Q: Can I still buy tutorials individually?**
 
