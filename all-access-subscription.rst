@@ -66,3 +66,4 @@ Now, go build something amazing!
 .. _`Enjoy Fixtures with Alice and Faker`: https://knpuniversity.com/screencast/alice-fixtures
 .. _`Pricing`: https://knpuniversity.com/pricing
 .. _`Start my All Access Pass`: https://knpuniversity.com/pricing
+.. _`Episode 2 of REST in the Real World`: http://knpuniversity.com/screencast/rest-ep2
