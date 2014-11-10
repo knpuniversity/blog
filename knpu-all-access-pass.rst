@@ -29,26 +29,26 @@ Coming up next is:
 
 A few questions you may have if you already own Tutorials from KnpU:
 
-Q: Can I still buy tutorials individually?
+**Q: Can I still buy tutorials individually?**
 
 Yes! You will still have the option to buy tutorials individually.
 
-Q: What if I already own some tutorials? Do I get to keep access to them?
+**Q: What if I already own some tutorials? Do I get to keep access to them?**
 
 Yes! You will continue to have access to the content you have already purchased, just the same as before.
 
-Q: Why should I get an all access pass?
+**Q: Why should I get an all access pass?**
 
 Well, funny you should ask, tons of smaller tutorials will be added soon making 
 the all access pass the easiest way to gain access.
 
-Q: When can I start a subscription?
+**Q: When can I start a subscription?**
 
 November 17th!
 
 If you think of anything else, send a contact message or leave a comment.
 
-<3 Ryan
+**<3** Ryan
 
 .. _`Symfony Best Practices`: http://knpuniversity.com/screencast/symfony-best-practices
 .. _`Symfony Voters`: http://knpuniversity.com/screencast/symfony-voters
