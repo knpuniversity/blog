@@ -28,6 +28,10 @@ tutorials for you. A few examples we've published recently include:
 
 * `Enjoy Fixtures with Alice and Faker`_
 
+Coming up next is:
+
+`Episode 2 of REST in the Real World`_
+
 Questions?
 ----------
 
@@ -40,6 +44,11 @@ Yes! You will still have the option to buy tutorials individually.
 **Q: What if I already own some tutorials? Do I get to keep access to them?**
 
 Yes! You will continue to have access to the content you have already purchased, just the same as before.
+
+**Q: Why should I get an all access pass?**
+
+Well, funny you should ask, tons of smaller tutorials will be added soon making 
+the all access pass the easiest way to gain access.
 
 **Q: When can I start a subscription?**
 
