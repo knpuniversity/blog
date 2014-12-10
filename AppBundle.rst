@@ -13,10 +13,6 @@ Let's figure this out in 10 Steps.
 1) Keep Calm: Because I don't Care
 ----------------------------------
 
-.. image:: /blog/images/appbundle/keep-calm.png
-   :align: right
-   :width: 100px
-
 I mean this with <3. We're using Symfony! This means you can do whatever
 you want. Nothing has changed in Symfony to prevent this, and nothing will.
 That's an awesome start.
