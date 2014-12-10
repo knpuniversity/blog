@@ -3,8 +3,6 @@ Bundles, No Bundles and AppBundle in 10 Steps
 
 Ah, the AppBundle: my **favorite** part of the Symfony best practices.
 
-.. code-block:: text
-
     RYAN, What are you an idiot!? That's a terrible idea!
 
 Ok, not everyone agrees - it's cool :). But here's what interesting: if you
@@ -16,7 +14,8 @@ Let's figure this out in 10 Steps.
 ----------------------------------
 
 .. image:: /blog/images/appbundle/keep-calm.png
-   :align: center
+   :align: right
+   :width: 100px
 
 I mean this with <3. We're using Symfony! This means you can do whatever
 you want. Nothing has changed in Symfony to prevent this, and nothing will.
@@ -24,6 +23,10 @@ That's an awesome start.
 
 2) Sorry, Your Bundles aren't Bundles: They're Directories
 ----------------------------------------------------------
+
+.. image:: /blog/images/appbundle/coupled-bundles.png
+   :align: right
+   :width: 300px
 
 A traditional Symfony project is made up of bundles that are coupled together.
 Ok, maybe you have some standalone bundles, but somewhere, there's a group
@@ -38,6 +41,10 @@ A true bundle is a standalone, reusable entity. These are just directories.
 
 3) AppBundle: Just a Different Directory Structure
 --------------------------------------------------
+
+.. image:: /blog/images/appbundle/app-bundle.png
+   :align: right
+   :width: 150px
 
 Now, if we decide to move everything into one bundle, it's nothing more than
 a different directory structure. You can even keep the same amount of organization
@@ -60,10 +67,12 @@ re-using this stuff somewhere else.
 a) Move service configuration to app/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. image:: /blog/images/appbundle/move-config.png
+   :align: right
+   :width: 300px
+
 Since each kernel has only *one* container, it's logical to move service
 config out of the bundle and into ``app/``.
-
-.. code-block:: text
 
     "But if I move my service configuration out of my bundle it's coupled
     to my app"
@@ -81,6 +90,10 @@ your app.
 b) Moving templates to app/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. image:: /blog/images/appbundle/move-templates.png
+   :align: right
+   :width: 300px
+
 Next, let's move the templates into ``app/``. I know many people *hate* this,
 because it puts the templates in a different directory than the controllers.
 That's subjective, but fair - and :ref:`I talk about that later <app-bundle-templates-decoupled>`.
@@ -96,6 +109,10 @@ and that's huge.
 
 5) No Bundles!?
 ---------------
+
+.. image:: /blog/images/appbundle/no-bundle.png
+   :align: right
+   :width: 300px
 
 You can keep doing this until AppBundle holds *only* PHP classes.
 
@@ -127,6 +144,10 @@ a directory for PHP classes. And for Symfony 3.0, maybe we'll get there!
 6) I hate having my Templates in app/, Controllers in src/
 ----------------------------------------------------------
 
+.. image:: /blog/images/appbundle/all-in-app.png
+   :align: right
+   :width: 300px
+
 The biggest complaint I've heard about the AppBundle is this: I don't like
 that my controllers would live in ``src/``, but the templates they render
 would live in ``app/``.
@@ -136,10 +157,17 @@ That's subjective, but totally fair (it hasn't bothered me).
 To solve this, we could move our ``Ryan`` directory (or ``AppBundle``, before
 my rename) into ``app/``. 
 
-    IMAGE
+This works with no code changes except for a new autoload entry:
 
-This works with no code changes except for the new autoload entry. I'm not
-recommending that everyone runs and does this, but logically, everything
+.. code-block:: json
+
+    {
+        "autoload": {
+            "psr-4": { "Ryan\\": "app/src" }
+        }
+    }
+
+I'm not recommending that everyone runs and does this, but logically, everything
 is coupled to ``app/``, so it makes perfect sense. I hope it at least gets
 you thinking!
 
@@ -151,11 +179,19 @@ you thinking!
 7) But I want to create a Decoupled Library!
 --------------------------------------------
 
+.. image:: /blog/images/appbundle/decoupled-library.png
+   :align: right
+   :width: 150px
+
 Sweet! Just create a directory in ``src/`` and put your decoupled library
 right there. It's ready to be re-used!
 
 8) But I want to re-use a Bundle between projects or kernels!
 -------------------------------------------------------------
+
+.. image:: /blog/images/appbundle/decoupled-bundle.png
+   :align: right
+   :width: 150px
 
 Nice! Just create the bundle in ``src/`` (or ``vendor/``, etc) and treat
 it like *true*, decoupled bundle.
