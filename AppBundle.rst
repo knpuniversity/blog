@@ -1,12 +1,18 @@
+.. |br| raw:: html
+
+   <br />
+
 Bundles, No Bundles and AppBundle in 10 Steps
 =============================================
 
 Ah, the AppBundle: my **favorite** part of the Symfony best practices.
 
-    RYAN, What are you an idiot!? That's a terrible idea!
+    "RYAN, What are you an idiot!? That's a terrible idea!"
 
-Ok, not everyone agrees - it's cool :). But here's what interesting: if you
-*don't* like the AppBundle, I bet I actually *agree* with your reasons. What!?
+Ok, not everyone agrees - it's cool :). But here's what's interesting: if you
+*don't* like the AppBundle, I bet I actually *agree* with your reasons.
+
+    "What!?"
 
 Let's figure this out in 10 Steps.
 
@@ -30,10 +36,12 @@ that are really coupled. And that's great! We're building an app here, not
 an open-source library. These coupled bundles *are* your app.
 
 But in this case, they **aren't** really bundles: **they're just directories**.
-There's no technical advantage to hacing 1 or 10: we're just trying to organize
+There's no technical advantage to having 1 or 10: we're just trying to organize
 things to our subjective liking.
 
 A true bundle is a standalone, reusable entity. These are just directories.
+
+|br|
 
 3) AppBundle: Just a Different Directory Structure
 --------------------------------------------------
@@ -48,6 +56,8 @@ by putting sub-directories in ``Controller`` or anywhere else.
 
 You might like this, or you might not. The point is: it's subjective, there's
 no technical benefit of having multiple bundles.
+
+|br| |br| |br|
 
 4) AppBundle and AppKernel are Best Friends!
 --------------------------------------------
@@ -83,6 +93,8 @@ your app.
     Like with everything, if you have *a lot* of services, feel free to create
     an ``app/config/services`` directory with multiple files.
 
+|br|
+
 b) Moving templates to app/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -102,6 +114,8 @@ beginners a lot of trouble.
 Instead, you just render the filename. The only rule you need to know is
 that templates live in ``app/Resources/views``. This reduces complexity,
 and that's huge.
+
+|br|
 
 5) No Bundles!?
 ---------------
@@ -134,6 +148,8 @@ reasons:
 
 But philosophically, I *do* hope you'll think of your ``AppBundle`` as just
 a directory for PHP classes. And for Symfony 3.0, maybe we'll get there!
+
+|br|
 
 .. _`app-bundle-templates-decoupled`:
 
@@ -171,6 +187,8 @@ you thinking!
 
     Still want the templates closer to the controllers? No problem, keep
     them in ``AppBundle`` :).
+
+|br|
 
 7) But I want to create a Decoupled Library!
 --------------------------------------------
