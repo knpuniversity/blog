@@ -130,3 +130,12 @@ blogs:
             you think about your app.
         author: weaverryan
         category: symfony
+
+    "expanding-code-blocks":
+        title: 'Expanding Code Blocks'
+        published: 2015-01-15
+        preview: |
+            We're giving our code-blocks a face-lift to show the filename
+            and folded lines you can expand to see the entire file.
+        author: weaverryan
+        category: symfony
