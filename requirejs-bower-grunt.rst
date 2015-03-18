@@ -1,7 +1,7 @@
 Evolving RequireJS, Bower and Grunt
 ===================================
 
-..tip::
+.. tip::
 
     Instead of Grunt, you might want to check out Gulp! It's at least as
     powerful and a lot easier. Checkout our series `Gulp! Refreshment for Your Frontend Assets`_.
