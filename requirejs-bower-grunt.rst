@@ -1,6 +1,11 @@
 Evolving RequireJS, Bower and Grunt
 ===================================
 
+..tip::
+
+    Instead of Grunt, you might want to check out Gulp! It's at least as
+    powerful and a lot easier. Checkout our series `Gulp! Refreshment for Your Frontend Assets`_.
+
 A few weeks ago, Leanna and I were one of the lucky 600+ that attended SymfonyCon
 in Warsaw - one of the best conferences we've been to! We hung out with some
 of our best tech friends, watched `Leanna`_ win tech Twitter, and had the
@@ -270,3 +275,4 @@ Have fun!
 .. _`Matt Davis`: https://twitter.com/mdavis1982
 .. _`pull request #7`: https://github.com/knpuniversity/symfonycon-frontend/pull/7
 .. _`Daniel Paschke`: https://github.com/paschdan
+.. _`Gulp! Refreshment for Your Frontend Assets`: https://knpuniversity.com/screencast/gulp
