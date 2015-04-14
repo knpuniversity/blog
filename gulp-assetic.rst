@@ -1,7 +1,7 @@
 Why I Switched from Assetic to Gulp
 ===================================
 
-**tldr;** Assetic was created when there were no real frontend tools for processing
+**tl;dr** Assetic was created when there were no real frontend tools for processing
 and combining CSS/JS. But now there are, and unless you feel really uncomfortable
 with Node.js, I recommend using `Gulp`_ instead of Assetic.
 
