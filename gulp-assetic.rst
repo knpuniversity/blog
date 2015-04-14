@@ -76,9 +76,9 @@ then writing out the new files:
     var sass = require('gulp-sass');
 
     gulp.task('default', function() {
-            gulp.src('app/Resources/assets/sass/**/*.scss')
-            .pipe(sass())
-            .pipe(gulp.dest('web/css'));
+        gulp.src('app/Resources/assets/sass/**/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('web/css'));
     });
 
 Now, any ``.scss`` files in the ``sass`` directory (recursive - that's the
@@ -96,10 +96,10 @@ into 1 CSS file? That's just a couple extra lines:
     var sass = require('gulp-sass');
 
     gulp.task('default', function() {
-            gulp.src('app/Resources/assets/sass/**/*.scss')
-            .pipe(sass())
-            .pipe(concat('main.css'))
-            .pipe(gulp.dest('web/css'));
+        gulp.src('app/Resources/assets/sass/**/*.scss')
+        .pipe(sass())
+        .pipe(concat('main.css'))
+        .pipe(gulp.dest('web/css'));
     });
 
 Run ``gulp default`` again (or just ``gulp``, which triggers the ``default``
