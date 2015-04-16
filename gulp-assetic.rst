@@ -94,6 +94,7 @@ into 1 CSS file? That's just a couple extra lines:
 
     var gulp = require('gulp');
     var sass = require('gulp-sass');
+    var concat = require('gulp-concat');
 
     gulp.task('default', function() {
         gulp.src('app/Resources/assets/sass/**/*.scss')
