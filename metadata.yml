@@ -150,3 +150,14 @@ blogs:
             give you a quick, 3-step intro to Gulp itself.
         author: weaverryan
         category: tech
+
+    "service-expressions":
+        title: 'Symfony Service Expressions for Easy Repos or a Config System'
+        published: 2015-05-02
+        preview: |
+            Did you know you can inject a Doctrine repository into a service
+            without registering it as a service? How about injecting scalar
+            values are arguments that live in the database? If not, you may
+            have missed Symfony's Expression Language.
+        author: weaverryan
+        category: symfony
