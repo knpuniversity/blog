@@ -31,7 +31,7 @@ isn't a culture (yet) of contributing like we do to code, I think it's inevitabl
 
 Our screencast and blog content is also open source and lives up on `GitHub`_.
 That's actually not new, but the **"Edit"** button at the top of this page
-and the contributers on the right *is* new. Get your avatar up there and
+and the contributors on the right *is* new. Get your avatar up there and
 push the culture of docs contributing by PR'ing some content. I even left
 a typo in this paragraph (though there's probably more on the page). Find it!
 
