@@ -65,6 +65,8 @@ sending emails. To accomplish this, you'd usually need inject the entire
 ``app_configuration_reader`` service (the service you create to read config
 values). But with expressions, you can inject *only* what you need:
 
+.. code-block:: yaml
+
     services:
         # some service that can read configuration values from the database
         app_configuration_reader:
