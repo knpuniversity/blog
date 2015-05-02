@@ -1,4 +1,4 @@
-Symfony Service Expressions for Easy Repos or a Config System
+Symfony Service Expressions: Do things you thought Impossible
 =============================================================
 
 Did you know you can do this with Symfony's service container?

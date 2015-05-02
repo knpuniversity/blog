@@ -152,7 +152,7 @@ blogs:
         category: tech
 
     "service-expressions":
-        title: 'Symfony Service Expressions for Easy Repos or a Config System'
+        title: 'Symfony Service Expressions: Do things you thought Impossible'
         published: 2015-05-02
         preview: |
             Did you know you can inject a Doctrine repository into a service
