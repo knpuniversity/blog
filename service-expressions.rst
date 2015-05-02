@@ -80,10 +80,12 @@ values). But with expressions, you can inject *only* what you need:
 
 And in addition to the ``service()`` function you also have a ``parameter``
 function, and all the normal syntax (including ``if`` statement logic) from
-the `Expression Language`_.
+the `Expression Language`_. See `Using the Expression Language`_ for a few
+more details about using it with services.
 
 Now, go do something cool with this :).
 
 .. _`Expression Language`: http://symfony.com/doc/current/components/expression_language/syntax.html
 .. _`factory`: http://symfony.com/doc/current/components/dependency_injection/factories.html
 .. _`compiled container`: http://knpuniversity.com/screencast/symfony-journey-di/symfony-builds-the-container#the-cached-container
+.. _`Using the Expression Language`: http://symfony.com/doc/current/book/service_container.html#using-the-expression-language
