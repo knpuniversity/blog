@@ -51,7 +51,7 @@ This means I can update my installation docs to say this:
 
 That's it! Composer automatically selects the latest version (using the ``~``
 constraint when possible), updates ``composer.json`` and runs the update.
-This means you get ``~2.5.4`` in ``composer.json`` and a sandwhich maker
+This means you get ``~2.5.4`` in ``composer.json`` and a sandwich maker
 that cooks `fancy sandwiches`_.
 
 Got it? Now let's go update our docs or open pull requests for libraries
