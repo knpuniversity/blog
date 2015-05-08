@@ -14,7 +14,7 @@ Did you know you can do this with Symfony's service container?
                 # ... other arguments
 
 The ``@=`` means that you're using Symfony's `Expression Language`_, which
-let's you mix dynamic logically into your normally-static service definitions.
+let's you mix dynamic logic into your normally-static service definitions.
 
 Normally, if you want to inject a repository, you need to register it as
 a service first, using a `factory`_. And while that's fine (and probably
