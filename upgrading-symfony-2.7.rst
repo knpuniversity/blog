@@ -48,8 +48,8 @@ on this post).
 
 So, if you see a friend who's getting a lot messages that look like this:
 
-    Deprecated: The Symfony\Component\DependencyInjection\Definition::setFactoryMethod
-    method is deprecated since version 2.6 and will be removed in 3.0.
+    Deprecated: The Definition::setFactoryMethod method is deprecated since
+    version 2.6 and will be removed in 3.0.
 
 Tell them to upgrade their ``sensio/distribution-bundle``. And of course,
 to eventually fix these deprecated calls.
@@ -99,8 +99,8 @@ Fixing Behat 2.5
 We're using Behat 2.5, which suffered from a minor BC break in Symfony 2.7.
 If you get this error:
 
-    Runtime Notice: Declaration of Behat\Behat\Console\Input\InputDefinition::getSynopsis()
-    should be compatible with Symfony\Component\Console\Input\InputDefinition::getSynopsis($short = false)  
+    Runtime Notice: Declaration of InputDefinition::getSynopsis()
+    should be compatible with InputDefinition::getSynopsis($short = false)  
 
 then welcome to the club! There are already two pull requests (`#749`_, `#750`_),
 so assuming these are merged, you'll just need to upgrade.
