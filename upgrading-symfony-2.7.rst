@@ -10,7 +10,7 @@ So, we decided to upgrade immediately and report back. Let's go!
 Upgrading composer.json
 -----------------------
 
-Since Symfony protects backwards-compatability, upgrading is *mostly* easy,
+Since Symfony protects backwards-compatibility, upgrading is *mostly* easy,
 but we did hit a few minor things. Btw, there's a new `upgrade`_ section
 on the docs about it - tell your friends!
 
@@ -60,7 +60,7 @@ This flag tells composer to update ``symfony/symfony`` *and* all libraries
 that it depends on. You *may* not need this, but without it, we got a dependency
 error involving ``twig/twig``. The version of Twig in our project was not
 compatible with Symfony and needs to be upgraded. To allow for this, you have
-two options: use ``--with-dependencies``, or explictly upgrade the library
+two options: use ``--with-dependencies``, or explicitly upgrade the library
 in question (e.g. ``twig/twig``):
 
 .. code-block:: bash
