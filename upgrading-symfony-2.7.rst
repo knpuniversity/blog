@@ -18,13 +18,13 @@ Start by updating your ``composer.json`` changes to allow for ``2.7.*``:
 
 .. code-block:: json
 
-{
-    "require": {
-        "php": ">=5.3.3",
-        "symfony/symfony" : "2.7.*",
-        "...": "..."
+    {
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/symfony" : "2.7.*",
+            "...": "..."
+        }
     }
-}
 
 Now update this with composer. The command may surprise you:
 
@@ -112,14 +112,14 @@ you can get Composer to load *our* file instead of the original one:
 
 .. code-block:: json
 
-{
-    "autoload": {
-        "psr-0": {
-            "...": "...",
-            "Behat\\Behat\\Console\\Input": "src/"
-        }
-    },
-}
+    {
+        "autoload": {
+            "psr-0": {
+                "...": "...",
+                "Behat\\Behat\\Console\\Input": "src/"
+            }
+        },
+    }
 
 File this under the category of "do not do, but I did it anyways". This is
 a big hack, but I'm comfortable, because I'm hacking a testing tool only.
