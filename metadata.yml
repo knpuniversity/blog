@@ -161,3 +161,12 @@ blogs:
             have missed Symfony's Expression Language.
         author: weaverryan
         category: symfony
+
+    "upgrading-symfony-2.7":
+        title: 'How we Upgraded to Symfony 2.7 (+ deprecation notices)'
+        published: 2015-05-31
+        preview: |
+            Symfony 2.7 has dropped! Learn how we upgraded to the latest
+            LTS and waht hiccups we hit along the way.
+        author: weaverryan
+        category: symfony
