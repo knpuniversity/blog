@@ -79,13 +79,12 @@ Upgrading FOSUserBundle
 
 A new enhancement in Symfony 2.7 caused an accidental `bug`_ in FOSUserBundle.
 This was fixed two months ago, but you'll need to upgrade FOSUserBundle to
-get it. Unfortunately, there's no tag yet with the fix. Hopefully a new tag
-will be `created soon`_.
+get it.
 
-Until then, you'll need to upgrade to the bleeding edge of whatever branch
-you're using. If you're using a ``1.3`` release, update your ``composer.json``
-with ``"friendsofsymfony/user-bundle": "1.3.x-dev"``. If you're using the
-master (or 2.0) branch, update with ``"friendsofsymfony/user-bundle": "~2.0@dev"``.
+If you're using a ``1.3`` release, just run the ``update`` command below
+(a tag was *just* released with the fix). If you're using the master (or 2.0)
+branch, that's not stable yet, and has no tag. Make sure your ``composer.json``
+file has something like ``"friendsofsymfony/user-bundle": "~2.0@dev"``.
 Then let composer work its magic:
 
 .. code-block:: bash
@@ -149,4 +148,3 @@ Cheers!
 .. _`#749`: https://github.com/Behat/Behat/pull/749
 .. _`#750`: https://github.com/Behat/Behat/pull/750
 .. _`bug`: https://github.com/FriendsOfSymfony/FOSUserBundle/issues/1775
-.. _`created soon`: https://github.com/FriendsOfSymfony/FOSUserBundle/issues/1844
