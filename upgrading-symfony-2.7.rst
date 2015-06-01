@@ -102,32 +102,12 @@ If you get this error:
     Runtime Notice: Declaration of InputDefinition::getSynopsis()
     should be compatible with InputDefinition::getSynopsis($short = false)  
 
-then welcome to the club! There are already two pull requests (`#749`_, `#750`_),
-so assuming these are merged, you'll just need to upgrade.
-
-But if you're impatient, you can hack around it. In our case, we copied
-the ``InputDefinition`` from Behat, pasted it into ``src/Behat/Behat/Console/Input/InputDefinition.php``,
-then applied the patch in `#749`_. By adding a small line to ``composer.json``,
-you can get Composer to load *our* file instead of the original one:
-
-.. code-block:: json
-
-    {
-        "autoload": {
-            "psr-0": {
-                "...": "...",
-                "Behat\\Behat\\Console\\Input": "src/"
-            }
-        },
-    }
-
-File this under the category of "do not do, but I did it anyways". This is
-a big hack, but I'm comfortable with it, because I'm hacking a testing tool.
-Dump the autoloader, and your Behat tests should start running again:
+then welcome to the club! Fortunately, this issue *has* been fixed
+(thanks to Stof for the fast release), so you just need to upgrade:
 
 .. code-block:: bash
 
-    composer dump-autoload
+    composer update behat/behat
 
 If you're using the symfony2 driver, Behat may also explode on the new deprecated
 notices. To fix this, add the following at the top of your ``FeatureContext``
@@ -145,6 +125,4 @@ Cheers!
 .. _`PSR-7`: http://symfony.com/blog/psr-7-support-in-symfony-is-here
 .. _`upgrade`: http://symfony.com/doc/current/cookbook/upgrade/index.html
 .. _`deprecation warnings`: http://symfony.com/doc/current/cookbook/upgrade/major_version.html#make-your-code-deprecation-free
-.. _`#749`: https://github.com/Behat/Behat/pull/749
-.. _`#750`: https://github.com/Behat/Behat/pull/750
 .. _`bug`: https://github.com/FriendsOfSymfony/FOSUserBundle/issues/1775
