@@ -1,8 +1,10 @@
 [DX] Guard: Symfony Authentication with a Smile
 ===============================================
 
-**tl;dr** Guard is a new library that makes Symfony authentication a joy. And we've
-written a big tutorial all about it: `KnpUGuard Tutorial`_.
+.. tip::
+
+    **tl;dr** Guard is a new library that makes Symfony authentication a joy. And
+    we've written a big tutorial all about it: `KnpUGuard Tutorial`_.
 
 Symfony's authorization system - the stuff related to `voters`_ and roles - is
 awesome. It's simple, it kicks butt, and it's one of my favorite things, just behind
