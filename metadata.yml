@@ -170,3 +170,13 @@ blogs:
             LTS and what hiccups we hit along the way.
         author: weaverryan
         category: symfony
+
+    "guard-authentication":
+        title: Introducing Guard: Symfony Security with a Smile
+        published: 2015-07-13
+        preview: |
+            Introducing Guard: Authentication any way you want, customize the heck
+            out of every part, and come out smiling. It's Symfony's security system
+            unleashed.
+        author: weaverryan
+        category: symfony
