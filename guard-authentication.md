@@ -2,8 +2,8 @@
 
 ***TIP
 
-    **tl;dr** Guard is a new library that makes Symfony authentication a joy. And
-    we've written a big tutorial all about it: [KnpUGuard Tutorial](https://knpuniversity.com/screencast/guard).
+**tl;dr** Guard is a new library that makes Symfony authentication a joy. And
+we've written a big tutorial all about it: [KnpUGuard Tutorial](https://knpuniversity.com/screencast/guard).
 ***
 
 Symfony's authorization system - the stuff related to [voters](https://knpuniversity.com/screencast/symfony-voters) and roles - is
