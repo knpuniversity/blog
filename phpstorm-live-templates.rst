@@ -14,22 +14,24 @@ and your cursor moves between the tags so you can add text.
 
 .. tip::
 
-    Check out our free tutorial - `PhpStorm LiveTemplates`_ - to see how to create
+    Check out our tutorial - `PhpStorm LiveTemplates`_ - to see how to create
     live templates and use variables.
 
 Most editors have a feature like this, and if you're not leveraging them, you're
-slowing yourself down. The vim users at KnpLabs *love* this kind of stuff, and have
-published their own snippets (`docteurklein`_, `PedroTroller`_, `Einenlum`_).
+slowing yourself down. Seriously: taking a few minutes to get into these now could
+add up to a *lot* of hours saved in the future. The vim users at KnpLabs *love* this
+kind of stuff, and have published their own snippets (`docteurklein`_, `PedroTroller`_, `Einenlum`_).
 
 In our tutorial about live templates, we turn ``formhandle`` into a snippet that
-types about 10 lines of form-handling boilerplate code. And I started wondering: what
-are some other *awesome* live templates we should all be using? On Facebook, `someone asked`_
-if these were shareable... and of course they are - just like all PhpStorm configuration.
+types about 10 *lines* of form-handling boilerplate code from 10 *characters* of
+text. So I started wondering: what are some other *awesome* live templates we should
+all be using? On Facebook, `someone asked`_ if these were shareable... and of course
+they are - just like all PhpStorm configuration.
 
 A Repository for Live Templates (and other Settings)
 ----------------------------------------------------
 
-Introducing a new repository to share useful PhpStorm settings (including live templates
+So we created a repository to share useful PhpStorm settings (including live templates
 of course):
 
 https://github.com/knpuniversity/phpstorm-settings
@@ -53,11 +55,11 @@ The starting list includes:
 * ``service`` (yaml) Adds the basic YAML service definition structure
 * ``tags`` (yaml) Adds a ``tags`` line to a service
 
-I'm not the first person to do this, but I am hoping that you'll suggest some more
+I'm not the first person to do this, but I *am() hoping that you'll suggest some more
 live templates, make these better, and even start adding other things - like code
 stylings, file templates and colors.
 
-Cheers!
+Happy (fast) coding!
 
 .. _`PhpStorm LiveTemplates`: http://knpuniversity.com/screencast/phpstorm/live-templates
 .. _`docteurklein`: https://github.com/docteurklein/dot-files/tree/master/vim/UltiSnips/php
