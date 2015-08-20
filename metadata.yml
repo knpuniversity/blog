@@ -182,7 +182,7 @@ blogs:
         category: symfony
 
     "phpstorm-live-templates":
-        title: "PhpStorm Live Templates: Add your Favorites?"
+        title: "Our favorite PhpStorm Live Templates: Share yours"
         published: 2015-08-20
         preview: |
             PhpStorm Live Templates: where you type a word, hit tab, and it expands

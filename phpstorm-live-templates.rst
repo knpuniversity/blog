@@ -1,5 +1,5 @@
-PhpStorm Live Templates: Add your Favorites?
-============================================
+Our favorite PhpStorm Live Templates: Share yours
+=================================================
 
 .. tip::
 
@@ -34,7 +34,24 @@ of course):
 
 https://github.com/knpuniversity/phpstorm-settings
 
-Feel free to copy from this, or use it all - instructions are on the repository/
+Feel free to copy from this, or use it all - instructions are on the repository.
+
+The starting list includes:
+
+* ``404Unless`` (controller): Adds an if statement with a 404
+* ``action`` (controller): Builds an action method
+* ``formhandle`` (controller): Adds form-handling boiler-plate code
+* ``formrow`` (twig): Renders ``form_row(form.???)``
+* ``formrowfull`` (twig): Renders the widget, label and errors for a field
+* ``include`` (twig): Adds ``{{ include('???') }}``
+* ``method`` (controller): Adds ``@Method`` annotation
+* ``path`` (twig): Adds ``{{ path('???') }}``
+* ``render`` (twig): Adds ``{{ render(controller('???')) }}``
+* ``rendertwig`` (controller) Adds ``$this->render('???')`` 
+* ``repofind`` (controller) Adds ``$this->getDoctrine()->getRepository('???')->???()``
+* ``route`` (controller) Adds ``@Route`` annotation
+* ``service`` (yaml) Adds the basic YAML service definition structure
+* ``tags`` (yaml) Adds a ``tags`` line to a service
 
 I'm not the first person to do this, but I am hoping that you'll suggest some more
 live templates, make these better, and even start adding other things - like code
