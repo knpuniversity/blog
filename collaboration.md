@@ -1,5 +1,4 @@
-The Collaboration Machine of the Docs World
-===========================================
+# The Collaboration Machine of the Docs World
 
 We all love and depend on open source software.
 
@@ -11,7 +10,7 @@ The result is huge gains in quality and innovation. That's really important.
 But content - the documentation, tutorials and books that teach us about all
 of this tech - is behind the curve. Yes, official documentation is usually
 on a GitHub repository and we see a **huge** community effort with the
-`Symfony documentation`_ (nod to `@WouterJ`_ - pronounced Wow!ter). Even
+[Symfony documentation](https://github.com/symfony/symfony-docs) (nod to [@WouterJ](https://twitter.com/wouterjnl) - pronounced Wow!ter). Even
 StackOverflow is an example of crowd-sourcing the information-side of tech.
 But mostly, books, blog posts and everything in between are still written
 by one person. They sit, slowly rot with time, and are eventually forgotten.
@@ -23,20 +22,18 @@ will correct this. Imagine a world where tutorials are based on real, high-quali
 projects written by many people and evolving over time. That's where I want
 to be.
 
-Making Content Editable
------------------------
+## Making Content Editable
 
 More and more blogs are using GitHub-backed repositories, and although there
 isn't a culture (yet) of contributing like we do to code, I think it's inevitable.
 
-Our screencast and blog content is also open source and lives up on `GitHub`_.
+Our screencast and blog content is also open source and lives up on [GitHub](https://github.com/knpuniversity).
 That's actually not new, but the **"Edit"** button at the top of this page
 and the contributors on the right *is* new. Get your avatar up there and
 push the culture of docs contributing by PR'ing some content. I even left
 a typo in this paragraph (though there's probably more on the page). Find it!
 
-Reading from the Shoulders of Giants
-------------------------------------
+## Reading from the Shoulders of Giants
 
 Often there are topics I need to learn and a person that I know could build
 a *perfect* tutorial to teach me. For that reason, I've started humbly asking
@@ -47,18 +44,17 @@ editing, video recording, etc).
 We're starting by (being really lucky to) collaborate with some brilliant
 people:
 
-* `Brent Shaffer`_ is our partner for the `OAuth 2.0 in 8 Steps`_ tutorial.
-  In addition to being our mega-expert, he drew us `ridiculous farming pictures`_.
+* [Brent Shaffer](https://twitter.com/bshaffer) is our partner for the [OAuth 2.0 in 8 Steps](http://knpuniversity.com/screencast/oauth) tutorial.
+  In addition to being our mega-expert, he drew us [ridiculous farming pictures](https://twitter.com/KnpUniversity/status/426043460160720896/photo/1).
 
-* `William Durand`_ will work with us in Feb on our `REST tutorial`_.
+* [William Durand](https://twitter.com/couac) will work with us in Feb on our [REST tutorial](http://knpuniversity.com/screencast/rest).
   This is amazing, because it means having a real-world tutorial written
   by one of the leaders in building technology that helps make RESTy sites.
 
 And if you're great at something and I haven't already bothered you - ping
-us on `Twitter`_ or comment here. I want to bother you :).
+us on [Twitter](https://twitter.com/knpuniversity) or comment here. I want to bother you :).
 
-Why Don't we all Write More?
-----------------------------
+## Why Don't we all Write More?
 
 If the problem is ultimately that we should all write more (and collaborate),
 then why don't we? What stops us from writing the tutorials we wish existed?
@@ -83,13 +79,3 @@ I hope we can help do the same for tutorials... and include everyone on the
 process.
 
 <3 Ryan
-
-.. _`@WouterJ`: https://twitter.com/wouterjnl
-.. _`Symfony documentation`: https://github.com/symfony/symfony-docs
-.. _`GitHub`: https://github.com/knpuniversity
-.. _`Brent Shaffer`: https://twitter.com/bshaffer
-.. _`OAuth 2.0 in 8 Steps`: http://knpuniversity.com/screencast/oauth
-.. _`ridiculous farming pictures`: https://twitter.com/KnpUniversity/status/426043460160720896/photo/1
-.. _`William Durand`: https://twitter.com/couac
-.. _`REST tutorial`: http://knpuniversity.com/screencast/rest
-.. _`Twitter`: https://twitter.com/knpuniversity
