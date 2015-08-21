@@ -10,7 +10,6 @@ blogs:
             
             So now, we're excited to enter our next phase, where it's all
             about collaboration and working together!
-        author: weaverryan
         category: news
 
     "what-the-rest":
@@ -22,7 +21,6 @@ blogs:
             like HAL or JSON-LD? Should I implement OPTIONS? What role
             should the API documentation play and what information should be described
             inside the API itself? In this post, I'm asking for help.
-        author: weaverryan
         category: tech
 
     "licenses":
@@ -32,7 +30,6 @@ blogs:
             We're releasing the content of our screencasts and we want to get the
             license right. In this post, we give a little background and ask for
             your thoughts.
-        author: weaverryan
         category: tech
 
     "rest-revisited":
@@ -43,7 +40,6 @@ blogs:
             to help answer the most difficult questions around creating a
             RESTful API. In this post, I outline what we learned and what
             questions remain before we release our REST tutorial.
-        author: weaverryan
         category: tech
 
     "rss":
@@ -54,7 +50,6 @@ blogs:
             we will be sharing tech experiences, updates, and other tech
             topics and we don't want you to miss out. We also talk about
             the code behind the RSS.
-        author: weaverryan
         category: news
 
     "requirejs-bower-grunt":
@@ -64,7 +59,6 @@ blogs:
             At SymfonyCon Warsaw, I talked about RequireJS, Bower and Grunt
             in your PHP project. In this post, we'll go a bit further and
             check out a way to organize things that may be even better!
-        author: weaverryan
         category: symfony
 
     "symfony-debugging-form-errors":
@@ -74,7 +68,6 @@ blogs:
             Inspired by an old StackOverflow post, we'll investigate why
             it's so hard to get *all* of the errors of a form and unlock
             some new tricks by understanding the form hierarchy.
-        author: weaverryan
         category: symfony
 
     "collaboration":
@@ -86,7 +79,6 @@ blogs:
             I think tutorials & collaboration are going and what prevents
             us from getting there. But I also want to know what keeps *you*
             from writing tutorials and collaborating.
-        author: weaverryan
         category: news
 
     "drupaler-learn-symfony":
@@ -97,7 +89,6 @@ blogs:
             a happier and more productive developer. But don't wait for its
             release to kick butt in the new world. That's right, just learn
             Symfony. 
-        author: weaverryan
         category: news
 
     "composer-require":
@@ -107,7 +98,6 @@ blogs:
             Composer's require command just learned how to guess the best
             version for you. So update your library docs to have a one-line
             installation! And then have a sandwich.
-        author: weaverryan
         category: tech
 
     "all-access-subscription":
@@ -116,7 +106,6 @@ blogs:
         preview: |
             The KnpU All Access Pass ... ooohhh ahhhh. Introducing binge-watching
             and more frequent content. Build something amazing!
-        author: weaverryan
         category: news
 
     "AppBundle":
@@ -128,7 +117,6 @@ blogs:
             bundles are just directories, and how close we are to having
             *no* bundles at all. Sound crazy? It might just change the way
             you think about your app.
-        author: weaverryan
         category: symfony
 
     "expanding-code-blocks":
@@ -137,7 +125,6 @@ blogs:
         preview: |
             We're giving our code-blocks a face-lift to show the filename
             and folded lines you can expand to see the entire file.
-        author: weaverryan
         category: news
 
     "gulp-assetic":
@@ -148,7 +135,6 @@ blogs:
             support. In this post, I'll' tell you why there's a good chance
             that switching to Gulp is a good decision for you too. And, I'll
             give you a quick, 3-step intro to Gulp itself.
-        author: weaverryan
         category: tech
 
     "service-expressions":
@@ -159,7 +145,6 @@ blogs:
             without registering it as a service? How about injecting scalar
             values are arguments that live in the database? If not, you may
             have missed Symfony's Expression Language.
-        author: weaverryan
         category: symfony
 
     "upgrading-symfony-2.7":
@@ -168,7 +153,6 @@ blogs:
         preview: |
             Symfony 2.7 has landed! Learn how we upgraded to the latest
             LTS and what hiccups we hit along the way.
-        author: weaverryan
         category: symfony
 
     "guard-authentication":
@@ -178,7 +162,6 @@ blogs:
             Introducing Guard: Authentication any way you want, customize the heck
             out of every part, and come out smiling. It's Symfony's security system
             unleashed.
-        author: weaverryan
         category: symfony
 
     "phpstorm-live-templates":
@@ -189,5 +172,4 @@ blogs:
             into a full code-block, saving you time on all the code you write
             over and over again. We've published a few of our favorites, and are
             hoping you'll share yours.
-        author: weaverryan
         category: symfony
