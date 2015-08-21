@@ -32,8 +32,8 @@ things to our subjective liking.
 
 A true bundle is a standalone, reusable entity. These are just directories.
 
-<br/>
-<br/>
+<br />
+<br />
 
 ## 3) AppBundle: Just a Different Directory Structure
 
