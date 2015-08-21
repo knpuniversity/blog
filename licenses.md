@@ -1,5 +1,4 @@
-Finding our OS Content License
-==============================
+# Finding our OS Content License
 
 A :doc:`couple of weeks ago </blog/knp-you>`, I talked about making KnpUniversity
 open, transparent, and full of the rainbows and sunshine that come with sharing
@@ -8,7 +7,7 @@ right here on the site. Our hope is that we can make money selling the full
 package (screencast + in-browser coding activities) while still giving away
 good content to everyone.
 
-But we want to go further by making the content available on GitHub (`done!`_),
+But we want to go further by making the content available on GitHub ([done!](https://github.com/knpuniversity)),
 which means figuring out how to license it. Of course, this is where things
 get legal, which means complicated... and boring -_- zzzz.
 
@@ -17,22 +16,20 @@ But my real goal is to get your opinion! If you're an expert or already bored,
 at least :ref:`scroll down <blog-license-choosing>` to the good part and let
 us know what you think.
 
-Creative Commons to the Rescue
-------------------------------
+## Creative Commons to the Rescue
 
-GitHub has a great site (`choosealicense.com`_) to help you license your
+GitHub has a great site ([choosealicense.com](http://choosealicense.com/)) to help you license your
 *code*, but not necessarily your content. If you peak at the footer,
 you'll see that the site itself is licensed as "Creative Commons Attribution 3.0
 Unported License". In fact, this is also the license used for
-`Symfony's documentation`_  and Creative Commons is the go-to provider of
+[Symfony's documentation](http://symfony.com/doc/current/contributing/code/license.html)  and Creative Commons is the go-to provider of
 licenses when it comes to protecting *content*. They even have an awesome
-`license "wizard"`_, which you can see a screenshot of at the top of this
+[license "wizard"](http://creativecommons.org/choose/), which you can see a screenshot of at the top of this
 post.
 
 .. _blog-license-choosing:
 
-But which License is for Us?
-----------------------------
+## But which License is for Us?
 
 There are basically two big decision points to selecting the license:
 
@@ -64,8 +61,3 @@ used in a way that we don't really want. The decision may never matter, but
 choosing a license lets us plan ahead... just in case.
 
 So what do you think?
-
-.. _`done!`: https://github.com/knpuniversity
-.. _`choosealicense.com`: http://choosealicense.com/
-.. _`license "wizard"`: http://creativecommons.org/choose/
-.. _`Symfony's documentation`: http://symfony.com/doc/current/contributing/code/license.html
