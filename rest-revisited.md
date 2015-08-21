@@ -1,6 +1,6 @@
 # REST Revisited
 
-Two weeks ago, I wrote ":doc:`/blog/what-the-rest`", asking for help answering
+Two weeks ago, I wrote [What the REST?](/blog/what-the-rest), asking for help answering
 questions around REST that I thought were incomplete. With all the beauty
 of REST and HATEOAS, I was coming across very real challenges and gaps when
 trying to write a tutorial on how to do it *well*. It seemed like there was
@@ -8,7 +8,7 @@ a lot of talk, but not a lot of real-world proven examples to back this all
 up.
 
 Wonderfully, a lot of people showed up to offer their thoughts, which you
-can see as comments on :doc:`that post </blog/what-the-rest>`. In this entry,
+can see as comments on [that post](/blog/what-the-rest). In this entry,
 I wanted to summarize the problems and the solutions we found. I may still
 say some wrong things, and hopefully people will once again come to my rescue.
 
@@ -26,7 +26,7 @@ If you want to know when the REST tutorial is released, follow us on
 
 ## 1. Links versus Resources
 
-:ref:`Original discussion <blog-what-the-rest-links-resources>`
+[Original discussion](/blog/what-the-rest#blog-what-the-rest-links-resources)
 
 Since a link contains a URI, and a URI is an address to a resource, the difference
 between a link and a resource can be fuzzy. In fact, if your API were entirely
@@ -36,7 +36,7 @@ each resource will probably only have one link to it.
 
 But as soon as you have some special, non-standard action that needs to be
 taken on a resource, then you may have 2, 3 or more links to that resource.
-I mentioned that with a :ref:`HAL example <blog-what-the-rest-original-links>`.
+I mentioned that with a [HAL example](/blog/what-the-rest#blog-what-the-rest-original-links).
 This is what I argued in my first post, and I think it's correct, or close
 enough.
 
@@ -70,7 +70,7 @@ So the lifecycle of developing an API client might look like this:
 A. A human crawls the API by starting on the homepage and observing the links.
    When the human sees an interesting link, the `rel` is used to look up
    the human documentation, which tells him the HTTP methods available, fields,
-   and other information (see :ref:`blog-what-the-rest-4-missing`).
+   and other information (see [The 4 Missing Pieces of a Link](/blog/what-the-rest#blog-what-the-rest-4-missing)).
 
 B. The human programs the API client to go to the homepage and look for a link
    with the "rel" that he looked up previously. The client uses the URI from
@@ -97,7 +97,7 @@ E. The human reads a blog post about a sweet new feature to the API, which
 That's it! Rinse and repeat. As long as a human can find documentation for
 a "rel", then we're in good shape. The client responds to "rel"s that it
 recognizes, because a human has looked up the documentation on that rel and
-filled in the :ref:`missing pieces <blog-what-the-rest-4-missing>`.
+filled in the [missing pieces](/blog/what-the-rest#blog-what-the-rest-4-missing).
 
 So the "rel" becomes the new all-important *key*, instead of the URI. But
 really, both are very similar. Both the "rel" in a HATEOAS API and a URI
@@ -125,13 +125,13 @@ lot further.
 ## 3. What happens when we're missing a link to the docs?
 
 In my previous post, I mentioned 2 situations where I end up with
-:ref:`only the URI without its rel <blog-what-the-rest-only-uri>`.
+[only the URI without its rel](/blog/what-the-rest#blog-what-the-rest-only-uri).
 
 For me, this was a serious problem. Even if we're relying on a human to find
 external documentation, the API should be easy for a human to use. This means
 that whenever the API isn't self-describing, it should tell us where the
 documentation lives. The "rel" is the pointer to the documentation, except
-that it's missing in these :ref:`2 cases <blog-what-the-rest-only-uri>`.
+that it's missing in these [2 cases](/blog/what-the-rest#blog-what-the-rest-only-uri).
 
 It turns out that this is maybe ok. What!? Let's revisit the first situation:
 I POST to create a new user resource. The response contains a 201 status
@@ -149,7 +149,7 @@ to do with the URI in the `Location` header.
 ### Embedded Resources: Not as Clean
 
 The same could be argued for the second place this problem shows up, embedded
-resources (:ref:`example <blog-what-the-rest-collection-missing-rel>`). In
+resources ([example](/blog/what-the-rest#blog-what-the-rest-collection-missing-rel)). In
 other words, you should look at the "https://api.example.com/rels/users" rel
 documentation to see that the embedded `users` key contains items whose
 "main rel" is `https://api.example.com/rels/user`.
@@ -250,9 +250,9 @@ Larry gave 2 examples in [his comment](http://knpuniversity.com/blog/what-the-re
 for my "resend" idea, which is a little bit less clean since we're operating
 on a collection resource. So, check out [his comment](http://knpuniversity.com/blog/what-the-rest#comment-1039347270) and then come back:
 
-    PUT /users/reinvite (bad!)
-
-    POST /users/reinvite (better!)
+> PUT /users/reinvite (bad!)
+>
+> POST /users/reinvite (better!)
 
 In both cases, I used a new URI instead of POST'ing to `/users` with some
 special request body that indicated that I want to reinvite users instead

@@ -1,11 +1,11 @@
 # What the REST?
 
 ***TIP
-See the follow-up post called :doc:`/blog/rest-revisited` that talks
+See the follow-up post called [REST Revisited](/blog/rest-revisited) that talks
 about the key things we learned from this.
 ***
 
-When I talked recently about :doc:`being collaborative and open</blog/knp-you>`,
+When I talked recently about [being collaborative and open](/blog/knp-you),
 I mentioned that I was weeks into research around building RESTful API's.
 I've been like Luke training on Dagobah, except replace Jedi powers with
 REST and Yoda with the Internet, RFCs and dozens of blog posts. And despite
@@ -48,7 +48,7 @@ up and shared openly.
 When I get a response from a RESTful API, it should contain links. Like on
 a webpage, these tell me what I might do next (i.e. what actions I can take).
 
-.. _blog-what-the-rest-links-resources:
+<a name="blog-what-the-rest-links-resources"></a>
 
 ### Links versus Resources
 
@@ -59,7 +59,7 @@ there are multiple actions I can take on that resource. Suppose that when
 we go to the homepage of our API it returns the following links (I'm using
 HAL to represent the links, but that's not important):
 
-.. _blog-what-the-rest-original-links:
+<a name="blog-what-the-rest-original-links"></a>
 
 ```json
 {
@@ -127,7 +127,7 @@ to follow it.
 But that's not true at all with an API. We need more information than we
 have from simply looking at the link, which I'll call:
 
-.. _blog-what-the-rest-4-missing:
+<a name="blog-what-the-rest-4-missing"></a>
 
 ### The 4 Missing Pieces of a Link
 
@@ -158,7 +158,7 @@ Your API also needs to choose how its hypermedia type(s) look like. Will
 each link have its own type (e.g. `application/vnd.com.users+xml`) or
 will you use one hypermedia type like HAL?
 
-Right now, we're missing :ref:`4 pieces of information<blog-what-the-rest-4-missing>`
+Right now, we're missing [4 pieces of information](#blog-what-the-rest-4-missing)
 before we can really make the next request. In REST, you often read that
 the only thing you should need to document is your hypermedia types. In
 that model, does *every* link have its own hypermedia type? And do the docs
@@ -169,7 +169,7 @@ with something simpler like `application/json`, and the special hypermedia
 is only used in the response.
 
 So let's look at the 2 approaches (custom hypermedia type versus HAL) and
-try to see how a client would answer the :ref:`4 questions<blog-what-the-rest-4-missing>`
+try to see how a client would answer the [4 questions](#blog-what-the-rest-4-missing)
 standing between us and the next API request:
 
 +--------------+-------------------------------------------+--------------------------------------+
@@ -204,7 +204,7 @@ But usually, we will need to look up a specific API docs page for each link.
 For a custom hypermedia approach, the docs *seem* to be for each hypermedia
 type (right?, wrong?). For HAL, since we only have one hypermedia type, we
 rely entirely on the link `rel`. This could all totally be wrong, but if
-it is, then how should the client be answering our :ref:`4 questions<blog-what-the-rest-4-missing>`
+it is, then how should the client be answering our [4 questions](#blog-what-the-rest-4-missing)
 for each link? If we have docs, how do they know which doc to look at for
 each link?
 
@@ -213,7 +213,7 @@ each link?
 What if we made an `OPTIONS` request to `/users`? This actually seems
 very unhelpful, as the `OPTIONS` is for a single URI, which could actually
 have multiple links to it. The `OPTIONS` response may say we can POST,
-but how would a client know what to POST? In our :ref:`example<blog-what-the-rest-original-links>`,
+but how would a client know what to POST? In our [example](#blog-what-the-rest-original-links),
 there will be 2 POST actions (one for creating a new user resource and another
 for "re-inviting" users), each which has its own documentation on how the
 fields should look.
@@ -221,12 +221,28 @@ fields should look.
 `OPTIONS` may be helpful if it returns the links that I would receive
 if I made a `GET` request to the resource. In our example, we'd have:
 
-.. include:: includes/what-the-rest/_users_hal_links.rst.inc
+```json
+{
+  "_links": {
+    "self": {
+      "href": "http://api.example.com/users",
+      "title": "Users in the system"
+    },
+    "http://api.example.com/rels/users_reinvite": {
+      "href": "http://api.example.com/users",
+      "title": "Re-invite unregistered users to the system"
+    },
+    
+    "...": "... other links, like first, prev, next, last ..."
+  },
+  "...": "... other stuff, like embedded users ..."
+}
+```
 
 Of course, I could just make a `GET` for this information. So is there
 value in `OPTIONS`?
 
-.. _blog-what-the-rest-only-uri:
+<a name="blog-what-the-rest-only-uri"></a>
 
 ## Problems: When I have only a URI
 
@@ -245,7 +261,23 @@ hypermedia type you'll get back.
 For example, if I know nothing about `/users` and I make a `GET` request,
 I get back these 2 links (among other things):
 
-.. include:: includes/what-the-rest/_users_hal_links.rst.inc
+```json
+{
+  "_links": {
+    "self": {
+      "href": "http://api.example.com/users",
+      "title": "Users in the system"
+    },
+    "http://api.example.com/rels/users_reinvite": {
+      "href": "http://api.example.com/users",
+      "title": "Re-invite unregistered users to the system"
+    },
+    
+    "...": "... other links, like first, prev, next, last ..."
+  },
+  "...": "... other stuff, like embedded users ..."
+}
+```
 
 Notice `self`, which is a standard [IANA Link Relation](http://www.iana.org/assignments/link-relations/link-relations.xhtml), but which no
 longer includes the helpful `http://api.example.com/rels/users` "rel".
@@ -267,31 +299,31 @@ at least two places:
 1. After POST'ing to create a new resource, the `location` header gives
    us the URI to the resource, but without a `rel`;
 
-.. _blog-what-the-rest-collection-missing-rel:
+<a name="blog-what-the-rest-collection-missing-rel"></a>
 
 2. When GET'ing a collection resource, the embedded children don't have a
    specific rel value (they have `self`):
 
-.. code-block:: json
-
-    {
-      "_embedded": {
-        "users": [
-          {
-            "username": "weaverryan",
-            "_links": {
-              "self": {
-                "href": "http://api.example.com/user/weaverryan",
-                "title": "Users in the system"
-              },
-              "...": "... other links ..."
-            }
+```json
+{
+  "_embedded": {
+    "users": [
+      {
+        "username": "weaverryan",
+        "_links": {
+          "self": {
+            "href": "http://api.example.com/user/weaverryan",
+            "title": "Users in the system"
           },
-          "... other users ..."
-        ]
+          "...": "... other links ..."
+        }
       },
-      "...": "... other stuff, links, data, etc ..."
-    }
+      "... other users ..."
+    ]
+  },
+  "...": "... other stuff, links, data, etc ..."
+}
+```
 
 In both cases, we can GET the resource, but we're never given the pointer
 (`rel` in HAL) to the docs, which answer our questions. I need some "in-band"

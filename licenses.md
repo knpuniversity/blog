@@ -1,6 +1,6 @@
 # Finding our OS Content License
 
-A :doc:`couple of weeks ago </blog/knp-you>`, I talked about making KnpUniversity
+A [couple of weeks ago](/blog/knp-you), I talked about making KnpUniversity
 open, transparent, and full of the rainbows and sunshine that come with sharing
 and collaborating. We already offer the content of our screencasts for free
 right here on the site. Our hope is that we can make money selling the full
@@ -13,7 +13,7 @@ get legal, which means complicated... and boring -_- zzzz.
 
 If you're not too familiar with licenses, I'll give a brief background.
 But my real goal is to get your opinion! If you're an expert or already bored,
-at least :ref:`scroll down <blog-license-choosing>` to the good part and let
+at least [scroll down](#blog-license-choosing) to the good part and let
 us know what you think.
 
 ## Creative Commons to the Rescue
@@ -27,7 +27,7 @@ licenses when it comes to protecting *content*. They even have an awesome
 [license "wizard"](http://creativecommons.org/choose/), which you can see a screenshot of at the top of this
 post.
 
-.. _blog-license-choosing:
+<a name="blog-license-choosing"></a>
 
 ## But which License is for Us?
 
