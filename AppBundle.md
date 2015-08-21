@@ -32,6 +32,8 @@ things to our subjective liking.
 
 A true bundle is a standalone, reusable entity. These are just directories.
 
+<br/><br/>
+
 ## 3) AppBundle: Just a Different Directory Structure
 
 <img class="pull-right" style="width: 150px;" src="/images/appbundle/app-bundle.png" alt="App Bundle" />
@@ -42,6 +44,8 @@ by putting sub-directories in `Controller` or anywhere else.
 
 You might like this, or you might not. The point is: it's subjective, there's
 no technical benefit of having multiple bundles.
+
+<br/><br/><br/>
 
 ## 4) AppBundle and AppKernel are Best Friends!
 
@@ -89,6 +93,8 @@ beginners a lot of trouble.
 Instead, you just render the filename. The only rule you need to know is
 that templates live in `app/Resources/views`. This reduces complexity,
 and that's huge.
+
+<br/><br/>
 
 ## 5) No Bundles!?
 
