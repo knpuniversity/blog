@@ -19,7 +19,7 @@ That's an awesome start.
 
 ## 2) Sorry, Your Bundles aren't Bundles: They're Directories
 
-.. image:: /blog/images/appbundle/coupled-bundles.png
+![Coupled Bundles](/images/appbundle/coupled-bundles.png)
    :align: right
    :width: 300px
 
@@ -34,11 +34,11 @@ things to our subjective liking.
 
 A true bundle is a standalone, reusable entity. These are just directories.
 
-|br|
+
 
 ## 3) AppBundle: Just a Different Directory Structure
 
-.. image:: /blog/images/appbundle/app-bundle.png
+![App Bundle](/images/appbundle/app-bundle.png)
    :align: right
    :width: 150px
 
@@ -49,7 +49,7 @@ by putting sub-directories in `Controller` or anywhere else.
 You might like this, or you might not. The point is: it's subjective, there's
 no technical benefit of having multiple bundles.
 
-|br| |br| |br|
+
 
 ## 4) AppBundle and AppKernel are Best Friends!
 
@@ -63,7 +63,7 @@ re-using this stuff somewhere else.
 
 ### a) Move service configuration to app/
 
-.. image:: /blog/images/appbundle/move-config.png
+![Move Config](/images/appbundle/move-config.png)
    :align: right
    :width: 300px
 
@@ -78,15 +78,15 @@ to re-use something, great! Put it in a *true*, standalone bundle. Here,
 I'm talking about moving pieces out of bundles that are *truly* a part of
 your app.
 
-***note::
+***TIP
 Like with everything, if you have *a lot* of services, feel free to create
 an `app/config/services` directory with multiple files.
 ***
-|br|
+
 
 ### b) Moving templates to app/
 
-.. image:: /blog/images/appbundle/move-templates.png
+![Move Templates](/images/appbundle/move-templates.png)
    :align: right
    :width: 300px
 
@@ -103,11 +103,11 @@ Instead, you just render the filename. The only rule you need to know is
 that templates live in `app/Resources/views`. This reduces complexity,
 and that's huge.
 
-|br|
+
 
 ## 5) No Bundles!?
 
-.. image:: /blog/images/appbundle/no-bundle.png
+![No Bundle](/images/appbundle/no-bundle.png)
    :align: right
    :width: 300px
 
@@ -117,7 +117,7 @@ But wait, why do we need a bundle at all then? You don't! A bundle is just
 a directory! And we can rename directories! We could rename this to `Ryan`
 and even delete the bundle file.
 
-***TIP::
+***TIP
 You can start thinking of AppKernel as your one "bundle". It can do
 anything a bundle can, including complex stuff like registering compiler
 passes.
@@ -136,13 +136,13 @@ reasons:
 But philosophically, I *do* hope you'll think of your `AppBundle` as just
 a directory for PHP classes. And for Symfony 3.0, maybe we'll get there!
 
-|br|
 
-.. _`app-bundle-templates-decoupled`:
+
+<a name="app-bundle-templates-decoupled"></a>
 
 ## 6) I hate having my Templates in app/, Controllers in src/
 
-.. image:: /blog/images/appbundle/all-in-app.png
+![All in App](/images/appbundle/all-in-app.png)
    :align: right
    :width: 300px
 
@@ -169,16 +169,16 @@ I'm not recommending that everyone runs and does this, but logically, everything
 is coupled to `app/`, so it makes perfect sense. I hope it at least gets
 you thinking!
 
-***note::
+***TIP
 Still want the templates closer to the controllers? No problem, keep
 them in `AppBundle` :).
 ***
 
-|br|
+
 
 ## 7) But I want to create a Decoupled Library!
 
-.. image:: /blog/images/appbundle/decoupled-library.png
+![Decoupled Library](/images/appbundle/decoupled-library.png)
    :align: right
    :width: 150px
 
@@ -187,7 +187,7 @@ right there. It's ready to be re-used!
 
 ## 8) But I want to re-use a Bundle between projects or kernels!
 
-.. image:: /blog/images/appbundle/decoupled-bundle.png
+![Decoupled Bundle](/images/appbundle/decoupled-bundle.png)
    :align: right
    :width: 150px
 
