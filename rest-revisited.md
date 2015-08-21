@@ -1,5 +1,4 @@
-REST Revisited
-==============
+# REST Revisited
 
 Two weeks ago, I wrote ":doc:`/blog/what-the-rest`", asking for help answering
 questions around REST that I thought were incomplete. With all the beauty
@@ -20,13 +19,12 @@ makes sense. Also, the "best practices" don't really exist, and there really
 way to do something, it may be because there isn't a "right" way. Instead,
 do your best to make an educated decision.
 
-.. note::
+***TIP
+If you want to know when the REST tutorial is released, follow us on
+[Twitter](https://twitter.com/knpuniversity) or [Register](http://knpuniversity.com/signup/) and add yourself to the email list.
+***
 
-    If you want to know when the REST tutorial is released, follow us on
-    `Twitter`_ or `Register`_ and add yourself to the email list.
-
-1. Links versus Resources
--------------------------
+## 1. Links versus Resources
 
 :ref:`Original discussion <blog-what-the-rest-links-resources>`
 
@@ -42,13 +40,12 @@ I mentioned that with a :ref:`HAL example <blog-what-the-rest-original-links>`.
 This is what I argued in my first post, and I think it's correct, or close
 enough.
 
-2. Self-Describing APIs and "rels"
-----------------------------------
+## 2. Self-Describing APIs and "rels"
 
 One of the seeming advantages of a truly RESTful API is that it has the potential
 of being self-describing, which means that you can learn everything you need
 to know about the API *from* the API. After talking with people (especially
-`Luke Stokes`_ and `Larry Garfield`_), I think the importance of this is over-emphasized.
+[Luke Stokes](https://twitter.com/lukestokes) and [Larry Garfield](http://knpuniversity.com/blog/what-the-rest#comment-1038006806)), I think the importance of this is over-emphasized.
 And worse, it's probably very difficult to achieve.
 
 Remember that HATEOAS (at least how we're using it) emphasizes links and says
@@ -108,25 +105,24 @@ in an older API somehow give you a pointer to the documentation. And in both
 cases, a human is needed to read that and figure out exactly *how* to make
 a request.
 
-.. sidebar:: More information-rich formats like JSON-LD
+***TIP More information-rich formats like JSON-LD
+Like I mentioned in my previous post, there are other formats like [JSON-LD](http://json-ld.org/)
+that seem to try to offer even more information about the link, like
+what fields are in it and how that information should be sent in the
+request (e.g. as simple ``application/json`` or ``application/x-www-form-urlencoded``).
+I think this is really interesting. However, I still think that a human
+needs to be involved. Even if you can programmatically determine that
+an endpoint needs ``firstName`` and ``lastName`` fields, your API client
+will need to be programmed to figure out the significance of these fields
+and what data goes into which field. Your client *could* give you warnings
+if something changes in the future (e.g. suddenly ``firstName`` is missing
+from the field list), but an API could also return a 400 validation error
+if you made a breaking change like this. In other words, I think this
+is cool, but I'm not sure I really see whether or not it gets us a whole
+lot further.
+***
 
-    Like I mentioned in my previous post, there are other formats like `JSON-LD`_
-    that seem to try to offer even more information about the link, like
-    what fields are in it and how that information should be sent in the
-    request (e.g. as simple ``application/json`` or ``application/x-www-form-urlencoded``).
-    I think this is really interesting. However, I still think that a human
-    needs to be involved. Even if you can programmatically determine that
-    an endpoint needs ``firstName`` and ``lastName`` fields, your API client
-    will need to be programmed to figure out the significance of these fields
-    and what data goes into which field. Your client *could* give you warnings
-    if something changes in the future (e.g. suddenly ``firstName`` is missing
-    from the field list), but an API could also return a 400 validation error
-    if you made a breaking change like this. In other words, I think this
-    is cool, but I'm not sure I really see whether or not it gets us a whole
-    lot further.
-
-3. What happens when we're missing a link to the docs?
-------------------------------------------------------
+## 3. What happens when we're missing a link to the docs?
 
 In my previous post, I mentioned 2 situations where I end up with
 :ref:`only the URI without its rel <blog-what-the-rest-only-uri>`.
@@ -141,7 +137,7 @@ It turns out that this is maybe ok. What!? Let's revisit the first situation:
 I POST to create a new user resource. The response contains a 201 status
 code with a ``Location`` header to ``/users/5``, but no rel.
 
-After talking with `Luke Stokes`_, he pointed out that in order to even know
+After talking with [Luke Stokes](https://twitter.com/lukestokes), he pointed out that in order to even know
 *how* to POST to create the user, a human would have needed to look at the
 documentation for the users rel (something like ``https://api.example.com/rels/users``,
 which we would have discovered by walking the API). As long as that documentation
@@ -150,8 +146,7 @@ to that resource is ``https://api.example.com/rels/user``, then we're in
 business! The user can then look up that documentation to figure out what
 to do with the URI in the ``Location`` header.
 
-Embedded Resources: Not as Clean
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Embedded Resources: Not as Clean
 
 The same could be argued for the second place this problem shows up, embedded
 resources (:ref:`example <blog-what-the-rest-collection-missing-rel>`). In
@@ -171,8 +166,7 @@ the fact that the embedded ``users`` resource after following a ``https://api.ex
 link contains links whose "self" is ``https://api.example.com/rels/user``.
 That's a bummer.
 
-A Better Way?
-~~~~~~~~~~~~~
+### A Better Way?
 
 First, this problem doesn't need to be solved. All the information is there
 for the human to understand the API and for the client to use it. I think
@@ -184,7 +178,7 @@ even if that means just pointing us to the docs. And for the simplicity of
 the API client, I think every link should have a "rel" so that we know if
 this is a link that we have already programmed the client to understand.
 
-One suggestion that `Raul Fraile from ServerGrove`_ suggested is to add a
+One suggestion that [Raul Fraile from ServerGrove](http://knpuniversity.com/blog/what-the-rest#comment-1032280776) suggested is to add a
 header on the 201 response when creating a resource (e.g. ``X-Location-Rel: https://api.example.com/rels/user``).
 For me, this is kind of cool because if we think of the response as a "link",
 it now contains the URI (``Location`` header) and the rel (``X-Location-Rel``
@@ -198,16 +192,15 @@ Should it be more clear that the "users" key will contain resources whose
 
 On this issue, I'm still a little dissatisfied.
 
-.. sidebar:: The "main rel" of a resource
+***TIP The "main rel" of a resource
+I've said "main rel" a few times to mean the link to a resource that represents
+its CRUD operations. I'm not sure this is totally correct, but I invented
+this term because in practice, there is always a "main" link to a resource,
+which includes the implied GET operation that you can do on any resource.
+This link is represented as the "self" rel of an embedded resource.
+***
 
-    I've said "main rel" a few times to mean the link to a resource that represents
-    its CRUD operations. I'm not sure this is totally correct, but I invented
-    this term because in practice, there is always a "main" link to a resource,
-    which includes the implied GET operation that you can do on any resource.
-    This link is represented as the "self" rel of an embedded resource.
-
-4. Walking the API - Caching
-----------------------------
+## 4. Walking the API - Caching
 
 One of the key assumptions of a REST API is that it will be used by REST
 API clients. This means that your API clients will *not* hardcode your URIs,
@@ -233,19 +226,18 @@ that allow the client to cache the responses. This means that even though
 your code may *look* like it's making 4 API requests, the first 3 that browse
 the API are cached, meaning no request is actually made.
 
-This sounds complicated, but if you use `Guzzle`_ to make the API requests
-in your client, then it happens automatically by using their `HTTP Cache Plugin`_.
+This sounds complicated, but if you use [Guzzle](http://guzzlephp.org) to make the API requests
+in your client, then it happens automatically by using their [HTTP Cache Plugin](http://guzzlephp.org/plugins/cache-plugin.html).
 So if "making too many requests" was one of your worries, it may not be such
 a big deal.
 
-5. Custom Actions
------------------
+## 5. Custom Actions
 
 One of the most difficult things to figure out is how custom "actions" should
 work on a resource. The basic operations are covered by the HTTP verbs GET,
 POST, PUT and DELETE. But what if I have an endpoint to ``/users`` that sends
 an invitation email to anyone that hasn't confirmed their registration yet?
-How should that look? Once again, `Larry helped here`_ by mentioning a few
+How should that look? Once again, [Larry helped here](http://knpuniversity.com/blog/what-the-rest#comment-1039347270) by mentioning a few
 good points:
 
 A) This is where REST starts to break down, so cheating here is not so bad.
@@ -254,12 +246,12 @@ B) POST is a great "fall-back" method to use for custom actions.
 
 C) You *can* sort of, "invent" new URIs (i.e. resources) for these actions.
 
-Larry gave 2 examples in `his comment`_, and I'll give 2 more possibilities
+Larry gave 2 examples in [his comment](http://knpuniversity.com/blog/what-the-rest#comment-1039347270), and I'll give 2 more possibilities
 for my "resend" idea, which is a little bit less clean since we're operating
-on a collection resource. So, check out `his comment`_ and then come back:
+on a collection resource. So, check out [his comment](http://knpuniversity.com/blog/what-the-rest#comment-1039347270) and then come back:
 
     PUT /users/reinvite (bad!)
-    
+
     POST /users/reinvite (better!)
 
 In both cases, I used a new URI instead of POST'ing to ``/users`` with some
@@ -271,7 +263,7 @@ Can you spot the problem with the first? It works in Larry's example
 this wouldn't be idempotent. That's an overused word, but I should always
 be able to issue a PUT request multiple times without adverse affects. In
 this example, making this request multiple times will probably email people
-multiple times. For that reason, POST is probably better. 
+multiple times. For that reason, POST is probably better.
 
 My point here was to give a few examples that probably *cheat* a little with
 REST and show how the thinking on these endpoints is always a little fuzzy.
@@ -279,8 +271,7 @@ I typically feel that someone will be able to come along and suggest a better
 way to format a custom verb. I hope they do. But in your API, choose something
 and live with it :).
 
-To the Tutorial!
-----------------
+## To the Tutorial!
 
 After all of this, I *am* once again working on the REST tutorial. In fact,
 we'll probably have 2: one for PHP talking about all the difficult things
@@ -288,21 +279,9 @@ we've discussed here, and another for Symfony, using FOSRestBundle, and probably
 bundles like FSCHateoasBundle.
 
 You can watch progress and contribute (that would be awesome) to the upcoming
-tutorial on `GitHub`_. Or follow us on `Twitter`_ or `Register`_ and add yourself
+tutorial on [GitHub](https://github.com/knpuniversity/rest). Or follow us on [Twitter](https://twitter.com/knpuniversity) or [Register](http://knpuniversity.com/signup/) and add yourself
 to the email list for a poke when it comes out.
 
 Cheers!
 
 *Title image courtesy of http://www.flickr.com/photos/hmk/1442578687/*
-
-.. _`Guzzle`: http://guzzlephp.org
-.. _`Http Cache Plugin`: http://guzzlephp.org/plugins/cache-plugin.html
-.. _`Twitter`: https://twitter.com/knpuniversity
-.. _`Register`: http://knpuniversity.com/signup/
-.. _`Luke Stokes`: https://twitter.com/lukestokes
-.. _`Larry Garfield`: http://knpuniversity.com/blog/what-the-rest#comment-1038006806
-.. _`JSON-LD`: http://json-ld.org/
-.. _`Raul Fraile from ServerGrove`: http://knpuniversity.com/blog/what-the-rest#comment-1032280776
-.. _`Larry helped here`: http://knpuniversity.com/blog/what-the-rest#comment-1039347270
-.. _`his comment`: http://knpuniversity.com/blog/what-the-rest#comment-1039347270
-.. _`GitHub`: https://github.com/knpuniversity/rest
