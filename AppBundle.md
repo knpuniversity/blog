@@ -19,9 +19,7 @@ That's an awesome start.
 
 ## 2) Sorry, Your Bundles aren't Bundles: They're Directories
 
-![Coupled Bundles](/images/appbundle/coupled-bundles.png)
-   :align: right
-   :width: 300px
+<img class="pull-right" style="width: 300px;" src="/images/appbundle/coupled-bundles.png">
 
 A traditional Symfony project is made up of bundles that are coupled together.
 Ok, maybe you have some standalone bundles, but somewhere, there's a group
