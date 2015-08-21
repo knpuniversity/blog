@@ -4,29 +4,29 @@ Pretty much every package manager works the same: run the executable (`apt-get`)
 add the command `install`, pass it a library name `php5`, then make a
 sandwich:
 
-``bash
+```bash
 apt-get install php5
 # ... makes a sandwich
-``
+```
 
 But not Composer, right? Typically, the docs for a a PHP library looks like
 this:
 
 1. Add the following to your `composer.json` file:
 
-``json
+```json
 {
     "require": {
         "my-cool-name/sandwich-maker": "~1.1.0"
     }
 }
-``
+```
 
 2. Run the following command:
 
-``bash
+```bash
     composer update my-cool-name/sandwich-maker
-``
+```
 
 Here are the problems:
 
