@@ -15,7 +15,7 @@ off with our Symfony2 Series ([Episode 2](http://knpuniversity.com/screencast/sy
 
 First, if you're trying to figure out what errors you have and which field
 each is attached to, you should use the
-:symfonymethod:`Form::getErrorsAsString() <Symfony\\Component\\Form\\Form::getErrorsAsString>`
+`Form::getErrorsAsString()`
 method that was introduced in Symfony 2.1 (so a long time ago!). Use it temporarily
 in a controller to see what's going on::
 
@@ -109,7 +109,7 @@ get a big array of *all* of the errors, so you'd need to build it yourself::
 We can iterate over `$form` (a `Form` object) to get all of its fields.
 And again, remember that each field (`$formField` here), is also a `Form`
 object, which is why we can call
-:symfonymethod:`Form::getErrors() <Symfony\\Component\\Form\\Form::getErrors>`
+`Form::getErrors()`
 on each.
 
 In reality, since a form can be many-levels deep, this solution isn't good
