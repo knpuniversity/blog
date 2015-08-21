@@ -1,9 +1,4 @@
-.. |br| raw:: html
-
-   <br />
-
-Bundles, No Bundles and AppBundle in 10 Steps
-=============================================
+# Bundles, No Bundles and AppBundle in 10 Steps
 
 Ah, the AppBundle: my **favorite** part of the Symfony best practices.
 
@@ -16,15 +11,13 @@ Ok, not everyone agrees - it's cool :). But here's what's interesting: if you
 
 Let's figure this out in 10 Steps.
 
-1) Keep Calm: Because I don't Care
-----------------------------------
+## 1) Keep Calm: Because I don't Care
 
 I mean this with <3. We're using Symfony! This means you can do whatever
 you want. Nothing has changed in Symfony to prevent this, and nothing will.
 That's an awesome start.
 
-2) Sorry, Your Bundles aren't Bundles: They're Directories
-----------------------------------------------------------
+## 2) Sorry, Your Bundles aren't Bundles: They're Directories
 
 .. image:: /blog/images/appbundle/coupled-bundles.png
    :align: right
@@ -43,8 +36,7 @@ A true bundle is a standalone, reusable entity. These are just directories.
 
 |br|
 
-3) AppBundle: Just a Different Directory Structure
---------------------------------------------------
+## 3) AppBundle: Just a Different Directory Structure
 
 .. image:: /blog/images/appbundle/app-bundle.png
    :align: right
@@ -52,33 +44,31 @@ A true bundle is a standalone, reusable entity. These are just directories.
 
 Now, if we decide to move everything into one bundle, it's nothing more than
 a different directory structure. You can even keep the same amount of organization
-by putting sub-directories in ``Controller`` or anywhere else.
+by putting sub-directories in `Controller` or anywhere else.
 
 You might like this, or you might not. The point is: it's subjective, there's
 no technical benefit of having multiple bundles.
 
 |br| |br| |br|
 
-4) AppBundle and AppKernel are Best Friends!
---------------------------------------------
+## 4) AppBundle and AppKernel are Best Friends!
 
-Your application *is* AppKernel, and it lives in ``app/``. It builds our
+Your application *is* AppKernel, and it lives in `app/`. It builds our
 1 container, 1 compiled list of routes, 1 collection of translations, 1 group
 of mapped entities and everything else. Even if you have these things spread
 out across bundles, it's all loaded right here.
 
-So why not move more things into ``app/``? Remember, we're not planning on
+So why not move more things into `app/`? Remember, we're not planning on
 re-using this stuff somewhere else.
 
-a) Move service configuration to app/
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### a) Move service configuration to app/
 
 .. image:: /blog/images/appbundle/move-config.png
    :align: right
    :width: 300px
 
 Since each kernel has only *one* container, it's logical to move service
-config out of the bundle and into ``app/``.
+config out of the bundle and into `app/`.
 
     "But if I move my service configuration out of my bundle it's coupled
     to my app"
@@ -88,21 +78,19 @@ to re-use something, great! Put it in a *true*, standalone bundle. Here,
 I'm talking about moving pieces out of bundles that are *truly* a part of
 your app.
 
-.. note::
-
-    Like with everything, if you have *a lot* of services, feel free to create
-    an ``app/config/services`` directory with multiple files.
-
+***note::
+Like with everything, if you have *a lot* of services, feel free to create
+an `app/config/services` directory with multiple files.
+***
 |br|
 
-b) Moving templates to app/
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### b) Moving templates to app/
 
 .. image:: /blog/images/appbundle/move-templates.png
    :align: right
    :width: 300px
 
-Next, let's move the templates into ``app/``. I know many people *hate* this,
+Next, let's move the templates into `app/`. I know many people *hate* this,
 because it puts the templates in a different directory than the controllers.
 That's subjective, but fair - and :ref:`I talk about that later <app-bundle-templates-decoupled>`.
 
@@ -112,13 +100,12 @@ know this syntax. But I give a lot of trainings, and these Symfony-isms give
 beginners a lot of trouble.
 
 Instead, you just render the filename. The only rule you need to know is
-that templates live in ``app/Resources/views``. This reduces complexity,
+that templates live in `app/Resources/views`. This reduces complexity,
 and that's huge.
 
 |br|
 
-5) No Bundles!?
----------------
+## 5) No Bundles!?
 
 .. image:: /blog/images/appbundle/no-bundle.png
    :align: right
@@ -127,106 +114,100 @@ and that's huge.
 You can keep doing this until AppBundle holds *only* PHP classes.
 
 But wait, why do we need a bundle at all then? You don't! A bundle is just
-a directory! And we can rename directories! We could rename this to ``Ryan``
+a directory! And we can rename directories! We could rename this to `Ryan`
 and even delete the bundle file.
 
-.. tip::
-
-    You can start thinking of AppKernel as your one "bundle". It can do
-    anything a bundle can, including complex stuff like registering compiler
-    passes.
+***TIP::
+You can start thinking of AppKernel as your one "bundle". It can do
+anything a bundle can, including complex stuff like registering compiler
+passes.
+***
 
 So why isn't *this* the Symfony best practice instead of AppBundle? A few
 reasons:
 
-* Without a bundle, you lose a few shortcuts, like the ``_controller`` shortcut
-  and the automatic bundle aliasing for entities (e.g. ``AcmeDemoBundle:Post``).
+* Without a bundle, you lose a few shortcuts, like the `_controller` shortcut
+  and the automatic bundle aliasing for entities (e.g. `AcmeDemoBundle:Post`).
   All of these are optional, but it's more work without them.
 
 * It would be a *big* philosophical leap, and change needs to be done carefully.
   Having only *one* bundle was a big enough change.
 
-But philosophically, I *do* hope you'll think of your ``AppBundle`` as just
+But philosophically, I *do* hope you'll think of your `AppBundle` as just
 a directory for PHP classes. And for Symfony 3.0, maybe we'll get there!
 
 |br|
 
 .. _`app-bundle-templates-decoupled`:
 
-6) I hate having my Templates in app/, Controllers in src/
-----------------------------------------------------------
+## 6) I hate having my Templates in app/, Controllers in src/
 
 .. image:: /blog/images/appbundle/all-in-app.png
    :align: right
    :width: 300px
 
 The biggest complaint I've heard about the AppBundle is this: I don't like
-that my controllers would live in ``src/``, but the templates they render
-would live in ``app/``.
+that my controllers would live in `src/`, but the templates they render
+would live in `app/`.
 
 That's subjective, but totally fair (it hasn't bothered me).
 
-To solve this, we could move our ``Ryan`` directory (or ``AppBundle``, before
-my rename) into ``app/``. 
+To solve this, we could move our `Ryan` directory (or `AppBundle`, before
+my rename) into `app/`.
 
 This works with no code changes except for a new autoload entry:
 
-.. code-block:: json
-
-    {
-        "autoload": {
-            "psr-4": { "Ryan\\": "app/src" }
-        }
+```json
+{
+    "autoload": {
+        "psr-4": { "Ryan\\": "app/src" }
     }
+}
+```
 
 I'm not recommending that everyone runs and does this, but logically, everything
-is coupled to ``app/``, so it makes perfect sense. I hope it at least gets
+is coupled to `app/`, so it makes perfect sense. I hope it at least gets
 you thinking!
 
-.. note::
-
-    Still want the templates closer to the controllers? No problem, keep
-    them in ``AppBundle`` :).
+***note::
+Still want the templates closer to the controllers? No problem, keep
+them in `AppBundle` :).
+***
 
 |br|
 
-7) But I want to create a Decoupled Library!
---------------------------------------------
+## 7) But I want to create a Decoupled Library!
 
 .. image:: /blog/images/appbundle/decoupled-library.png
    :align: right
    :width: 150px
 
-Sweet! Just create a directory in ``src/`` and put your decoupled library
+Sweet! Just create a directory in `src/` and put your decoupled library
 right there. It's ready to be re-used!
 
-8) But I want to re-use a Bundle between projects or kernels!
--------------------------------------------------------------
+## 8) But I want to re-use a Bundle between projects or kernels!
 
 .. image:: /blog/images/appbundle/decoupled-bundle.png
    :align: right
    :width: 150px
 
-Nice! Just create the bundle in ``src/`` (or ``vendor/``, etc) and treat
+Nice! Just create the bundle in `src/` (or `vendor/`, etc) and treat
 it like *true*, decoupled bundle.
 
-9) I don't know, I *still* want multiple Bundles
-------------------------------------------------
+## 9) I don't know, I *still* want multiple Bundles
 
 Still feel like you need more bundles? No worries - create as many as you
 want. But don't be afraid to choose *one* bundle that you *really* couple
-to your ``app/`` directory - it might just make your life simpler.
+to your `app/` directory - it might just make your life simpler.
 
-10) What if I have multiple Kernels?
-------------------------------------
+## 10) What if I have multiple Kernels?
 
 Multiple kernels? Sounds like a neat project :). You should have one super-coupled
-bundle per kernel. For example, ``WebKernel`` & ``WebBundle``, ``ApiKernel``
-and ``ApiBundle``. If you need to share things between kernels, put this
+bundle per kernel. For example, `WebKernel` & `WebBundle`, `ApiKernel`
+and `ApiBundle`. If you need to share things between kernels, put this
 into proper, de-coupled bundles that are booted by each kernel.
 
-Do We Agree Now?
-----------------
+## Do We Agree Now?
 
 One main argument against the AppBundle is that you should make your code
 modular. I agree! But having 1 directory or 10 doesn't make a difference.
