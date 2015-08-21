@@ -2,12 +2,12 @@
 
 Ah, the AppBundle: my **favorite** part of the Symfony best practices.
 
->RYAN, What are you an idiot!? That's a terrible idea!
+> RYAN, What are you an idiot!? That's a terrible idea!
 
 Ok, not everyone agrees - it's cool :). But here's what's interesting: if you
 *don't* like the AppBundle, I bet I actually *agree* with your reasons.
 
->What!?
+> What!?
 
 Let's figure this out in 10 Steps.
 
@@ -60,8 +60,8 @@ re-using this stuff somewhere else.
 Since each kernel has only *one* container, it's logical to move service
 config out of the bundle and into `app/`.
 
->But if I move my service configuration out of my bundle it's coupled
->to my app
+> But if I move my service configuration out of my bundle it's coupled
+> to my app
 
 That's right! But it probably already *was* coupled. And if you *do* need
 to re-use something, great! Put it in a *true*, standalone bundle. Here,
