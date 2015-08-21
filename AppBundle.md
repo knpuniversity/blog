@@ -75,6 +75,8 @@ to re-use something, great! Put it in a *true*, standalone bundle. Here,
 I'm talking about moving pieces out of bundles that are *truly* a part of
 your app.
 
+<br />
+
 ***TIP
 Like with everything, if you have *a lot* of services, feel free to create
 an `app/config/services` directory with multiple files.
