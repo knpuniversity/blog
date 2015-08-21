@@ -1,5 +1,4 @@
-KnpYou
-======
+# KnpYou
 
 For the past few weeks, I've been *scouring* the web to learn everything I
 can about REST. I've spent hours watching presentations, reading blog posts,
@@ -16,8 +15,7 @@ brains of smart people. So why can't we put it all together into one complete ex
 of how to do something correctly? We work together on open source libraries we all
 use, but why not on real-life tutorials?
 
-Opening up and Collaboration
-----------------------------
+## Opening up and Collaboration
 
 And even though we're really proud of our tutorials, until now, we've worked on
 them in isolation. In fact, almost everyone on the web operates around this old
@@ -32,22 +30,22 @@ What do I mean? Let's use some friendly bullet points:
 * **Opening up on GitHub** - Until now, the script and code have been
   totally closed. It was a model of "us the writer" and "you the reader".
   That's silly, so we're now in the process of releasing 100% of the script
-  and code from every screencast (you can already peak at `our GitHub`_).
+  and code from every screencast (you can already peak at [our GitHub](https://github.com/knpuniversity)).
   We're also going to open source more code and parts of the KnpUniversity
   site itself and share experiences (e.g. server stuff). In fact, this blog
-  is `sourced from GitHub`_.
+  is [sourced from GitHub](https://github.com/knpuniversity/blog).
 
 * **Everyone is an Author** - Wherever good tutorials live, it *must* be
   possible for anyone to update or even create new, high-quality coding stories.
   We're not there yet, but we *are* working with some really smart people
-  (`Brent Shaffer (OAuth)`_, `Saša Stamenković (Sylius)`_) on new content.
+  ([Brent Shaffer (OAuth)](https://github.com/bshaffer), [Saša Stamenković (Sylius)](https://github.com/umpirsky)) on new content.
   If you've got a topic you know a little bit about, then we'd love to open
   this site up for your tutorial as well (email us: hello@knpuniversity.com).
   We need to be even more open and that's in the works.
 
 * **Coding Activities** - Watching a complete tutorial is better than reading
   a book. But nothing is better than actually coding yourself! We're poking that
-  box by adding activities to our `Twig`_ course, with
+  box by adding activities to our [Twig](https://github.com/knpuniversity/twig) course, with
   PHP activities coming very soon! This is something that we'll offer on every
   tutorial so that we can make learning these techy things as easy as possible.
   We're still figuring out how this should all look and work, so give us
@@ -64,8 +62,7 @@ that we're *really* *silly* excited! It means we get to share more and collabora
 with really smart people. And it's a challenge to us to open up as much of our code,
 scripts and processes as possible.
 
-Thank you!
-----------
+## Thank you!
 
 We started KnpUniversity way back in December 2011 to prove that combining
 Symfony screencasts with corny humor was a rather silly idea. To make sure
@@ -76,9 +73,3 @@ But somehow, you're still here, reading this. And for that, we're embarrassingly
 thankful :).
 
 Cheers!
-
-.. _`Brent Shaffer (OAuth)`: https://github.com/bshaffer
-.. _`Saša Stamenković (Sylius)`: https://github.com/umpirsky
-.. _`our GitHub`: https://github.com/knpuniversity
-.. _`sourced from GitHub`: https://github.com/knpuniversity/blog
-.. _`Twig`: https://github.com/knpuniversity/twig
