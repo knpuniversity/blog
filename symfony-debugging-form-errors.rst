@@ -206,6 +206,27 @@ To find out what variables a field has, just dump them:
 .. code-block:: html+jinja
 
     {{ dump(form.price.vars) }}
+    
+It is also possible to compile a list of all form errors for the current form and display them inside a paragraph tah (or any other formatting you wish to use). This requires some additional looping:
+
+.. code-block:: html+jinja
+
+    {% set messages = [] %}
+    {% for child in form.children %}
+        {% if child.vars.errors|length > 0 %}
+            {% for error in child.vars.errors %}
+                {% set messages = messages|merge([error.message]) %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    {% if messages|length > 0 %}
+        <p>
+            {% for message in messages %}
+                {{ message }}<br />
+            {% endfor %}
+        </p>
+    {% endif %}
+
 
 .. tip::
 
