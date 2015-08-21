@@ -90,7 +90,9 @@ I recommend using the [HAL Browser](https://api-sandbox.foxycart.com/hal-browser
 to see how this really looks for an API.
 ***
 
-***TIP A link for *every* CRUD operation?
+***TIP
+**A link for *every* CRUD operation?**
+
 It also *seems* to be safe that the "main" link to the user resource is
 *probably* being used for CRUD operations. Luke suggested that some APIs
 break each operation into its own link (1 link for the read/GET, 1 for
