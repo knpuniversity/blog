@@ -49,8 +49,8 @@ to know about the API *from* the API. After talking with people (especially
 And worse, it's probably very difficult to achieve.
 
 Remember that HATEOAS (at least how we're using it) emphasizes links and says
-that the ``rel`` of the link describes its importance. Instead of coding
-our clients to the URIs, we code them to recognize the ``rel`` of a link
+that the `rel` of the link describes its importance. Instead of coding
+our clients to the URIs, we code them to recognize the `rel` of a link
 and know how to process it. To quote Larry:
 
     It's not reasonable to expect a client to see a new rel it doesn't understand
@@ -68,7 +68,7 @@ and know how to process it. To quote Larry:
 So the lifecycle of developing an API client might look like this:
 
 A. A human crawls the API by starting on the homepage and observing the links.
-   When the human sees an interesting link, the ``rel`` is used to look up
+   When the human sees an interesting link, the `rel` is used to look up
    the human documentation, which tells him the HTTP methods available, fields,
    and other information (see :ref:`blog-what-the-rest-4-missing`).
 
@@ -109,13 +109,13 @@ a request.
 Like I mentioned in my previous post, there are other formats like [JSON-LD](http://json-ld.org/)
 that seem to try to offer even more information about the link, like
 what fields are in it and how that information should be sent in the
-request (e.g. as simple ``application/json`` or ``application/x-www-form-urlencoded``).
+request (e.g. as simple `application/json` or `application/x-www-form-urlencoded`).
 I think this is really interesting. However, I still think that a human
 needs to be involved. Even if you can programmatically determine that
-an endpoint needs ``firstName`` and ``lastName`` fields, your API client
+an endpoint needs `firstName` and `lastName` fields, your API client
 will need to be programmed to figure out the significance of these fields
 and what data goes into which field. Your client *could* give you warnings
-if something changes in the future (e.g. suddenly ``firstName`` is missing
+if something changes in the future (e.g. suddenly `firstName` is missing
 from the field list), but an API could also return a 400 validation error
 if you made a breaking change like this. In other words, I think this
 is cool, but I'm not sure I really see whether or not it gets us a whole
@@ -135,24 +135,24 @@ that it's missing in these :ref:`2 cases <blog-what-the-rest-only-uri>`.
 
 It turns out that this is maybe ok. What!? Let's revisit the first situation:
 I POST to create a new user resource. The response contains a 201 status
-code with a ``Location`` header to ``/users/5``, but no rel.
+code with a `Location` header to `/users/5`, but no rel.
 
 After talking with [Luke Stokes](https://twitter.com/lukestokes), he pointed out that in order to even know
 *how* to POST to create the user, a human would have needed to look at the
-documentation for the users rel (something like ``https://api.example.com/rels/users``,
+documentation for the users rel (something like `https://api.example.com/rels/users`,
 which we would have discovered by walking the API). As long as that documentation
 clearly states that POST'ing will create a user resource and that the "main rel"
-to that resource is ``https://api.example.com/rels/user``, then we're in
+to that resource is `https://api.example.com/rels/user`, then we're in
 business! The user can then look up that documentation to figure out what
-to do with the URI in the ``Location`` header.
+to do with the URI in the `Location` header.
 
 ### Embedded Resources: Not as Clean
 
 The same could be argued for the second place this problem shows up, embedded
 resources (:ref:`example <blog-what-the-rest-collection-missing-rel>`). In
 other words, you should look at the "https://api.example.com/rels/users" rel
-documentation to see that the embedded ``users`` key contains items whose
-"main rel" is ``https://api.example.com/rels/user``.
+documentation to see that the embedded `users` key contains items whose
+"main rel" is `https://api.example.com/rels/user`.
 
 But this "smells" to me a little bit. I think a link should always give me
 enough information to follow it. In our API, that means a URI and a rel so
@@ -162,8 +162,8 @@ missing from embedded resources, and I think that's unfortunate.
 This also affects how we program our API client. When we see these links,
 we don't know if we recognize how to use them because the rel is missing.
 Instead of hardcoding the "rel" and looking for it, we would need to hardcode
-the fact that the embedded ``users`` resource after following a ``https://api.example.com/rels/users``
-link contains links whose "self" is ``https://api.example.com/rels/user``.
+the fact that the embedded `users` resource after following a `https://api.example.com/rels/users`
+link contains links whose "self" is `https://api.example.com/rels/user`.
 That's a bummer.
 
 ### A Better Way?
@@ -179,16 +179,16 @@ the API client, I think every link should have a "rel" so that we know if
 this is a link that we have already programmed the client to understand.
 
 One suggestion that [Raul Fraile from ServerGrove](http://knpuniversity.com/blog/what-the-rest#comment-1032280776) suggested is to add a
-header on the 201 response when creating a resource (e.g. ``X-Location-Rel: https://api.example.com/rels/user``).
+header on the 201 response when creating a resource (e.g. `X-Location-Rel: https://api.example.com/rels/user`).
 For me, this is kind of cool because if we think of the response as a "link",
-it now contains the URI (``Location`` header) and the rel (``X-Location-Rel``
+it now contains the URI (`Location` header) and the rel (`X-Location-Rel`
 header). The only downside is that it's odd to invent things like this when
 this is clearly a problem shared by many people.
 
 But what about the embedded resources issue? For this, I don't know. Could
 we duplicate the "self" link by adding another link with the true "rel"?
 Should it be more clear that the "users" key will contain resources whose
-"main rel" is ``https://api.example.com/rels/user``? Where would we put this?
+"main rel" is `https://api.example.com/rels/user`? Where would we put this?
 
 On this issue, I'm still a little dissatisfied.
 
@@ -235,7 +235,7 @@ a big deal.
 
 One of the most difficult things to figure out is how custom "actions" should
 work on a resource. The basic operations are covered by the HTTP verbs GET,
-POST, PUT and DELETE. But what if I have an endpoint to ``/users`` that sends
+POST, PUT and DELETE. But what if I have an endpoint to `/users` that sends
 an invitation email to anyone that hasn't confirmed their registration yet?
 How should that look? Once again, [Larry helped here](http://knpuniversity.com/blog/what-the-rest#comment-1039347270) by mentioning a few
 good points:
@@ -254,12 +254,12 @@ on a collection resource. So, check out [his comment](http://knpuniversity.com/b
 
     POST /users/reinvite (better!)
 
-In both cases, I used a new URI instead of POST'ing to ``/users`` with some
+In both cases, I used a new URI instead of POST'ing to `/users` with some
 special request body that indicated that I want to reinvite users instead
 of creating a new user resource. That point is debatable, but this seems cleaner.
 
 Can you spot the problem with the first? It works in Larry's example
-(``PUT /article/1/published`` with a body containing "1"), but in our example,
+(`PUT /article/1/published` with a body containing "1"), but in our example,
 this wouldn't be idempotent. That's an overused word, but I should always
 be able to issue a PUT request multiple times without adverse affects. In
 this example, making this request multiple times will probably email people
