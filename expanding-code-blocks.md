@@ -1,5 +1,4 @@
-Expanding Code Blocks
-=====================
+# Expanding Code Blocks
 
 We've always published the scripts for each screencast publicly in the page
 *and* included code-blocks so you can follow along. But naturally, sometimes
@@ -13,11 +12,9 @@ the *actual* project that was built behind the scenes. So, you're seeing
 the real thing.
 
 Only new code-blocks have this, and you can see an example in the second
-half of REST Episode 2 - like in our `HATEOAS Linking`_ chapter.
+half of REST Episode 2 - like in our [HATEOAS Linking](http://knpuniversity.com/screencast/rest-ep2/hateoas-linking) chapter.
 
 I'm not sure how many people read through the code-blocks now, I'd love to
 hear if this is helpful.
 
 Cheers!
-
-.. _`HATEOAS Linking`: http://knpuniversity.com/screencast/rest-ep2/hateoas-linking
