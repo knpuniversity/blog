@@ -1,4 +1,4 @@
-# Our favorite PhpStorm Live Templates: Share yours
+# Our favorite PhpStorm Live Templates + Share yours
 
 ***TIP
 **tl;dr** We've shared our PhpStorm settings (starting with live templates) on
