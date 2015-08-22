@@ -105,7 +105,9 @@ in an older API somehow give you a pointer to the documentation. And in both
 cases, a human is needed to read that and figure out exactly *how* to make
 a request.
 
-***TIP More information-rich formats like JSON-LD
+***TIP
+**More information-rich formats like JSON-LD**
+
 Like I mentioned in my previous post, there are other formats like [JSON-LD](http://json-ld.org/)
 that seem to try to offer even more information about the link, like
 what fields are in it and how that information should be sent in the
