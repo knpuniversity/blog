@@ -194,7 +194,9 @@ Should it be more clear that the "users" key will contain resources whose
 
 On this issue, I'm still a little dissatisfied.
 
-***TIP The "main rel" of a resource
+***TIP
+**The "main rel" of a resource**
+
 I've said "main rel" a few times to mean the link to a resource that represents
 its CRUD operations. I'm not sure this is totally correct, but I invented
 this term because in practice, there is always a "main" link to a resource,
