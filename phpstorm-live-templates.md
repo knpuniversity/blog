@@ -57,7 +57,7 @@ The starting list includes:
 * `service` (yaml) Adds the basic YAML service definition structure
 * `tags` (yaml) Adds a `tags` line to a service
 
-I'm not the first person to do this, but I *am() hoping that you'll suggest some more
+I'm not the first person to do this, but I'm hoping that you'll suggest some more
 live templates, make these better, and even start adding other things - like code
 stylings, file templates and colors.
 
