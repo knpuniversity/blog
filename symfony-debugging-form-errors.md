@@ -201,26 +201,25 @@ To find out what variables a field has, just dump them:
 {{ dump(form.price.vars) }}
 ```
 
-It is also possible to compile a list of all form errors for the current form and display them inside a paragraph tah (or any other formatting you wish to use). This requires some additional looping:
+Now that you know about the magic `form.vars`, you could also use it to render
+all validation errors at the top of your form. This will only work for simple forms
+(i.e. forms without nested fields), which most forms are:
 
-.. code-block:: html+jinja
-
-    {% set messages = [] %}
-    {% for child in form.children %}
-        {% if child.vars.errors|length > 0 %}
-            {% for error in child.vars.errors %}
-                {% set messages = messages|merge([error.message]) %}
-            {% endfor %}
-        {% endif %}
+```html+jinja
+{% set messages = [] %}
+{% for child in form.children %}
+    {% for error in child.vars.errors %}
+        {% set messages = messages|merge([error.message]) %}
     {% endfor %}
-    {% if messages|length > 0 %}
-        <p>
-            {% for message in messages %}
-                {{ message }}<br />
-            {% endfor %}
-        </p>
-    {% endif %}
-
+{% endfor %}
+{% if messages|length %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+```
 
 ***TIP
 When you are form theming, these variables become accessible in your
