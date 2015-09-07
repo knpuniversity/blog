@@ -161,7 +161,7 @@ blogs:
         preview: |
             Introducing Guard: Authentication any way you want, customize the heck
             out of every part, and come out smiling. It's Symfony's security system
-            unleashed.
+            unleashed!
         category: symfony
 
     "phpstorm-live-templates":
