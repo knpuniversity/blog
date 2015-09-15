@@ -1,6 +1,6 @@
 # Symfony's Under-Used property_path option
 
-Though not required, you typically, we bind Symfony form objects to a class (often
+Though not required, we typically, bind Symfony form objects to a class (often
 an entity). This means that the field names must correspond with the property names
 on the class (well actually, the getter/setter methods, via the
 [PropertyAccess](http://symfony.com/doc/current/components/property_access/introduction.html)
@@ -58,12 +58,13 @@ class Product
 
 ```
 
-## The Magic: property_path
+## The Magic: property_path Option
 
 But the mapping *doesn't* actually use the field's name (e.g. `price`) to find the
-getters/setters. In the background, each field has a [property_path]()
+getters/setters. In the background, each field has a [property_path](http://symfony.com/doc/current/reference/forms/types/form.html#property-path)
 option, which defaults to the field name. This means that the field names could
-change to something else entirely:
+be something entirely different than the property name, as long as the `property_path`
+is set:
 
 ```
 // ProductFormType.php
@@ -98,7 +99,7 @@ class Product
     {
         return $this->category;
     }
-    public function setCategory($category)
+    public function setCategory(Category $category)
     {
         $this->category = $category;
     }
@@ -130,5 +131,7 @@ are called in the background when the form is loaded and saved.
 
 Now, note that this won't *change* the Category from one to another: you're actually
 modifying the title of the same object. You also need to make sure that the Product
-has a Category, else the PropertyAccess component can't call down the path. But, depending
+has a Category, or else the PropertyAccess component can't call down the path. But, depending
 on your situation, this might be the perfect (and simplest) solution.
+
+Cheers!
