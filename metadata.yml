@@ -173,3 +173,11 @@ blogs:
             over and over again. We've published a few of our favorites, and are
             hoping you'll share yours.
         category: symfony
+
+    "property_path":
+        title: "Symfony's Under-Used property_path option"
+        published: 2015-09-15
+        preview: |
+            The Symfony Form property_path option is one of the most under-appreciated,
+            and powerful parts of the form component.
+        category: symfony
