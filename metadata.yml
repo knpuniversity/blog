@@ -181,3 +181,11 @@ blogs:
             The Symfony Form property_path option is one of the most under-appreciated,
             and powerful parts of the form component.
         category: symfony
+
+    "fun-with-symfonys-console":
+        title: "Fun with Symfony's Console Component"
+        published: 2015-09-29
+        preview: |
+            Symfony's Console component can be used in a single, standalone file
+            to add colors, build a table or add a progress bar with a beer icon.
+        category: symfony
