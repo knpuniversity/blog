@@ -46,7 +46,7 @@ Ok, let's run this from the command line!
 php print_pretty.php
 ```
 
-<img class="pull-right" style="width: 300px;" src="/images/console/print_color.gif" alt="Print with Color" />
+<img style="width: 100%;" src="/images/console/print_color.gif" alt="Print with Color" />
 
 That's right, it's blinking. You can also wrap up your custom colorings and options
 (like our blinking cyan section) into a new style (e.g. `<annoying_blinking>`).
@@ -92,7 +92,7 @@ Moment of truth:
 php print_pretty.php
 ```
 
-<img class="pull-right" style="width: 300px;" src="/images/console/full.gif" alt="With table and progress bar" />
+Check out the animated gif below!
 
 ***TIP
 Yes, that is a beer icon :). You can find more icons [here](http://www.fileformat.info/info/unicode/block/miscellaneous_symbols_and_pictographs/list.htm).
@@ -104,3 +104,5 @@ That's just another trick hidden inside Symfony. If you want to learn more, chec
 out our entire [Symfony track](http://knpuniversity.com/tracks/symfony)!
 
 Have fun!
+
+<img style="width: 100%;" src="/images/console/full.gif" alt="With table and progress bar" />
