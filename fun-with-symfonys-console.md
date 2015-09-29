@@ -46,7 +46,7 @@ Ok, let's run this from the command line!
 php print_pretty.php
 ```
 
-<img class="pull-right" style="width: 300px;" src="/images/console/print-color.gif" alt="Print with Color" />
+<img class="pull-right" style="width: 300px;" src="/images/console/print_color.gif" alt="Print with Color" />
 
 That's right, it's blinking. You can also wrap up your custom colorings and options
 (like our blinking cyan section) into a new style (e.g. `<annoying_blinking>`).
