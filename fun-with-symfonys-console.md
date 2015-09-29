@@ -1,9 +1,9 @@
 # Fun with Symfony's Console Component
 
 One of the best parts of using Symfony's Console component is all the output
-control you have to the CLI: colors, tables, progress bars etc. What you
-may *not* know is that you can get to all this goodness in a single, flat
-PHP file (i.e. without needing to create a Command).
+control you have to the CLI: colors, tables, progress bars etc. Usually, you create
+a command to do this. But what you may *not* know is that you can get to all
+this goodness in a single, flat PHP file
 
 ## Using ConsoleOutput in a Flat File
 
@@ -99,5 +99,8 @@ Yes, that is a beer icon :). You can find more icons [here](http://www.fileforma
 Just use the UTF-8 value - `e.g. 0xF0 0x9F 0x8D 0xBA` or `f09f8dba` and put it into
 the `\xF0\x9F\x8D\xBA` format.
 ***
+
+That's just another trick hidden inside Symfony. If you want to learn more, check
+out our entire [Symfony track](http://knpuniversity.com/tracks/symfony)!
 
 Have fun!
