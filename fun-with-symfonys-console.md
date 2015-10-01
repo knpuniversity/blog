@@ -8,8 +8,7 @@ this goodness in a single, flat PHP file
 ## Using ConsoleOutput in a Flat File
 
 Suppose you've started a new project and want to write a CLI script with some added
-flare: colors, tables and a progress part. First, just grab the `symfony/console`
-component:
+flare. First, just grab the `symfony/console` component:
 
 ```bash
 composer require symfony/console
@@ -56,7 +55,8 @@ for details.
 
 ## How about Table and a Progress Bar?
 
-With the `ConsoleOutput` object, using any of the other
+
+I'm so glad you asked! With the `ConsoleOutput` object, using any of the other
 [Console Helpers](http://symfony.com/doc/current/components/console/helpers/index.html)
 is easy! Let's build a table with a progress bar that shows how things are going:
 
