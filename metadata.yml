@@ -189,3 +189,10 @@ blogs:
             Symfony's Console component can be used in a single, standalone file
             to add colors, build a table or add a progress bar with a beer icon.
         category: symfony
+    # "circle-ci-behat-screenshots"
+    #     title: Behat on CircleCI with Failure Screenshots
+    #     published: 2015-10-27
+    #     preview: |
+    #         Not only is running Behat on CircleCI easy, with just a few lines
+    #         of code, you can get screenshots when a test fails.
+
