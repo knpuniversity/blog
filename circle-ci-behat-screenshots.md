@@ -53,7 +53,7 @@ test:
     # and maybe some unit tests
 ```
 
-Actually, CircleCI already takes care of a lot of details that we [previously](todo link)
+Actually, CircleCI already takes care of a lot of details that we [previously](https://knpuniversity.com/screencast/question-answer-day/travis-ci)
 needed to worry about, like setting up xvfb and installing a browser (chrome).
 
 The `behat.yml` file doesn't need anything special, except that the web server port
@@ -126,10 +126,10 @@ class FeatureContext extends RawMinkContext
 }
 ```
 
-This uses the [@AfterStep hook](TODO link)
+This uses the [@AfterStep hook](http://knpuniversity.com/screencast/behat/behat-hooks-background)
 to save a timestamped screenshot into a `behat_screenshots/` directory on failure.
 The `saveScreenshot()` method comes directly from the `RawMinkContext` class that's
-available from [MinkExtension](TODO LINK).
+available from [MinkExtension](http://knpuniversity.com/screencast/behat/behat-loves-mink).
 
 ***TIP
 With a little more work, you could probably use the `AfterStepScope` object to save
