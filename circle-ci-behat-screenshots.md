@@ -165,7 +165,7 @@ points to a directory where you can place artifacts. Anything you put here is au
 made available in the artifacts section of your build after it finishes.
 
 To become a Behat & Mink expert, check out our full
-[BDD, Behat, Mink and other Wonderful Things](https://knpuniversity.com/screenshots/behat)
+[BDD, Behat, Mink and other Wonderful Things](https://knpuniversity.com/screencast/behat)
 tutorial.
 
 Have fun!
