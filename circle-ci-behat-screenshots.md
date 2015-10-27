@@ -5,7 +5,7 @@
 on failures and see a list of them on each build. This is madness!
 ***
 
-For KnpUniversity, we use both [Behat](https://knpuniversity.com/screencasts/behat)
+For KnpUniversity, we use both [Behat](https://knpuniversity.com/screencast/behat)
 and CircleCI for continuous integration. The combination works *great*, except for
 debugging. If you've done functional testing in a CI environment before, then
 you're probably familiar with (yikes!) *phantom failures*: those tests that *only*
