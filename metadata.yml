@@ -195,5 +195,4 @@ blogs:
         preview: |
             Not only is running Behat on CircleCI easy, with just a few lines
             of code, you can get screenshots when a test fails.
-
-
+        category: tech
