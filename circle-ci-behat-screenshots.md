@@ -1,7 +1,9 @@
 # Behat on CircleCI with Failure Screenshots
 
-    **tl;dr** By combining Behat and CircleCI, you can automatically take screenshots
-    on failures and see a list of them on each build. This is madness!
+***TIP
+**tl;dr** By combining Behat and CircleCI, you can automatically take screenshots
+on failures and see a list of them on each build. This is madness!
+***
 
 For KnpUniversity, we use both [Behat](https://knpuniversity.com/screencasts/behat)
 and CircleCI for continuous integration. The combination works *great*, except for
