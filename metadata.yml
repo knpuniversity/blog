@@ -196,3 +196,11 @@ blogs:
             Not only is running Behat on CircleCI easy, with just a few lines
             of code, you can get screenshots when a test fails.
         category: tech
+    "hello-drupal-8":
+        title: '7 Free Screencasts to Welcome Drupal 8'
+        published: 2015-11-17
+        preview: |
+            Drupal 8 is here! Now get to work with video tutorials and
+            coding challenges for Drupal, OO coding and more. All free until
+            Dec 25th.
+        category: tech
