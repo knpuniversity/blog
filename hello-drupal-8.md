@@ -1,4 +1,4 @@
-# 7 Free Screencasts to Welcome Drupal 8
+# 7 Free Screencasts for the Drupal 8 Party
 
 ***TIP
 **tl;dr** To celebrate Drupal 8, we've created a [Drupal Track](http://knpuniversity.com/tracks/drupal)
@@ -8,8 +8,9 @@ and spread the love.
 
 Drupal 8 will finally be released on [November 19th](https://www.drupal.org/node/2605142).
 From the Symfony perspective, this has been an amazing thing to watch full of brilliant
-people that have come into my life as a result. But that deserves its own post. But
-anyways, I'm *exceedingly* excited about Drupal 8, and I want you to be too.
+people that have come into my life as a result. But that deserves its own post. 
+The point is this: I'm *exceedingly* excited about Drupal 8, and I want you to be
+too.
 
 
 ## The New Drupal 8 Tutorial Track
