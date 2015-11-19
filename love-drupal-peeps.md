@@ -24,7 +24,7 @@ I've been to every DrupalCon since and [DrupalCamp Mexico](http://drupalcamp.mx/
 And each talk is the same: people climbing over each other to take photos of the
 slides, packed rooms, and insightful questions. And of course, there's also the
 DrupalCon [Prenote](https://www.youtube.com/watch?v=7zvCOKzY3kA)... one of the most
-ridiculous, but fin things I've ever witnessed.
+ridiculous, but fun things I've ever witnessed.
 
 When Drupal chose to integrate Symfony, that was of course great. But the people,
 they're better than I could have hoped for.
