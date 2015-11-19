@@ -35,8 +35,8 @@ A few are so awesome, I have to call them out. First, our best friend
 [Jesus Olivas](https://www.drupal.org/u/jmolivas) and of course, the famous mustachioed
 (and wonderfully generous) [jam](https://www.drupal.org/u/horncologne).
 
-So, happy birthday Drupal 8! Now let's all building something amazing, together.
+So, happy birthday Drupal 8! Now let's all build something amazing, together.
 
 ***SEEALSO
-Now go learn how Drupal 8 work! [Drupal 8: Under the Hood](https://knpuniversity.com/screencast/drupal8-under-the-hood).
+Now go learn how Drupal 8 works! [Drupal 8: Under the Hood](https://knpuniversity.com/screencast/drupal8-under-the-hood).
 ***
