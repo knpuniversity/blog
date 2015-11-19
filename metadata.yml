@@ -204,3 +204,10 @@ blogs:
             coding challenges for Drupal, OO coding and more. All free until
             Dec 25th.
         category: tech
+    "love-drupal-peeps":
+        title: 'Why I Love Drupal People'
+        published: 2015-11-19
+        preview: |
+            Yea yea yea, Drupal 8 is out. But more than that, Drupal people are
+            *awesome*. So let me tell you about how I met them.
+        category: news
