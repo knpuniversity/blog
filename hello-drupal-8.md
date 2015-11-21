@@ -3,7 +3,7 @@
 ***TIP
 **tl;dr** To celebrate Drupal 8, we've created a [Drupal Track](http://knpuniversity.com/tracks/drupal)
 and made it free until Dec 25. Watch screencasts, practice with the coding challenges
-and spread the love.
+and spread the love!
 ***
 
 Drupal 8 will finally be released on [November 19th](https://www.drupal.org/node/2605142).
