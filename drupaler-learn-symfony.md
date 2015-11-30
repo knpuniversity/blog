@@ -1,5 +1,9 @@
 # Want to be a Drupal 8 Expert? Learn Symfony
 
+***SEEALSO
+Drupal 8 is out! Check out [Drupal 8 Under the Hood](https://knpuniversity.com/screencast/drupal8-under-the-hood)
+***
+
 ***TIP
 Image courtesy of [Ekino](http://www.ekino.com/drupal-and-symfony2-dont-wait-for-drupal8/), who has a bundle for using Drupal in Symfony.
 ***
