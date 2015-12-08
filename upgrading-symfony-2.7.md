@@ -1,5 +1,9 @@
 # How we Upgraded to Symfony 2.7 (+ deprecation notices)
 
+***SEEALSO
+When you're ready, also check out [How to Upgrade to Symfony 2.8, then 3.0!](http://knpuniversity.com/screencast/symfony3-upgrade)
+***
+
 Symfony 2.7 - the next LTS release - came out on Saturday, with bells and
 whistles like [100+ new features/enhancements](http://symfony.com/blog/symfony-2-7-0-released) and a surprise new bridge
 component to [PSR-7](http://symfony.com/blog/psr-7-support-in-symfony-is-here).
