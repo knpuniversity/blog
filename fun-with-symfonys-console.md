@@ -30,7 +30,7 @@ $output->setFormatter(new OutputFormatter(true));
 
 $output->writeln(
     'The <comment>console</comment> component is'
-    .' <bg=magenta;fg=cyan;option=blink>sweet!</bg=magenta;fg=cyan;option=blink>'
+    .' <bg=magenta;fg=cyan;option=blink>sweet!</>'
 );
 ```
 
@@ -63,11 +63,14 @@ is easy! Let's build a table with a progress bar that shows how things are going
 ```php
 // print_pretty.php
 
+use Symfony\Component\Console\Helper\ProgressBar;
+use Symfony\Component\Console\Helper\Table;
+
 // ... all the other code from before
 
 $rows = 10;
 $progressBar = new ProgressBar($output, $rows);
-$progressBar->setBarCharacter('<fg=magenta>=</fg=magenta>');
+$progressBar->setBarCharacter('<fg=magenta>=</>');
 $progressBar->setProgressCharacter("\xF0\x9F\x8D\xBA");
 
 $table = new Table($output);
