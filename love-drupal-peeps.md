@@ -2,7 +2,7 @@
 
 *Image credits to [http://forumone.com/blog/behind-the-curtain-the-making-of-the-drupalcon-prenote/](http://forumone.com/blog/behind-the-curtain-the-making-of-the-drupalcon-prenote/)*
 
-First, HAPPY BIRTHDAY DRUPAL 8. OMG! Go play with it, get started down our
+First, HAPPY BIRTHDAY DRUPAL 8. OMG!!! Go play with it, get started down our
 [Drupal 8 Tutorial Track](http://knpuniversity.com/tracks/drupal), then come back.
 This means you too Symfony people - Drupal 8 is actually pretty darn cool.
 
