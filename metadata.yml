@@ -211,3 +211,11 @@ blogs:
             Yea yea yea, Drupal 8 is out. But more than that, Drupal people are
             *awesome*. So let me tell you about how I met them...
         category: news
+    "KnpUOAuth2ClientBundle":
+        title: 'Introducing KnpUOAuth2ClientBundle: Making Social Easy'
+        published: 2016-02-23
+        preview: |
+            Say hello to KnpUOAuth2ClientBundle: Social connect, social authentication,
+            social registration - do it all, easily and without frustration.
+        category: tech
+
