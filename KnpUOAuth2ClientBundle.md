@@ -95,11 +95,11 @@ info.
 
 Ready to try it? Let's do this!
 
-A) Docs: [https://github.com/knpuniversity/oauth2-client-bundle/blob/master/README.md](Official Documentation)
+A) Official Documentation: https://github.com/knpuniversity/oauth2-client-bundle/blob/master/README.md
 
-B) Example: [https://github.com/knpuniversity/guard-tutorial/tree/finished](Example Project)
+B) Example Project: https://github.com/knpuniversity/guard-tutorial/tree/finished
 
-C) Tutorial: [https://knpuniversity.com/screencast/guard](And soon, A full tutorial!)
+C) Tutorial (coming soon): https://knpuniversity.com/screencast/guard
 
 Like everything, this is a community project meant to make our collective lives
 easier (and honestly, more fun). If you have some ideas or problems - please
