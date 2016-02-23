@@ -27,7 +27,7 @@ from the PHP League. In other words: take the best from the PHP world and make i
 
 In a nut-shell, here's how it works:
 
-1. You configure a provider. This gives you a "client" service:
+1) You configure a provider. This gives you a "client" service:
 
 ```yml
 # app/config/config.yml
@@ -42,7 +42,7 @@ knpu_oauth2_client:
             redirect_route: connect_facebook_check
 ```
 
-2. Use the new service to redirect to Facebook and do some cool stuff when the
+2) Use the new service to redirect to Facebook and do some cool stuff when the
    user comes back:
 
 ```php
