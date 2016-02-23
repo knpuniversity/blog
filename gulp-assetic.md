@@ -1,8 +1,8 @@
 # Why I Switched from Assetic to Gulp
 
-    **tl;dr** Assetic was created when there were no real frontend tools for processing
-    and combining CSS/JS. But now there are, and unless you feel really uncomfortable
-    with Node.js, I recommend using [Gulp](http://knpuniversity.com/screencast/gulp) instead of Assetic.
+**tl;dr** Assetic was created when there were no real frontend tools for processing
+and combining CSS/JS. But now there are, and unless you feel really uncomfortable
+with Node.js, I recommend using [Gulp](http://knpuniversity.com/screencast/gulp) instead of Assetic.
 
 [Assetic](https://github.com/kriswallsmith/assetic) (PHP library) does one simple job: processes and combines assets.
 If you've used the Symfony framework, you've probably used it: it's still

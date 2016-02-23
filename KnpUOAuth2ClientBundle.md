@@ -1,8 +1,8 @@
 # Introducing KnpUOAuth2ClientBundle: Making Social Easy
 
-    **tl;dr** [https://github.com/knpuniversity/oauth2-client-bundle](KnpUOAuth2ClientBundle)
-    has hit 1.0 - use it for all sorts of "social connect" functionality in Symfony
-    without a headache.
+**tl;dr** [https://github.com/knpuniversity/oauth2-client-bundle](KnpUOAuth2ClientBundle)
+has hit 1.0 - use it for all sorts of "social connect" functionality in Symfony
+without a headache.
 
 Logging in with Facebook, connecting with your Twitter account, or registering via
 GitHub - integrating with "Social" networks is now a standard feature of many sites.
