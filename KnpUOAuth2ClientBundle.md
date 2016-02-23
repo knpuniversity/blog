@@ -1,6 +1,6 @@
 # Introducing KnpUOAuth2ClientBundle: Making Social Easy
 
-**tl;dr** [https://github.com/knpuniversity/oauth2-client-bundle](KnpUOAuth2ClientBundle)
+**tl;dr** [KnpUOAuth2ClientBundle](https://github.com/knpuniversity/oauth2-client-bundle)
 has hit 1.0 - use it for all sorts of "social connect" functionality in Symfony
 without a headache.
 
@@ -11,7 +11,7 @@ HWIOAuthBundle - is good and has a *lot* of built-in OAuth providers. But, it's 
 confusing to use and frustrating to extend. I know, we use it here on KnpUniversity.
 I wanted a better option.
 
-Today, I'm *thrilled* to announce the 1.0 release of [https://github.com/knpuniversity/oauth2-client-bundle](KnpUOAuth2ClientBundle),
+Today, I'm *thrilled* to announce the 1.0 release of [KnpUOAuth2ClientBundle](https://github.com/knpuniversity/oauth2-client-bundle),
 which is built on the backs of the wonderful [OAuth 2.0 Client Library](https://github.com/thephpleague/oauth2-client)
 from the PHP League. In other words: take the best from the PHP world and make it
 *sing* inside of Symfony.
@@ -95,11 +95,11 @@ info.
 
 Ready to try it? Let's do this!
 
-A) Official Documentation: https://github.com/knpuniversity/oauth2-client-bundle/blob/master/README.md
+A) [Official Documentation](https://github.com/knpuniversity/oauth2-client-bundle/blob/master/README.md)
 
-B) Example Project: https://github.com/knpuniversity/guard-tutorial/tree/finished
+B) [Example Project](https://github.com/knpuniversity/guard-tutorial/tree/finished)
 
-C) Tutorial (coming soon): https://knpuniversity.com/screencast/guard
+C) [Tutorial (coming soon)](https://knpuniversity.com/screencast/guard)
 
 Like everything, this is a community project meant to make our collective lives
 easier (and honestly, more fun). If you have some ideas or problems - please
