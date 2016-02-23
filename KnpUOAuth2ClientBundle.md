@@ -96,8 +96,10 @@ info.
 Ready to try it? Let's do this!
 
 A) [https://github.com/knpuniversity/oauth2-client-bundle/blob/master/README.md](Official Documentation)
-B) [https://github.com/knpuniversity/guard-tutorial/tree/finished](Example Project!)
-C) [knpuniversity.com/screencast/guard](And soon, A full tutorial!)
+
+B) [https://github.com/knpuniversity/guard-tutorial/tree/finished](Example Project)
+
+C) [https://knpuniversity.com/screencast/guard](And soon, A full tutorial!)
 
 Like everything, this is a community project meant to make our collective lives
 easier (and honestly, more fun). If you have some ideas or problems - please
