@@ -218,4 +218,11 @@ blogs:
             Say hello to KnpUOAuth2ClientBundle: Social connect, social authentication,
             social registration - do it all, easily and without frustration.
         category: tech
-
+    "symfony-3.3-changes":
+        title: 'Changes to Symfony Tutorials for Symfony 3.3'
+        published: 2017-08-02
+        preview: |
+            Symfony 3.3 comes with some great new config in services.yml. But,
+            if you're coding along with our tutorials, this code may cause some
+            issues! Find out how to keep coding along happily.
+        category: tech
