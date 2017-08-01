@@ -220,7 +220,7 @@ blogs:
         category: tech
     "symfony-3.3-changes":
         title: 'Changes to Symfony Tutorials for Symfony 3.3'
-        published: 2017-08-02
+        published: 2017-08-01
         preview: |
             Symfony 3.3 comes with some great new config in services.yml. But,
             if you're coding along with our tutorials, this code may cause some
