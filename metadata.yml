@@ -156,7 +156,7 @@ blogs:
         category: symfony
 
     "guard-authentication":
-        title: Introducing Guard: Symfony Security with a Smile
+        title: 'Introducing Guard: Symfony Security with a Smile'
         published: 2015-07-13
         preview: |
             Introducing Guard: Authentication any way you want, customize the heck
