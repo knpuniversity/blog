@@ -227,8 +227,8 @@ blogs:
             issues! Find out how to keep coding along happily.
         category: tech
     "october-2017-tut-updates":
-        title: 'New in October'
-        #published: 2017-08-01
+        title: 'New for October 2017'
+        published: 2017-10-03
         preview: |
             New releases, upcoming tutorials and upcoming Symfony events we want you to
             know about in October!
