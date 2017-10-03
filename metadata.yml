@@ -7,7 +7,7 @@ blogs:
             is scattered, opinions vary, and best-practices are buried. Nothing tells
             the whole, realistic story in a real world application. We work together
             on open source libraries, but not on tutorials.
-            
+
             So now, we're excited to enter our next phase, where it's all
             about collaboration and working together!
         category: news
@@ -88,7 +88,7 @@ blogs:
             Drupal 8 changes a lot under the hood and those will make you
             a happier and more productive developer. But don't wait for its
             release to kick butt in the new world. That's right, just learn
-            Symfony. 
+            Symfony.
         category: news
 
     "composer-require":
@@ -226,3 +226,10 @@ blogs:
             if you're coding along with our tutorials, this code may cause some
             issues! Find out how to keep coding along happily.
         category: tech
+    "october-2017-tut-updates":
+        title: 'New in October'
+        #published: 2017-08-01
+        preview: |
+            New releases, upcoming tutorials and upcoming Symfony events we want you to
+            know about in October!
+        category: tutorials
