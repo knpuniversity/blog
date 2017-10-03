@@ -1,6 +1,6 @@
 ## New Releases
 
-<img style="width: 100%;" src="/images/ansistrano.png" alt="Ansistrano Tutorial Image" />
+<img style="height: 300px;" src="/images/ansistrano.png" alt="Ansistrano Tutorial Image" />
 <h2>Learn Animated Deployment with Ansistrano</h2>
 
 
