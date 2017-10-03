@@ -6,8 +6,8 @@
 
 
 <h3 style="font-weight: bold;">Upcoming Tutorials</h3>
-[PHP Unit: Testing with a Bite](https://knpuniversity.com/screencast/phpunit)
-[Webpack Encore: A party for your assets](https://knpuniversity.com/screencast/webpack-encore)
+[PHP Unit: Testing with a Bite](https://knpuniversity.com/screencast/phpunit)<br>
+[Webpack Encore: A party for your assets](https://knpuniversity.com/screencast/webpack-encore)<br>
 [Data Fixtures: Love your Dummy Data](https://knpuniversity.com/screencast/fixtures)
 
 <h3 style="font-weight: bold;">Upcoming Events</h3>
