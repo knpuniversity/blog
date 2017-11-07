@@ -233,3 +233,9 @@ blogs:
             New releases, upcoming tutorials and upcoming Symfony events we want you to
             know about in October!
         category: tutorials
+    "november-2017-tut-updates":
+        title: 'New for November 2017'
+        published: 2017-11-07
+        preview: |
+            New Release: PHPUnit with a Bite & we hope to see you in Cluj!
+        category: tutorials
