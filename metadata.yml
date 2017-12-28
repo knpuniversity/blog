@@ -239,3 +239,9 @@ blogs:
         preview: |
             New Release: PHPUnit with a Bite & we hope to see you in Cluj!
         category: tutorials
+    "2017-year-in-review":
+        title: '2017 Year in Review'
+        published: 2017-12-28
+        preview: |
+            2017 was the *biggest* year yet for KnpUniversity!
+        category: tutorials
