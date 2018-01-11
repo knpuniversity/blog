@@ -245,3 +245,9 @@ blogs:
         preview: |
             2017 was the *biggest* year yet for KnpUniversity!
         category: tutorials
+    "january-2018-tut-updates":
+        title: 'New for January 2018'
+        published: 2018-01-11
+        preview: |
+            2018 = Symfony 4 Development
+        category: tutorials
