@@ -1,8 +1,8 @@
 <hr>
 
-<p>Welcome to 2018! Now that you've got your mantra for the year down, it's time to get to business. Symfony 4 business!</p>
-
-<p>If you haven't yet, follow along with us as we [upgrade our beloved Aquanotes app](https://knpuniversity.com/screencast/symfony4-upgrade) from Symfony 3.3 to 4.0. And then go deep into [Symfony 4 & Flex](https://knpuniversity.com/screencast/symfony) (and outerspace) with us! </p>
+Welcome to 2018! Now that you've got your mantra for the year down, it's time to get to business. Symfony 4 business!
+<br>
+If you haven't yet, follow along with us as we [upgrade our beloved Aquanotes app](https://knpuniversity.com/screencast/symfony4-upgrade) from Symfony 3.3 to 4.0. And then go deep into [Symfony 4 & Flex](https://knpuniversity.com/screencast/symfony) (and outerspace) with us!
 
 <h3 style="font-weight: bold;">New Releases</h3>
 
