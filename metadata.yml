@@ -251,3 +251,10 @@ blogs:
         preview: |
             2018 = Symfony 4 Development
         category: tutorials
+    "subtitles"
+        title: 'Adding English Subtitles & Course Thumbnails'
+        published: 2018-01-30
+        preview: |
+            Making our content friendly & accessible is *super* important. That's
+            why we're thrilled to announce English subtitles & course thumbnails!
+        category: news
