@@ -1,4 +1,4 @@
-One of our goals at KnpUniversity is make technology fun and accessible
+One of our goals is make technology fun and accessible
 to as *many* people as possible, including tech beginners, students and non-native
 English speakers. Because... great tech should be available to *everyone*!
 
