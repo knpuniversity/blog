@@ -1,4 +1,4 @@
-# Behat on CircleCI with Failure Screenshots
+# Behat on CircleCI 2.0 with Failure Screenshots
 
 ***TIP
 **tl;dr** By combining Behat and CircleCI, you can automatically take screenshots
@@ -6,7 +6,8 @@ on failures and see a list of them on each build. This is madness!
 ***
 
 For KnpUniversity, we use both [Behat](https://knpuniversity.com/screencast/behat)
-and CircleCI for continuous integration. The combination works *great*, except for
+and [CircleCI](https://knpuniversity.com/screencast/phpunit/continuous-integration)
+for continuous integration. The combination works *great*, except for
 debugging. If you've done functional testing in a CI environment before, then
 you're probably familiar with (yikes!) *phantom failures*: those tests that *only*
 seem to fail on the CI server, making them nearly impossible to debug.
@@ -18,41 +19,40 @@ CI server, you'll see a big error screenshot that tells you so. Sweet!
 
 ## CircleCI Setup
 
-To run our `@javascript` Behat scenarios, we use Selenium2. Our `circle.yml` setup
+To run our `@javascript` Behat scenarios, we use Selenium2. Our CircleCI 2.0 `config.yml` setup
 (without the screenshot magic) looks like this:
 
 ```yml
-# circle.yml
-machine:
-  php:
-    version: 5.5.21
+# .circleci/config.yml
+version: 2
+jobs:
+  build:
+    docker:
+      - image: php:7
+      - image: mysql:5
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      - image: selenium/standalone-chrome:3
+    working_directory: ~/your-repository-name
+    steps:
+      - checkout
 
-dependencies:
-  cache_directories:
-    - vendor
+      # Update Composer and install dependencies
+      - run: composer self-update
+      - run: composer install --prefer-dist
 
-  pre:
-    - sudo composer self-update
-    - composer install --prefer-dist
+      # Setup database
+	  - run: php bin/console doctrine:database:create --env=test
+	  - run: php bin/console doctrine:schema:create --env=test
 
-    # get selenium rocking!
-    - wget http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar
-    - 'java -jar selenium-server-standalone-2.47.1.jar > /dev/null 2>&1':
+      - run:
+          name: Run web server
+          command: php bin/console server:run --env=test -vvv localhost:8080 > server.log 2>&1:
           background: true
 
-    # start the web server
-    - 'php app/console server:run --env=test -vvv localhost:8080 > server.log 2>&1':
-          background: true
-
-database:
-  override:
-    - app/console do:da:cr -e=test
-    - app/console do:sc:cr -e=test
-
-test:
-  override:
-    - php vendor/bin/behat
-    # and maybe some unit tests
+      # Run tests
+	  - run: php vendor/bin/behat
+      # and maybe some unit tests
 ```
 
 Actually, CircleCI already takes care of a lot of details that we [previously](https://knpuniversity.com/screencast/question-answer-day/travis-ci)
