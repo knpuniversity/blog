@@ -5,6 +5,11 @@
 on failures and see a list of them on each build. This is madness!
 ***
 
+***TIP
+After August 31, 2018, CircleCI 1.0 will no longer be available This blog post was updated
+to support the new CircleCI 2.0.
+***
+
 For KnpUniversity, we use both [Behat](https://knpuniversity.com/screencast/behat)
 and [CircleCI](https://knpuniversity.com/screencast/phpunit/continuous-integration)
 for continuous integration. The combination works *great*, except for
