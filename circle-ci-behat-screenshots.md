@@ -42,8 +42,8 @@ jobs:
       - run: composer install --prefer-dist
 
       # Setup database
-	  - run: php bin/console doctrine:database:create --env=test
-	  - run: php bin/console doctrine:schema:create --env=test
+      - run: php bin/console doctrine:database:create --env=test
+      - run: php bin/console doctrine:schema:create --env=test
 
       - run:
           name: Run web server
@@ -51,15 +51,16 @@ jobs:
           background: true
 
       # Run tests
-	  - run: php vendor/bin/behat
+      - run: php vendor/bin/behat
       # and maybe some unit tests
 ```
 
-Actually, CircleCI already takes care of a lot of details that we [previously](https://knpuniversity.com/screencast/question-answer-day/travis-ci)
-needed to worry about, like setting up xvfb and installing a browser (chrome).
+CircleCI 2.0 allows you to add Docker images, so you don't need to take care of a lot of
+details that we [previously](https://knpuniversity.com/screencast/question-answer-day/travis-ci)
+needed to worry about, like setting up `xvfb` and installing a browser (Chrome).
 
 The `behat.yml` file doesn't need anything special, except that the web server port
-needs to match the `8080` used above you should use the `chrome` browser:
+needs to match the `8080` used above and you should use the `chrome` browser:
 
 ```yml
 default:
@@ -128,7 +129,7 @@ class FeatureContext extends RawMinkContext
 }
 ```
 
-This uses the [@AfterStep hook](http://knpuniversity.com/screencast/behat/behat-hooks-background)
+This uses the [@AfterStep hook](https://knpuniversity.com/screencast/behat/behat-hooks-background)
 to save a timestamped screenshot into a `behat_screenshots/` directory on failure.
 The `saveScreenshot()` method comes directly from the `RawMinkContext` class that's
 available from [MinkExtension](http://knpuniversity.com/screencast/behat/behat-loves-mink).
@@ -145,24 +146,35 @@ To finish things, we need to tweak the CircleCI setup to make sure this director
 exists and to set the `BEHAT_SCREENSHOTS` environment variable that activates everything:
 
 ```yml
-test:
-  pre:
-    - mkdir behat_screenshots
-    - chmod 777 behat_screenshots
-    - export BEHAT_SCREENSHOTS="1"
-  override:
-    - php vendor/bin/behat
-    # and maybe some unit tests
-  post:
-    # add a file so that the directory isn't empty (else copy will fail)
-    - touch behat_screenshots/keep
-    - cp behat_screenshots/* $CIRCLE_ARTIFACTS/
-    - rm $CIRCLE_ARTIFACTS/keep
+# .circleci/config.yml
+version: 2
+jobs:
+  build:
+    # ...
+    steps:
+      # ...
+
+      # Run tests
+      - run: mkdir var/behat_screenshots/
+      # add an empty file so that the directory isn't empty (else copy may fail)
+      - run: touch var/behat_screenshots/empty.txt
+
+      - run:
+          name: Run Behat tests
+          command: php vendor/bin/behat
+          # Export environment variable for this single command shell
+          environment:
+            BEHAT_SCREENSHOTS: '1'
+      # and maybe some unit tests
+
+      - store_artifacts:
+          path: var/behat_screenshots/
 ```
 
-The `$CIRCLE_ARTIFACTS` is an environment variable that's special to CircleCI: it
-points to a directory where you can place artifacts. Anything you put here is automatically
-made available in the artifacts section of your build after it finishes.
+The `store_artifacts` is a special to CircleCI 2.0: it uploads a file or a directory you specified
+to the special directory where all artifacts of the current job are placed. After the artifacts
+successfully upload, view them in the Artifacts tab of the Job page in your browser. There is no limit
+on the number of `store_artifacts` steps a job can run. Artifacts will be available after job finishes.
 
 To become a Behat & Mink expert, check out our full
 [BDD, Behat, Mink and other Wonderful Things](https://knpuniversity.com/screencast/behat)
