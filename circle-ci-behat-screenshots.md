@@ -6,8 +6,8 @@ on failures and see a list of them on each build. This is madness!
 ***
 
 ***TIP
-After August 31, 2018, CircleCI 1.0 will no longer be available This blog post was updated
-to support the new CircleCI 2.0.
+This blog post was updated to support the new CircleCI 2.0 because of CircleCI 1.0
+will no longer be available after August 31, 2018.
 ***
 
 For KnpUniversity, we use both [Behat](https://knpuniversity.com/screencast/behat)
@@ -24,7 +24,7 @@ CI server, you'll see a big error screenshot that tells you so. Sweet!
 
 ## CircleCI Setup
 
-To run our `@javascript` Behat scenarios, we use Selenium2. Our CircleCI 2.0 `config.yml` setup
+To run our `@javascript` Behat scenarios, we use Selenium 2. Our CircleCI 2.0 `config.yml` setup
 (without the screenshot magic) looks like this:
 
 ```yml
