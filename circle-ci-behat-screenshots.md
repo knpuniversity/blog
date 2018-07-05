@@ -6,7 +6,7 @@ on failures and see a list of them on each build. This is madness!
 ***
 
 ***TIP
-This blog post was updated to support the new CircleCI 2.0 because of CircleCI 1.0
+This blog post was updated to support CircleCI 2.0 because CircleCI 1.0
 will no longer be available after August 31, 2018.
 ***
 
@@ -176,10 +176,10 @@ jobs:
           path: var/behat_screenshots/
 ```
 
-The `store_artifacts` is a special to CircleCI 2.0: it uploads a file or a directory you specified
-to the special directory where all artifacts of the current job are placed. After the artifacts
-successfully upload, view them in the Artifacts tab of the Job page in your browser. There is no limit
-on the number of `store_artifacts` steps a job can run. Artifacts will be available after job finishes.
+The `store_artifacts` command is special to CircleCI 2.0: it uploads a file or a directory so
+that, when the job finishes, you can view those files in the Artifacts tab of the Job page in
+your browser. There is no limit on the number of `store_artifacts` steps a job can run. Artifacts
+will be available after the job finishes.
 
 To become a Behat & Mink expert, check out our full
 [BDD, Behat, Mink and other Wonderful Things](https://knpuniversity.com/screencast/behat)
