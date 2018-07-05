@@ -1,12 +1,18 @@
-# Behat on CircleCI with Failure Screenshots
+# Behat on CircleCI 2.0 with Failure Screenshots
 
 ***TIP
 **tl;dr** By combining Behat and CircleCI, you can automatically take screenshots
 on failures and see a list of them on each build. This is madness!
 ***
 
+***TIP
+This blog post was updated to support CircleCI 2.0 because CircleCI 1.0
+will no longer be available after August 31, 2018.
+***
+
 For KnpUniversity, we use both [Behat](https://knpuniversity.com/screencast/behat)
-and CircleCI for continuous integration. The combination works *great*, except for
+and [CircleCI](https://knpuniversity.com/screencast/phpunit/continuous-integration)
+for continuous integration. The combination works *great*, except for
 debugging. If you've done functional testing in a CI environment before, then
 you're probably familiar with (yikes!) *phantom failures*: those tests that *only*
 seem to fail on the CI server, making them nearly impossible to debug.
@@ -18,48 +24,48 @@ CI server, you'll see a big error screenshot that tells you so. Sweet!
 
 ## CircleCI Setup
 
-To run our `@javascript` Behat scenarios, we use Selenium2. Our `circle.yml` setup
+To run our `@javascript` Behat scenarios, we use Selenium 2. Our CircleCI 2.0 `config.yml` setup
 (without the screenshot magic) looks like this:
 
 ```yml
-# circle.yml
-machine:
-  php:
-    version: 5.5.21
+# .circleci/config.yml
+version: 2
+jobs:
+  build:
+    docker:
+      - image: php:7
+      - image: mysql:5
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      - image: selenium/standalone-chrome:3
+    working_directory: ~/your-repository-name
+    steps:
+      - checkout
 
-dependencies:
-  cache_directories:
-    - vendor
+      # Update Composer and install dependencies
+      - run: composer self-update
+      - run: composer install --prefer-dist
 
-  pre:
-    - sudo composer self-update
-    - composer install --prefer-dist
+      # Setup database
+      - run: php bin/console doctrine:database:create --env=test
+      - run: php bin/console doctrine:schema:create --env=test
 
-    # get selenium rocking!
-    - wget http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar
-    - 'java -jar selenium-server-standalone-2.47.1.jar > /dev/null 2>&1':
+      - run:
+          name: Run web server
+          command: php bin/console server:run --env=test -vvv localhost:8080 > server.log 2>&1:
           background: true
 
-    # start the web server
-    - 'php app/console server:run --env=test -vvv localhost:8080 > server.log 2>&1':
-          background: true
-
-database:
-  override:
-    - app/console do:da:cr -e=test
-    - app/console do:sc:cr -e=test
-
-test:
-  override:
-    - php vendor/bin/behat
-    # and maybe some unit tests
+      # Run tests
+      - run: php vendor/bin/behat
+      # and maybe some unit tests
 ```
 
-Actually, CircleCI already takes care of a lot of details that we [previously](https://knpuniversity.com/screencast/question-answer-day/travis-ci)
-needed to worry about, like setting up xvfb and installing a browser (chrome).
+CircleCI 2.0 allows you to add Docker images, so you don't need to take care of a lot of
+details that we [previously](https://knpuniversity.com/screencast/question-answer-day/travis-ci)
+needed to worry about, like setting up `xvfb` and installing a browser (Chrome).
 
 The `behat.yml` file doesn't need anything special, except that the web server port
-needs to match the `8080` used above you should use the `chrome` browser:
+needs to match the `8080` used above and you should use the `chrome` browser:
 
 ```yml
 default:
@@ -128,7 +134,7 @@ class FeatureContext extends RawMinkContext
 }
 ```
 
-This uses the [@AfterStep hook](http://knpuniversity.com/screencast/behat/behat-hooks-background)
+This uses the [@AfterStep hook](https://knpuniversity.com/screencast/behat/behat-hooks-background)
 to save a timestamped screenshot into a `behat_screenshots/` directory on failure.
 The `saveScreenshot()` method comes directly from the `RawMinkContext` class that's
 available from [MinkExtension](http://knpuniversity.com/screencast/behat/behat-loves-mink).
@@ -145,24 +151,35 @@ To finish things, we need to tweak the CircleCI setup to make sure this director
 exists and to set the `BEHAT_SCREENSHOTS` environment variable that activates everything:
 
 ```yml
-test:
-  pre:
-    - mkdir behat_screenshots
-    - chmod 777 behat_screenshots
-    - export BEHAT_SCREENSHOTS="1"
-  override:
-    - php vendor/bin/behat
-    # and maybe some unit tests
-  post:
-    # add a file so that the directory isn't empty (else copy will fail)
-    - touch behat_screenshots/keep
-    - cp behat_screenshots/* $CIRCLE_ARTIFACTS/
-    - rm $CIRCLE_ARTIFACTS/keep
+# .circleci/config.yml
+version: 2
+jobs:
+  build:
+    # ...
+    steps:
+      # ...
+
+      # Run tests
+      - run: mkdir var/behat_screenshots/
+      # add an empty file so that the directory isn't empty (else copy may fail)
+      - run: touch var/behat_screenshots/empty.txt
+
+      - run:
+          name: Run Behat tests
+          command: php vendor/bin/behat
+          # Export environment variable for this single command shell
+          environment:
+            BEHAT_SCREENSHOTS: '1'
+      # and maybe some unit tests
+
+      - store_artifacts:
+          path: var/behat_screenshots/
 ```
 
-The `$CIRCLE_ARTIFACTS` is an environment variable that's special to CircleCI: it
-points to a directory where you can place artifacts. Anything you put here is automatically
-made available in the artifacts section of your build after it finishes.
+The `store_artifacts` command is special to CircleCI 2.0: it uploads a file or a directory so
+that, when the job finishes, you can view those files in the Artifacts tab of the Job page in
+your browser. There is no limit on the number of `store_artifacts` steps a job can run. Artifacts
+will be available after the job finishes.
 
 To become a Behat & Mink expert, check out our full
 [BDD, Behat, Mink and other Wonderful Things](https://knpuniversity.com/screencast/behat)
