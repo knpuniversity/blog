@@ -1,7 +1,7 @@
 It's now super easy to remember your favorite course or even video with
 our new bookmarking feature. Look for the bookmark icon on the course overview
 and video pages. Found something important and don't want to lose it?
-Awesome! Just bookmark and find it later under [My Bookmarks](/profile/bookmarks)
+Awesome! Just bookmark and find it later under "[My Bookmarks](/profile/bookmarks)".
 
 Also, our course list page has a new filter to show only courses that you
 bookmarked. And of course, you can combine all the normal filters, e.g.
