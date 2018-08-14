@@ -9,4 +9,4 @@ show only unwatched courses that you bookmarked.
 
 Oh, and thanks to *you* for suggesting this new feature! It's available to
 everyone now: just log in and start bookmarking. Don't have a KnpU account yet?
-Register for free <a href="/signup/">here</a> in just a minute.
+[Register for free](/signup/) in just a minute.
