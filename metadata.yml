@@ -258,3 +258,10 @@ blogs:
             Making our content friendly & accessible is *super* important. That's
             why we've just added English subtitles & course thumbnails!
         category: news
+    "bookmarking":
+        title: 'Bookmark your favorite courses and videos'
+        published: 2018-08-14
+        preview: |
+            We've been getting many requests lately from our users
+            about bookmarking feature and now it's implemented!
+        category: news
