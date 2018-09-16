@@ -265,3 +265,10 @@ blogs:
             We've been getting many requests lately from our users
             about a bookmarking feature, and now it's ready!
         category: news
+    "symfonycasts":
+        title: 'KnpUniversity is now SymfonyCasts!'
+        published: 2018-09-17
+        preview: |
+            We've got some big news! KnpUniversity is now SymfonyCasts! Find out
+            what this means, and why we're excited!
+        category: news
