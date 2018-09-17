@@ -3,10 +3,10 @@
 If you look around the site today, you'll probably notice something different.
 KnpUniversity is *now* SymfonyCasts! *And* SymfonyCasts is the official online
 training system for Symfony. This is something we've been planning for awhile and
-we are *beyond* excited. Like, jumping-high-fives-someone-order-a-big-🎂 kind
+we are *beyond* excited. Like, jumping-high-fives-someone-order-a-big-cake kind
 of excited! Woh.
 
-If you're already a KnpU/SymfonyCasts user: we ❤️ you! And because of that, I want
+If you're already a KnpU/SymfonyCasts user: we <3 you! And because of that, I want
 to explain *exactly* what this change means (and doesn't mean). Question & answer
 time!
 
