@@ -13,7 +13,7 @@ time!
 **A) So... What Changed Exactly?**
 
 Basically, our name :). Well, a bit more than that (keep reading). But, we are
-**the same team**, creating the **same aweome tutorials** and we are the **same company**. 
+**the same team**, creating the **same awesome tutorials** and we are the **same company**.
 
 **B) Was KnpUniversity acquired?**
 
