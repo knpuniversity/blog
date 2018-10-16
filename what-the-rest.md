@@ -365,4 +365,4 @@ leave what's complex, break some rules, and move forward.
 But, maybe I'm just missing a few, final, beautiful pieces to get out of
 the swamp and up to blissful RESTland.
 
-Thanks!
+Thanks! 
