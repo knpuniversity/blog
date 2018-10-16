@@ -185,4 +185,4 @@ To become a Behat & Mink expert, check out our full
 [BDD, Behat, Mink and other Wonderful Things](https://knpuniversity.com/screencast/behat)
 tutorial.
 
-Have fun!
+Have fun! 
