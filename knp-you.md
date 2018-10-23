@@ -72,4 +72,4 @@ didn't give you a script, and spread out releases over a long period of time.
 But somehow, you're still here, reading this. And for that, we're embarrassingly
 thankful :).
 
-Cheers!
+Cheers! 
