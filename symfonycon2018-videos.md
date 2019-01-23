@@ -18,10 +18,10 @@ https://symfonycasts.com/screencast/symfonycon2018
 We'll be releasing these as soon as they're ready over the next few weeks - so
 watch closely!
 
-If you attended the conference, [log in with your Symfony Connect](https://symfonycasts.com/login)
-account for access. Or, if you already have an account here, "connect" your Symfony Connect
-account [on your profile](https://symfonycasts.com/profile/show). The videos are
-also available to all active SymfonyCasts subscribers.
+If you attended the conference, [log in with your Symfony Connect](https://symfonycasts.com/login/sensiolabs)
+account for access. Or, **if you already have an account** here, click the
+"Connect with Symfony" button [on your profile](https://symfonycasts.com/profile/show).
+The videos are also available to all active SymfonyCasts subscribers.
 
 If you have any questions or issues, as always, you can message us, say hi, or tell
 us random cool science facts at `hello@symfonycasts.com`.
