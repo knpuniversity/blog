@@ -272,3 +272,10 @@ blogs:
             We've got some big news! KnpUniversity is now SymfonyCasts! Find out
             what this means, and why we're excited!
         category: news
+    "symfonycon2018-videos":
+        title: 'SymfonyCon 2018 Lisbon Videos are Here'
+        published: 2019-01-23
+        preview: |
+            Did you attend SymfonyCon and want to re-watch stuff? Or maybe you
+            missed it and need to catch up? Either way, SymfonyCon 2018
+            videos are here!
