@@ -280,3 +280,10 @@ blogs:
             missed it and need to catch up? Either way, SymfonyCon 2018
             videos are here!
         category: news
+    "symfonycats":
+        title: 'SymfonyCasts Rebrands as SymfonyCATS'
+        published: 2019-04-01
+        preview: |
+            After mis-typing SymfonyCasts as SymfonyCATS... about a million times,
+            we decided it was easier just to go with it.
+        category: news
