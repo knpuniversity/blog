@@ -19,7 +19,7 @@ That's an awesome start.
 
 ## 2) Sorry, Your Bundles aren't Bundles: They're Directories
 
-<img class="pull-right" style="width: 300px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/imagine/blog_image/uploads/blog/appbundle/coupled-bundles.png" alt="Coupled Bundles" />
+<img class="pull-right" style="width: 300px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/appbundle/coupled-bundles.png" alt="Coupled Bundles" />
 
 A traditional Symfony project is made up of bundles that are coupled together.
 Ok, maybe you have some standalone bundles, but somewhere, there's a group
@@ -37,7 +37,7 @@ A true bundle is a standalone, reusable entity. These are just directories.
 
 ## 3) AppBundle: Just a Different Directory Structure
 
-<img class="pull-right" style="width: 150px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/imagine/blog_image/uploads/blog/appbundle/app-bundle.png" alt="App Bundle" />
+<img class="pull-right" style="width: 150px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/appbundle/app-bundle.png" alt="App Bundle" />
 
 Now, if we decide to move everything into one bundle, it's nothing more than
 a different directory structure. You can even keep the same amount of organization
@@ -62,7 +62,7 @@ re-using this stuff somewhere else.
 
 ### a) Move service configuration to app/
 
-<img class="pull-right" style="width: 300px;" src="/images/appbundle/move-config.png" alt="Move Config" />
+<img class="pull-right" style="width: 300px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/appbundle/move-config.png" alt="Move Config" />
 
 Since each kernel has only *one* container, it's logical to move service
 config out of the bundle and into `app/`.
@@ -84,7 +84,7 @@ an `app/config/services` directory with multiple files.
 
 ### b) Moving templates to app/
 
-<img class="pull-right" style="width: 300px;" src="/images/appbundle/move-templates.png" alt="Move Templates" />
+<img class="pull-right" style="width: 300px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/appbundle/move-templates.png" alt="Move Templates" />
 
 Next, let's move the templates into `app/`. I know many people *hate* this,
 because it puts the templates in a different directory than the controllers.
@@ -104,7 +104,7 @@ and that's huge.
 
 ## 5) No Bundles!?
 
-<img class="pull-right" style="width: 300px;" src="/images/appbundle/no-bundle.png" alt="No Bundle" />
+<img class="pull-right" style="width: 300px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/appbundle/no-bundle.png" alt="No Bundle" />
 
 You can keep doing this until AppBundle holds *only* PHP classes.
 
@@ -135,7 +135,7 @@ a directory for PHP classes. And for Symfony 3.0, maybe we'll get there!
 
 ## 6) I hate having my Templates in app/, Controllers in src/
 
-<img class="pull-right" style="width: 300px;" src="/images/appbundle/all-in-app.png" alt="All in App" />
+<img class="pull-right" style="width: 300px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/appbundle/all-in-app.png" alt="All in App" />
 
 The biggest complaint I've heard about the AppBundle is this: I don't like
 that my controllers would live in `src/`, but the templates they render
@@ -167,14 +167,14 @@ them in `AppBundle` :).
 
 ## 7) But I want to create a Decoupled Library!
 
-<img class="pull-right" style="width: 150px;" src="/images/appbundle/decoupled-library.png" alt="Decoupled Library" />
+<img class="pull-right" style="width: 150px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/appbundle/decoupled-library.png" alt="Decoupled Library" />
 
 Sweet! Just create a directory in `src/` and put your decoupled library
 right there. It's ready to be re-used!
 
 ## 8) But I want to re-use a Bundle between projects or kernels!
 
-<img class="pull-right" style="width: 150px;" src="/images/appbundle/decoupled-bundle.png" alt="Decoupled Bundle" />
+<img class="pull-right" style="width: 150px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/appbundle/decoupled-bundle.png" alt="Decoupled Bundle" />
 
 Nice! Just create the bundle in `src/` (or `vendor/`, etc) and treat
 it like *true*, decoupled bundle.
