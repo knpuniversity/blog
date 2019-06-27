@@ -19,7 +19,7 @@ That's an awesome start.
 
 ## 2) Sorry, Your Bundles aren't Bundles: They're Directories
 
-<img class="pull-right" style="width: 300px;" src="/images/appbundle/coupled-bundles.png" alt="Coupled Bundles" />
+<img class="pull-right" style="width: 300px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/imagine/blog_image/uploads/blog/appbundle/coupled-bundles.png" alt="Coupled Bundles" />
 
 A traditional Symfony project is made up of bundles that are coupled together.
 Ok, maybe you have some standalone bundles, but somewhere, there's a group
@@ -37,7 +37,7 @@ A true bundle is a standalone, reusable entity. These are just directories.
 
 ## 3) AppBundle: Just a Different Directory Structure
 
-<img class="pull-right" style="width: 150px;" src="/images/appbundle/app-bundle.png" alt="App Bundle" />
+<img class="pull-right" style="width: 150px;" src="https://d399irh3pgqnz3.cloudfront.net/prod/imagine/blog_image/uploads/blog/appbundle/app-bundle.png" alt="App Bundle" />
 
 Now, if we decide to move everything into one bundle, it's nothing more than
 a different directory structure. You can even keep the same amount of organization
