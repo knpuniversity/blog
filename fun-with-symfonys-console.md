@@ -45,7 +45,7 @@ Ok, let's run this from the command line!
 php print_pretty.php
 ```
 
-<img style="width: 100%;" src="/images/console/print_color.gif" alt="Print with Color" />
+<img style="width: 100%;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/console/print_color.gif" alt="Print with Color" />
 
 That's right, it's blinking. You can also wrap up your custom colorings and options
 (like our blinking cyan section) into a new style (e.g. `<annoying_blinking>`).
@@ -108,4 +108,4 @@ out our entire [Symfony track](http://knpuniversity.com/tracks/symfony)!
 
 Have fun!
 
-<img style="width: 100%;" src="/images/console/full.gif" alt="With table and progress bar" />
+<img style="width: 100%;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/console/full.gif" alt="With table and progress bar" />
