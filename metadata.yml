@@ -287,3 +287,10 @@ blogs:
             After mis-typing SymfonyCasts as SymfonyCATS... about a million times,
             we decided it was easier just to go with it.
         category: news
+    "listen":
+        title: 'Symfonycasts is here to listen'
+        published: 2020-06-10
+        preview: |
+            We are motivated by the message and momentum of the Black Lives Matter
+            movement that is happening worldwide and in the US.
+        category: news
