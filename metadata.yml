@@ -300,3 +300,4 @@ blogs:
         preview: |
             Curious what versions of a library a tutorial is using? Every tutorial
             *now* exposes the full composer.json and package.json info!
+        category: tutorials
