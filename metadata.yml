@@ -294,3 +294,9 @@ blogs:
             We are motivated by the message and momentum of the Black Lives Matter
             movement that is happening worldwide and in the US.
         category: news
+    "versions":
+        title: 'Now Exposed: composer.json & package.json for every Tutorial'
+        published: 2020-08-25
+        preview: |
+            Curious what versions of a library a tutorial is using? Every tutorial
+            *now* exposes the full composer.json and package.json info!
