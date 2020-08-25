@@ -27,7 +27,7 @@ contents right on the main tutorial page under a button that highlights a main
 library that's being taught. If you open the contents, you can see the exact,
 *locked* version of each library from the final code in the tutorial.
 
-<img src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/versions/versions.gif" alt="Animation of clicking the new versions button" />
+<img src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/versions/versions.gif" alt="Animation of clicking the new versions button" style="max-width: 100%" />
 
 I already *love* this feature. But we also realized that even *it* can sometimes
 be misleading. For example, our
