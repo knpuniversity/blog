@@ -301,3 +301,10 @@ blogs:
             Curious what versions of a library a tutorial is using? Every tutorial
             *now* exposes the full composer.json and package.json info!
         category: tutorials
+    "symfony-world":
+        title: 'Symfony World Videos are Available (but not here)'
+        published: 2020-12-07
+        preview: |
+            The Symfony World videos are available with high-quality captions,
+            but not in SymfonyCasts this year!
+        category: news
