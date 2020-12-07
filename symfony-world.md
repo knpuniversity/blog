@@ -13,15 +13,15 @@ you didn't attend, you can *still* buy a ticket and have full access to the repl
 
 So, here are the details, in mock interview form:
 
-*Hey Ryan! Where can I watch the conference videos?*
+**Hey Ryan! Where can I watch the conference videos?**
 
 Right here: https://live.symfony.com/account/replay/videos/2020-world
 
-*I didn't attend the conference... can I still watch the videos?*
+**I didn't attend the conference... can I still watch the videos?**
 
 Yep! You can [buy a conference ticket](https://live.symfony.com/2020-world/registration/) and get full access. As a bonus, this directly supports the Symfony team.
 
-*Did you where shoes during your presentation?*
+**Did you where shoes during your presentation?**
 
 Of course not! But, apart from that, I was wearing a full tuxedo... probably.
 
