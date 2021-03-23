@@ -25,4 +25,4 @@ Yep! You can [buy a conference ticket](https://live.symfony.com/2020-world/regis
 
 Of course not! But, apart from that, I was wearing a full tuxedo... probably.
 
-Cheers!
+Cheers! 
