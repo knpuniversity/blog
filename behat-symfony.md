@@ -33,7 +33,7 @@ You may see this warning:
 > The recipe for this package comes from the "contrib" repository, which is open to
 > community contributions.
 
-Hit "yes" to continue installation. This recipe has everything you need to run Behat:
+Hit "yes" to continue the installation. This recipe has everything you need to run Behat:
 
 ```
 |config/
@@ -138,7 +138,7 @@ You may ask:
 
 > Hey, what about testing in a real browser!?
 
-Lets do it!
+Let's do it!
 
 For this, we *will* need some additional tools: Java, Selenium and a browser to test with,
 like Chrome or Firefox.
@@ -188,7 +188,7 @@ java -version
 ```
 
 If you see an error like "Command not found", then install it. Installation, of course,
-is one of those wonderful things that varies depend on your operating system.
+is one of those wonderful things that varies depending on your operating system.
 
 Ok, so we have Java, Selenium and a browser with a driver! Next,
 open a terminal, go to wherever you put the Selenium file, and run:
@@ -273,7 +273,7 @@ Try it again:
 ./vendor/bin/behat
 ```
 
-And... celebrate with green pass mark on all tests!
+And... celebrate with a green pass mark on all tests!
 
 If you have any issues, feel free to ask us in the comments below or anywhere
 on the [Behat tutorial](https://symfonycasts.com/screencast/behat). We think Behat
