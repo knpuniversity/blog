@@ -313,6 +313,6 @@ blogs:
         title: 'Setting up Behat on Symfony 5'
         published: 2021-08-03
         preview: |
-            Got issues with Behat running with Symfony 5? Want to know more about
+            Got issues with Behat running on Symfony 5? Want to know more about
             its configuration and possibilities? You are in the right spot!
         category: tech
