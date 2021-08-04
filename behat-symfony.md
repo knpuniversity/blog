@@ -255,7 +255,7 @@ Try it with:
 ```
 
 Hey! Where is our browser? Add one more scenario to `features/demo.feature`,
-but this time add `@javasctipt` above it:
+but this time add `@javascript` above it:
 
 ```gherkin
 Feature:
