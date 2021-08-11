@@ -11,7 +11,7 @@ Too fast? Ok, let's look at each part, step-by-step.
 
 ## Install Behat with everything you need
 
-To get a minimal setup, let's install some packages:
+To get started, let's install some packages:
 
 ```terminal
 composer require friends-of-behat/mink-extension friends-of-behat/mink-browserkit-driver friends-of-behat/symfony-extension --dev
