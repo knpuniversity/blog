@@ -316,3 +316,11 @@ blogs:
             Got issues with Behat running on Symfony 5? Want to know more about
             its configuration and possibilities? You are in the right spot!
         category: tech
+
+    "behat-panther":
+        title: 'Wanna see some Panther'
+        published: 2021-08-25
+        preview: |
+            You don't have to go to the Zoo to see the Panther in action. All
+            you need is Composer and some time to configure things properly!
+        category: tech
