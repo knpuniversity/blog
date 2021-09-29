@@ -1,4 +1,4 @@
-# ¡Tutorial de Symfony 5 en español!
+# ¡Tutorial de Symfony 5 en Español!
 
 Todos sabemos que la carrera del programador es un constante viaje de aprendizaje. A lo
 largo de mi carrera como programador hispanoparlante, me he encontrado siempre con el mismo
@@ -14,7 +14,7 @@ universal!
 
 ## Nuestro primer curso en Español
 
-Nos gustaría que heches un vistazo a nuestro curso gratuito
+Nos gustaría que eches un vistazo a nuestro curso gratuito
 [Desarrollo Encantador en Symfony 5](https://symfonycasts.com/es/screencast/symfony) disponible ahora mismo en español.
 Si accedes al link y haces click en cualquier video, verás que el texto del curso está traducido al español. (Si no
 lo ves, puedes cambiar de idioma en la nueva barra de idiomas en la parte superior de la página de cada video).
@@ -26,9 +26,9 @@ correspondientes!
 
 <img src="/images/symfonycasts-en-espanol.png" alt="SymfonyCasts Tutorial en Español" style="max-width: 100%">
 
-## Cómo funciona
+## Cómo Funciona
 
-Siempre que un curso esté disponible en Español verás en la parte superior de la pantalla
+Siempre que un curso esté disponible en español verás en la parte superior de la pantalla
 una barra de idiomas que te permitirá cambiar el mismo. ¡Simplemente haz click en el link
 correspondiente a tu idioma y listo! Tu curso tendrá texto y subtítulos acordes.
 
