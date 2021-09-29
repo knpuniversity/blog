@@ -24,7 +24,7 @@ subtítulos del video (cc).
 ¡Si estás viendo un curso en español, podrás seguir el mismo con los subtítulos
 correspondientes!
 
-<img src="/images/sfcasts-es-blog.png" alt="SymfonyCasts Tutorial en Español" style="max-width: 100%">
+<img src="/images/symfonycasts-en-espanol.png" alt="SymfonyCasts Tutorial en Español" style="max-width: 100%">
 
 ## Cómo funciona
 
