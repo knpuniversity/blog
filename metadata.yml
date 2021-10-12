@@ -324,3 +324,12 @@ blogs:
             You don't have to go to the Zoo to see the Panther in action. All
             you need is Composer and some time to configure things properly!
         category: tech
+
+    "symfonycasts-en-espanol":
+        title: 'SymfonyCasts en Español'
+        published: 2021-09-29
+        preview: |
+            En SymfonyCasts nos arremangamos y traducimos nuestro popular curso de
+            Symfony 5 para que puedas disfrutarlo gratuitamente sin tener que activar
+            el traductor universal!
+        category: tutorials
