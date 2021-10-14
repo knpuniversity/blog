@@ -29,6 +29,8 @@ subtítulos del video (cc).
 ¡Si estás viendo un curso en español, podrás seguir el mismo con los subtítulos
 correspondientes!
 
+<img style="width: 100%;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/console/translation.png" alt="Video Player with Translations" />
+
 ## Cómo Funciona
 
 Siempre que un curso esté disponible en español verás en la parte superior de la pantalla
