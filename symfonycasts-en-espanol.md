@@ -29,7 +29,7 @@ subtítulos del video (cc).
 ¡Si estás viendo un curso en español, podrás seguir el mismo con los subtítulos
 correspondientes!
 
-<img style="width: 100%;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/console/translation.png" alt="Video Player with Translations" />
+<img style="width: 100%;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/es-translation/translation.png" alt="Video Player with Translations" />
 
 ## Cómo Funciona
 
