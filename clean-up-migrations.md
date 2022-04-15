@@ -16,9 +16,9 @@ the migrations so that you have exactly what's on production and a `migration_ve
 table that matches production instead of simply running `symfony console doctrine:schema:update`
 command.
 
-And that's when many files may cause some performance issues locally. In this case,
-you can drop all the migrations you have so far and create a single migration
-that will recreate the whole database schema from scratch.
+And that's when many migration files may cause some performance issues locally.
+In this case, you can drop all the migrations you have so far and create a single
+migration that will recreate the whole database schema from scratch.
 
 So, this is TOTALLY optional, but if a giant `migrations/` folder is bothering you,
 clean it up! Also, congratulations on having a successful site that has lived
