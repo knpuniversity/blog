@@ -333,3 +333,12 @@ blogs:
             Symfony 5 para que puedas disfrutarlo gratuitamente sin tener que activar
             el traductor universal!
         category: tutorials
+
+    "clean-up-migrations":
+        title: 'Clean up your migrations!'
+        published: 2022-04-15
+        preview: |
+            Does your giant migrations/ folder is bothering you? Clean it up! A tip
+            about how to get rid of a hude set of old migration files in your project
+            correctly.
+        category: tech
