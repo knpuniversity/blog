@@ -2,19 +2,19 @@
 
 Database migrations are a great way to safely update your database schema,
 and so it's very useful for production where you do not want to lose the data
-you have. If. you want to know more about migrations - SymfonyCasts has a
-[screencasts](https://symfonycasts.com/screencast/symfony-doctrine/migrations)
+you have. If you want to know more about migrations - we have a
+[screencast](https://symfonycasts.com/screencast/symfony-doctrine/migrations)
 about it, check it out!
 
-But here, I will give you a tip on how to clean up your migrations correctly.
-First of all, this is mostly for local development, because usually it's not
-important how many migrations you have on production - all those migrations
-were already executed.
+But here, I want to give you a tip on how to clean up your migrations...
+if you find your `migrations/` directory growing and growing... like we did!
+First of all, this is mostly a problem for local development: on production,
+we don't really care how many migration files were executed in the past.
 
-But in local development it's also a good idea to create the database and run
-the migrations so that you have exactly what's on production and a `migration_versions`
-table that matches production instead of simply running `symfony console doctrine:schema:update`
-command.
+But while developing locally, to set things up, we recommend creating your database and
+then running the `doctrine:migrations:migrate` command so that you have exactly what's
+on production, including a `migration_versions` table. This is better than running the
+`doctrine:schema:update` command, which then makes it hard to test new migrations.
 
 And that's when many migration files may cause some performance issues locally.
 In this case, you can drop all the migrations you have so far and create a single
@@ -33,15 +33,15 @@ rm -rf migrations/*
 ```
 
 to drop all the migrations. Then, make sure you don't have important data
-you care about in your local database and drop its schema completely with:
+you care about in your local database, then drop its schema completely with:
 
 ```terminal
 symfony console doctrine:schema:drop --force
 ```
 
 ***TIP
-The `symfony console` is the same as `bin/console` but allows env vars to be injected
-if you're using the Docker integration.
+The `symfony console` command is the same as `bin/console` but it allows environment
+variables to be injected if you're using the Docker integration.
 ***
 
 Now let's generate a new migration with
@@ -53,9 +53,9 @@ symfony console make:migration
 
 Double-check the queries inside the new file to make sure the new migration looks good.
 
-But we cannot just commit changes and deploy to production because the database server
-will try to recreate the tables we already have on production and the migration will fail.
-And... there's almost nothing *less* fun than migrations failing during a deploy!
+But we can't just commit these changes and deploy to production... because the database server
+will try to run this command and recreate the tables we already have on production!
+There's almost nothing *less* fun than migrations failing during a deploy!
 How can we work around it without manually messing with the production database?
 
 ### Skipping the Re-generated Migration on Production
@@ -68,20 +68,20 @@ git status
 ```
 
 For example, if you had a migration file called `Version20220415102030.php`
-before - rename the new migration file that was just generated to this exact name,
+before, rename the new migration file that was just generated to this exact name,
 and don't forget to change the class name inside the file accordingly. This will
-allow you to deploy to production but this migration won't be executed
+allow you to deploy to production, but this migration won't be executed
 (it will be skipped) because it was already executed in the past.
 
 ## Removing the Previously Executed Migrations from Production
 
-But we can improve this a bit more. Well, if you executed this migration right
+But we can improve this a bit more. Because if you executed this migration right
 now - it would say something like:
 
 > [WARNING] You have X previously executed migrations in the database that are not
 > registered migrations.
 
-This is because the `migration_versions` table on production will now show that it
+Rude! This is because the `migration_versions` table on production will now show that it
 executed a bunch of migrations in the past... but these migration files don't exist
 anymore! We could remove them manually from the production database but... yikes!
 Manually running a `DELETE` query on the production database is less fun than taking
@@ -93,7 +93,7 @@ Generate a blank migration instead:
 symfony console doctrine:migration:generate
 ```
 
-Then, open it and add a new SQL statement at the end:
+Then, open it, and add a new SQL statement at the end:
 
 ```php
 final class Version20220415102031 extends AbstractMigration

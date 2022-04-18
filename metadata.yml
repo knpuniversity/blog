@@ -336,9 +336,9 @@ blogs:
 
     "clean-up-migrations":
         title: 'Clean up your migrations!'
-        published: 2022-04-15
+        published: 2022-04-18
         preview: |
-            Does your giant migrations/ folder is bothering you? Clean it up! A tip
-            about how to get rid of a hude set of old migration files in your project
-            correctly.
+            Does your giant migrations/ folder bother you? Let's do some spring cleaning!
+            A tip about how to get rid of a huge set of old migration files in your project,
+            without blowing up your database.
         category: tech
