@@ -16,13 +16,10 @@ then running the `doctrine:migrations:migrate` command so that you have exactly 
 on production, including a `migration_versions` table. This is better than running the
 `doctrine:schema:update` command, which then makes it hard to test new migrations.
 
-And that's when many migration files may cause some performance issues locally.
-In this case, you can drop all the migrations you have so far and create a single
-migration that will recreate the whole database schema from scratch.
-
-So, this is TOTALLY optional, but if a giant `migrations/` folder is bothering you,
-clean it up! Also, congratulations on having a successful site that has lived
-long enough to need this.
+But, if you have a lot of old migration files, this can start to get kinda slow!
+On SymfonyCasts, we had 49. And so, while it's TOTALLY optional, if a giant `migrations/`
+folder bothers you, you CAN clean it up! Also, congratulations on having a successful
+site that has lived long enough to need this.
 
 ## Generating a Complete Single Migration
 
