@@ -101,6 +101,7 @@ final class Version20220415102031 extends AbstractMigration
 
         $this->addSql('DELETE FROM migration_versions WHERE version NOT LIKE "%20220415102030" AND version NOT LIKE "%20220415102031"');
     }
+
     // ...
 }
 ```
