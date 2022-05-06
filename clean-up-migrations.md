@@ -23,6 +23,37 @@ site that has lived long enough to need this.
 
 ## Generating a Complete Single Migration
 
+***TIP
+Now you can achieve this with built-in features in a much easier way than described
+in the beginning of this blog post!
+
+First of all, delete all your migrations:
+
+```terminal
+rm -rf migrations/*
+```
+
+Now, dump the current schema into a new single migration:
+
+```terminal
+symfony console doctrine:migrations:dump-schema
+```
+
+The bundle provides one more command that helps to "roll up" the migrations by deleting
+all tracked versions and insert the one version that exists:
+
+```terminal
+symfony console doctrine:migrations:rollup
+```
+
+You just need to deploy the code to production and run this command manually. But
+if you have automated deployment that runs migrations - it might not fit you.
+For automated deploy, continue reading this blog post from
+[Skipping the Re-generated Migration on Production](https://symfonycasts.com/blog/clean-up-migrations#skipping-the-re-generated-migration-on-production).
+
+P.S. Thanks to [Christophe Coevoet](http://github.com/stof) for pointing it in the comments.
+***
+
 Of course, we're going to do this locally first, so, run:
 
 ```terminal
