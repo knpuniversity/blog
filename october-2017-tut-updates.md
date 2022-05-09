@@ -1,9 +1,6 @@
-<hr>
 <h3 style="font-weight: bold;">New Releases</h3>
 
-[<img style="border: solid 5px #efefee; border-radius: 5px; height: 300px;" src="/images/ansistrano.png" alt="Ansistrano Tutorial Image"/>](https://knpuniversity.com/screencast/ansistrano)
 <h2>[Learn Animated Deployment with Ansistrano](https://knpuniversity.com/screencast/ansistrano)</h2>
-
 
 <h3 style="font-weight: bold;">Upcoming Tutorials</h3>
 [PHP Unit: Testing with a Bite](https://knpuniversity.com/screencast/phpunit)<br>
