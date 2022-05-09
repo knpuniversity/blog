@@ -230,7 +230,7 @@ blogs:
         title: 'New for October 2017'
         published: 2017-10-03
         preview: |
-            New releases, upcoming tutorials and upcoming Symfony events we want you to
+            New releases, upcoming tutorials, and upcoming Symfony events we want you to
             know about in October!
         category: tutorials
     "november-2017-tut-updates":
