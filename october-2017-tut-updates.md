@@ -1,6 +1,6 @@
 <h3 style="font-weight: bold;">New Releases</h3>
 
-<h2>[Learn Animated Deployment with Ansistrano](https://knpuniversity.com/screencast/ansistrano)</h2>
+<h2><a href="https://knpuniversity.com/screencast/ansistrano">Learn Animated Deployment with Ansistrano</a></h2>
 
 <h3 style="font-weight: bold;">Upcoming Tutorials</h3>
 [PHP Unit: Testing with a Bite](https://knpuniversity.com/screencast/phpunit)<br>
