@@ -15,4 +15,4 @@ SymfonyLive San Francisco is a 4-day event from October 17th to 20th.
 
 [SymfonyCon Cluj](clujcon2017.symfony.com)
 This is the fifth edition of SymfonyCon and we can't wait to see you in Romania!
-SymfonyCon Cluj is a 5-day event from November 14th to November 18th.
+SymfonyCon Cluj is a 5-day event from November 14th to 18th.
