@@ -2,7 +2,8 @@
 
 We're happy to announce that from now on we'll deliver Spanish translations to our new
 tutorials (scripts and subtitles). How did we make this possible? You may think that
-we hired a professional who takes care of translating the content, well, let me
+we hired a professional who takes care of translating the content. As great as human beings, I'm proud
+to say that you would be wrong!
 proudly say that you're wrong. As programmers, we love to automate processes, so, that's
 exactly what we did. We leverage the powerful translations service of *DeepL*. DeepL is
 a translating cloud service based on an AI algorithm which is surprisingly good. But, 
