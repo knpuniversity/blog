@@ -11,7 +11,7 @@ content so that it supports our custom Markdown syntax and keeps the translation
 accurate as possible.
 
 Since this is a process run by machines, it's likely that you'll notice "details"
-in our translations. So, that's why we also delivered a way where you can easily submit
+in our translations. So, that's why we hosted translations in public GitHub repositories and also delivered a way where you can easily submit
 a fix by sending a pull request. You only need to click on the "Edit on GitHub" button 
 which is at the right top corner of the script area, edit the script (or caption) file
 and commit the changes.
