@@ -1,6 +1,6 @@
 # Automatic Spanish Translations
 
-We're happy to announce that from now on we'll deliver Spanish translations to our
+We're happy to announce that from now on we'll deliver Spanish translations to our new
 tutorials (script and subtitles). How we made this possible? You may think that
 we hired a professional who takes care of translating the content, well, let me
 proudly say that you're wrong. As programmers, we love to automate processes, so, that's
