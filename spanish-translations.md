@@ -5,7 +5,7 @@ tutorials (scripts and subtitles). How did we make this possible? You may think 
 we hired a professional who takes care of translating the content. As great as human beings, I'm proud
 to say that you would be wrong!
 proudly say that you're wrong. As programmers, we love to automate processes, so, that's
-exactly what we did. We leverage the powerful translations service of *DeepL*. DeepL is
+exactly what we did! We leverage the powerful translations service of *DeepL*, which is
 a translating cloud service based on an AI algorithm which is surprisingly good. But, 
 this time it wasn't as easy as making an API call, we had to heavily customize our 
 content so that it supports our custom Markdown syntax and keeps the translations as 
