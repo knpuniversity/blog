@@ -7,7 +7,7 @@ proudly say that you're wrong. As programmers, we love to automate processes, so
 exactly what we did. We leverage the powerful translations service of *DeepL*. DeepL is
 a translating cloud service based on an AI algorithm which is surprisingly good. But, 
 this time it wasn't as easy as making an API call, we had to heavily customize our 
-content so it supports our custom MarkDown syntax and keeping the translations as 
+content so that it supports our custom Markdown syntax and keeps the translations as 
 accurate as possible.
 
 Since this is a process run by machines, it's likely that you'll notice "details"
