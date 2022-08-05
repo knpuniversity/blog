@@ -73,7 +73,7 @@ You can learn more about the _translatable_ behavior [here](https://github.com/d
 
 ## Want to Help?
 
-Since this is a process run by machines, you'll notice some "misprints" or just... silly translations. 
+Since this is a process run by machines, you may notice some "misprints" or just... silly translations.
 Machines haven't quite taken over the world yet. But that's ok because we've also delivered a way 
 where you can easily help improve or fix an error by sending a pull request to a public GitHub repository.
 You only need to click on the "Edit on GitHub" button which is at the right top corner of the script area, 
