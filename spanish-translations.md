@@ -68,7 +68,7 @@ can fix it, unfortunately this latter step is still a manual process.
 One thing is to accurately translate a tutorial but delivering a multi-language site
 it's quite a different thing to do. As you may have noticed we partially translated the site
 into Spanish, you will see Spanish content only on those tutorials that are translated. For this
-purpose we installed and configured the `StofDoctrineExtensionsBundle` bundle in the application. 
+purpose we installed and configured the `StofDoctrineExtensionsBundle` in the application. 
 If you can learn more about the _translatable_ behavior [here](https://github.com/doctrine-extensions/DoctrineExtensions/blob/main/doc/translatable.md)
 
 ## Want to Help?
