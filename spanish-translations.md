@@ -51,7 +51,7 @@ XML tags into Markdown, besides fixing a few flaws that comes from DeepL.
 The API also comes with a glossary where you can define a set of words that you want to translate
 in a particular way. In our case, is very useful for not translating library names. 
 
-Fun fact: _Twig_ translates into _Ramita_!
+Fun fact: _Twig_ is translated into _Ramita_!
 
 ## Script-clicking Feature
 
