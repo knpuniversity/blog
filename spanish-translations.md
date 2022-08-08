@@ -80,6 +80,6 @@ You only need to click on the "Edit on GitHub" button which is at the right top 
 edit the script (or caption) file and commit the changes.
 
 Oh, and right now, we're focused only on translating content into Spanish, but we may expand 
-in the future to other languages.
+to other languages in the future.
 
 Thank you for reading! And I hope you will find this helpful.
