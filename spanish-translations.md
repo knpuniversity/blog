@@ -18,10 +18,10 @@ same sentence (useful for not losing context on the subtitles).
 
 To understand the challenge, let's look at an example from our Doctrine tutorial:
 
-> For example, one command is called `doctrine:database:create`. Cool, let's try it:
-> ```terminal
+> For example, one command is called \`doctrine:database:create\`. Cool, let's try it:
+> \`\`\`terminal
 > php bin/console doctrine:database:create
-> ```
+> \`\`\`
 
 We want DeepL to translate the first two sentences, but not the technical word `doctrine:database:create`. 
 We also want it to skip the terminal block entirely... and to just return it "verbatim" 
