@@ -1,7 +1,7 @@
 # Automated Tutorial Spanish Translations!
 
 We're happy to announce that from now on we'll deliver Spanish translations to our new
-tutorials (scripts and subtitles)... pretty much instantly.  How did we make this possible? You might think that
+tutorials (scripts and subtitles)... pretty much instantly. How did we make this possible? You might think that
 we hired a professional who takes care of translating the content. As lovely as humans are, 
 we did *not* do this! As programmers, we love to automate processes, so, that's
 exactly what we did! We leverage *DeepL*: a powerful translation service based on an AI algorithm. 
@@ -88,9 +88,9 @@ Fun fact: _Twig_ is translated into _Ramita_!
 You may have noticed that if you click on the script text, the video will start playing
 at that specific moment. We manage to do that by synchronizing the script and video subtitle word-by-word, 
 giving us the ability to know *when* each word in the script occurs with the subtitles, so it's 
-very important to keep both files as similar as possible. So, for making this feature to work
+very important to keep both files as similar as possible. To make this feature work
 on translated courses we need to translate the subtitles files as well. This is how a
-subtitles file look like:
+subtitle file looks:
 
 ```
 WEBVTT
@@ -116,7 +116,7 @@ It's one thing to accurately translate a tutorial, but delivering a multi-langua
 a different thing to do. As you may have noticed, we partially translated the site
 into Spanish: you will see Spanish content only on tutorials that are translated. For this
 purpose we installed and configured the `StofDoctrineExtensionsBundle` in the application. 
-You can learn more about the _translatable_ behavior [here](https://github.com/doctrine-extensions/DoctrineExtensions/blob/main/doc/translatable.md)
+You can learn more about the _translatable_ behavior [here](https://github.com/doctrine-extensions/DoctrineExtensions/blob/main/doc/translatable.md).
 
 ## Want to Help?
 
@@ -130,3 +130,5 @@ Oh, and right now, we're focused only on translating content into Spanish. We ma
 languages in the future, but not immediately.
 
 Have fun!
+
+By the way, we translated this blog post using DeepL. Check it out [here](https://symfonycasts.com/blog/spanish-translations-es).
