@@ -349,6 +349,7 @@ blogs:
         preview: |
             We're happy to announce that from now on we'll deliver Spanish translations to our new
             tutorials (scripts and subtitles)... pretty much instantly!
+        category: tech
 
     "spanish-translations-es":
         title: 'Traducciones Automáticas al Español'
@@ -356,3 +357,4 @@ blogs:
         preview: |
             Nos complace anunciar que a partir de ahora entregaremos traducciones al español de
             nuestros nuevos tutoriales (guiones y subtítulos)... prácticamente al instante!
+        category: tech
