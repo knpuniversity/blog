@@ -21,8 +21,11 @@ no perder el contexto en los subtítulos)
 Para entender el reto, veamos un ejemplo de nuestro tutorial de Doctrine:
 
 > Por ejemplo, un comando se llama \`doctrine:database:create\`. Genial, vamos a probarlo:
+> 
 > \`\`\`terminal
+> 
 > php bin/console doctrine:database:create
+> 
 > \`\`\`
 
 Queremos que DeepL traduzca las dos primeras frases, pero no la palabra técnica `doctrine:database:create`.
