@@ -1,5 +1,7 @@
 # ¡Traducciones Automáticas de Tutoriales al Español!
 
+> Don't know Spanish? Check the [English version](https://symfonycasts.com/blog/spanish-translations) of this blog post!
+
 Nos complace anunciar que a partir de ahora entregaremos traducciones al español de
 nuestros nuevos tutoriales (guiones y subtítulos)... prácticamente al instante. ¿Cómo
 lo hemos hecho posible? Podrías pensar que hemos contratado a un profesional que se
