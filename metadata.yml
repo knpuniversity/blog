@@ -358,3 +358,10 @@ blogs:
             Nos complace anunciar que a partir de ahora entregaremos traducciones al español de
             nuestros nuevos tutoriales (guiones y subtítulos)... prácticamente al instante!
         category: tech
+
+    "cat-gpt":
+        title: 'Introducing Cat GPT'
+        published: 2023-04-01
+        preview: |
+            Tap into the most powerful source of knowledge in the world: your cat!
+        category: tech
