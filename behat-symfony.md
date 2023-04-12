@@ -1,10 +1,10 @@
-# Setting up Behat on Symfony 5
+# Setting up Behat on Symfony 5 or higher
 
 If you're interested in Behat, we have a [great tutorial](https://symfonycasts.com/screencast/behat)
 about it! Except that... well... that tutorial is getting old when it comes to
 getting Behat installed and configured into a modern app.
 
-So how *can* you use Behat with Symfony 5? Easy Peasy! Just find a Symfony 5 project,
+So how *can* you use Behat with Symfony 5 or higher? Easy Peasy! Just find a Symfony 5+ project,
 install and configure Behat, then profit!
 
 Too fast? Ok, let's look at each part, step-by-step.
@@ -49,7 +49,7 @@ Hit "yes" to continue the installation. This recipe has everything you need to r
 ## Configure it
 
 But it's still not enough. By default `FriendsOfBehat\SymfonyExtension` tries to load
-`config/bootstrap.php`. But in Symfony 5, we don't have that file! No problem.
+`config/bootstrap.php`. But in Symfony 5 or higher, we don't have that file! No problem.
 
 Because Behat is a test system, we can use the same configuration as, for example, PHPUnit.
 In this case, we can use the same bootstrap file. The only problem is that, unless you already
