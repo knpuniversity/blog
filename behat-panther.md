@@ -9,8 +9,8 @@ but without visually *opening* the browser).
 
 ## Installing Symfony Panther extension for Behat
 
-Ok, we need a **Panther**! So... _let's go to the Zoo_! Or, maybe just install the
-digital version with Composer:
+Ok, we need a **Panther**! So... _let's go to the Zoo_! Or, maybe just install the digital
+version with Composer:
 
 ```terminal
 composer require robertfausk/behat-panther-extension --dev
