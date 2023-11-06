@@ -365,3 +365,11 @@ blogs:
         preview: |
             Tap into the most powerful source of knowledge in the world: your cat!
         category: tech
+
+    "last-stack":
+        title: 'Your LAST Stack'
+        published: 2023-11-06
+        preview: |
+            Introducing LAST Stack: A simple, no-build, high-performance, stack
+            made up of Live Components, AssetMapper, Stimulus & Turbo.
+        category: tech
