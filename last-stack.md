@@ -1,7 +1,7 @@
 # Your LAST Stack
 
 > Look out for an upcoming [30 Days with Last Stack](https://symfonycasts.com/screencast/30-days-last)
-> tutorial.
+> tutorial. Or join me for my [UX + AssetMapper SymfonyCon Workshop](https://live.symfony.com/2023-brussels-con/workshop/having-fun-and-being-productive-with-symfony-ux-and-assetmapper)!
 
 The mechanics behind the internet - browsers & web servers - have, for most
 of history, been terrible. We rounded corners using images, did transitions using
