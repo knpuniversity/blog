@@ -1,4 +1,4 @@
-The Blerg! Ahem, KnpUniversity Blog
-===================================
+The Blerg! Ahem, Symfonycasts Blog
+==================================
 
-This repository houses the blog content located at https://knpuniversity.com/blog
+This repository houses the blog content located at https://symfonycasts.com/blog
