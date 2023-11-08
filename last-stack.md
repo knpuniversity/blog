@@ -1,6 +1,10 @@
 # Your LAST Stack
 
-> Look out for an upcoming [30 Days with Last Stack](https://symfonycasts.com/screencast/30-days-last)
+> Read the entire series about LAST Stack:
+> * Your LAST Stack
+> * [Myth: JS imports need a Build System](https://symfonycasts.com/blog/myth-imports-need-build)
+>
+> And look out for an upcoming [30 Days with Last Stack](https://symfonycasts.com/screencast/30-days-last)
 > tutorial. Or join me for my [UX + AssetMapper SymfonyCon Workshop](https://live.symfony.com/2023-brussels-con/workshop/having-fun-and-being-productive-with-symfony-ux-and-assetmapper)!
 
 The mechanics behind the internet - browsers & web servers - have, for most
