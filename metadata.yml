@@ -373,3 +373,11 @@ blogs:
             Introducing LAST Stack: A simple, no-build, high-performance, stack
             made up of Live Components, AssetMapper, Stimulus & Turbo.
         category: tech
+
+    "myth-imports-need-build":
+        title: 'Myth: JS imports need a Build System'
+        published: 2023-11-09
+        preview: |
+            One of the biggest reasons to use a bundler is `import` and `export`.
+            But guess what? These work in your browser just fine.`
+        category: tech
