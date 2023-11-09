@@ -9,11 +9,11 @@
 
 The mechanics behind the internet - browsers & web servers - have, for most
 of history, been terrible. We rounded corners using images, did transitions using
-jQuery, and combined all or JS into a single file, amongst other unsavory things.
+jQuery, and combined all our JS into a single file, amongst other unsavory things.
 
 Fortunately, times have changed. Browsers let us do amazing things out-of-the-box.
 HTTP/2+ allows us to serve individual files without a material performance impact
-and these can be compressed on-the-fly the web server. This means that we can build
+and these can be compressed on-the-fly by the web server. This means that we can build
 apps in a new way, using tools that are simpler *precisely* because they
 *don't* do many things that we no longer need.
 
