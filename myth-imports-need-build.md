@@ -52,7 +52,7 @@ paste anywhere... then refresh. I'll wait:
 <script type="module">
     import { cowthink } from 'https://cdn.jsdelivr.net/npm/cowsayjs@2.0.0/+esm';
 
-    console.log(cowthink('I\'d rather eat grass than keep bundling... though I do ❤️  grass...'));
+    console.log(cowthink('I\'d rather eat grass than keep bundling... though I do ❤️ grass...'));
 </script>
 ```
 
@@ -66,7 +66,7 @@ for another day (and something that AssetMapper handles for you).
 So then... do we still need bundlers? Let's find out with this handy questionnaire:
 
 1) **Do you need to support IE 11?** If yes -> then you need a bundler.
-     A, you should chat with your client about this - even
+     And, you should chat with your client about this - even
      Microsoft dropped IE 11 support more than 2 years ago and `0.37%`
      of users are still using it as of Nov 2023). Don't be a browser "hoarder".
      It's ok to let go.
