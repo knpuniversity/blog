@@ -381,3 +381,11 @@ blogs:
             One of the biggest reasons to use a bundler is `import` and `export`.
             But guess what? These work in your browser just fine.`
         category: tech
+
+    "stop-combining-files":
+        title: 'Stop Combining CSS & JS! + Performance Revisited'
+        published: 2023-11-14
+        preview: |
+            Combining files to minimize requests is a relic to of the past. It's
+            time to stop.
+        category: tech
