@@ -59,7 +59,7 @@ the *main* task that we still need *some* tool to help us with. Webpack did this
 for us. And so does [AssetMapper](https://symfony.com/doc/current/frontend/asset_mapper.html).
 In fact, AssetMapper is *built* for this.
 
-For example, if we have an `assets/images/alien-atatck.png` file, we can reference
+For example, if we have an `assets/images/alien-attack.png` file, we can reference
 it in a template like this:
 
 ```twig
