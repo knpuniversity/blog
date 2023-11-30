@@ -389,3 +389,11 @@ blogs:
             Combining files to minimize requests is a relic to of the past. It's
             time to stop.
         category: tech
+
+    "30-days-last-stack-free":
+        title: '30 Days of LAST Stack Tutorial Free until Jan 15th'
+        published: 2023-11-30
+        preview: |
+            To celebrate the release of Symfony 7 & a stable AssetMapper, we're
+            releasing a 30 day LAST stack tutorial starting December 1st. And,
+            it's free until Jan 15th! Share the love.
