@@ -4,9 +4,10 @@
 > * [Your LAST Stack](/blog/last-stack)
 > * Myth: JS imports need a Build System
 > * [Stop Combining CSS & JS](/blog/stop-combining-files)
+> * [Preloading Assets](/blog/preloading)
 >
-> And look out for an upcoming [30 Days with Last Stack](https://symfonycasts.com/screencast/30-days-last)
-> tutorial. Or join me for my [UX + AssetMapper SymfonyCon Workshop](https://live.symfony.com/2023-brussels-con/workshop/having-fun-and-being-productive-with-symfony-ux-and-assetmapper)!
+> And look out for the [30 Days with Last Stack](https://symfonycasts.com/screencast/30-days-last)
+> tutorial.
 
 When I was a youngster (back when we kids had to walk uphill both ways to
 school through snow) JavaScript thrived on global variables. We added a

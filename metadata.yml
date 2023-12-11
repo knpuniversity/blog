@@ -398,3 +398,11 @@ blogs:
             releasing a 30 day LAST stack tutorial starting December 1st. And,
             it's free until Jan 15th! Share the love.
         category: tech
+
+    "preloading":
+        title: 'Preloading Assets for Fun & Performance'
+        published: 2023-12-12
+        preview: |
+            Want your site to fly? Preload your assets! This happens automatically
+            in AssetMapper, but let's learn how it works anyway!
+        category: tech
