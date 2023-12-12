@@ -4,6 +4,7 @@
 > * [Your LAST Stack](https://symfonycasts.com/blog/last-stack)
 > * [Myth: JS imports need a Build System](https://symfonycasts.com/blog/myth-imports-need-build)
 > * Stop Combining CSS & JS
+> * [Preloading Assets](/blog/preloading)
 >
 > And look out for an upcoming [30 Days with Last Stack](https://symfonycasts.com/screencast/30-days-last)
 > tutorial. Or join me for my [UX + AssetMapper SymfonyCon Workshop](https://live.symfony.com/2023-brussels-con/workshop/having-fun-and-being-productive-with-symfony-ux-and-assetmapper)!
