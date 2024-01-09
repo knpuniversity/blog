@@ -9,13 +9,13 @@ open source tools that I'm extremely proud of.
 
 I have an odd, wonderful job, entirely crowd-sourced by you lovely people.
 
-So in the interest of openness, I wanted share what we did in 2023, my hopes
+So in the interest of openness, I wanted to share what we did in 2023, my hopes
 and dreams for 2024 and... some stats!
 
 ### 2023 Open Source
 
 In 2023, I spent `636 hours` on open source, entirely sponsored
-by Symfonycasts - i.e. you! The truth is that open source takes time, and time
+by SymfonyCasts - i.e. you! The truth is that open source takes time, and time
 requires money. You make this economically possible. [Victor](https://github.com/bocharsky-bw)
 also worked hard on supporting our libraries, which was huge. 
 
@@ -46,7 +46,7 @@ None of this mentions the *real* work: maintenance, reviewing pull requests,
 fixing tests, etc. I work on this, but the true stars are people from the
 community & the Symfony core team. For example, check out the work from
 [nicolas-grekas](https://github.com/nicolas-grekas)! Thanks to our users,
-Symfonycasts is able to financially support Symfony itself in a significant
+SymfonyCasts is able to financially support Symfony itself in a significant
 way.
 
 ### 2023 Tutorials
@@ -54,7 +54,7 @@ way.
 In 2023, we published `19.2` hours of content, which is slightly down from 2022
 (`20.7` hours). That's frustrating. There is *so* much content I'd like to cover,
 and we have big goals this year to streamline our processes. Personally, I'd love
-to hit 30 or 40 hours. Symfony deserves that. And, fortunately, the Symfonycasts
+to hit 30 or 40 hours. Symfony deserves that. And, fortunately, the SymfonyCasts
 team helps so I can focus my time.
 
 How many tutorials were watched? Over `3100 DAYS` of content was watch last year.
@@ -107,21 +107,22 @@ I have a few ideas to improve this:
 
 * **New tutorial authoring tool**. We use a fantastic, internal tool called
   TutsHero to help us build the code for each tutorial. But it's time to
-  modernize that and better integrate it with the recording process.
+  modernize that and better integrate it with the recording process. This
+  should also alleviate the time it takes to add our magic "code blocks".
 
 * **AI in Script Editing**. Fun fact: I first record rough audio while recording
   the video. We use AI to transcribe that. Then we manually clean up the
-  script, reformatting code (`foo arow bar` becomes `$foo->bar()`), adding
+  script, reformatting code (`foo arrow bar` becomes `$foo->bar()`), adding
   `ticks` around code, and rephrasing. Finally, I record this. The script
   editing this takes a significant amount of time and I think AI can help
   automate this.
 
-What about other authors? Sure! though finding consistent, high-quality authors is
+What about other authors? Sure! Though finding consistent, high-quality authors is
 hard. If you have a passion for teaching, definitely [reach out](https://symfonycasts.com/contact)!
 
-### 2023 Symfonycasts.com
+### 2023 SymfonyCasts.com
 
-Our team - Diego, Vladimir, Victor & Leanna - work a lot on Symfonycasts.com so
+Our team - Diego, Vladimir, Victor & Leanna - work a lot on SymfonyCasts.com so
 that we can have nice things... and I can focus on tutorials (Diego & Victor also
 help with creating tutorials).
 
@@ -147,7 +148,7 @@ answers live in public: they help everyone.
 So what's next? I have a few goals for 2024:
 
 * **More languages**. Each new tutorial's script and subtitles are already
-  translated into Spanish in a high quality way thanks to AI. We should add
+  translated into Spanish in a high-quality way thanks to AI. We should add
   more languages to make the content accessible to more people.
 
 * **More tutorials**. We have a lot of ideas for new tutorials. We're also
