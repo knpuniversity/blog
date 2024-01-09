@@ -406,3 +406,10 @@ blogs:
             Want your site to fly? Preload your assets! This happens automatically
             in AssetMapper, but let's learn how it works anyway!
         category: tech
+    "2023-review":
+        title: '2023: A Year in Tutorials & Open Source'
+        published: 2024-01-10
+        preview: |
+            Let's peak back at 2023: the tutorials we created & the open source
+            initiatives that you helped us push forward.
+        category: news
