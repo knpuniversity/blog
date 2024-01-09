@@ -126,7 +126,7 @@ Our team - Diego, Vladimir, Victor & Leanna - work a lot on SymfonyCasts.com so
 that we can have nice things... and I can focus on tutorials (Diego & Victor also
 help with creating tutorials).
 
-Out of the million different things from 2023, one stands our: our new Tailwind-powered
+Out of the million different things from 2023, one stands out: our new Tailwind-powered
 design. We're rolling this out slowly - but you can see it on this blog section
 or any course pages. And this is more than a re-skinning: it's a chance for us
 to embrace the [LAST Stack](https://symfonycasts.com/blog/last-stack) principles:
