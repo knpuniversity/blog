@@ -413,3 +413,11 @@ blogs:
             Let's peak back at 2023: the tutorials we created & the open source
             initiatives that you helped us push forward.
         category: news
+
+    "doctrine-hidden":
+        title: "Doctrine's HIDDEN"
+        published: 2024-01-17
+        preview: |
+            Using Doctrine's HIDDEN doesn't come up often but it is a great tool to have 
+            when you need it!
+        category: tech
