@@ -414,10 +414,18 @@ blogs:
             initiatives that you helped us push forward.
         category: news
 
+    "live-stream-5":
+        title: "Live Stream #5: A Day in the Life of Getting Live Components to stable"
+        published: 2024-01-17
+        preview: |
+            Live stream from Jan 24th where we talk about the steps to getting live
+            components to a stable release and triage a few technical issues.
+        category: tech
+
 #    "doctrine-hidden":
 #        title: "Doctrine's HIDDEN"
 #        published: 2024-01-17
 #        preview: |
-#            Using Doctrine's HIDDEN doesn't come up often but it is a great tool to have 
+#            Using Doctrine's HIDDEN doesn't come up often but it is a great tool to have
 #            when you need it!
 #        category: tech
