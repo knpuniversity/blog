@@ -422,10 +422,10 @@ blogs:
             components to a stable release and triage a few technical issues.
         category: tech
 
-#    "doctrine-hidden":
-#        title: "Doctrine's HIDDEN"
-#        published: 2024-01-17
-#        preview: |
-#            Using Doctrine's HIDDEN doesn't come up often but it is a great tool to have
-#            when you need it!
-#        category: tech
+    "doctrine-hidden":
+        title: "Doctrine's HIDDEN gem"
+        published: 2024-01-23
+        preview: |
+            Using Doctrine's HIDDEN doesn't come up often but it is a great tool to have
+            when you need it!
+        category: tech
