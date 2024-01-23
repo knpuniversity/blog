@@ -7,7 +7,7 @@ but it deserves its 5 in the spotlight!
 `HIDDEN` allows you to select a field so that you can sort by it... but *without*
 include it in the results:
 
-```
+```php
 /** @return Voyage[] */
 public function findAllOrderedByPastFirst(): array
 {
