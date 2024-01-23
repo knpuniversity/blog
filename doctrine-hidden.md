@@ -54,7 +54,7 @@ $this->createQueryBuilder('voyage')
 
 ## Ordering Null Values Last
 
-Ordering `null` values last thanks to [@Thibault_1635](https://twitter.com/Thibault_1635/status/1744867305786384855):
+Ordering `null` values first thanks to [@Thibault_1635](https://twitter.com/Thibault_1635/status/1744867305786384855):
 
 ```php
 $this->createQueryBuilder('voyage')
