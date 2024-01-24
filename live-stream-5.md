@@ -16,5 +16,5 @@ and came up with a simpler, more standard result. Good stuff. Topic:
 * Morphing! What is it? What is idiomorph? `9:10`
 * Using POST requests for Ajax calls: `13:30`
 * Changing the `data-action-name` syntax: `25:30`
-* The exciting work of traiging UX PRs: `49:30`
+* The exciting work of triaging UX PRs: `49:30`
 

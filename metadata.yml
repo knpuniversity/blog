@@ -418,7 +418,7 @@ blogs:
         title: "Live Stream #5: A Day in the Life of Getting Live Components to stable"
         published: 2024-01-17
         preview: |
-            Live stream from Jan 24th where we talk about the steps to getting live
+            Live stream from Jan 17th where we talk about the steps to getting live
             components to a stable release and triage a few technical issues.
         category: tech
 
@@ -428,4 +428,13 @@ blogs:
         preview: |
             Using Doctrine's HIDDEN doesn't come up often but it is a great tool to have
             when you need it!
+        category: tech
+
+    "live-stream-6":
+        title: "Live Stream #6: Building v2 of our TutsHero Tutorial-building Tool"
+        published: 2024-01-24
+        preview: |
+            Live stream from Jan 24th where we talk about HTTP caching, brainstorming
+            the "attributes" variable for Twig Component & some hacking on our
+            internal tutorial-building tool: TutsHero.
         category: tech
