@@ -438,3 +438,13 @@ blogs:
             the "attributes" variable for Twig Component & some hacking on our
             internal tutorial-building tool: TutsHero.
         category: tech
+
+    "live-stream-7":
+        title: "Live Stream #7: Let's build some Twig UI Components"
+        published: 2024-01-31
+        preview: |
+            Live stream from Jan 31st where we talk about Twig attribute syntax
+            proposal, the new "URL" binding feature in LiveComponents and then
+            dive into building a "Tooltip" Twig component / recipe for a proposed
+            new section of the UX site.
+        category: tech
