@@ -448,3 +448,13 @@ blogs:
             dive into building a "Tooltip" Twig component / recipe for a proposed
             new section of the UX site.
         category: tech
+
+    "live-stream-8":
+        title: "Live Stream #8: Live Component JavaScript Internals"
+        published: 2024-02-07
+        preview: |
+            Live stream from Feb 7th where we dive into the JavaScript behind
+            the Live Components package: the Stimulus controller, Component objects,
+            how re-rendering happens & the internal plugins system. Yes, this one
+            gets TECHY.
+        category: tech
