@@ -458,3 +458,12 @@ blogs:
             how re-rendering happens & the internal plugins system. Yes, this one
             gets TECHY.
         category: tech
+
+    "live-stream-9":
+        title: "Live Stream #9: Turbo 8, Live Components & Challenges in Morphing"
+        published: 2024-02-14
+        preview: |
+            Live stream from Feb 14th where we dive Turbo 8, view transitions,
+            and "morphing": the key tech behind LiveComponents & a new feature
+            in Turbo 8. We work on how to make our Stimulus controllers morph-ready.
+        category: tech

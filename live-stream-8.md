@@ -1,4 +1,4 @@
-# Live Component JavaScript Internals: Cleanup time!
+# Live Stream #8: Live Component JavaScript Internals: Cleanup time!
 
 In this week's live stream, we talk the new major Doctrine releases, the
 UX twig Icon pull request and then dive into the JavaScript internals of
