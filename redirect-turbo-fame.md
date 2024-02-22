@@ -3,12 +3,13 @@
 Recently, we received a fascinating [question](https://symfonycasts.com/screencast/last-stack/live-components#comment-31545),
 summarized as:
 
-> Suppose I submit from a Live component to a [LiveAction](https://symfony.com/bundles/ux-live-component/current/index.html#actions)
+> Suppose I submit a Live component to a [LiveAction](https://symfony.com/bundles/ux-live-component/current/index.html#actions)
 > and redirect from there. How can I make this navigate a `<turbo-frame>` instead
 > of the full page?
 
 Let's learn a bit about how Live Components handles redirects, then see how we can
-use Turbo Streams to navigate a frame instead of the full page.
+use Turbo Streams to navigate a frame instead of the full page. This is team work
+at the max!
 
 ## How Live Components Handles Redirects
 
@@ -30,7 +31,7 @@ class SendMessage extends AbstractController
 }
 ```
 
-The template for this component might look like this:
+The template for this component might look like:
 
 ```twig
 <div {{ attributes }}>
@@ -48,22 +49,22 @@ With this setup, when the user clicks the "Send" button, the `send()` method is
 called, which returns a redirect. Redirects are tricky in JavaScript. In fact,
 it's impossible for JavaScript to detect when a redirect happens (your browser
 automatically makes a second request to the new URL and returns that, all without
-JavaScript knowing anything about it).
+JavaScript knowing this happened).
 
 To work around this limitation, the LiveComponents PHP code intercepts the redirect
 and changes it to a non-redirect response that *includes* the new URL. The LiveComponents
-JavaScript sees that, then redirects the page using JavaScript. Or, if `Turbo` is
-available, it uses `Turbo.visit()` to navigate to the new page.
+JavaScript detects that, then redirects the page using JavaScript. Or, if `Turbo` is
+available, it uses `Turbo.visit()` to navigate to the new page. Sweet!
 
 ## turbo-frame & turbo-stream Secret Powers
 
 So then, what if we want to navigate a single `<turbo-frame>` on the page instead
 of the full page?
 
-The answer lies in combining two *super* cool things about Turbo:
+Before we get there, let me tell you about two *super* cool things about Turbo:
 
 1. `<turbo-frame>` is a [custom HTML element](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_custom_elements).
-   And, as part of this, if you set the `src` attribute of a `<turbo-frame>` - whether
+   As part of this, if you set the `src` attribute of a `<turbo-frame>` - whether
    via JavaScript or even manually in your browser's debugger - the frame will make
    an Ajax request to that URL and navigate. Or, if a new `<turbo-frame>` pops
    onto the page *and* it has a `src` attribute, the same thing will happen.
@@ -113,7 +114,7 @@ Then, in the template, anywhere inside your root component element, add somethin
 ```
 
 That's it! When this `<turbo-stream>` pops onto the page, it'll replace your existing
-`<turbo-frame>` with this new one. That new element will instantly activate, see
+`<turbo-frame>` with this new one. That new element will instantly activate,
 notice its `src` attribute, and make an Ajax request to fetch that page. It'll
 then use its normal behavior of only loading the matching frame from that page
 into the frame.

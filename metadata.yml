@@ -449,9 +449,38 @@ blogs:
             new section of the UX site.
         category: tech
 
+    "live-stream-8":
+        title: "Live Stream #8: Live Component JavaScript Internals"
+        published: 2024-02-07
+        preview: |
+            Live stream from Feb 7th where we dive into the JavaScript behind
+            the Live Components package: the Stimulus controller, Component objects,
+            how re-rendering happens & the internal plugins system. Yes, this one
+            gets TECHY.
+        category: tech
+
+    "live-stream-9":
+        title: "Live Stream #9: Turbo 8, Live Components & Challenges in Morphing"
+        published: 2024-02-14
+        preview: |
+            Live stream from Feb 14th where we dive Turbo 8, view transitions,
+            and "morphing": the key tech behind LiveComponents & a new feature
+            in Turbo 8. We work on how to make our Stimulus controllers morph-ready.
+        category: tech
+
+    "live-stream-10":
+        title: "Live Stream #10: Finishing the LiveComponents data-live-action-args Syntax Change"
+        published: 2024-02-20
+        preview: |
+            Live stream from Feb 20th where we do some open source maintenance
+            on Symfony UX, merge some PR's then finish the `data-live-action-args`
+            pull request that we first discussed several weeks ago. Good work
+            towards LiveComponents stable!
+        category: tech
+
     "redirect-turbo-fame":
         title: "Live Components + Turbo Streams: Navigating a Frame"
-        published: 2024-02-10
+        published: 2024-02-26
         preview: |
             When you redirect from a `LiveAction`, LiveComponents, naturally,
             will perform a full page redirect (or redirect via `Turbo` if it's
