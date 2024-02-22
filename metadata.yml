@@ -448,13 +448,13 @@ blogs:
             dive into building a "Tooltip" Twig component / recipe for a proposed
             new section of the UX site.
         category: tech
-   
+
     "redirect-turbo-fame":
-        title: "How to Redirect into a Turbo-Frame from a Live Component"
+        title: "Live Components + Turbo Streams: Navigating a Frame"
         published: 2024-02-10
         preview: |
-         When you redirect from LiveAction, LiveComponents sees that and checks 
-        to see if Turbo is installed. If it is, it does a Turbo.visit() instead of a real, full 
-        site redirect. So that works great. But you want something different; 
-        not a page navigation, but a frame navigation.
+            When you redirect from a `LiveAction`, LiveComponents, naturally,
+            will perform a full page redirect (or redirect via `Turbo` if it's
+            available. But what if you want to navigate a frame? The answer lies
+            in some clever use of Turbo Streams.
         category: tech
