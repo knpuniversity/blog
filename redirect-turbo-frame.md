@@ -1,4 +1,4 @@
-# Live Components + Turbo Streams: Navigating a Frame
+# Live Components + Turbo Streams: Navigating a Turbo Frame
 
 Recently, we received a fascinating [question](https://symfonycasts.com/screencast/last-stack/live-components#comment-31545),
 summarized as:
@@ -37,11 +37,11 @@ The template for this component might look like:
 <div {{ attributes }}>
     <input data-model="message" />
 
-    <button data-action="live#action data-action-name="send">Send</button>
+    <button data-action="live#action" data-action-name="send">Send</button>
 ```
 
 ***TIP
-In an upcoming version of LiveComponents, `data-action-name` will become
+In the upcoming 2.16.0 version of LiveComponents, `data-action-name` will become
 `data-live-action-param`.
 ***
 
