@@ -477,3 +477,13 @@ blogs:
             pull request that we first discussed several weeks ago. Good work
             towards LiveComponents stable!
         category: tech
+
+    "redirect-turbo-frame":
+        title: "Live Components + Turbo Streams: Navigating a Turbo Frame"
+        published: 2024-02-26
+        preview: |
+            When you redirect from a `LiveAction`, LiveComponents, naturally,
+            will perform a full page redirect (or redirect via `Turbo` if it's
+            available. But what if you want to navigate a Turbo frame? The answer lies
+            in some clever use of Turbo Streams.
+        category: tech
