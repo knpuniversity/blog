@@ -487,3 +487,12 @@ blogs:
             available. But what if you want to navigate a Turbo frame? The answer lies
             in some clever use of Turbo Streams.
         category: tech
+
+    "live-stream-11":
+        title: "Live Stream #11: Turbo Morph Updates & Autocomplete morphing work"
+        published: 2024-02-28
+        preview: |
+            Live stream from Feb 28th where we get some updates on the "active value"
+            change in Turbo 8 morphing. Then we dive into work on a PR for the
+            autocomplete component: making it morph-ready... which is tricky!
+        category: tech
