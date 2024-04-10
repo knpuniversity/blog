@@ -496,3 +496,12 @@ blogs:
             change in Turbo 8 morphing. Then we dive into work on a PR for the
             autocomplete component: making it morph-ready... which is tricky!
         category: tech
+
+    "ryan-brain-cancer":
+        title: "Ryan has Incurable Brain Cancer - but SymfonyCasts is Strong"
+        published: 2024-04-10
+        preview: |
+            Bad News: Ryan has incurable brain cancer. Good News: SymfonyCasts
+            is still going strong. Best news: we're fighting it with everything
+            we've got & have amazing support from the community.
+        category: news
