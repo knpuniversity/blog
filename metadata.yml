@@ -505,3 +505,13 @@ blogs:
             is still going strong. Best news: we're fighting it with everything
             we've got & have amazing support from the community.
         category: news
+
+    "zenstruck-joins-symfonycasts":
+        title: "Kevin Bond (aka Zenstruck) joins SymfonyCasts"
+        published: 2024-05-21
+        preview: |
+            Kevin Bond (aka Zenstruck) is joining forces with us as a head 
+            tutorial writer. This means tutorials created by Kevin in the SymfonyCasts 
+            style you know and love. It also means the ability for us to make more 
+            content about more libraries and solutions around the Symfony ecosystem. 
+        category: news
