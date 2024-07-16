@@ -513,5 +513,15 @@ blogs:
             Kevin Bond (aka Zenstruck) is joining forces with us as a head 
             tutorial writer. This means tutorials created by Kevin in the SymfonyCasts 
             style you know and love. It also means the ability for us to make more 
-            content about more libraries and solutions around the Symfony ecosystem. 
+            content about more libraries and solutions around the Symfony ecosystem.
         category: news
+
+    "symfony-reproducer":
+        title: "Creating a Symfony Reproducer"
+        published: 2024-07-16
+        preview: |
+            Oh snap! You've discovered what you suspect is a bug in Symfony.
+            Don't despair, Symfony is open source so there many ways you can
+            help get it resolved. Let's look at how to create a reproducer to
+            help other contributors understand the issue and find a solution.
+        category: tech
