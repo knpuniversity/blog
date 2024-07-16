@@ -5,15 +5,13 @@ Actually, it's all good! Symfony is open source, so we have some good options to
 
 1. Search the [symfony/symfony](https://github.com/symfony/symfony) repository for keywords related to your problem.
    It's possible this bug has already been reported and maybe a fix is already in progress.
-2. Ask about your issue in the `#support` channel on the [Symfony Slack](https://symfony.com/slack). This can be a good
-   way to confirm the bug or perhaps get ideas for a workaround.
-3. Do you think you know how to fix the issue? Open a PR! See the
+2. Do you think you know how to fix the issue? Open a PR! See the
    [Symfony documentation](https://symfony.com/doc/current/contributing/code/pull_requests.html) to help with this.
    Add a test if possible, it helps a *ton* to get the PR merged!
-4. Not sure how to fix? Yea, bug fixes are hard. Are you able to create a failing test? If so, same as the above
+3. Not sure how to fix? Yea, bug fixes are hard. Are you able to create a failing test? If so, same as the above
    step, create a PR that demonstrates the bug in a failing test. Even if it doesn't include a fix, it's highly
    likely it will get reviewed and confirmed. You'll also likely get tips on how to fix!
-5. Still no luck? No worries: creating a fix or even a failing test can be tricky!
+4. Still no luck? No worries: creating a fix or even a failing test can be tricky!
 
 At this point, you should open a [bug report issue](https://github.com/symfony/symfony/issues/new/choose).
 
@@ -23,7 +21,7 @@ If we can create a simple Symfony app that shows the bug, then it's 10x, no 50x 
 friendly neighborhood Symfony contributor will swing in to save the day.
 
 ***TIP
-In general, pull requests (like described in steps 3 and 4 above) are more likely to catch the eye
+In general, pull requests (like described in steps 2 and 3 above) are more likely to catch the eye
 of maintainers than issues (even a PR that only includes a failing test).
 ***
 
