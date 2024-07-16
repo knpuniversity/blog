@@ -22,9 +22,10 @@ Another contributor can probably fix the issue, IF, they can reproduce it. And *
 If we can create a simple Symfony app that shows the bug, then it's 10x, no 50x more likely that your
 friendly neighborhood Symfony contributor will swing in to save the day.
 
-> [!TIP]
-> In general, pull requests (like described in steps 3 and 4 above) are more likely to catch the eye
-> of maintainers than issues (even a PR that only includes a failing test).
+***TIP
+In general, pull requests (like described in steps 3 and 4 above) are more likely to catch the eye
+of maintainers than issues (even a PR that only includes a failing test).
+***
 
 ## What is a Reproducer
 
@@ -33,11 +34,12 @@ includes only the code to reproduce the bug you are seeing. Maintainers love the
 to see the same bug as you (it's a fast way to make friends with the core team!). They can clone it and test
 it locally to confirm and test possible fixes.
 
-> [!TIP]
-> Occasionally, even we Symfony devs make mistakes (gasp!).
-> Creating a reproducer is a great learning experience, helps narrow down the
-> bug and (yes) occasionally helps us realize that it wasn't a bug at all, but a
-> a misconfiguration or mistake in our own app.
+***TIP
+Occasionally, even we Symfony devs make mistakes (gasp!).
+Creating a reproducer is a great learning experience, helps narrow down the
+bug and (yes) occasionally helps us realize that it wasn't a bug at all, but a
+a misconfiguration or mistake in our own app.
+***
 
 ## Create a Reproducer
 
@@ -48,10 +50,11 @@ Be sure to replace `--version=7.1` with the version of Symfony your app is using
 symfony new --webapp --version=7.1 my-reproducer
 ```
 
-> [!NOTE]
-> The `--webapp` flag is optional and may not be required depending on the reproducer you are creating.
-> It does give you a database and a bunch of other features that are ready to go out of the box.
-> Also, the maker bundle is included which can be helpful for generating the code you'll need.
+***TIP
+The `--webapp` flag is optional and may not be required depending on the reproducer you are creating.
+It does give you a database and a bunch of other features that are ready to go out of the box.
+Also, the maker bundle is included which can be helpful for generating the code you'll need.
+***
 
 Ok, we're ready! Open the app in your IDE and add whatever code is needed to see the issue.
 This could be entities, services, messages, controllers, tests, or cryptocurrency keys (kidding!).
@@ -59,10 +62,11 @@ Remember, it's important to keep the code as simple as possible to make it easy 
 to see the exact code that causes the problem. Add all this as a single commit so you can reference
 both the repository and this commit in your Symfony issue.
 
-> [!TIP]
-> Instructions on how to use and see the issue can be added as a `README.md` at the root of the
-> repository. Here's a [good example](https://github.com/weaverryan/api_platform_null_object_security_reproducer?tab=readme-ov-file#api-platform-bug-reproducer-object-is-null-during-patch-security)
-> of this.
+***TIP
+Instructions on how to use and see the issue can be added as a `README.md` at the root of the
+repository. Here's a [good example](https://github.com/weaverryan/api_platform_null_object_security_reproducer?tab=readme-ov-file#api-platform-bug-reproducer-object-is-null-during-patch-security)
+of this.
+***
 
 Next, create a (public) [new repository](https://github.com/new) on GitHub and follow the instructions
 to push to it.
