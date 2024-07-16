@@ -518,7 +518,7 @@ blogs:
 
     "symfony-reproducer":
         title: "Creating a Symfony Reproducer"
-        published: 2024-07-11
+        published: 2024-07-16
         preview: |
             Oh snap! You've discovered what you suspect is a bug in Symfony.
             Don't despair, Symfony is open source so there many ways you can
