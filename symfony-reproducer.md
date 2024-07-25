@@ -86,4 +86,4 @@ you can see a maintainer suggesting a solution.
 Interested in fixing the bug yourself? 10 ⭐s for you! In my next post, we'll see how you can leverage
 your own reproducer to do that.
 
-Happy reproducing 😉!!
+Happy reproducing 😉!
