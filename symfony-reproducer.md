@@ -1,6 +1,6 @@
 # Creating a Symfony Reproducer
 
-Oh snap! You've discovered what you suspect is a bug in Symfony. Nooooooooooooo!
+Oh, snap! You've discovered what you suspect is a bug in Symfony. Nooooooooooooo!
 Actually, it's all good! Symfony is open source, so we have some good options to keep you moving:
 
 1. Search the [symfony/symfony](https://github.com/symfony/symfony) repository for keywords related to your problem.
@@ -8,20 +8,20 @@ Actually, it's all good! Symfony is open source, so we have some good options to
 2. Do you think you know how to fix the issue? Open a PR! See the
    [Symfony documentation](https://symfony.com/doc/current/contributing/code/pull_requests.html) to help with this.
    Add a test if possible, it helps a *ton* to get the PR merged!
-3. Not sure how to fix? Yea, bug fixes are hard. Are you able to create a failing test? If so, same as the above
+3. Not sure how to fix? Yeah, bug fixes are hard. Are you able to create a failing test? If so, same as the above
    step, create a PR that demonstrates the bug in a failing test. Even if it doesn't include a fix, it's highly
-   likely it will get reviewed and confirmed. You'll also likely get tips on how to fix!
+   likely it will get reviewed and confirmed. You'll also likely get tips on how to fix it!
 4. Still no luck? No worries: creating a fix or even a failing test can be tricky!
 
 At this point, you should open a [bug report issue](https://github.com/symfony/symfony/issues/new/choose).
 
-But wait! HOW you open the issue will make a HUGE difference in if and how quickly the bug is fixed.
+But wait! HOW you open the issue will make a HUGE difference in whether and how quickly the bug is fixed.
 Another contributor can probably fix the issue, IF, they can reproduce it. And *that* is the key.
 If we can create a simple Symfony app that shows the bug, then it's 10x, no 50x more likely that your
 friendly neighborhood Symfony contributor will swing in to save the day.
 
 ***TIP
-In general, pull requests (like described in steps 2 and 3 above) are more likely to catch the eye
+In general, pull requests (like those described in steps 2 and 3 above) are more likely to catch the eye
 of maintainers than issues (even a PR that only includes a failing test).
 ***
 
@@ -34,7 +34,7 @@ it locally to confirm and test possible fixes.
 
 ***TIP
 Occasionally, even we Symfony devs make mistakes (gasp!).
-Creating a reproducer is a great learning experience, helps narrow down the
+Creating a reproducer is a great learning experience, and helps narrow down the
 bug and (yes) occasionally helps us realize that it wasn't a bug at all, but a
 a misconfiguration or mistake in our own app.
 ***
