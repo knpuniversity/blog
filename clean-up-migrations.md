@@ -36,17 +36,8 @@ rm -rf migrations/*
 Now, dump the current schema into a new single migration:
 
 ```terminal
-symfony console doctrine:migrations:dump-schema
-```
-
-***TIP
- The `doctrine:migrations:dump-schema` command doesn't dump foreign key constraints. Instead,
- better use:
- 
- ```terminal
 symfony console doctrine:migrations:diff --from-empty-schema
 ```
-***
 
 The bundle provides one more command that helps to "roll up" the migrations by deleting
 all tracked versions and insert the one version that exists:
