@@ -19,9 +19,10 @@ where we can work.
    button at the top of the page.
 2. Choose your personal GitHub account as the owner and keep the default name
    of `symfony`.
-3. Leave all the other options as is and click _Create Fork_. You should now be on https://github.com/your-username/symfony.
-4. Wait a few seconds for the fork to be created.
-5. Click the green _Code_ dropdown and under the _SSH_ tab,
+3. Leave all the other options as is and click _Create Fork_.
+4. You should now be on https://github.com/your-username/symfony.
+5. Wait a few seconds for the fork to be created.
+6. Click the green _Code_ dropdown and under the _SSH_ tab,
    copy the URL to your clipboard.
 
 ## Cloning your Fork
@@ -54,11 +55,11 @@ In Part 1, you picked the Symfony version for your reproducer. Now it’s time
 to match that version in our forked Symfony repo. Let’s check it out:
 
 ```bash
-git checkout 7.1
+git checkout 7.1 # or any other version you picked for your reproducer
 ```
 
 Boom! You’ve got the right version. Now, let’s make sure we’re up-to-date
-by merging in any new changes:
+by merging in any new changes from the _upstream_ repository:
 
 ```bash
 git merge upstream/7.1
@@ -95,8 +96,8 @@ php ../symfony/link .
 
 Open your reproducer in your favorite IDE. Normally, messing with files in the 
 `vendor/` directory is a no-no, but in this case, for files in `vendor/symfony/*`,
-you can! Changes you make to these files  are actually being made in your forked
-Symfony repository.
+you can! Changes you make to these files are actually being made in your forked
+Symfony repository because of the symlinks.
 
 Once you’ve squashed that bug, jump back into your local Symfony fork and take a
 look at your changes:
@@ -112,8 +113,9 @@ to submit your fix to the Symfony repository!
 
 ## Verifying a Proposed Fix
 
-So, you’ve found a bug, and someone from the awesome Symfony community has proposed a fix.
-Now, let’s use your reproducer to check if the fix works.
+But if you can't fix it yourself - don't worry! Someone from the awesome Symfony community
+may propose a fix. If this happens, you can help with the review and confirm with your
+reproducer if the fix works. PR authors _love_ seeing "this fixes my issue" comments!
 
 First, track down the Pull Request (PR) that has the fix. You’ll see something like this
 at the top of the PR:
@@ -134,12 +136,16 @@ git fetch {user}
 Now, checkout the branch from the user's fork:
 
 ```bash
-git switch -c {user}-{branch-name} {user}/{branch-name}
+git switch -c {branch-name} {user}/{branch-name}
 ```
 
 ***TIP
 I like to prefix the branch name with the user’s GitHub handle
 so I don’t get lost in branch-land!
+
+```bash
+git switch -c fabpot-fix-something fabpot/fix-something
+```
 ***
 
 Back to your reproducer! Let’s link it to this new branch:
@@ -160,7 +166,7 @@ If you want to make your life a little easier (and why wouldn’t you?), check o
 and submitting PRs without all the manual fuss.
 
 And there you have it! Whether you’re fixing a bug or helping the community
-squash one, you’re making Symfony even better. Got questions or feedback?
+to squash one, you’re making Symfony even better. Got questions or feedback?
 Drop them in the comments below!
 
 Happy coding!
