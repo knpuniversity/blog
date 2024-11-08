@@ -27,7 +27,7 @@ where we can work.
 
 ## Cloning your Fork
 
-Let’s get the repo down to your local workspace:
+Let's get the repo down to your local workspace:
 
 ```bash
 cd ~
@@ -35,15 +35,15 @@ git clone <your-fork-url-from-clipboard>
 cd symfony
 ```
 
-Now we’re going to add the original Symfony repo as an _upstream_ remote. Why?
+Now we're going to add the original Symfony repo as an _upstream_ remote. Why?
 So we can easily pull in the latest Symfony updates and stay fresh!
 
 ```bash
 git remote add upstream git@github.com:symfony/symfony.git
 ```
 
-Let’s grab the latest changes from Symfony (you’ll want to run this command
-whenever Symfony gets an update, so it’s good to get used to it).
+Let's grab the latest changes from Symfony (you'll want to run this command
+whenever Symfony gets an update, so it's good to get used to it).
 
 ```bash
 git fetch upstream
@@ -51,21 +51,21 @@ git fetch upstream
 
 ## Use your Reproducer to Fix the Bug
 
-In Part 1, you picked the Symfony version for your reproducer. Now it’s time
-to match that version in our forked Symfony repo. Let’s check it out:
+In Part 1, you picked the Symfony version for your reproducer. Now it's time
+to match that version in our forked Symfony repo. Let's check it out:
 
 ```bash
 git checkout 7.1 # or any other version you picked for your reproducer
 ```
 
-Boom! You’ve got the right version. Now, let’s make sure we’re up-to-date
+Boom! You've got the right version. Now, let's make sure we're up-to-date
 by merging in any new changes from the _upstream_ repository:
 
 ```bash
 git merge upstream/7.1
 ```
 
-Great! Now, we’re going to create a new branch for our bug fix:
+Great! Now, we're going to create a new branch for our bug fix:
 
 ```bash
 git checkout -b my-fix
@@ -78,7 +78,7 @@ unique to your fork.
 
 ## Linking your Reproducer to your Fork
 
-Let’s link that reproducer you created to your freshly forked Symfony repo.
+Let's link that reproducer you created to your freshly forked Symfony repo.
 Head back to your reproducer directory:
 
 ```bash
@@ -86,7 +86,7 @@ cd ~/my-reproducer
 ```
 
 Symfony comes with a handy PHP script to link itself to a project. This will
-symlink all your app’s `symfony/*` packages to your local fork. Super neat, right?
+symlink all your app's `symfony/*` packages to your local fork. Super neat, right?
 
 ```bash
 php ../symfony/link .
@@ -99,7 +99,7 @@ Open your reproducer in your favorite IDE. Normally, messing with files in the
 you can! Changes you make to these files are actually being made in your forked
 Symfony repository because of the symlinks.
 
-Once you’ve squashed that bug, jump back into your local Symfony fork and take a
+Once you've squashed that bug, jump back into your local Symfony fork and take a
 look at your changes:
 
 ```bash
@@ -117,7 +117,7 @@ But if you can't fix it yourself - don't worry! Someone from the awesome Symfony
 may propose a fix. If this happens, you can help with the review and confirm with your
 reproducer if the fix works. PR authors _love_ seeing "this fixes my issue" comments!
 
-First, track down the Pull Request (PR) that has the fix. You’ll see something like this
+First, track down the Pull Request (PR) that has the fix. You'll see something like this
 at the top of the PR:
 
 > {user} wants to merge X commit(s) into symfony:{version} from {user}:{branch-name}
@@ -125,7 +125,7 @@ at the top of the PR:
 Click `{user}:{branch-name}` to jump to the `{user}`'s fork. Like we did with
 our own fork, click the green _Code_ dropdown and copy the URL to your clipboard.
 
-We’re going to add their fork as a remote:
+We're going to add their fork as a remote:
 
 ```bash
 cd ~/symfony
@@ -140,15 +140,15 @@ git switch -c {branch-name} {user}/{branch-name}
 ```
 
 ***TIP
-I like to prefix the branch name with the user’s GitHub handle
-so I don’t get lost in branch-land!
+I like to prefix the branch name with the user's GitHub handle
+so I don't get lost in branch-land!
 
 ```bash
 git switch -c fabpot-fix-something fabpot/fix-something
 ```
 ***
 
-Back to your reproducer! Let’s link it to this new branch:
+Back to your reproducer! Let's link it to this new branch:
 
 ```bash
 cd ~/my-reproducer
@@ -160,13 +160,13 @@ giving feedback on the PR!
 
 ## Bonus Tools
 
-If you want to make your life a little easier (and why wouldn’t you?), check out
+If you want to make your life a little easier (and why wouldn't you?), check out
 [GitHub Desktop](https://github.com/apps/desktop) or the
-[GitHub CLI](https://cli.github.com). They’re awesome for forking, cloning,
+[GitHub CLI](https://cli.github.com). They're awesome for forking, cloning,
 and submitting PRs without all the manual fuss.
 
-And there you have it! Whether you’re fixing a bug or helping the community
-to squash one, you’re making Symfony even better. Got questions or feedback?
+And there you have it! Whether you're fixing a bug or helping the community
+to squash one, you're making Symfony even better. Got questions or feedback?
 Drop them in the comments below!
 
 Happy coding!
