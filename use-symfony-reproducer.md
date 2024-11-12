@@ -11,9 +11,8 @@ at `~/my-reproducer`.
 
 ## Forking the Symfony Repository
 
-The first thing we'll do is _fork_ the [`symfony/symfony`](https://github.com/symfony/symfony)
-repository on GitHub. This will give us our own copy of the Symfony repository
-where we can work.
+Step 1 is to _fork_ the [`symfony/symfony`](https://github.com/symfony/symfony)
+repository on GitHub. This will give us our own copy where we can work.
 
 1. Visit https://github.com/symfony/symfony and click the _Fork_
    button at the top of the page.
@@ -65,7 +64,7 @@ by merging in any new changes from the _upstream_ repository:
 git merge upstream/7.1
 ```
 
-Great! Now, we're going to create a new branch for our bug fix:
+Great! Next, create a new branch for our bug fix:
 
 ```bash
 git checkout -b my-fix
