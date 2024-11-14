@@ -535,3 +535,12 @@ blogs:
             the Symfony repository, link our reproducer to it, and make the
             necessary changes.
         category: tech
+
+     "oss-november":
+        title: "Symfonycasts Open Source Releases November"
+        published: 2024-11-18
+        preview: |
+            This month we've got 6 Symfonycasts open source releases, let's take a quick
+            look at what's new and give a huge thanks to all the contributors who helped make
+            these releases happen!
+        category: tech
