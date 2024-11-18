@@ -1,4 +1,4 @@
-# Symfonycasts November Open Source Roundup!
+# SymfonyCasts November Open Source Roundup!
 
 Hello to our open source friends! In addition to teaching, we also create and maintain
 packages to (hopefully) make your life easier!
@@ -39,7 +39,7 @@ This month we've got 6 releases:
 
 A huge thanks to the new contributors!
 
-Check out the release notes for more details. tl;dr; sometime open source is boring maintenance
+Check out the release notes for more details. tl;dr; sometimes open source is boring maintenance
 and bug fixes. This is one of those times! Nothing too exciting, except for how easy the upgrades
 will be.
 
