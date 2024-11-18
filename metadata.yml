@@ -537,7 +537,7 @@ blogs:
         category: tech
 
     "2024-november-oss-roundup":
-        title: "Symfonycasts November Open Source Roundup!"
+        title: "SymfonyCasts November Open Source Roundup!"
         published: 2024-11-18
         preview: |
             This month we've got 6 SymfonyCasts open source releases, let's take a quick
