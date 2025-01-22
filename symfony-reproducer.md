@@ -83,7 +83,7 @@ As you can see, the issue includes [a reproducer](https://github.com/kbond/subsc
 and instructions on how to experience the problem within the reproducer. If you look further down the issue,
 you can see a maintainer suggesting a solution.
 
-Interested in fixing the bug yourself? 10 ⭐s for you! In my [next post](https://symfonycasts.com/blog/use-symfony-reproducer,
+Interested in fixing the bug yourself? 10 ⭐s for you! In my [next post](https://symfonycasts.com/blog/use-symfony-reproducer),
 we'll see how you can leverage your own reproducer to do that.
 
 Happy reproducing 😉!
