@@ -20,8 +20,10 @@ Webhooks let us react in real-time when emails are delivered, opened, or bounced
 
 While integrating Mailtrap, we hit a few limitations in Symfony’s **Webhook component**—so we **fixed them**! In fact there were several improvements:
 
-Mailtrap Bridge PR: https://github.com/symfony/symfony/pull/58252
-Mailtrap Bridge Webhook PR: https://github.com/symfony/symfony/pull/58403"bulk" webhook event parsing PR: https://github.com/symfony/symfony/pull/58248SendGrid's bridge to benefit from bulk: https://github.com/symfony/symfony/pull/58401
+- Mailtrap Bridge PR: https://github.com/symfony/symfony/pull/58252
+- Mailtrap Bridge Webhook PR: https://github.com/symfony/symfony/pull/58403
+- Bulk webhook event parsing PR: https://github.com/symfony/symfony/pull/58248
+- SendGrid's bridge to benefit from bulk: https://github.com/symfony/symfony/pull/58401
 
 Those improvements are now part of Symfony core.  
 
