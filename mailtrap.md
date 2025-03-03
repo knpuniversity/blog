@@ -18,7 +18,7 @@ Webhooks let us react in real-time when emails are delivered, opened, or bounced
 
 ## Contributing Back to Symfony  
 
-While integrating Mailtrap, we hit a few limitations in Symfony’s **Webhook component**—so we **fixed them**! In fact there were several improvements:
+While integrating Mailtrap, we hit a few limitations in Symfony’s **Webhook component** — so we **fixed them**! In fact there were several improvements:
 
 - Mailtrap Bridge PR: https://github.com/symfony/symfony/pull/58252
 - Mailtrap Bridge Webhook PR: https://github.com/symfony/symfony/pull/58403
