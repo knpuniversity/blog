@@ -8,7 +8,7 @@ We use Mailtrap (which is amazing btw) to get a total refresher on using Mailer:
 
 Testing emails **shouldn't suck**. Real SMTP servers? Clunky. Sending test emails? Messy. Spamming real users? Disaster.  
 
-Mailtrap gives you a **sandboxed email testing environment**—send, preview, inspect, and even check spam scores in one place.  
+Mailtrap gives you a **sandboxed email testing environment** — send, preview, inspect, and even check spam scores in one place.  
 
 ## Mailer & Webhook Superpowers  
 
