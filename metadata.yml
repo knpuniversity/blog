@@ -544,3 +544,12 @@ blogs:
             look at what's new and give a huge thanks to all the contributors who helped make
             these releases happen!
         category: tech
+
+    "package-spotlight-class-metadata":
+        title: "Package Spotlight: `zenstruck/class-metadata`"
+        published: 2024-12-02
+        preview: |
+            `zenstruck/class-metadata` is a library and composer plugin that
+            enables you to *alias* classes in your codebase. We'll look at 
+            a use case and how it can help you in your projects.
+        category: tech
