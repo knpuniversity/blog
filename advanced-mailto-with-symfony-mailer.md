@@ -1,6 +1,6 @@
 # Advanced `mailto:` with Symfony Mailer
 
-Consider the following scenario: you manage the website for company that
+Consider the following scenario: you manage the website for a company that
 builds and sells dinosaur enclosures: "Prehistoric Pens".
 
 There's a section for the sales team where they can review pending
