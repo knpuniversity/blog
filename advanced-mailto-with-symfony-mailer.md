@@ -1,32 +1,19 @@
-# Advanced `mailto:` with Symfony Mailer
+# Ditch mailto Links: Pre-Fill & even Attach Files with Symfony Mailer (.eml Magic!)
 
-Consider the following scenario: you manage the website for a company that
-builds and sells dinosaur enclosures: "Prehistoric Pens".
+Congratulations on your new gig working on the site for "Prehistoric Pens": the leader
+in building dinosaur enclosures!
 
-There's a section for the sales team where they can review pending
-quotes. They want a new feature: when they view a quote, they want to
-quickly send a follow-up email to the customer.
+Every morning (after getting a soda) our sales person Dennis reviews customer requests
+asking for a quote on a specific pen. To be personal (and see it in his sent messages),
+Dennis copies the customer email address, composes an email in his own email client and
+types out a personal message. He also finds and attaches the specs PDF of the pen they want.
 
-Ok, so what about a "Send Follow-up" button that auto sends a generated email with
-Symfony Mailer. We could make the `Reply-To` the currently logged in sales person
-so they get replies.
+This all works fine. But darn it! Dennis is even lazier than the programmers! He wants to be
+able to click a link that opens a new email in his mail client, prefilled with `to` set to the
+customer's email, a subject *and* the pen's PDF attachment. All of this can be done with
+`mailto:`, *except* for the attachment part.
 
-They want to be able to customize the message... sure, we can add a form to fill out.
-
-But... they want to send the email from their own email client so they can find it later
-in their *sent items*.
-
-Sweet! That's super easy! We can just create a "Send Follow-up" button that's a mailto link.
-Something like:
-
-```twig
-<a href="mailto:{{ quote.customer.email }}?subject=Following up on Quote #{{ quote.id }}">
-    Send Follow-up
-</a>
-```
-
-But... they want the email to include the quote PDF as an attachment... I... don't think you
-can do this with a `mailto:` link.
+But good news Dennis! This *is* possible! Programmers rule!
 
 We can do this with Symfony Mailer (well actually, the underlying Mime package that Mailer uses)
 and a controller:
@@ -72,9 +59,9 @@ Now, on our quote page, instead of a `mailto:` link, we can link to this control
 </a>
 ```
 
-When the sales person clicks this link, their browser will download an `.eml` file.
-Opening this will open their email client with the email pre-filled and the PDF attached.
-They can adjust the message, maybe add their signature, and send it off!
+When Dennis clicks this link, his browser will download a `.eml` file.
+Opening this will open his email client with the `to` email pre-filled and the PDF attached.
+He can adjust the message, maybe add his signature, and send it off!
 
 See the Symfony Documentation for more information about
 [Draft Emails](https://symfony.com/doc/current/mailer.html#draft-emails).
