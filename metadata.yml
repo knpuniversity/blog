@@ -544,6 +544,7 @@ blogs:
             look at what's new and give a huge thanks to all the contributors who helped make
             these releases happen!
         category: tech
+
     mailtrap:
         title: "Mailtrap Tutorial (Free) = Mailer + Webhook + Contributing back to Symfony"
         published: 2025-03-01
@@ -551,4 +552,13 @@ blogs:
             The free Mailtrap tutorial is here! It's all about the Mailer & Webhook
             components with the joy of previewing emails in a sandbox. As a bonus,
             this tutorial triggered several contributions back to Symfony!
+        category: tech
+
+    advanced-mailto-with-symfony-mailer:
+        title: "Ditch mailto Links: Pre-Fill & even Attach Files with Symfony Mailer (.eml Magic!)"
+        published: 2025-03-19
+        preview: |
+            The `mailto:` link is a simple way to open an email client with a pre-filled
+            email. But what if you want this email to have a pre-filled attachment?
+            Let's dive into how to do this with Symfony Mailer.
         category: tech
