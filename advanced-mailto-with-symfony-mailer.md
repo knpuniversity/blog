@@ -1,12 +1,12 @@
 # Ditch mailto Links: Pre-Fill & even Attach Files with Symfony Mailer (.eml Magic!)
 
 Congratulations on your new gig working on the site for "Prehistoric Pens": the leader
-in building dinosaur enclosures!
+in dinosaur enclosures!
 
-Every morning (after getting a soda) our sales person Dennis reviews customer requests
+Each morning (after getting a soda), our sales person Dennis reviews customer requests
 asking for a quote on a specific pen. To be personal (and see it in his sent messages),
 Dennis copies the customer email address, composes an email in his own email client and
-types out a personal message. He also finds and attaches the specs PDF of the pen they want.
+types out a personal message. He also finds and attaches the "specs" PDF of the pen the customer wants.
 
 This all works fine. But darn it! Dennis is even lazier than the programmers! He wants to be
 able to click a link that opens a new email in his mail client, prefilled with `to` set to the
@@ -61,13 +61,14 @@ Now, on our quote page, instead of a `mailto:` link, we can link to this control
 
 When Dennis clicks this link, his browser will download a `.eml` file.
 Opening this will open his email client with the `to` email pre-filled and the PDF attached.
-He can adjust the message, maybe add his signature, and send it off!
+All he needs to do is add the message (written with the famous Dennis Nedry charm),
+hit send and finish that tasty soda. Another successful day selling dino pens Dennis!
 
 See the Symfony Documentation for more information about
 [Draft Emails](https://symfony.com/doc/current/mailer.html#draft-emails).
 
-Check out our full and free Symfony
+And check out our full and free Symfony
 [Mailer and Webhook with Mailtrap](https://symfonycasts.com/screencast/mailtrap)
-course for more email fun!
+course for more email goodies!
 
 Happy emailing!
