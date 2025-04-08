@@ -6,6 +6,8 @@ We use Mailtrap (which is amazing btw) to get a total refresher on using Mailer:
 
 ## Why Mailtrap?  
 
+With Mailtrap, sending emails can be both fun in development and simple & reliable on production.
+
 Testing emails **shouldn't suck**. Real SMTP servers? Clunky. Sending test emails? Messy. Spamming real users? Disaster.  
 
 Mailtrap gives you a **sandboxed email testing environment** — send, preview, inspect, and even check spam scores in one place.  
@@ -23,7 +25,7 @@ While integrating Mailtrap, we hit a few limitations in Symfony’s **Webhook co
 - Mailtrap Bridge PR: https://github.com/symfony/symfony/pull/58252
 - Mailtrap Bridge Webhook PR: https://github.com/symfony/symfony/pull/58403
 - Bulk webhook event parsing PR: https://github.com/symfony/symfony/pull/58248
-- SendGrid's bridge to benefit from bulk: https://github.com/symfony/symfony/pull/58401
+- SendGrid's bridge bulk webhook event parsing PR: https://github.com/symfony/symfony/pull/58401
 
 Those improvements are now part of Symfony core.  
 
