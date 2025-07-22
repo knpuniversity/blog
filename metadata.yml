@@ -562,3 +562,12 @@ blogs:
             email. But what if you want this email to have a pre-filled attachment?
             Let's dive into how to do this with Symfony Mailer.
         category: tech
+
+    install-php-locally:
+        title: "Installing PHP Locally (for Symfony CLI)"
+        published: 2025-07-22
+        preview: |
+            The Symfony CLI is *almost* fully batteries included, but it does require
+            PHP be installed locally. Let's look at how to do this on macOS, Linux
+            and Windows.
+        category: tech
