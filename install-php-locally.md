@@ -21,11 +21,7 @@ Once you have PHP and the Symfony CLI installed, [verify your installation](#ver
 
 ## macOS (Homebrew)
 
-First, ensure you have the [Homebrew](https://brew.sh) package manager installed (if it isn't already):
-
-```terminal
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+First, ensure you have the [Homebrew](https://brew.sh) package manager installed (if it isn't already).
 
 ### Homebrew PHP
 
@@ -109,12 +105,7 @@ sudo apt install php8.4-redis
 ### APT Symfony CLI
 
 There are several methods to [install the Symfony CLI](https://symfony.com/download), since we used
-`apt` to install PHP, let's use it to install the Symfony CLI as well:
-
-```terminal
-curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo -E bash
-sudo apt install symfony-cli
-```
+`apt` to install PHP, I'd suggest using that method in the link above to install the Symfony CLI as well.
 
 You should be ready to go! [Verify the installation below](#verify-phpsymfony-cli-installation).
 
