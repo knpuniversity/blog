@@ -121,8 +121,9 @@ You should be ready to go! [Verify the installation below](#verify-phpsymfony-cl
 ## Windows (WSL)
 
 Running PHP natively on Windows (as an `exe`) is *possible*, but can be tricky. I recommend using the
-"Windows Subsystem for Linux" (WSL) to run Ubuntu. It isn't in a container or anything, it runs
-*directly* on Windows! Follow the [WSL installation guide](https://learn.microsoft.com/en-us/windows/wsl/install)
+"Windows Subsystem for Linux" (WSL) to run Ubuntu. It isn't in a container or other virtualization tool,
+it runs *directly* on Windows! Follow the
+[WSL installation guide](https://learn.microsoft.com/en-us/windows/wsl/install)
 to get setup with WSL and Ubuntu.
 
 Now, follow the [Ubuntu/Debian Linux (apt)](#ubuntudebian-linux-apt) section above to get PHP installed!
@@ -166,6 +167,12 @@ Finally, to ensure that you're ready to go with Symfony, run:
 ```terminal
 symfony check:requirements
 ```
+
+***TIP
+When this command is run *outside* a Symfony project directory, it will check the *general* requirements
+for Symfony applications. This includes PHP version, required extensions, and other system checks.
+If run *inside* a Symfony project directory, it will perform additional, project-specific checks.
+***
 
 Ok, you should be all set up!
 
