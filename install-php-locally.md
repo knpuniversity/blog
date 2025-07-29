@@ -14,10 +14,10 @@ PostgreSQL) are installed.
 
 To get started, follow the instructions below for your operating system:
 1. [macOS](#macos-homebrew)
-2. [Ubuntu/Debian Linux](#ubuntudebian-linux-apt)
+2. [Ubuntu/Debian Linux](#ubuntu-debian-linux-apt)
 3. [Windows](#windows-wsl)
 
-Once you have PHP and the Symfony CLI installed, [verify your installation](#verify-phpsymfony-cli-installation).
+Once you have PHP and the Symfony CLI installed, [verify your installation](#verify-php-symfony-cli-installation).
 
 ## macOS (Homebrew)
 
@@ -60,7 +60,7 @@ have Homebrew installed, let's use it to install the Symfony CLI:
 brew install symfony-cli/tap/symfony-cli
 ```
 
-You should be ready to go on your Mac! [Verify the installation below](#verify-phpsymfony-cli-installation).
+You should be ready to go on your Mac! [Verify the installation below](#verify-php-symfony-cli-installation).
 
 ## Ubuntu/Debian Linux (apt)
 
@@ -107,7 +107,7 @@ sudo apt install php8.4-redis
 There are several methods to [install the Symfony CLI](https://symfony.com/download), since we used
 `apt` to install PHP, I'd suggest using that method in the link above to install the Symfony CLI as well.
 
-You should be ready to go! [Verify the installation below](#verify-phpsymfony-cli-installation).
+You should be ready to go! [Verify the installation below](#verify-php-symfony-cli-installation).
 
 ## Windows (WSL)
 
@@ -117,7 +117,7 @@ it runs *directly* on Windows! Follow the
 [WSL installation guide](https://learn.microsoft.com/en-us/windows/wsl/install)
 to get setup with WSL and Ubuntu.
 
-Now, follow the [Ubuntu/Debian Linux (apt)](#ubuntudebian-linux-apt) section above to get PHP installed!
+Now, follow the [Ubuntu/Debian Linux (apt)](#ubuntu-debian-linux-apt) section above to get PHP installed!
 
 ## Verify PHP/Symfony CLI Installation
 
