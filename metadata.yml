@@ -565,9 +565,10 @@ blogs:
 
     install-php-locally:
         title: "Installing PHP and Symfony CLI Locally"
-        published: 2025-07-22
+        published: 2025-07-29
         preview: |
-            The Symfony CLI is *almost* fully batteries-included, but it does require
-            PHP be installed locally. Let's look at how to do this on macOS, Linux
-            and Windows.
+            The Symfony CLI makes local development a breeze - but it works best when PHP
+            is installed directly on your machine. Let's walk through setting up PHP (plus
+            common database extensions) and the Symfony CLI on macOS, Linux, or Windows
+            so you're ready to start building Symfony apps.
         category: tech
