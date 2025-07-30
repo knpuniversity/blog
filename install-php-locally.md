@@ -80,7 +80,7 @@ sudo apt update
 To install PHP 8.4 and some common extensions, run:
 
 ```terminal
-sudo apt install php8.4 php8.4-cli php8.4-common php8.4-curl php8.4-mbstring php8.4-xml php8.4-zip php8.4-gd php8.4-intl php8.4-bcmath 
+sudo apt install php8.4 php8.4-cli php8.4-fpm php8.4-common php8.4-curl php8.4-mbstring php8.4-xml php8.4-zip php8.4-gd php8.4-intl php8.4-bcmath 
 ```
 
 To install the common database extensions, run:
