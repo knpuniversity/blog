@@ -1,6 +1,6 @@
 # Mailtrap Tutorial = (Free) Mailer + Webhook + Contributing back to Symfony  
 
-Good news Symfony peeps: we now have an updated Mailer tutorial that also covers the Webhook component *and* - thanks to a sponsorship from your friendly neighborhood Mailtrap friends - is free!
+Good news Symfony peeps: we now have an updated Mailer tutorial that also covers the Webhook component *and* - thanks to a sponsorship from your friendly neighborhood [Mailtrap](https://mailtrap.io/) friends - is free!
 
 We use Mailtrap (which is amazing btw) to get a total refresher on using Mailer: it’s like the original tutorial, but updated and with extra goodies.
 
