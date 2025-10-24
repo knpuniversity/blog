@@ -581,3 +581,12 @@ blogs:
           husband, beloved teacher, and friend — has passed away after a long and courageous
           journey with brain cancer.
         category: news
+
+    "package-spotlight-class-metadata":
+        title: "Package Spotlight: `zenstruck/class-metadata`"
+        published: 2025-10-08
+        preview: |
+          Add extra context to your PHP classes with `zenstruck/class-metadata`. This
+          lightweight package lets you define short, readable identifiers for your
+          classes - known as aliases - and attach custom metadata directly to them.
+        category: tech
