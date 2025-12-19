@@ -115,7 +115,7 @@ really enforce clean dependency baselines.
 ✅ Keep your lock file up to date
 
 Since security blocking runs during dependency resolution, make sure you regularly
-refresh your composer.lock file. Easy peasy!
+refresh your `composer.lock` file. Easy peasy!
 
 ✅ Use advisory ignores thoughtfully
 
@@ -137,4 +137,10 @@ Yes, this can be disruptive — but the benefits are clear: fewer vulnerable
 deployments, stronger supply-chain hygiene, and tighter feedback loops in CI/CD.
 
 And if you need flexibility, Composer gives you fine-grained configuration via
-audit.block-insecure, audit.ignore, and severity controls.
+`audit.block-insecure`, `audit.ignore`, and severity controls.
+
+## Tutorial Tip
+
+This will be helpful when working with dependencies on some of our older courses.
+
+Happy secure installs!
