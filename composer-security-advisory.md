@@ -47,61 +47,61 @@ to manage this behavior.
 
 1. Disable Blocking Entirely
 
-If you’re in a situation where you know a package is safe (or you’re stuck
-waiting for a patch), you can turn off security blocking:
+    If you’re in a situation where you know a package is safe (or you’re stuck
+    waiting for a patch), you can turn off security blocking:
 
-```json
-{
-    "config": {
-        "audit": {
-            "block-insecure": false
+    ```json
+    {
+        "config": {
+            "audit": {
+                "block-insecure": false
+            }
         }
     }
-}
-```
+    ```
 
-This restores the old behavior where vulnerabilities are reported, but no
-install is blocked.
+    This restores the old behavior where vulnerabilities are reported, but no
+    install is blocked.
 
 2. Ignore Specific Advisories
 
-Instead of disabling blocking globally, you can target specific advisory IDs:
+    Instead of disabling blocking globally, you can target specific advisory IDs:
 
-```json
-{
-    "config": {
-        "audit": {
-            "ignore": {
-                "GHSA-xxxx-xxxx": "We have a workaround",
-                "CVE-2025-12345": "Not used in our context"
+    ```json
+    {
+        "config": {
+            "audit": {
+                "ignore": {
+                    "GHSA-xxxx-xxxx": "We have a workaround",
+                    "CVE-2025-12345": "Not used in our context"
+                }
             }
         }
     }
-}
-```
+    ```
 
-Ignored advisories will still appear in reports, but won’t block resolution.
-That lets you keep the protections in place while making informed exceptions.
+    Ignored advisories will still appear in reports, but won’t block resolution.
+    That lets you keep the protections in place while making informed exceptions.
 
 3. Configure Severity Levels
 
-Composer lets you control blocking based on severity:
+    Composer lets you control blocking based on severity:
 
-```json
-{
-    "config": {
-        "audit": {
-            "ignore-severity": {
-                "low": { "apply": "all" },
-                "medium": { "apply": "block" }
+    ```json
+    {
+        "config": {
+            "audit": {
+                "ignore-severity": {
+                    "low": { "apply": "all" },
+                    "medium": { "apply": "block" }
+                }
             }
         }
     }
-}
-```
+    ```
 
-You can choose to only block high severity issues, while allowing low or
-informational ones during install/update.
+    You can choose to only block high severity issues, while allowing low or
+    informational ones during install/update.
 
 ## Best Practices With Automatic Security Blocking
 
@@ -142,5 +142,7 @@ And if you need flexibility, Composer gives you fine-grained configuration via
 ## Tutorial Tip
 
 This will be helpful when working with dependencies on some of our older courses.
+If you are having these related issues when following along with SymfonyCasts course code,
+just disable blocking. After all, our tutorials aren't for production use!
 
 Happy secure installs!

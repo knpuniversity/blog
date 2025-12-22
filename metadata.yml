@@ -590,3 +590,12 @@ blogs:
           lightweight package lets you define short, readable identifiers for your
           classes - known as aliases - and attach custom metadata directly to them.
         category: tech
+
+    composer-security-advisory:
+        title: "Composer 2.9 Automatic Security Blocking: Fireside Chat"
+        published: 2025-12-22
+        preview: |
+            Composer 2.9 turns security the next level. Instead of politely warning about vulnerable dependencies,
+            it now blocks insecure installs and updates by default, forcing issues to surface early and keeping
+            your PHP projects safer without extra tools.
+        category: tech
