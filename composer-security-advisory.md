@@ -110,24 +110,19 @@ to manage this behavior.
 
 Here’s how to approach this feature in real projects:
 
-✅ Run `composer audit` in the CI
+- ✅ **Run `composer audit` in the CI.** Blocking is a great tool, and coupled
+  with `composer audit`, your CI can really enforce clean dependency baselines.
 
-Blocking is a great tool, and coupled with `composer audit`, your CI can 
-really enforce clean dependency baselines.
+- ✅ **Keep your lock file up to date.** Since security blocking runs during
+  dependency resolution, make sure you regularly refresh your `composer.lock`
+  file. Easy peasy!
 
-✅ Keep your lock file up to date
+- ✅ **Use advisory ignores thoughtfully.** Even though it seems like a fun,
+  relaxing hobby, try not to ignore vulnerabilities. And if you have to,
+  document your choices for both your colleagues and your future self.
 
-Since security blocking runs during dependency resolution, make sure you regularly
-refresh your `composer.lock` file. Easy peasy!
-
-✅ Use advisory ignores thoughtfully
-
-Even though it seems like a fun, relaxing hobby, try not to ignore vulnerabilities. 
-And if you have to, document your choices for both your colleagues and your future self.
-
-❌ Don’t disable blocking globally (if you can avoid it)
-
-It defeats the purpose of automated supply-chain security.
+- ❌ **Don’t disable blocking globally (if you can avoid it).** It defeats
+  the purpose of automated supply-chain security.
 
 ## Wrapping it up
 
