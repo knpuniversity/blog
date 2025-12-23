@@ -1,6 +1,6 @@
 # Composer 2.9 Automatic Security Blocking: Fireside Chat
 
-In November 2025 we got Composer 2.9 which introduced an important shift in how
+In November 2025, we got Composer 2.9, which introduced an important shift in how
 to manage security dependencies in PHP projects, specifically automatic security blocking.
 
 In the before times, Composer helped you audit your dependencies — but that
@@ -14,7 +14,7 @@ advisories — and that behavior is enabled by default. Boom!
 
 If you’re already using a vulnerable library in your project, upgrading or
 requiring a package can now fail outright. While in the past, you would have 
-received a quiet warning you about a security advisory, Composer now refuses to 
+received a quiet warning about a security advisory, Composer now refuses to 
 resolve constraints if a package version is known to be insecure.
 
 Here’s what that experience looks like in practice:
@@ -31,8 +31,11 @@ take a deep breath and keep going.
 
 ## Why is this Change Important to you?
 
-You might be thinking: “Why should I care, I already use composer audit in my CI.” That’s great,
-but the difference with Composer 2.9 is:
+You might be thinking:
+
+> Why should I care? I already use Composer audit in my CI.
+
+That’s great, but the difference with Composer 2.9 is:
 
 - Blocking happens during dependency resolution, not just at the end.
 - You aren't allowed to accidentally deploy or run code with known security issues.
@@ -41,8 +44,8 @@ this purpose — Composer has your back.
 
 ## Controlling or Fixing Security Blocking
 
-Automatic security blocking is powerful, but as with all defaults there are
-times when you need to take back control. You get several levers in composer.json
+Automatic security blocking is powerful, but as with all defaults, there are
+times when you need to take back control. You get several levers in `composer.json`
 to manage this behavior.
 
 1. Disable Blocking Entirely
@@ -60,8 +63,8 @@ to manage this behavior.
     }
     ```
 
-    This restores the old behavior where vulnerabilities are reported, but no
-    install is blocked.
+    This restores the old behavior where vulnerabilities are reported, but installation
+    is not blocked.
 
 2. Ignore Specific Advisories
 
@@ -109,7 +112,7 @@ Here’s how to approach this feature in real projects:
 
 ✅ Run `composer audit` in the CI
 
-Blocking is a great tool and coupled with `composer audit` your CI can 
+Blocking is a great tool, and coupled with `composer audit`, your CI can 
 really enforce clean dependency baselines.
 
 ✅ Keep your lock file up to date
@@ -119,7 +122,7 @@ refresh your `composer.lock` file. Easy peasy!
 
 ✅ Use advisory ignores thoughtfully
 
-Even though it seems like a fun relaxing hobby, try not to ignore vulnerabilities. 
+Even though it seems like a fun, relaxing hobby, try not to ignore vulnerabilities. 
 And if you have to, document your choices for both your colleagues and your future self.
 
 ❌ Don’t disable blocking globally (if you can avoid it)
@@ -142,7 +145,7 @@ And if you need flexibility, Composer gives you fine-grained configuration via
 ## Tutorial Tip
 
 This will be helpful when working with dependencies on some of our older courses.
-If you are having these related issues when following along with SymfonyCasts course code,
+If you are having these related issues when following along with the SymfonyCasts course code,
 just disable blocking. After all, our tutorials aren't for production use!
 
 Happy secure installs!
