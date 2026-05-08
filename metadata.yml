@@ -599,3 +599,11 @@ blogs:
             it now blocks insecure installs and updates by default, forcing issues to surface early and keeping
             your PHP projects safer without extra tools.
         category: tech
+    deprecations-explained:
+        title: "Symfony Deprecations Explained (Upgrade Without Breaking Things)"
+        published: 2026-05-11
+        preview: |
+            Symfony upgrades do not have to be stressful. Thanks to Symfony's deprecation system, you can fix future
+            breaking changes before upgrading. Learn why "no deprecations" is the key to a safe major upgrade - and
+            how Symfony gives you a clear roadmap forward.
+        category: tech
