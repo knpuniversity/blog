@@ -108,7 +108,7 @@ blogs:
             and more frequent content. Build something amazing!
         category: news
 
-    "AppBundle":
+    "app-bundle":
         title: 'Bundles, No Bundles and AppBundle in 10 Steps'
         published: 2014-12-10
         preview: |
@@ -211,7 +211,7 @@ blogs:
             Yea yea yea, Drupal 8 is out. But more than that, Drupal people are
             *awesome*. So let me tell you about how I met them...
         category: news
-    "KnpUOAuth2ClientBundle":
+    "knpu-oauth2-client-bundle":
         title: 'Introducing KnpUOAuth2ClientBundle: Making Social Easy'
         published: 2016-02-23
         preview: |
