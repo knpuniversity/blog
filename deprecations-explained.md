@@ -21,7 +21,7 @@ first - think about eliminating deprecations. Once those are gone, the upgrade b
 
 We've got a quick video explanation for you on how this all fits together and why it is such a powerful part of the framework:
 
-<div style="position: relative;padding-bottom: 56.25%; padding-top: 25px;">
+<div style="position: relative; padding-top: 25px;">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/m2m2CRs4yMA?si=_8JLWx96Xc3jOUcn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
