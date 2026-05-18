@@ -9,7 +9,7 @@ service to autowire, or just want a second opinion on your code.
 
 # How to summon Brontie
 
-Brontie lives in comments. To get her attention, mention @Brontie in any comment
+Brontie lives in comments. To get her attention, mention `@Brontie` in any comment
 on a chapter, course, or blog post — same as you'd tag a
 teammate.
 
