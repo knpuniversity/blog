@@ -17,7 +17,7 @@ That's it! Brontie will pop in with an answer, usually within a few seconds.
 Want to keep the conversation going? Just reply to her comment
 like you would to anyone else — she remembers the thread.
 
-# Brontie actually knows SymfonyCasts
+# Brontie has watched every tutorial on SymfonyCasts
 
 Here's the part we're really proud of: Brontie is trained on every SymfonyCasts
 tutorial. When you ask her a question, she pulls from the
