@@ -608,10 +608,10 @@ blogs:
             how Symfony gives you a clear roadmap forward.
         category: tech
     brontie-your-ai-companion:
-        title: "Meet Brontie, your AI companion"
-        published: TBD
+        title: "Meet Brontie, your AI Companion"
+        published: 2026-05-25
         preview: |
             Meet Brontie - your new SymfonyCasts companion. Part dinosaur, part AI, fully obsessed with Symfony.
-            Mention `@Brontie` in any tutorial, course, or blog post comment and she'll jump in with answers grounded
-            in the actual SymfonyCasts lessons.
+            Mention `@Brontie` in any tutorial, course, or blog post comment and Brontie will jump in with answers
+            grounded in the actual SymfonyCasts lessons.
         category: news
