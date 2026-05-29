@@ -39,7 +39,7 @@ use it to sharpen it up over time.
 # Joining the Beta
 
 Brontie is currently in closed beta for SymfonyCasts subscribers. We're letting
-people in gradually so we can keep an eye on quality and make sure it's is actually helping.
+people in gradually, so we can keep an eye on quality and make sure it's actually helping.
 
 If you're a subscriber, head over to the [Brontie page](https://symfonycasts.com/brontie/beta) and request access.
 
