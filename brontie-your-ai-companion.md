@@ -1,6 +1,6 @@
 # Meet Brontie
 
-We're excited to introduce you to our own Symfony trained AI helper: **Brontie**. 
+We're excited to introduce you to our own Symfony trained AI coding assistant: **Brontie**. 
 Part dinosaur, part AI, fully obsessed with Symfony.
 
 You'll find Brontie hanging out in the comments of every tutorial — ready to help
