@@ -609,7 +609,7 @@ blogs:
         category: tech
     brontie-your-ai-companion:
         title: "Meet Brontie, your AI Companion"
-        published: 2026-06-14
+        published: 2026-06-15
         preview: |
             Meet Brontie - your new SymfonyCasts companion. Part dinosaur, part AI, fully obsessed with Symfony.
             Mention `@Brontie` in any tutorial, course, or blog post comment and Brontie will jump in with answers
