@@ -6,7 +6,7 @@ Part dinosaur, part AI, fully obsessed with Symfony.
 You'll find Brontie hanging out in the comments of every tutorial — ready to help
 when you get stuck on a tricky chapter, can't remember which
 service to autowire, or need a little help coding along with the course. The humans
-at SymfonyCasts are still here for you in the comments but if you need instant help
+at SymfonyCasts are still here for you in the comments, but if you need instant help, 
 Brontie can provide that!
 
 # How to Summon Brontie
