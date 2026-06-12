@@ -1,6 +1,8 @@
 # Keeping Doctrine Entities Honest
 
-> Your Doctrine entities are lying to you!
+***IMPORTANT
+Your Doctrine entities are lying to you!
+***
 
 For years, the standard way to build Doctrine entities in Symfony has looked
 something like this (and it's still what MakerBundle generates today):
@@ -63,6 +65,8 @@ But look closer.
 private ?string $title = null;
 
 public function setTitle(?string $title): static
+
+public function getTitle(): ?string
 ```
 
 According to the PHP type system, the title is optional. In fact, the public
@@ -97,7 +101,7 @@ $entityManager->flush(); // boom!
 
 The database knows that a conference talk must have a title.
 
-Our entity does not.
+Our PHP code does not.
 
 So why do we build entities this way?
 
@@ -114,7 +118,7 @@ For beginners, this is fantastic. There is very little ceremony, very little
 boilerplate, and very little to learn before you can build working CRUD
 screens.
 
-The tradeoff is that entities end up serving two purposes.
+The tradeoff is that entities end up serving two very different purposes.
 
 They represent persisted application data, but they also act as form models.
 Because user input is often incomplete or invalid, entities need to be able
@@ -124,12 +128,17 @@ That's why we end up with a seemingly contradictory combination:
 
 ```php
 #[Assert\NotBlank]
+#[ORM\Column(nullable: false)]
 private ?string $title = null;
 ```
 
 The validator says the field is *required*.
 
+The database mapping says it's *required*.
+
 The PHP type says it's *optional*.
+
+Those statements don't all agree.
 
 But what if our entities didn't need to act as form models at all?
 
@@ -164,7 +173,7 @@ Unlike our entity, the DTO is allowed to be incomplete.
 That's its job. It represents data coming from the outside world before we've
 proven that it's valid.
 
-Our entity can finally tell the truth:
+Our entity can finally express its real requirements:
 
 ```php
 #[ORM\Entity]
@@ -237,7 +246,7 @@ The natural objection is:
 > Great, but now I have two classes. Do I need to
 > manually copy data between them?
 
-Historically, yes.
+Historically, yes - and that was a legitimate objection.
 
 And that boilerplate is one of the reasons many Symfony applications have
 continued using entities directly with forms and validation.
@@ -275,7 +284,7 @@ about what it represents.
 ## What Does This Look Like in Practice?
 
 The nice thing about this approach is that it doesn't require a massive
-rewrite. In my example application, only five things changed:
+rewrite. Starting from a standard `make:crud` setup, only five things change:
 
 1. Add a DTO
 2. Update the form to map to the DTO instead of the entity
@@ -344,6 +353,8 @@ actually required.
 Before:
 
 ```php
+// src/Entity/ConferenceTalk.php
+
 #[Assert\NotBlank]
 #[ORM\Column(length: 255)]
 private ?string $title = null;
@@ -363,6 +374,8 @@ public function getTitle(): ?string // (nullable return type)
 After:
 
 ```php
+// src/Entity/ConferenceTalk.php
+
 #[ORM\Column(length: 255)]
 private string $title;
 
@@ -393,6 +406,8 @@ This is where ObjectMapper comes in.
 Before, the form populated the entity directly:
 
 ```php
+// src/Controller/ConferenceTalkController.php
+
 $talk = new ConferenceTalk();
 
 $form = $this->createForm(
@@ -405,12 +420,18 @@ $form->handleRequest($request);
 if ($form->isSubmitted() && $form->isValid()) {
     $entityManager->persist($talk);
     $entityManager->flush();
+
+    // ...
 }
+
+// ...
 ```
 
 Now the form populates the DTO:
 
 ```php
+// src/Controller/ConferenceTalkController.php
+
 $dto = new ConferenceTalkDto();
 
 $form = $this->createForm(
@@ -428,7 +449,11 @@ if ($form->isSubmitted() && $form->isValid()) {
 
     $entityManager->persist($talk);
     $entityManager->flush();
+
+    // ...
 }
+
+// ...
 ```
 
 ### 5. Update the Edit Controller
@@ -438,6 +463,8 @@ Editing existing entities works too.
 Before:
 
 ```php
+// src/Controller/ConferenceTalkController.php
+
 $form = $this->createForm(
     ConferenceTalkType::class,
     $talk,
@@ -447,12 +474,18 @@ $form->handleRequest($request);
 
 if ($form->isSubmitted() && $form->isValid()) {
     $entityManager->flush();
+
+    // ...
 }
+
+// ...
 ```
 
 After:
 
 ```php
+// src/Controller/ConferenceTalkController.php
+
 $dto = $objectMapper->map(
     $talk,
     ConferenceTalkDto::class,
@@ -472,7 +505,11 @@ if ($form->isSubmitted() && $form->isValid()) {
     );
 
     $entityManager->flush();
+
+    // ...
 }
+
+// ...
 ```
 
 Notice what's happening.
@@ -489,12 +526,25 @@ The pattern remains consistent:
 - Validation runs on DTOs
 - Entities remain valid application data
 
-Most importantly, we no longer have a period of time where a
+Most importantly, we no longer have a period of time when a
 `ConferenceTalk` exists without a title!
+
+***NOTE
+Want to see all of these changes together?
+
+Check out the [full diff](https://github.com/kbond/honest-entities/compare/b2e573ab37e40b9b74f542249cfb3fc96427b296...bf9fc872d6135d8431af932808ce7a620b6cbc47)
+to see this pattern applied to a real Symfony application.
+***
 
 ## ObjectMapper Changes the Equation
 
-For years, we've accepted a compromise.
+For years, we've accepted a contradiction.
+
+The validator says required.
+
+The database says required.
+
+The entity says optional.
 
 We allow entities to exist in invalid states because they also need to act as
 form models. We make required properties nullable. We rely on validation to
@@ -507,18 +557,16 @@ But ObjectMapper changes the equation.
 To be fair, this idea isn't entirely new.
 
 Many Symfony developers have used DTOs for years, often with custom mapping
-code or libraries such as [`symfonycasts/micro-mapper`].
+code or libraries such as [`symfonycasts/micro-mapper`](https://github.com/SymfonyCasts/micro-mapper).
 
 The challenge has never been whether DTOs are useful. The challenge has been
-the cost of moving data between DTOs and entities.
+standardization.
 
-Historically, that meant writing and maintaining mapping code yourself.
+ObjectMapper brings this capability into Symfony itself, giving the ecosystem
+a first-class solution for moving data between DTOs and entities.
 
-ObjectMapper brings that capability into Symfony itself, dramatically lowering
-the cost of adopting this pattern.
-
-For the first time, Symfony has a first-class way to separate user input from
-persisted entities without introducing a bunch of manual mapping code.
+For the first time, this pattern feels practical enough to be considered a
+mainstream Symfony approach rather than an advanced architectural choice.
 
 That allows each object to focus on a single responsibility:
 
