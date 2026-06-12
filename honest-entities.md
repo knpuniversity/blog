@@ -504,6 +504,19 @@ The tradeoff made sense when entities doubled as form models.
 
 But ObjectMapper changes the equation.
 
+To be fair, this idea isn't entirely new.
+
+Many Symfony developers have used DTOs for years, often with custom mapping
+code or libraries such as [`symfonycasts/micro-mapper`].
+
+The challenge has never been whether DTOs are useful. The challenge has been
+the cost of moving data between DTOs and entities.
+
+Historically, that meant writing and maintaining mapping code yourself.
+
+ObjectMapper brings that capability into Symfony itself, dramatically lowering
+the cost of adopting this pattern.
+
 For the first time, Symfony has a first-class way to separate user input from
 persisted entities without introducing a bunch of manual mapping code.
 
