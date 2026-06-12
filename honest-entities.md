@@ -243,8 +243,7 @@ A `ConferenceTalk` can no longer exist without a title.
 
 The natural objection is: 
 
-> Great, but now I have two classes. Do I need to
-> manually copy data between them?
+> Great, but now I have two classes. Do I need to manually map data between them?
 
 Historically, yes - and that was a legitimate objection.
 
@@ -267,6 +266,12 @@ we can let `ObjectMapper` do the transformation for us:
 ```php
 $talk = $objectMapper->map($dto, ConferenceTalk::class);
 ```
+
+***NOTE
+One nice detail is that this remains fully type-safe. Thanks to generics,
+IDE autocompletion and static analysis tools can correctly infer that
+`$talk` is a `ConferenceTalk` instance.
+***
 
 The DTO remains flexible enough to receive and validate user input. The
 entity remains strict enough to represent valid application data.
