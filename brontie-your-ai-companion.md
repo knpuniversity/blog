@@ -1,6 +1,6 @@
 # Meet Brontie
 
-We're excited to introduce you to our own Symfony trained AI coding assistant: **Brontie**. 
+We're excited to introduce you to our own Symfony-trained AI coding assistant: **Brontie**. 
 Part dinosaur, part AI, fully obsessed with Symfony.
 
 You'll find Brontie hanging out in the comments of every tutorial — ready to help
@@ -29,7 +29,7 @@ it's grounded in the real ecosystem you're working in.
 
 That means Brontie's answers stay closer to the version of Symfony you're
 learning — and far less likely to reach for a method that was removed several versions ago,
-or an invented API. Realistically, Brontie is an AI and it won't always be perfect, but the tutorials
+or an invented API. Realistically, Brontie is an AI, and it won't always be perfect, but the tutorials
 and docs help keep Brontie as on track as a web developing dino can be.
 
 # Help Brontie get Smarter
