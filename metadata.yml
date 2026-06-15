@@ -607,3 +607,11 @@ blogs:
             breaking changes before upgrading. Learn why "no deprecations" is the key to a safe major upgrade - and
             how Symfony gives you a clear roadmap forward.
         category: tech
+    brontie-your-ai-companion:
+        title: "Meet Brontie, your AI Companion"
+        published: 2026-06-15
+        preview: |
+            Meet Brontie - your new SymfonyCasts companion. Part dinosaur, part AI, fully obsessed with Symfony.
+            Mention `@Brontie` in any tutorial, course, or blog post comment and Brontie will jump in with answers
+            grounded in the actual SymfonyCasts lessons.
+        category: news
