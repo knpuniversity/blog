@@ -1,4 +1,4 @@
-# Keeping Doctrine Entities Honest
+# Keeping Doctrine Entities Honest with DTOs and ObjectMapper
 
 ***IMPORTANT
 Your Doctrine entities are lying to you!
@@ -583,8 +583,6 @@ is actually optional, and entities can no longer be created in impossible
 states.
 
 At least to me, that feels like a cleaner approach.
-
-I'm curious what others think.
 
 Should MakerBundle generate DTOs by default? Should `make:crud` offer a
 DTO/ObjectMapper workflow? Have you already been using a pattern like this in
