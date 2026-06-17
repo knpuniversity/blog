@@ -13,7 +13,7 @@ Brontie can provide that!
 
 Just mention `@Brontie` in any comment on a chapter, course, or blog post and
 that's it! Brontie will pop in with an answer shortly after. Want to keep the
-conversation going? Just reply like you would to anyone else — Brontie
+conversation going? Just reply as you would to anyone else — Brontie
 remembers the thread.
 
 # Brontie has Watched Every Tutorial on SymfonyCasts
