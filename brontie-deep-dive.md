@@ -1,64 +1,53 @@
 # How We Built Brontie, Our Comment-Thread AI
 
-Every day, students leave questions in the comments under our tutorials. And most
-of the time, the answer *already exists* somewhere in our content — the chapter
-they're watching, another course, a blog post, the upstream Symfony and Doctrine
-docs. Having the answer was never the problem. Being on every thread at once was.
+The SymfonyCasts team is amazing, but we can't be online all the time! To help
+us more quickly answer questions on our courses we've introduced **Brontie**: 
+a Retrieval-Augmented Generation (RAG) chatbot that lives right 
+in the comment thread. Mention`@Brontie` to get instant help that will also be
+reviewed by the humans on the team when we're online! 
 
-So we built something that can. Meet **Brontie**: a Retrieval-Augmented
-Generation (RAG) chatbot that lives right in the comment thread. Mention
-`@Brontie` and it writes back, grounded in our *actual* content and aware of
-which page you're on. This post is the behind-the-scenes tour — architecture,
-tech, trade-offs. Spoiler: the model is the easy part.
+For the really interesting part let's tour the architecture, tech and trade-offs!
 
-## What Brontie had to be
 
-We boiled Brontie down to four non-negotiables. Almost every decision in this
-post falls out of one of them:
+## Brontie Deliverables
 
-- **Fast.** Nobody wants to stare at a spinner while an LLM thinks for eight
-  seconds — and an HTTP request *really* can't sit and block on that. Whatever
-  Brontie did, it had to get out of the request's way and let the page answer
-  instantly.
-- **Grounded.** Answers have to come from *our* content — the courses, the blog,
-  the docs — not from a model cheerfully inventing a plausible-sounding API that
-  has never existed. A confident wrong answer is worse than no answer at all.
-- **Gated.** Every reply is a real (paid) API call, so Brontie can't be a
-  free-for-all. Only paying subscribers — and, at first, a closed beta — get
-  through the door.
-- **Auditable.** When an answer is great, we want to know why. When it's bad, we
-  *really* want to know why. So every prompt and every retrieved chunk gets
-  logged — no shrugging at a mystery reply.
+To start any new feature you first need a list of requirements, here are ours:
 
-Keep those four in your back pocket. They're the *why* behind everything below.
+- **Speed** Watching a spinner on your browser can be meditative but no one
+  reallys wants to sit and stare while an LLM thinks for eight
+  seconds!
+- **Quality** Answers have to come from *our* content: the courses and the blog,
+  not from a model confidently inventing a plausible-sounding API that
+  has never existed.
+- **Auditable** When an answer is great, we want to know why. When it's bad, we
+  *really* want to know why. Which is the reason behind our rating system - if 
+  a user doesn't like what came from Brontie we want that feedback!
 
-## The shape of it: four layers and an async hand-off
+## The layers and an async hand-off
 
-It would have been *so* easy to write Brontie as one giant do-everything service.
-We didn't. We split it into four single-responsibility layers instead:
+Let's take a look at the four single-responsibility layers that make up Brontie:
 
-1. **Detection** — `BrontieMentionDetector`: pure logic. Was Brontie mentioned?
+1. **Detection** — `BrontieMentionDetector`: this is the logic. Was Brontie mentioned?
    Is this a reply *to* Brontie? Has this thread already hit its reply limit?
-2. **Orchestration** — `BrontieChatbotService`: access control, rate limiting,
+2. **Orchestration** — `BrontieChatbotService`: this is the access control, rate limiting,
    creating the placeholder, and kicking off the real work.
-3. **Context assembly** — `BrontieContextBuilder`, which builds a
-   `BrontiePromptContext`: it gathers the article context, the thread history,
+3. **Context assembly** — `BrontieContextBuilder`, this builds a
+   `BrontiePromptContext`. It gathers the article context, the thread history,
    and the embedding search results into a value object.
-4. **Agent execution** — `BrontieChatbotAgent`: assembles the LLM message stack
-   and calls the model.
+4. **Agent execution** — `BrontieChatbotAgent`: Finally, this is what assembles the LLM message 
+   stack and calls the model.
 
-This isn't architecture astronautics — each layer earns its keep by being
-*independently testable*. Detection is pure functions over comments. Context
+A big reason for having the four layers is to make sure each piece is
+*independently testable*. Detection is the functions over comments. Context
 assembly is a deterministic builder. The agent is the *only* piece that talks to
 the network. So when an answer comes out weird, the layering tells us exactly
 *where* to go looking.
 
 ### Never block the response on the LLM
 
-Here's the single most important decision in the whole project: **never block the
-HTTP response on the model.**
+A piece that was important to us in creating Brontie was to **never block the HTTP response on the model.**
 
-When you trigger Brontie, the request synchronously drops a placeholder comment —
+When Brontie is triggered the request synchronously drops a placeholder comment —
 *"Brontie is thinking…"* — and returns immediately. The real work gets dispatched
 as a Symfony Messenger message, `GenerateBrontieReply`, and picked up by a
 background worker. That worker does the thinking and then **updates the
