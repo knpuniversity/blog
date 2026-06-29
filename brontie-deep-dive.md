@@ -1,24 +1,21 @@
 # How We Built Brontie, Our Comment-Thread AI
 
 The SymfonyCasts team is amazing, but we can't be online all the time! To help
-us more quickly answer questions on our courses we've introduced **Brontie**: 
+us more quickly answer questions on our courses, we've introduced **Brontie**: 
 a Retrieval-Augmented Generation (RAG) chatbot that lives right 
-in the comment thread. Mention`@Brontie` to get instant help that will also be
+in the comment thread. Mention `@Brontie` to get instant help that will also be
 reviewed by the humans on the team when we're online! 
 
 For the really interesting part let's tour the architecture, tech and trade-offs!
-
 
 ## Brontie Deliverables
 
 To start any new feature you first need a list of requirements, here are ours:
 
-- **Speed** Watching a spinner on your browser can be meditative but no one
-  reallys wants to sit and stare while an LLM thinks for eight
-  seconds!
+- **Speed** Watching a spinner on your browser can be meditative, but no one
+  really wants to sit and stare while an LLM thinks for around ten seconds!
 - **Quality** Answers have to come from *our* content: the courses and the blog,
-  not from a model confidently inventing a plausible-sounding API that
-  has never existed.
+  not from a model confidently inventing a plausible-sounding API that has never existed.
 - **Auditable** When an answer is great, we want to know why. When it's bad, we
   *really* want to know why. Which is the reason behind our rating system - if 
   a user doesn't like what came from Brontie we want that feedback!
@@ -37,7 +34,7 @@ Let's take a look at the four single-responsibility layers that make up Brontie:
 4. **Agent execution** — `BrontieChatbotAgent`: Finally, this is what assembles the LLM message 
    stack and calls the model.
 
-Why these four layers? For us it's to make sure each piece is
+Why these four layers? For us, it's to make sure each piece is
 *independently testable*. Detection is the functions over comments. Context
 assembly is a deterministic builder. The agent is the *only* piece that talks to
 the network. So when an answer comes out weird, the layering tells us exactly
@@ -47,11 +44,10 @@ the network. So when an answer comes out weird, the layering tells us exactly
 
 An important piece in creating Brontie was to **never block the HTTP response on the model.**
 
-When Brontie is triggered the request synchronously drops a placeholder comment —
+When Brontie is triggered, the request synchronously drops a placeholder comment —
 *"Brontie is thinking…"* — and returns immediately. The real work gets dispatched
 as a Symfony Messenger message, `GenerateBrontieReply`, and picked up by a
-background worker. That worker does the thinking and then updates the
-placeholder.
+background worker. That worker does the thinking and then updates the placeholder.
 
 ```
 HTTP request ──► create "Brontie is thinking…" placeholder ──► 200 OK
@@ -61,7 +57,7 @@ HTTP request ──► create "Brontie is thinking…" placeholder ──► 200
                       worker: build context → call LLM → update placeholder
 ```
 
-Once the worker is finished the placeholder gets updated to show the answer, 
+Once the worker is finished, the placeholder gets updated to show the answer, 
 no page refresh needed! The whole point of this dance is to
 get the *latency out of the request path*: the HTTP response comes back in
 milliseconds, while the slower model call happens entirely in the
@@ -73,7 +69,7 @@ answer. Nice!
 Okay here is the fun part!
 
 Naive RAG goes like this: embed the question, grab the top-k nearest vectors,
-stuff them into the prompt and ... hope. It's *easy* to build. It also produces
+stuff them into the prompt and... hope. It's *easy* to build. It also produces
 mediocre answers. These kinds of answers will confidently quote a chunk of text that 
 only *looks* relevant. Almost all of our engineering went into the retrieval pipeline
 that sits *between* the question and the prompt. Let's walk through it.
@@ -94,12 +90,8 @@ handing the job off to an LLM is always on the table.
 
 ### 2. Enrich the query with the page you're on
 
-Before we vectorize the question, we add the **article title** onto the front
-of it:
-
-```
-{articleTitle}: {userQuestion}
-```
+Before we vectorize the question, we add some critical information about the
+article (like the title) onto the front of it.
 
 This tiny change nudges the vector search toward the topic of the
 page the student is *actually* on. So, a question like: "why isn't this saving?" 
@@ -109,8 +101,8 @@ same question asked under a Forms chapter.
 ### 3. Search, scoped by technology
 
 First, we narrow the field of search. `EmbeddingsContextProvider` sniffs out which 
-topic the question is about, Doctrine, Turbo, Twig, etc. Then we ask Pinecone for 
-the `top_k: 12` nearest chunks inside those filters.
+topic the question is about, Doctrine, Turbo, Twig, etc. Then we ask Pinecone (a vector database service)
+for the `top_k: 12` nearest chunks inside those filters.
 
 Twelve feels like a lot, right? That's because it totally is. In the next step we'll 
 be throwing most of them out.
@@ -118,7 +110,7 @@ be throwing most of them out.
 ### 4. Re-rank twelve hits down to four
 
 Those twelve raw hits get whittled down to at most **four** hand-picked chunks. That's 
-`ChunkReRanker`'s whole purpse. Here are the real knobs, straight from the code:
+`ChunkReRanker`'s whole purpose. Here are the real knobs, straight from the code:
 
 ```php
 // ChunkReRanker.php
@@ -137,7 +129,7 @@ To make the cut, a chunk has to survive four passes:
    hand the model nothing than feed it with noise.
 3. **Diversity caps.** No more than 3 chunks from one file, 2 from one topic. 
    This prevents a single chapter from dominating the whole context window.
-4. **Group and slice.** Group by file, sort by score, grab the top four. Boom done.
+4. **Group and slice.** Group by file, sort by score, grab the top four.
 
 Keep in mind, none of those numbers are set in stone. We're *still* nudging them around
 and then watching what actually makes Brontie's answers better.
@@ -148,19 +140,18 @@ four constantly reviewed steps.
 ### Pre-computed chapter summaries
 
 One last grounding trick. Our tutorial scripts are *long* since they're video
-transcripts. These are best consumed through watching one of course videos so they
+transcripts. These are best consumed through watching one of the course videos, so they
 can be rough to hand an LLM. It's a *lot* of tokens for not much signal.
 
 So, we don't hand it the transcript. Instead, a background job,
-`GenerateChapterAiSummaryMessage`, boils each chapter down to a dense ~400-word
+`GenerateChapterAiSummary`, boils each chapter down to a dense ~400-word
 summary and stashes it on the `CourseChapter` entity. *That's* what Brontie reads
-first, not the raw script. This creates a Better signal, fewer tokens, and a happier model.
+first, not the raw script. This creates a better signal, fewer tokens, and a happier model.
 
 And chapters aren't the only thing available. Brontie searches three sources
 side by side: course chapters, blog posts (even this one), and the 
-docs for Symfony, Doctrine, PHPUnit, Behat, Foundry, and EasyAdmin, each
-wired in through a shared `AbstractRstLibraryProcessor`. If the answer lives
-in the official docs and not in our own content, Brontie has access to it.
+docs for Symfony, Doctrine, PHPUnit, Foundry, etc. If the answer lives in the official docs
+and not in our own content, Brontie has access to it.
 
 ## The tech stack
 
@@ -196,16 +187,9 @@ fully static system prompt first (cached), then the per-page article context
 (cached per page), then the dynamic stuff last: embeddings, thread history, and
 the question itself.
 
-***IMPORTANT
-Keeping that system message *fully static* is the trick. The *moment* you
-interpolate per-call data into it, you bust the cached prefix for *everyone*.
-So we just... don't. Anything that changes per call lives later in the stack,
-every single time.
-***
-
-**Prompt-injection defense.** Here's a cheap little trick we're fond of: we wrap
+**Prompt-injection defense.** Here's a little trick we're fond of: we wrap
 each user's message in a deliberately *non-obvious* tag name, nothing guessable
-like `<student_message>`. And since the system prompt never leaves the server,
+like `<question>`. And since the system prompt never leaves the server,
 anyone trying to "close the tag" and break out has to guess that name completely
 blind. This makes the most common injection trick a whole lot harder, for basically 
 free. Good luck closing a tag you can't see!
@@ -220,16 +204,16 @@ comment and the model:
    subscription.
 
 2. **Beta access.** For now a subscription gets you *in line*, not necessarily *in*.
-   Brontie is still a closed beta while we fine tune its answers.
+   Brontie is still a closed beta while we fine-tune its answers.
 
 3. **Rate limits.** `BrontieChatbotRateLimiter` runs two layers: a short-term burst limiter
    that stops users from machine-gunning questions back-to-back, and a
    longer-term fair-use quota so that one *very* enthusiastic student doesn't quietly
-   run up the entire monthly bill. Hit the cap and Brontie will politely tells you
-   when the service will be available again.
+   run up the entire monthly bill. Hit the cap and Brontie will politely tell you
+   when the service is available again.
 
 And one last guard rail, less about cost, any single comment
-thread is capped at four Brontie replies. Otherwise a stray "...are you sure?"
+thread is capped at four Brontie replies. Otherwise, a stray "...are you sure?"
 could nudge Brontie into an infinite argument with itself.
 
 ## A quick word on feedback
@@ -240,9 +224,6 @@ just whoever asked, and you can change your vote later. A thumbs-down pops a
 little Turbo modal with context-specific reasons ("Solved my problem", "Incorrect
 or incomplete", and friends) plus an optional free-text note.
 
-This feeds our analytics but stay admin-only. We don't show vote counts
-to externally.
-
 ## Observability
 
 Since answer quality is really important, every Brontie reply gets logged in
@@ -252,7 +233,7 @@ of that sits a `BrontieAnalyticsService` dashboard. This contains daily usage, f
 per-course breakdowns, and the running monthly OpenAI spend via `OpenAiUsageService`.
 
 Here's the goal, when an answer is bad, we don't sit around theorizing. We open the
-log and see *exactly* what context the model was handed making debugging answer quality
+log and see *exactly* what context the model was handed, making debugging answer quality
 more transparent.
 
 ## What we learned
@@ -278,7 +259,7 @@ That feedback is *exactly* what we're feeding back into the retrieval pipeline
 next.
 
 And that's what's next: closing the feedback loop. We'll be turning those thumbs-down
-ratings into smarter retrieval and prompts and we'll continue adjusting as the library
+ratings into smarter retrieval and prompts, and we'll continue adjusting as the library
 grows.
 
 Because when you get right down to it, Brontie is a careful retrieval pipeline
