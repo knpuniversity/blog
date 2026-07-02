@@ -10,7 +10,7 @@ For the really interesting part let's tour the architecture, tech and trade-offs
 
 ## Brontie Deliverables
 
-To start any new feature you first need a list of requirements, here are ours:
+To start any new feature you first need a list of requirements. Here are ours:
 
 - **Speed** Watching a spinner on your browser can be meditative, but no one
   really wants to sit and stare while an LLM thinks for around ten seconds!
@@ -212,9 +212,8 @@ comment and the model:
    run up the entire monthly bill. Hit the cap and Brontie will politely tell you
    when the service is available again.
 
-And one last guard rail, less about cost, any single comment
-thread is capped at four Brontie replies. Otherwise, a stray "...are you sure?"
-could nudge Brontie into an infinite argument with itself.
+And one last guard rail, any single comment thread is capped at four Brontie replies.
+Otherwise, a stray "...are you sure?" could nudge Brontie into an infinite argument with itself.
 
 ## A quick word on feedback
 
