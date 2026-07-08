@@ -70,7 +70,7 @@ Before we dive deeper, meet the two AI services doing the heavy lifting:
 
 - **LLM: OpenAI** — generates the embeddings we search with *and* writes the actual answers.
 - **Vector store: Pinecone** — a managed vector database. It stores our content
-  as embeddings and finds the chunks most similar to a question.
+  as embeddings and finds the chunks most relevant to a question.
 
 That's the whole list! Everything else is regular Symfony code — more on that
 in a bit.
