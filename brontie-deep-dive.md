@@ -14,13 +14,13 @@ To start any new feature you first need a list of requirements. Here are ours:
 
 - **Speed** - watching a spinner on your browser can be meditative, but no one
   really wants to sit and stare while an LLM thinks for around ten seconds!
-- **Quality** Answers have to come from *our* content: the courses and the blog,
+- **Quality** - answers have to come from *our* content: the courses and the blog,
   not from a model confidently inventing a plausible-sounding API that has never existed.
-- **Auditable** When an answer is great, we want to know why. When it's bad, we
+- **Auditable** - when an answer is great, we want to know why. When it's bad, we
   *really* want to know why. Which is the reason behind our rating system - if 
   a user doesn't like what came from Brontie we want that feedback!
 
-## The layers and an async hand-off
+## The Layers and an Async Hand-Off
 
 Let's take a look at the four single-responsibility layers that make up Brontie:
 
@@ -39,7 +39,7 @@ assembly is a deterministic builder. The agent is the *only* piece that talks to
 the network. So when an answer comes out weird, the layering tells us exactly
 *where* to go looking.
 
-### Never block the response on the LLM
+### Never Block the Response on the LLM
 
 An important piece in creating Brontie was to **never block the HTTP response on the model.**
 
@@ -64,7 +64,7 @@ milliseconds, while the slower model call happens entirely in the
 background. The user sees "Brontie is thinking…" and a moment later, a real
 answer. Nice!
 
-## The service stack
+## The Service Stack
 
 Before we dive deeper, meet the two AI services doing the heavy lifting:
 
@@ -75,7 +75,7 @@ Before we dive deeper, meet the two AI services doing the heavy lifting:
 That's the whole list! Everything else is regular Symfony code — more on that
 in a bit.
 
-## The RAG pipeline
+## The RAG Pipeline
 
 Okay here is the fun part!
 
@@ -85,7 +85,7 @@ mediocre answers. These kinds of answers will confidently quote a chunk of text 
 only *looks* relevant. Almost all of our engineering went into the retrieval pipeline
 that sits *between* the question and the prompt. Let's walk through it.
 
-### 1. Classify the question — without an LLM call
+### 1. Classify the Question — Without an LLM Call
 
 Before we search for anything, we sort the question into one of four intents:
 
@@ -98,7 +98,7 @@ We handled this in the traditional way (no LLM involved), keeping the process
 simple and fast. However, if a plain classifier turns out not to be good enough, 
 handing the job off to an LLM is always on the table.
 
-### 2. Enrich the query with the page you're on
+### 2. Enrich the Query with the Page You're On
 
 Before we vectorize the question, we add some critical information about the
 article (like the title) onto the front of it.
@@ -108,7 +108,7 @@ page the student is *actually* on. So, a question like: "why isn't this saving?"
 asked under a Doctrine chapter pulls completely different context than the 
 same question asked under a Forms chapter.
 
-### 3. Search, scoped by technology
+### 3. Search, Scoped by Technology
 
 First, we narrow the field of search by sniffing out which topic the question
 is about: Doctrine, Turbo, Twig, etc. Then we ask Pinecone for the `top_k: 12`
@@ -117,7 +117,7 @@ nearest chunks inside those filters.
 Twelve feels like a lot, right? That's because it totally is. In the next step we'll 
 be throwing most of them out.
 
-### 4. Re-rank twelve hits down to four
+### 4. Re-Rank Twelve Hits Down to Four
 
 Those twelve raw hits get whittled down to at most **four** top-scoring chunks.
 That's the re-ranker's whole job. Here are the real knobs, straight from the code:
@@ -146,7 +146,7 @@ and then watching what actually makes Brontie's answers better.
 This is where "grounded, not hallucinated" really comes from. No magic, just
 four constantly reviewed steps.
 
-### Pre-computed chapter summaries
+### Pre-Computed Chapter Summaries
 
 One last grounding trick. Our tutorial scripts are *long* since they're video
 transcripts. These are best consumed through watching one of the course videos, so they
@@ -161,10 +161,10 @@ side by side: course chapters, blog posts (even this one), and the
 docs for Symfony, Doctrine, PHPUnit, Foundry, etc. If the answer lives in the official docs
 and not in our own content, Brontie has access to it.
 
-## Symfony AI holds it all together
+## Symfony AI Holds It All Together
 
 Remember that "regular Symfony code"? None of it talks to OpenAI or Pinecone
-by hand: that's all [Symfony AI](https://github.com/symfony/ai), the first-party AI framework.
+by hand: that's all [Symfony AI](https://ai.symfony.com/), the first-party AI framework.
 We lean on three of its packages:
 
 - **Platform** (`symfony/ai-platform`) — one consistent interface in front of
@@ -181,7 +181,7 @@ And since these are Symfony components, they wire up through the container like
 any other service. If we ever swap the model, or even the vector database,
 Brontie's code barely notices.
 
-## Prompting: tone, caching, and injection defense
+## Prompting: Tone, Caching, and Injection Defense
 
 **Prompt tone.** We've set Brontie's voice to be in the theme of a "senior dev pair-programming 
 with a colleague", very casual. But it also has a handful of rules keep every 
@@ -196,14 +196,14 @@ fully static system prompt first (cached), then the per-page article context
 the question itself.
 
 **Prompt-injection defense.** One classic injection trick: if a prompt wraps
-user input in an obvious tag like `<question>`, an attacker types `</question>`
+user input in a common, guessable tag like `<question>`, an attacker types `</question>`
 themselves to "close" it, then writes instructions as if they came from us.
 Our counter is straightforward: we wrap each message in a tag with a weird, unguessable name that only
 exists server-side, so anyone trying that has to guess the name blind. It's not
 a force field — no delimiter trick is — but it makes the most common breakout
 a lot harder, basically for free.
 
-## Access control and rate limiting
+## Access Control and Rate Limiting
 
 Every Brontie reply costs us a real, paid API call — so not just *anyone* can
 summon it, and nobody can summon it *endlessly*. Three gates stand between a
@@ -224,11 +224,11 @@ comment and the model:
 And one last guard rail, any single comment thread is capped at four Brontie replies.
 Otherwise, a stray "...are you sure?" could nudge Brontie into an infinite argument with itself.
 
-## A quick word on feedback
+## A Quick Word on Feedback
 
 We *really* want readers to tell us when Brontie gets it wrong, so every answer
 carries a thumbs up / thumbs down. Anyone logged in can rate any answer, not
-just whoever asked, and you can change your vote later. A thumbs-down pops a
+just whoever asked, and you can change your vote later. A thumbs-up pops a
 little Turbo modal with context-specific reasons ("Solved my problem", "Incorrect
 or incomplete", etc.) plus an optional free-text note.
 
@@ -237,14 +237,13 @@ or incomplete", etc.) plus an optional free-text note.
 Since answer quality is really important, every Brontie reply gets logged: the
 full serialized prompt, every ranked chunk with its score, the classified intent,
 and the tech filters we used. On top of that sits an analytics dashboard with
-daily usage, failure rates, per-course breakdowns, and the running monthly
-OpenAI spend.
+daily usage, failure rates, per-course breakdowns, and the running monthly OpenAI spent.
 
 Here's the goal, when an answer is bad, we don't sit around theorizing. We open the
 log and see *exactly* what context the model was handed, making debugging answer quality
 more transparent.
 
-## What we learned
+## What We Learned
 
 1. **Most of RAG quality is in retrieval, not the model.** Intent biasing, query
    enrichment, thresholding, diversity caps, adjacent-chunk merging. All of it
@@ -256,7 +255,7 @@ more transparent.
 4. **Ship gated and instrumented.** A closed beta plus full prompt-and-chunk
    logging has let us iterate on real questions with a safety net.
 
-## Try it
+## Try It
 
 So that's Brontie: a genuinely modern RAG agent, retrofitted into a Symfony app
 that's been enjoyed by users like you for over a *decade*!
