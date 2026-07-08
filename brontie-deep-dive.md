@@ -48,13 +48,7 @@ When Brontie is triggered, the request synchronously drops a placeholder comment
 as a Symfony Messenger message that's picked up by a background worker.
 That worker does the thinking and then updates the placeholder.
 
-```
-HTTP request ──► create "Brontie is thinking…" placeholder ──► 200 OK
-                             │
-                             └─► dispatch Messenger message (async)
-                                           │
-                      worker: build context → call LLM → update placeholder
-```
+<img class="center-block" style="border: solid 5px #efefee; border-radius: 5px; width: 100%; max-width: 700px; height: auto;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/brontie-deep-dive/async-flow.png" alt="Diagram: the Brontie HTTP request"/>
 
 Once the worker is finished, the placeholder gets updated to show the answer, 
 no page refresh needed! The page just quietly polls in the background and swaps the
@@ -249,7 +243,7 @@ more transparent.
    enrichment, thresholding, diversity caps, adjacent-chunk merging. All of it
    moved the needle more than any model upgrade would have.
 2. **Hide latency, don't fight it.** The placeholder-then-update pattern makes an
-   eight-second LLM call *feel* instant.
+   ten-second LLM call *feel* instant.
 3. **Pre-compute when you can.** Dense chapter summaries beat raw transcripts as
    context *and* cost fewer tokens.
 4. **Ship gated and instrumented.** A closed beta plus full prompt-and-chunk
