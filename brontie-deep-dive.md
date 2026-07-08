@@ -25,7 +25,7 @@ To start any new feature you first need a list of requirements. Here are ours:
 Let's take a look at the four single-responsibility layers that make up Brontie:
 
 1. **Detection** — this is the logic. Was Brontie mentioned? Is this a reply
-   *to* Brontie? Has this thread already hit its reply limit?
+   *to* Brontie? Is this thread already at its cap of Brontie replies?
 2. **Orchestration** — this is the access control, rate limiting, creating the
    placeholder, and kicking off the real work.
 3. **Context assembly** — this gathers the article context, the thread history,
