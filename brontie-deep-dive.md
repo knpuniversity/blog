@@ -230,7 +230,7 @@ We *really* want readers to tell us when Brontie gets it wrong, so every answer
 carries a thumbs up / thumbs down. Anyone logged in can rate any answer, not
 just whoever asked, and you can change your vote later. A thumbs-down pops a
 little Turbo modal with context-specific reasons ("Solved my problem", "Incorrect
-or incomplete", and friends) plus an optional free-text note.
+or incomplete", etc.) plus an optional free-text note.
 
 ## Observability
 
