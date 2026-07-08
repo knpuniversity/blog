@@ -12,7 +12,7 @@ For the really interesting part let's tour the architecture, tech and trade-offs
 
 To start any new feature you first need a list of requirements. Here are ours:
 
-- **Speed** Watching a spinner on your browser can be meditative, but no one
+- **Speed** - watching a spinner on your browser can be meditative, but no one
   really wants to sit and stare while an LLM thinks for around ten seconds!
 - **Quality** Answers have to come from *our* content: the courses and the blog,
   not from a model confidently inventing a plausible-sounding API that has never existed.
