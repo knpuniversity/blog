@@ -68,7 +68,7 @@ answer. Nice!
 
 Before we dive deeper, meet the two AI services doing the heavy lifting:
 
-- **LLM: OpenAI** — writes the actual answers *and* generates the embeddings we search with.
+- **LLM: OpenAI** — generates the embeddings we search with *and* writes the actual answers.
 - **Vector store: Pinecone** — a managed vector database. It stores our content
   as embeddings and finds the chunks most similar to a question.
 
