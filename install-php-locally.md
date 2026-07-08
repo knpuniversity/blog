@@ -25,30 +25,54 @@ First, ensure you have the [Homebrew](https://brew.sh) package manager installed
 
 ### Homebrew PHP
 
-Now, install PHP:
+I recommend using the [`shivammathur/php`](https://github.com/shivammathur/homebrew-php) tap to install PHP.
+Tap with:
 
 ```terminal
-brew install php
+brew tap shivammathur/php
 ```
 
-***TIP
-This will install the latest stable version of PHP. If you want a specific version, check
-[the Homebrew PHP formula](https://formulae.brew.sh/formula/php). Under "Other versions"
-you'll find available alternate versions. For example, to install PHP 8.3, run:
+***NOTE
+Homebrew now requires you to *trust* a third-party tap before it will load
+anything from it. Trust the tap with:
 
 ```terminal
-brew install php@8.3
+brew trust shivammathur/php
 ```
 ***
 
-### Homebrew PHP Extensions
+Determine the version of PHP you want to install. I'll assume `8.5` for the following instructions,
+but you can install any version you want (8.4, 8.3, etc.).
 
-Homebrew's PHP formula includes many extensions out of the box (including common database extensions).
-If you need additional extensions, use [PECL](https://pecl.php.net/) (PHP Extension Community
-Library), which was installed with PHP. For instance, to install the Redis extension, run:
+Now, install PHP:
 
 ```terminal
-pecl install redis
+brew install shivammathur/php/php@8.5
+```
+
+### Homebrew PHP Extensions
+
+`shivammathur/php`'s formula includes many extensions out of the box (including common database extensions).
+I recommend using the [`shivammathur/extensions`](https://github.com/shivammathur/homebrew-extensions) tap
+to install additional extensions. Tap it with:
+
+```terminal
+brew tap shivammathur/extensions
+```
+
+***NOTE
+Homebrew now requires you to *trust* a third-party tap before it will load
+anything from it. Trust the tap with:
+
+```terminal
+brew trust shivammathur/extensions
+```
+***
+
+If you want to install the Redis extension (for PHP 8.5), run:
+
+```terminal
+brew install shivammathur/extensions/phpredis@8.5
 ```
 
 ### Homebrew Symfony CLI
@@ -59,6 +83,15 @@ have Homebrew installed, let's use it to install the Symfony CLI:
 ```terminal
 brew install symfony-cli/tap/symfony-cli
 ```
+
+***NOTE
+Homebrew now requires you to *trust* a third-party tap before it will load
+anything from it. Trust the tap with:
+
+```terminal
+brew trust symfony-cli/tap
+```
+***
 
 You should be ready to go on your Mac! [Verify the installation below](#verify-php-symfony-cli-installation).
 
