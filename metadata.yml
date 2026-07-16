@@ -623,3 +623,10 @@ blogs:
             and allowing invalid states required by Symfony forms. Let's explore how DTOs (Data Transfer Objects) and
             Symfony's ObjectMapper component can help keep our entities honest.
         category: tech
+    brontie-deep-dive:
+        title: "How We Built Brontie your AI Assistant"
+        published: 2026-07-17
+        preview: |
+            Brontie is a new AI assistant for SymfonyCasts. Learn how we built it, how it works, and how you can get
+            involved.
+        category: tech
