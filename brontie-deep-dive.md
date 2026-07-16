@@ -1,8 +1,8 @@
 # How We Built Brontie
 
 A few weeks ago, we
-introduced [Brontie, our AI companion](https://symfonycasts.com/blog/brontie-your-ai-companion).
-Mention `@Brontie` in a SymfonyCasts comment and our friendly neighborhood
+introduced [Brontie, our AI assistant](https://symfonycasts.com/blog/brontie-your-ai-companion).
+Mention `@Brontie` in a SymfonyCasts comment and our friendly Symfony trained
 dinosaur will jump in with an answer.
 
 In that post, we said Brontie has watched every SymfonyCasts tutorial.
@@ -10,8 +10,8 @@ In that post, we said Brontie has watched every SymfonyCasts tutorial.
 That's true... in the same way that a dinosaur can watch hundreds of hours of
 video without blinking.
 
-Technically, Brontie hasn't been *trained* on our tutorials. Instead, when you
-ask a question, it searches our courses, blog posts, and the official
+That's true... in the same way that a dinosaur can watch hundreds of hours of
+video without blinking. When you ask a question, it searches our courses, blog posts, and the official
 documentation to find the most useful context. It sends that context, along with
 your question, to an LLM.
 
@@ -57,11 +57,7 @@ when it is finished.
 
 On the frontend, we use some simple polling to check whether the answer is
 ready. Nothing particularly fancy. It quietly checks in the background, then
-swaps in the finished answer.
-
-Boring? A little.
-
-Reliable? Yup!
+swaps in the finished answer. This creates a very reliable experience!
 
 More importantly, the normal HTTP request stays fast. The slow AI work happens
 somewhere else.
@@ -203,9 +199,6 @@ Brontie also searches beyond our tutorials. Its index includes SymfonyCasts blog
 posts and documentation for the tools we teach, including Symfony, Doctrine,
 PHPUnit, Foundry, and more.
 
-Sometimes the best answer is in one of our courses. Sometimes it lives in the
-official docs. Brontie can use both.
-
 ## Symfony AI Holds Everything Together
 
 We didn't write custom integrations for OpenAI and Pinecone. Instead, Brontie is
@@ -230,7 +223,8 @@ And, because this is all inside our existing Symfony application, we can use the
 tools we already rely on: Messenger, the service container, the Rate Limiter
 component, security voters, Turbo, Stimulus, and our normal testing setup.
 
-It turns out Symfony is pretty good at building AI applications. Who knew?
+It turns out Symfony is pretty good at building AI applications. Another reason
+why we love it!
 
 ## Teaching Brontie How to Answer
 
@@ -238,9 +232,7 @@ Retrieving useful content is only half of the job. We also need to tell the
 model what a good SymfonyCasts answer looks like.
 
 Brontie's prompt asks it to behave like a senior developer pair-programming with
-a colleague.
-
-The goal is casual and helpful, but concise. We don't want a five-paragraph
+a colleague. The goal is casual and helpful, but concise. We don't want a five-paragraph
 introduction before the useful part.
 
 Some of its rules are:
@@ -365,12 +357,12 @@ The rating helps us find those cases. The logs help us understand them. Then we
 can adjust the retrieval rules, prompts, summaries, or source content.
 
 And that's where we are now: closing that loop and gradually making Brontie more
-useful.
+helpful.
 
 ## Come Say Hello
 
-Brontie is still in beta, but subscribers can request access from the Brontie
-page.
+Brontie is still in beta, but subscribers can request access from the [Brontie
+page](https://symfonycasts.com/brontie/beta).
 
 Once you're in, head to any course chapter or blog post, mention `@Brontie`, and
 ask a real question.
