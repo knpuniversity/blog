@@ -50,6 +50,7 @@ Instead, we dispatch a Symfony Messenger message and return the response
 immediately.
 
 <img class="center-block light-theme-only" style="border: solid 5px #efefee; border-radius: 5px; width: 100%; max-width: 700px; height: auto;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/brontie-deep-dive/async-flow.png" alt="Diagram: the Brontie HTTP request"/>
+
 <img class="center-block dark-theme-only" style="border: solid 5px #efefee; border-radius: 5px; width: 100%; max-width: 700px; height: auto;" src="https://d399irh3pgqnz3.cloudfront.net/prod/uploads/blog/brontie-deep-dive/async-flow-dark.png" alt="Diagram (dark): the Brontie HTTP request"/>
 
 A background worker generates the answer and updates the placeholder comment
