@@ -8,9 +8,6 @@ dinosaur will jump in with an answer.
 In that post, we said Brontie has watched every SymfonyCasts tutorial.
 
 That's true... in the same way that a dinosaur can watch hundreds of hours of
-video without blinking.
-
-That's true... in the same way that a dinosaur can watch hundreds of hours of
 video without blinking. When you ask a question, it searches our courses, blog posts, and the official
 documentation to find the most useful context. It sends that context, along with
 your question, to an LLM.
