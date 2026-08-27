@@ -313,3 +313,9 @@ see where it goes next.
 
 If you're testing Symfony apps in a browser, **you should absolutely be paying
 attention to this project**.
+
+And we're building a full course on all of this:
+[Symfony End-to-End Testing: WebTestCase to Playwright](https://symfonycasts.com/screencast/e2e-testing)
+
+It's not out yet - head over there to read more and get notified the moment it's
+released.
