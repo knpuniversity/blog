@@ -1,3 +1,12 @@
+---
+title: 'Adding English Subtitles & Course Thumbnails'
+published: 2018-01-30
+category: news
+preview: |-
+    Making our content friendly & accessible is *super* important. That's
+    why we've just added English subtitles & course thumbnails!
+---
+
 One of our goals is make technology fun and accessible
 to as *many* people as possible, including tech beginners, students and non-native
 English speakers. Because... great tech should be available to *everyone*!

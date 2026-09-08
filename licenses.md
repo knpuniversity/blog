@@ -1,3 +1,13 @@
+---
+title: 'Finding our OS Content License'
+published: 2013-09-13
+category: tech
+preview: |-
+    We're releasing the content of our screencasts and we want to get the
+    license right. In this post, we give a little background and ask for
+    your thoughts.
+---
+
 # Finding our OS Content License
 
 A [couple of weeks ago](/blog/knp-you), I talked about making KnpUniversity

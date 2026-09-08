@@ -1,3 +1,12 @@
+---
+title: 'Myth: JS imports need a Build System'
+published: 2023-11-09
+category: tech
+preview: |-
+    One of the biggest reasons to use a bundler is `import` and `export`.
+    But guess what? These work in your browser just fine.`
+---
+
 # Myth: JS imports need a Build System
 
 > Read the entire series about LAST Stack:

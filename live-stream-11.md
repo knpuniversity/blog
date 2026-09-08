@@ -1,3 +1,13 @@
+---
+title: 'Live Stream #11: Turbo Morph Updates & Autocomplete morphing work'
+published: 2024-02-28
+category: tech
+preview: |-
+    Live stream from Feb 28th where we get some updates on the "active value"
+    change in Turbo 8 morphing. Then we dive into work on a PR for the
+    autocomplete component: making it morph-ready... which is tricky!
+---
+
 # Live Stream #11: Turbo Morph Updates & Autocomplete morphing work
 
 In this week's live stream, we get some updates on the "active value"

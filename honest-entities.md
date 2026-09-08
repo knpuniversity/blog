@@ -1,3 +1,13 @@
+---
+title: 'Keeping Doctrine Entities Honest with DTOs and ObjectMapper'
+published: 2026-06-17
+category: tech
+preview: |-
+    Doctrine entities in Symfony often double as form models, forcing required properties to become nullable
+    and allowing invalid states required by Symfony forms. Let's explore how DTOs (Data Transfer Objects) and
+    Symfony's ObjectMapper component can help keep our entities honest.
+---
+
 # Keeping Doctrine Entities Honest with DTOs and ObjectMapper
 
 ***IMPORTANT

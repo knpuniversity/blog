@@ -1,3 +1,12 @@
+---
+title: 'Why I Love Drupal People'
+published: 2015-11-19
+category: news
+preview: |-
+    Yea yea yea, Drupal 8 is out. But more than that, Drupal people are
+    *awesome*. So let me tell you about how I met them...
+---
+
 # Why I Love Drupal People
 
 *Image credits to [http://forumone.com/blog/behind-the-curtain-the-making-of-the-drupalcon-prenote/](http://forumone.com/blog/behind-the-curtain-the-making-of-the-drupalcon-prenote/)*

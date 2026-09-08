@@ -1,3 +1,13 @@
+---
+title: 'SymfonyCasts November Open Source Roundup!'
+published: 2024-11-18
+category: tech
+preview: |-
+    This month we've got 6 SymfonyCasts open source releases, let's take a quick
+    look at what's new and give a huge thanks to all the contributors who helped make
+    these releases happen!
+---
+
 # SymfonyCasts November Open Source Roundup!
 
 Hello to our open source friends! In addition to teaching, we also create and maintain

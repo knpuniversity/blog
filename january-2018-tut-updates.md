@@ -1,3 +1,10 @@
+---
+title: 'New for January 2018'
+published: 2018-01-11
+category: tutorials
+preview: '2018 = Symfony 4 Development'
+---
+
 <hr>
 
 Welcome to 2018! Now that you've got your mantra for the year down, it's time to get to business. Symfony 4 business!

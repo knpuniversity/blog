@@ -1,3 +1,13 @@
+---
+title: 'Meet Brontie, your AI Companion'
+published: 2026-06-15
+category: news
+preview: |-
+    Meet Brontie - your new SymfonyCasts companion. Part dinosaur, part AI, fully obsessed with Symfony.
+    Mention `@Brontie` in any tutorial, course, or blog post comment and Brontie will jump in with answers
+    grounded in the actual SymfonyCasts lessons.
+---
+
 # Meet Brontie
 
 We're excited to introduce you to our own Symfony-trained AI coding assistant: **Brontie**. 

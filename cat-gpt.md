@@ -1,3 +1,10 @@
+---
+title: 'Introducing Cat GPT'
+published: 2023-04-01
+category: tech
+preview: 'Tap into the most powerful source of knowledge in the world: your cat!'
+---
+
 # Introducing: Cat GPT
 
 You've heard of AI, but what if we told you there's a much more

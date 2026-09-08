@@ -1,3 +1,13 @@
+---
+title: 'Symfony Deprecations Explained (Upgrade Without Breaking Things)'
+published: 2026-05-11
+category: tech
+preview: |-
+    Symfony upgrades do not have to be stressful. Thanks to Symfony's deprecation system, you can fix future
+    breaking changes before upgrading. Learn why "no deprecations" is the key to a safe major upgrade - and
+    how Symfony gives you a clear roadmap forward.
+---
+
 # Symfony Deprecations Explained (Upgrade Without Breaking Things)
 
 Upgrading Symfony does not have to feel like walking through a minefield. In fact, if you are using Symfony the way it is designed,

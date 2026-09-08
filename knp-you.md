@@ -1,3 +1,17 @@
+---
+title: KnpYou!
+published: 2013-08-29
+category: news
+preview: |-
+    Sometimes, learning something technical is just plain hard. Information
+    is scattered, opinions vary, and best-practices are buried. Nothing tells
+    the whole, realistic story in a real world application. We work together
+    on open source libraries, but not on tutorials.
+
+    So now, we're excited to enter our next phase, where it's all
+    about collaboration and working together!
+---
+
 # KnpYou
 
 For the past few weeks, I've been *scouring* the web to learn everything I

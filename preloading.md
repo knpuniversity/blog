@@ -1,3 +1,12 @@
+---
+title: 'Preloading Assets for Fun & Performance'
+published: 2023-12-12
+category: tech
+preview: |-
+    Want your site to fly? Preload your assets! This happens automatically
+    in AssetMapper, but let's learn how it works anyway!
+---
+
 # Preloading Assets for Fun & Performance
 
 > Read the entire series about LAST Stack:

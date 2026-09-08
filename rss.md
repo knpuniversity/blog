@@ -1,3 +1,14 @@
+---
+title: 'We can has RSS?'
+published: 2013-09-27
+category: news
+preview: |-
+    We have an RSS feed! Ok, that's not earth-shattering, but
+    we will be sharing tech experiences, updates, and other tech
+    topics and we don't want you to miss out. We also talk about
+    the code behind the RSS.
+---
+
 # We can has RSS?
 
 We have an [RSS feed](http://feeds.feedburner.com/knpuniversity)! Ok, that's not earth-shattering 2013 news, but you if

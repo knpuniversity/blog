@@ -1,3 +1,12 @@
+---
+title: 'Symfony World Videos are Available (but not here)'
+published: 2020-12-07
+category: news
+preview: |-
+    The Symfony World videos are available with high-quality captions,
+    but not in SymfonyCasts this year!
+---
+
 # Symfony World Videos are Available (but not here)
 
 The online [Symfony World conference](https://live.symfony.com/2020-world/) was

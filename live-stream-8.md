@@ -1,3 +1,14 @@
+---
+title: 'Live Stream #8: Live Component JavaScript Internals'
+published: 2024-02-07
+category: tech
+preview: |-
+    Live stream from Feb 7th where we dive into the JavaScript behind
+    the Live Components package: the Stimulus controller, Component objects,
+    how re-rendering happens & the internal plugins system. Yes, this one
+    gets TECHY.
+---
+
 # Live Stream #8: Live Component JavaScript Internals: Cleanup time!
 
 In this week's live stream, we talk the new major Doctrine releases, the

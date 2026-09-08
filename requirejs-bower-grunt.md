@@ -1,3 +1,13 @@
+---
+title: 'Evolving RequireJS, Bower and Grunt'
+published: 2014-01-02
+category: symfony
+preview: |-
+    At SymfonyCon Warsaw, I talked about RequireJS, Bower and Grunt
+    in your PHP project. In this post, we'll go a bit further and
+    check out a way to organize things that may be even better!
+---
+
 # Evolving RequireJS, Bower and Grunt
 
 ***TIP

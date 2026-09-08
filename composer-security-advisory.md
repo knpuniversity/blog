@@ -1,3 +1,13 @@
+---
+title: 'Composer 2.9 Automatic Security Blocking: Fireside Chat'
+published: 2025-12-22
+category: tech
+preview: |-
+    Composer 2.9 turns security the next level. Instead of politely warning about vulnerable dependencies,
+    it now blocks insecure installs and updates by default, forcing issues to surface early and keeping
+    your PHP projects safer without extra tools.
+---
+
 # Composer 2.9 Automatic Security Blocking: Fireside Chat
 
 In November 2025, we got Composer 2.9, which introduced an important shift in how

@@ -1,3 +1,13 @@
+---
+title: 'Playwright-PHP Changes the Game for Symfony Testing'
+published: 2026-08-28
+category: tech
+preview: |-
+    Real browser. Real JavaScript. No web server?! Playwright-PHP's Symfony integration sends browser requests
+    directly through your Symfony kernel, unlocking fast, parallel browser tests with the same kind of access
+    and control we love from Symfony's kernel tests. It's kind of blowing my mind.
+---
+
 # Playwright-PHP Changes the Game for Symfony Testing
 
 > "We migrated our browser test suite from Panther to Playwright...

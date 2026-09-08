@@ -1,3 +1,12 @@
+---
+title: 'All About the All Access Subscription Pass'
+published: 2014-11-06
+category: news
+preview: |-
+    The KnpU All Access Pass ... ooohhh ahhhh. Introducing binge-watching
+    and more frequent content. Build something amazing!
+---
+
 # All About the All Access Subscription Pass
 
 Introducing binge-watching and more frequent content:

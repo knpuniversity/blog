@@ -1,3 +1,13 @@
+---
+title: 'SymfonyCon 2018 Lisbon Videos are Here'
+published: 2019-01-23
+category: news
+preview: |-
+    Did you attend SymfonyCon and want to re-watch stuff? Or maybe you
+    missed it and need to catch up? Either way, SymfonyCon 2018
+    videos are here!
+---
+
 # SymfonyCon 2018 Lisbon Videos are Here
 
 Last month, the SymfonyCasts team had the privilege of attending [SymfonyCon 2018](https://lisbon2018.symfony.com/)

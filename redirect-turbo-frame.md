@@ -1,3 +1,14 @@
+---
+title: 'Live Components + Turbo Streams: Navigating a Turbo Frame'
+published: 2024-02-26
+category: tech
+preview: |-
+    When you redirect from a `LiveAction`, LiveComponents, naturally,
+    will perform a full page redirect (or redirect via `Turbo` if it's
+    available. But what if you want to navigate a Turbo frame? The answer lies
+    in some clever use of Turbo Streams.
+---
+
 # Live Components + Turbo Streams: Navigating a Turbo Frame
 
 Recently, we received a fascinating [question](https://symfonycasts.com/screencast/last-stack/live-components#comment-31545),

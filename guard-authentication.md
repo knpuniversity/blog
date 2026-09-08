@@ -1,3 +1,13 @@
+---
+title: 'Introducing Guard: Symfony Security with a Smile'
+published: 2015-07-13
+category: symfony
+preview: |-
+    Introducing Guard: Authentication any way you want, customize the heck
+    out of every part, and come out smiling. It's Symfony's security system
+    unleashed!
+---
+
 # [DX] Guard: Symfony Authentication with a Smile
 
 ***TIP

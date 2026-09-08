@@ -1,3 +1,14 @@
+---
+title: 'REST Revisited'
+published: 2013-09-17
+category: tech
+preview: |-
+    After our recent "What the REST" post, a lot of people came out
+    to help answer the most difficult questions around creating a
+    RESTful API. In this post, I outline what we learned and what
+    questions remain before we release our REST tutorial.
+---
+
 # REST Revisited
 
 Two weeks ago, I wrote [What the REST?](/blog/what-the-rest), asking for help answering

@@ -1,3 +1,13 @@
+---
+title: 'Remembering Ryan Weaver'
+published: 2025-08-29
+category: news
+preview: |-
+    With deep sadness, we share that Ryan Weaver — co-founder of SymfonyCasts, father,
+    husband, beloved teacher, and friend — has passed away after a long and courageous
+    journey with brain cancer.
+---
+
 # Remembering Ryan Weaver
 
 With deep sadness, we share that Ryan Weaver — co-founder of SymfonyCasts, father, husband, beloved teacher, and

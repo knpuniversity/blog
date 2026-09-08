@@ -1,3 +1,13 @@
+---
+title: 'Update your Docs for "composer require", then Celebrate with a Sandwich'
+published: 2014-10-02
+category: tech
+preview: |-
+    Composer's require command just learned how to guess the best
+    version for you. So update your library docs to have a one-line
+    installation! And then have a sandwich.
+---
+
 # Update your Docs for "composer require", then Celebrate with a Sandwich
 
 Pretty much every package manager works the same: run the executable (`apt-get`),

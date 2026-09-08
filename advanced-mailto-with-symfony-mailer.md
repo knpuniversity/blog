@@ -1,3 +1,13 @@
+---
+title: 'Ditch mailto Links: Pre-Fill & even Attach Files with Symfony Mailer (.eml Magic!)'
+published: 2025-03-19
+category: tech
+preview: |-
+    The `mailto:` link is a simple way to open an email client with a pre-filled
+    email. But what if you want this email to have a pre-filled attachment?
+    Let's dive into how to do this with Symfony Mailer.
+---
+
 # Ditch mailto Links: Pre-Fill & even Attach Files with Symfony Mailer (.eml Magic!)
 
 Congratulations on your new gig working on the site for "Prehistoric Pens": the leader

@@ -1,3 +1,13 @@
+---
+title: '7 Free Screencasts for the Drupal 8 Party'
+published: 2015-11-17
+category: tech
+preview: |-
+    Drupal 8 is here! Now get to work with video tutorials and
+    coding challenges for Drupal, OO coding and more. All free until
+    Dec 25th.
+---
+
 # 7 Free Screencasts for the Drupal 8 Party
 
 ***TIP

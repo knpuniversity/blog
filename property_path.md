@@ -1,3 +1,12 @@
+---
+title: "Symfony's Under-Used property_path option"
+published: 2015-09-15
+category: symfony
+preview: |-
+    The Symfony Form property_path option is one of the most under-appreciated,
+    and powerful parts of the form component.
+---
+
 # Symfony's Under-Used property_path option
 
 Though not required, we typically, bind Symfony form objects to a class (often

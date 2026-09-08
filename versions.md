@@ -1,3 +1,12 @@
+---
+title: 'Now Exposed: composer.json & package.json for every Tutorial'
+published: 2020-08-25
+category: tutorials
+preview: |-
+    Curious what versions of a library a tutorial is using? Every tutorial
+    *now* exposes the full composer.json and package.json info!
+---
+
 # Now Exposed: composer.json & package.json for every Tutorial
 
 We're lucky to get a *lot* of user feedback at SymfonyCasts. One of the

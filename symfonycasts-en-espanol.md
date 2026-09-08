@@ -1,3 +1,13 @@
+---
+title: 'SymfonyCasts en Español'
+published: 2021-09-29
+category: tutorials
+preview: |-
+    En SymfonyCasts nos arremangamos y traducimos nuestro popular curso de
+    Symfony 5 para que puedas disfrutarlo gratuitamente sin tener que activar
+    el traductor universal!
+---
+
 # ¡Tutorial de Symfony 5 en Español!
 
 ***TIP

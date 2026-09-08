@@ -1,3 +1,14 @@
+---
+title: 'Using a Symfony Reproducer'
+published: 2024-09-27
+category: tech
+preview: |-
+    Now that you've created a Symfony reproducer, let's use it to fix a
+    bug in Symfony or verify a fix proposed by someone else. We'll fork
+    the Symfony repository, link our reproducer to it, and make the
+    necessary changes.
+---
+
 # Using a Symfony Reproducer
 
 ***TIP

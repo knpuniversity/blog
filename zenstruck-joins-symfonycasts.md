@@ -1,3 +1,14 @@
+---
+title: 'Kevin Bond (aka Zenstruck) joins SymfonyCasts'
+published: 2024-05-21
+category: news
+preview: |-
+    Kevin Bond (aka Zenstruck) is joining forces with us as a head 
+    tutorial writer. This means tutorials created by Kevin in the SymfonyCasts 
+    style you know and love. It also means the ability for us to make more 
+    content about more libraries and solutions around the Symfony ecosystem.
+---
+
 # Kevin Bond (aka Zenstruck) joins SymfonyCasts
 
 I’m so excited to announce that Kevin Bond (aka [zenstruck](https://twitter.com/zenstruck)) is joining forces with us at SymfonyCasts as a head tutorial writer! This means tutorials created by Kevin in the SymfonyCasts style you know and love, starting with Symfony 7 Fundamentals. It also means the ability for us to make more content about more libraries and solutions around the Symfony ecosystem. AND, of course, Kevin can continue his work in the open source world.

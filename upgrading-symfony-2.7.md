@@ -1,3 +1,12 @@
+---
+title: 'How we Upgraded to Symfony 2.7 (+ deprecation notices)'
+published: 2015-05-31
+category: symfony
+preview: |-
+    Symfony 2.7 has landed! Learn how we upgraded to the latest
+    LTS and what hiccups we hit along the way.
+---
+
 # How we Upgraded to Symfony 2.7 (+ deprecation notices)
 
 ***SEEALSO

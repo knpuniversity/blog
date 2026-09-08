@@ -1,3 +1,12 @@
+---
+title: '2023: A Year in Tutorials & Open Source'
+published: 2024-01-10
+category: news
+preview: |-
+    Let's peek back at 2023: the tutorials we created & the open source
+    initiatives that you helped us push forward.
+---
+
 # 2023: A Year in Tutorials & Open Source
 
 For SymfonyCon 2022, I wore a Mickey Mouse costume in front of over 1000
