@@ -1,5 +1,4 @@
 ---
-title: 'Clean up your migrations!'
 published: 2022-04-19
 category: tech
 preview: |-

@@ -1,5 +1,4 @@
 ---
-title: 'Ryan has Incurable Brain Cancer - but SymfonyCasts is Strong'
 published: 2024-04-10
 category: news
 preview: |-
@@ -8,7 +7,7 @@ preview: |-
     we've got & have amazing support from the community.
 ---
 
-# Ryan has Incurable Brain Cancer - but SymfonyCasts is Strong"
+# Ryan has Incurable Brain Cancer - but SymfonyCasts is Strong
 
 <div style="position: relative;padding-bottom: 56.25%; padding-top: 25px;">
 <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" src="https://www.youtube.com/embed/pCJ6YE0FI34?si=_fJsh1VCJ7t2LViO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

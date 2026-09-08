@@ -1,5 +1,4 @@
 ---
-title: 'Live Stream #5: A Day in the Life of Getting Live Components to stable'
 published: 2024-01-17
 category: tech
 preview: |-

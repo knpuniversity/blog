@@ -1,5 +1,4 @@
 ---
-title: '7 Free Screencasts for the Drupal 8 Party'
 published: 2015-11-17
 category: tech
 preview: |-

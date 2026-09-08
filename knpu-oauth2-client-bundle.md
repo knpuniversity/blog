@@ -1,5 +1,4 @@
 ---
-title: 'Introducing KnpUOAuth2ClientBundle: Making Social Easy'
 published: 2016-02-23
 category: tech
 preview: |-

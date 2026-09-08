@@ -1,5 +1,4 @@
 ---
-title: 'Symfony World Videos are Available (but not here)'
 published: 2020-12-07
 category: news
 preview: |-

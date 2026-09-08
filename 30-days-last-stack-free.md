@@ -1,5 +1,4 @@
 ---
-title: '30 Days of LAST Stack Tutorial Free until Jan 15th'
 published: 2023-11-30
 category: tech
 preview: |-

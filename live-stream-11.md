@@ -1,5 +1,4 @@
 ---
-title: 'Live Stream #11: Turbo Morph Updates & Autocomplete morphing work'
 published: 2024-02-28
 category: tech
 preview: |-

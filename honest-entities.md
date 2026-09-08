@@ -1,5 +1,4 @@
 ---
-title: 'Keeping Doctrine Entities Honest with DTOs and ObjectMapper'
 published: 2026-06-17
 category: tech
 preview: |-

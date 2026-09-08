@@ -1,5 +1,4 @@
 ---
-title: 'Your LAST Stack'
 published: 2023-11-06
 category: tech
 preview: |-

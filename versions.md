@@ -1,5 +1,4 @@
 ---
-title: 'Now Exposed: composer.json & package.json for every Tutorial'
 published: 2020-08-25
 category: tutorials
 preview: |-

@@ -1,9 +1,10 @@
 ---
-title: '2017 Year in Review'
 published: 2017-12-28
 category: tutorials
 preview: '2017 was the *biggest* year yet for KnpUniversity!'
 ---
+
+# 2017 Year in Review
 
 <hr>
 <h3 style="font-weight: bold;">New Releases</h3>

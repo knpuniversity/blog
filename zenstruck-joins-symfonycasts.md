@@ -1,5 +1,4 @@
 ---
-title: 'Kevin Bond (aka Zenstruck) joins SymfonyCasts'
 published: 2024-05-21
 category: news
 preview: |-

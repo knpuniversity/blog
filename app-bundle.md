@@ -1,5 +1,4 @@
 ---
-title: 'Bundles, No Bundles and AppBundle in 10 Steps'
 published: 2014-12-10
 category: symfony
 preview: |-

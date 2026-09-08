@@ -1,5 +1,4 @@
 ---
-title: 'Changes to Symfony Tutorials for Symfony 3.3'
 published: 2017-08-01
 category: tech
 preview: |-

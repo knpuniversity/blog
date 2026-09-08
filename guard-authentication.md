@@ -1,5 +1,4 @@
 ---
-title: 'Introducing Guard: Symfony Security with a Smile'
 published: 2015-07-13
 category: symfony
 preview: |-
@@ -8,7 +7,7 @@ preview: |-
     unleashed!
 ---
 
-# [DX] Guard: Symfony Authentication with a Smile
+# Introducing Guard: Symfony Security with a Smile
 
 ***TIP
 

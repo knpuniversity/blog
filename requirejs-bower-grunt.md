@@ -1,5 +1,4 @@
 ---
-title: 'Evolving RequireJS, Bower and Grunt'
 published: 2014-01-02
 category: symfony
 preview: |-

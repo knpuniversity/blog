@@ -1,5 +1,4 @@
 ---
-title: 'Creating a Symfony Reproducer'
 published: 2024-07-16
 category: tech
 preview: |-

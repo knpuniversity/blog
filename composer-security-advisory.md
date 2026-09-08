@@ -1,5 +1,4 @@
 ---
-title: 'Composer 2.9 Automatic Security Blocking: Fireside Chat'
 published: 2025-12-22
 category: tech
 preview: |-

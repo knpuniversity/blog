@@ -1,5 +1,4 @@
 ---
-title: "Doctrine's HIDDEN gem"
 published: 2024-01-23
 category: tech
 preview: |-

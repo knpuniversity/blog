@@ -1,5 +1,4 @@
 ---
-title: 'Expanding Code Blocks'
 published: 2015-01-15
 category: news
 preview: |-

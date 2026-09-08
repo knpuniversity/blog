@@ -1,5 +1,4 @@
 ---
-title: 'Why I Switched from Assetic to Gulp'
 published: 2015-04-14
 category: tech
 preview: |-

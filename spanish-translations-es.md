@@ -1,5 +1,4 @@
 ---
-title: 'Traducciones Automáticas al Español'
 published: 2022-08-24
 category: tech
 preview: |-
@@ -7,7 +6,7 @@ preview: |-
     nuestros nuevos tutoriales (guiones y subtítulos)... prácticamente al instante!
 ---
 
-# ¡Traducciones Automáticas de Tutoriales al Español!
+# Traducciones Automáticas al Español
 
 > Don't know Spanish? Check the [English version](https://symfonycasts.com/blog/spanish-translations) of this blog post!
 

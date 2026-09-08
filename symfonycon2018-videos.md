@@ -1,5 +1,4 @@
 ---
-title: 'SymfonyCon 2018 Lisbon Videos are Here'
 published: 2019-01-23
 category: news
 preview: |-

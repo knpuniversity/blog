@@ -1,5 +1,4 @@
 ---
-title: 'Live Components + Turbo Streams: Navigating a Turbo Frame'
 published: 2024-02-26
 category: tech
 preview: |-

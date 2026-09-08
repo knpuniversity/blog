@@ -1,5 +1,4 @@
 ---
-title: 'Want to be a Drupal 8 Expert? Start with Symfony'
 published: 2014-03-06
 category: news
 preview: |-
@@ -9,7 +8,7 @@ preview: |-
     Symfony.
 ---
 
-# Want to be a Drupal 8 Expert? Learn Symfony
+# Want to be a Drupal 8 Expert? Start with Symfony
 
 ***SEEALSO
 Drupal 8 is out! Check out [Drupal 8 Under the Hood](https://knpuniversity.com/screencast/drupal8-under-the-hood)

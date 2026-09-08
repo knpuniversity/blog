@@ -1,11 +1,12 @@
 ---
-title: 'New for October 2017'
 published: 2017-10-03
 category: tutorials
 preview: |-
     New releases, upcoming tutorials, and upcoming Symfony events we want you to
     know about in October!
 ---
+
+# New for October 2017
 
 <h3 style="font-weight: bold;">New Releases</h3>
 

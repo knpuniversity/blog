@@ -1,5 +1,4 @@
 ---
-title: 'REST Revisited'
 published: 2013-09-17
 category: tech
 preview: |-

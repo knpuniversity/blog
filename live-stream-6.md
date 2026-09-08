@@ -1,5 +1,4 @@
 ---
-title: 'Live Stream #6: Building v2 of our TutsHero Tutorial-building Tool'
 published: 2024-01-24
 category: tech
 preview: |-

@@ -1,5 +1,4 @@
 ---
-title: 'How we Upgraded to Symfony 2.7 (+ deprecation notices)'
 published: 2015-05-31
 category: symfony
 preview: |-

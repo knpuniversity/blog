@@ -1,5 +1,4 @@
 ---
-title: 'Live Stream #10: Finishing the LiveComponents data-live-action-args Syntax Change'
 published: 2024-02-20
 category: tech
 preview: |-

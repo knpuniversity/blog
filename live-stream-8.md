@@ -1,5 +1,4 @@
 ---
-title: 'Live Stream #8: Live Component JavaScript Internals'
 published: 2024-02-07
 category: tech
 preview: |-
@@ -9,7 +8,7 @@ preview: |-
     gets TECHY.
 ---
 
-# Live Stream #8: Live Component JavaScript Internals: Cleanup time!
+# Live Stream #8: Live Component JavaScript Internals
 
 In this week's live stream, we talk the new major Doctrine releases, the
 UX twig Icon pull request and then dive into the JavaScript internals of

@@ -1,5 +1,4 @@
 ---
-title: 'Our favorite PhpStorm Live Templates + Share yours'
 published: 2015-08-20
 category: symfony
 preview: |-

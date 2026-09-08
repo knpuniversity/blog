@@ -1,5 +1,4 @@
 ---
-title: 'Symfony Service Expressions: Do things you thought Impossible'
 published: 2015-05-02
 category: symfony
 preview: |-

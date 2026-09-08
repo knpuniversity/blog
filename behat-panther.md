@@ -1,5 +1,4 @@
 ---
-title: 'Wanna see some Panther'
 published: 2021-08-25
 category: tech
 preview: |-
@@ -7,7 +6,7 @@ preview: |-
     you need is Composer and some time to configure things properly!
 ---
 
-# Wanna see some Panther?
+# Wanna see some Panther
 
 In [the previous blog post](https://symfonycasts.com/blog/behat-symfony), we successfully configured Behat with Symfony 5.
 Everything was super cool, and we used Selenium to operate our tests that required JavaScript.

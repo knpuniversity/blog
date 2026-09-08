@@ -1,5 +1,4 @@
 ---
-title: 'Automated Spanish Translations'
 published: 2022-08-24
 category: tech
 preview: |-
@@ -7,7 +6,7 @@ preview: |-
     tutorials (scripts and subtitles)... pretty much instantly!
 ---
 
-# Automated Tutorial Spanish Translations!
+# Automated Spanish Translations
 
 > ¿No sabes inglés? ¡Consulta la [versión en español](https://symfonycasts.com/blog/spanish-translations-es) de esta entrada de blog!
 

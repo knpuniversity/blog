@@ -1,5 +1,4 @@
 ---
-title: 'SymfonyCasts November Open Source Roundup!'
 published: 2024-11-18
 category: tech
 preview: |-

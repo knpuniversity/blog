@@ -1,5 +1,4 @@
 ---
-title: 'Myth: JS imports need a Build System'
 published: 2023-11-09
 category: tech
 preview: |-

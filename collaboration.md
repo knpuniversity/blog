@@ -1,5 +1,4 @@
 ---
-title: 'The Collaboration Machine of the Docs World'
 published: 2014-02-04
 category: news
 preview: |-

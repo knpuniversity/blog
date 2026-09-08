@@ -1,5 +1,4 @@
 ---
-title: 'Accessing and Debugging Symfony Form Errors'
 published: 2014-01-10
 category: symfony
 preview: |-

@@ -1,5 +1,4 @@
 ---
-title: 'Live Stream #9: Turbo 8, Live Components & Challenges in Morphing'
 published: 2024-02-14
 category: tech
 preview: |-

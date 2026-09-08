@@ -1,5 +1,4 @@
 ---
-title: "Fun with Symfony's Console Component"
 published: 2015-09-29
 category: symfony
 preview: |-

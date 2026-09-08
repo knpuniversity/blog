@@ -1,5 +1,4 @@
 ---
-title: 'KnpUniversity is now SymfonyCasts!'
 published: 2018-09-17
 category: news
 preview: |-

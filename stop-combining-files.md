@@ -1,5 +1,4 @@
 ---
-title: 'Stop Combining CSS & JS! + Performance Revisited'
 published: 2023-11-14
 category: tech
 preview: |-

@@ -1,5 +1,4 @@
 ---
-title: '2023: A Year in Tutorials & Open Source'
 published: 2024-01-10
 category: news
 preview: |-

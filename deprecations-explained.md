@@ -1,5 +1,4 @@
 ---
-title: 'Symfony Deprecations Explained (Upgrade Without Breaking Things)'
 published: 2026-05-11
 category: tech
 preview: |-

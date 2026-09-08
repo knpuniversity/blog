@@ -1,5 +1,4 @@
 ---
-title: 'Setting up Behat on Symfony 5 or higher'
 published: 2021-08-03
 category: tech
 preview: |-

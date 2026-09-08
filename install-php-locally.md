@@ -1,5 +1,4 @@
 ---
-title: 'Installing PHP and Symfony CLI Locally'
 published: 2025-07-29
 category: tech
 preview: |-

@@ -1,5 +1,4 @@
 ---
-title: 'Finding our OS Content License'
 published: 2013-09-13
 category: tech
 preview: |-

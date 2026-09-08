@@ -1,5 +1,4 @@
 ---
-title: 'Behat on CircleCI with Failure Screenshots'
 published: 2015-10-27
 category: tech
 preview: |-
@@ -7,7 +6,7 @@ preview: |-
     of code, you can get screenshots when a test fails.
 ---
 
-# Behat on CircleCI 2.0 with Failure Screenshots
+# Behat on CircleCI with Failure Screenshots
 
 ***TIP
 **tl;dr** By combining Behat and CircleCI, you can automatically take screenshots

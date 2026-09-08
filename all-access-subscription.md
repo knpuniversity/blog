@@ -1,5 +1,4 @@
 ---
-title: 'All About the All Access Subscription Pass'
 published: 2014-11-06
 category: news
 preview: |-

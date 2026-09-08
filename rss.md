@@ -1,5 +1,4 @@
 ---
-title: 'We can has RSS?'
 published: 2013-09-27
 category: news
 preview: |-

@@ -1,5 +1,4 @@
 ---
-title: 'How We Built Brontie your AI Assistant'
 published: 2026-07-17
 category: tech
 preview: |-
@@ -7,7 +6,7 @@ preview: |-
     involved.
 ---
 
-# How We Built Brontie
+# How We Built Brontie your AI Assistant
 
 A few weeks ago, we
 introduced [Brontie, our AI assistant](https://symfonycasts.com/blog/brontie-your-ai-companion).

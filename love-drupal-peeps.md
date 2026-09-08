@@ -1,5 +1,4 @@
 ---
-title: 'Why I Love Drupal People'
 published: 2015-11-19
 category: news
 preview: |-

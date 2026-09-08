@@ -1,5 +1,4 @@
 ---
-title: 'Package Spotlight: `zenstruck/class-metadata`'
 published: 2025-10-08
 category: tech
 preview: |-

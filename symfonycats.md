@@ -1,5 +1,4 @@
 ---
-title: 'SymfonyCasts Rebrands as SymfonyCATS'
 published: 2019-04-01
 category: news
 preview: |-
@@ -7,7 +6,7 @@ preview: |-
     we decided it was easier just to go with it.
 ---
 
-# SymfonyCasts Rebrands as SymfonyCATS!
+# SymfonyCasts Rebrands as SymfonyCATS
 
 Great news! Our last rebranding from KnpUniversity to SymfonyCasts went *so* well
 that we decided to do it again! Today, we're thrilled to announce our new name -

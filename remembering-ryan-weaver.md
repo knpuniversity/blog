@@ -1,5 +1,4 @@
 ---
-title: 'Remembering Ryan Weaver'
 published: 2025-08-29
 category: news
 preview: |-

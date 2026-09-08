@@ -1,5 +1,4 @@
 ---
-title: 'Ditch mailto Links: Pre-Fill & even Attach Files with Symfony Mailer (.eml Magic!)'
 published: 2025-03-19
 category: tech
 preview: |-

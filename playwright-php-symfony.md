@@ -1,5 +1,4 @@
 ---
-title: 'Playwright-PHP Changes the Game for Symfony Testing'
 published: 2026-08-28
 category: tech
 preview: |-

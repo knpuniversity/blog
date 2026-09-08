@@ -1,5 +1,4 @@
 ---
-title: "Live Stream #7: Let's build some Twig UI Components"
 published: 2024-01-31
 category: tech
 preview: |-

@@ -1,5 +1,4 @@
 ---
-title: 'Preloading Assets for Fun & Performance'
 published: 2023-12-12
 category: tech
 preview: |-

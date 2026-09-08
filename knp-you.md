@@ -1,5 +1,4 @@
 ---
-title: KnpYou!
 published: 2013-08-29
 category: news
 preview: |-
@@ -12,7 +11,7 @@ preview: |-
     about collaboration and working together!
 ---
 
-# KnpYou
+# KnpYou!
 
 For the past few weeks, I've been *scouring* the web to learn everything I
 can about REST. I've spent hours watching presentations, reading blog posts,

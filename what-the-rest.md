@@ -1,5 +1,4 @@
 ---
-title: 'What the Rest?'
 published: 2013-09-04
 category: tech
 preview: |-
@@ -10,7 +9,7 @@ preview: |-
     inside the API itself? In this post, I'm asking for help.
 ---
 
-# What the REST?
+# What the Rest?
 
 ***TIP
 See the follow-up post called [REST Revisited](/blog/rest-revisited) that talks

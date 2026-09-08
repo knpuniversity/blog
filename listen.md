@@ -1,5 +1,4 @@
 ---
-title: 'SymfonyCasts is here to listen'
 published: 2020-06-10
 category: news
 preview: |-
@@ -7,7 +6,7 @@ preview: |-
     movement that is happening worldwide and in the US.
 ---
 
-# SymfonyCasts is here to Listen
+# SymfonyCasts is here to listen
 
 We are inspired and motivated by the message and momentum of the Black Lives Matter movement
 that is happening worldwide and in the US, where we are headquartered. The outpouring

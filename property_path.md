@@ -1,5 +1,4 @@
 ---
-title: "Symfony's Under-Used property_path option"
 published: 2015-09-15
 category: symfony
 preview: |-

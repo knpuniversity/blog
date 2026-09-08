@@ -1,5 +1,4 @@
 ---
-title: 'Update your Docs for "composer require", then Celebrate with a Sandwich'
 published: 2014-10-02
 category: tech
 preview: |-
