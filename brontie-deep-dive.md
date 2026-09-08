@@ -6,7 +6,7 @@ preview: |-
     involved.
 ---
 
-# How We Built Brontie your AI Assistant
+# How We Built Brontie, your AI Assistant
 
 A few weeks ago, we
 introduced [Brontie, our AI assistant](https://symfonycasts.com/blog/brontie-your-ai-companion).

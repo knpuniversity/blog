@@ -7,7 +7,7 @@ preview: |-
     autocomplete component: making it morph-ready... which is tricky!
 ---
 
-# Live Stream #11: Turbo Morph Updates & Autocomplete morphing work
+# Live Stream #11: Turbo Morph Updates & Autocomplete Morphing Work
 
 In this week's live stream, we get some updates on the "active value"
 change in Turbo 8 morphing. Then we dive into work on a PR for the

@@ -4,7 +4,7 @@ category: tech
 preview: 'Tap into the most powerful source of knowledge in the world: your cat!'
 ---
 
-# Introducing Cat GPT
+# Introducing CatGPT
 
 You've heard of AI, but what if we told you there's a much more
 PURR-vasive coding companion lurking right in your own home? That's right,

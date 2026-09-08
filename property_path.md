@@ -6,7 +6,7 @@ preview: |-
     and powerful parts of the form component.
 ---
 
-# Symfony's Under-Used property_path option
+# Symfony's Under-Used property_path Option
 
 Though not required, we typically, bind Symfony form objects to a class (often
 an entity). This means that the field names must correspond with the property names

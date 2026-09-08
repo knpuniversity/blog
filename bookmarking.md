@@ -6,7 +6,7 @@ preview: |-
     about a bookmarking feature, and now it's ready!
 ---
 
-# Bookmark your favorite courses and videos
+# Bookmark your Favorite Courses and Videos
 
 It's now super easy to remember your favorite course or even video with
 our new bookmarking feature. Look for the bookmark icon on the course overview

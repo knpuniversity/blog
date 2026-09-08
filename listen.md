@@ -6,7 +6,7 @@ preview: |-
     movement that is happening worldwide and in the US.
 ---
 
-# SymfonyCasts is here to listen
+# SymfonyCasts is here to Listen
 
 We are inspired and motivated by the message and momentum of the Black Lives Matter movement
 that is happening worldwide and in the US, where we are headquartered. The outpouring

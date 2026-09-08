@@ -7,7 +7,7 @@ preview: |-
     without blowing up your database.
 ---
 
-# Clean up your migrations!
+# Clean up your Migrations!
 
 Database migrations are a great way to safely update your database schema,
 and so it's very useful for production where you do not want to lose the data

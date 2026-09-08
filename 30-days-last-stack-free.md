@@ -7,7 +7,7 @@ preview: |-
     it's free until Jan 15th! Share the love.
 ---
 
-# 30 Days of LAST Stack Tutorial Free until Jan 15th
+# 30 Days of LAST Stack Tutorial (Free until Jan 15th)
 
 I haven't been this excited about the web in a long time. Layers of complexity
 that we learned to live with - Node, Webpack, Babel, combining files, giant

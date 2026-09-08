@@ -6,7 +6,7 @@ preview: |-
     when you need it!
 ---
 
-# Doctrine's HIDDEN gem
+# Doctrine's HIDDEN Gem
 
 We had a great question from a user recently where the answer involved a
 little-known Doctrine feature called `HIDDEN`. You won't need it often,

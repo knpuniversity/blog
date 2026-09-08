@@ -9,7 +9,7 @@ preview: |-
     inside the API itself? In this post, I'm asking for help.
 ---
 
-# What the Rest?
+# What the REST?
 
 ***TIP
 See the follow-up post called [REST Revisited](/blog/rest-revisited) that talks

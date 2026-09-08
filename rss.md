@@ -8,7 +8,7 @@ preview: |-
     the code behind the RSS.
 ---
 
-# We can has RSS?
+# We can have RSS?
 
 We have an [RSS feed](http://feeds.feedburner.com/knpuniversity)! Ok, that's not earth-shattering 2013 news, but you if
 you've enjoyed our posts about REST and OSS licenses, then subscribe and
