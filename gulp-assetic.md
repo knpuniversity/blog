@@ -1,3 +1,13 @@
+---
+published: 2015-04-14
+category: tech
+preview: |-
+    I switched from Assetic to Gulp to get more features and better
+    support. In this post, I'll' tell you why there's a good chance
+    that switching to Gulp is a good decision for you too. And, I'll
+    give you a quick, 3-step intro to Gulp itself.
+---
+
 # Why I Switched from Assetic to Gulp
 
 **tl;dr** Assetic was created when there were no real frontend tools for processing

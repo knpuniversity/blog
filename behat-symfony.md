@@ -1,3 +1,11 @@
+---
+published: 2021-08-03
+category: tech
+preview: |-
+    Got issues with Behat running on Symfony 5 or higher? Want to know more about
+    its configuration and possibilities? You are in the right spot!
+---
+
 # Setting up Behat on Symfony 5 or higher
 
 If you're interested in Behat, we have a [great tutorial](https://symfonycasts.com/screencast/behat)

@@ -1,4 +1,12 @@
-# Doctrine's HIDDEN gem
+---
+published: 2024-01-23
+category: tech
+preview: |-
+    Using Doctrine's HIDDEN doesn't come up often but it is a great tool to have
+    when you need it!
+---
+
+# Doctrine's HIDDEN Gem
 
 We had a great question from a user recently where the answer involved a
 little-known Doctrine feature called `HIDDEN`. You won't need it often,

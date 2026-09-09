@@ -1,3 +1,14 @@
+---
+published: 2013-09-04
+category: tech
+preview: |-
+    REST is as deep as the rabbit hole, with varied approaches and undefined
+    best-practices. Should I use custom hypermedia types or something
+    like HAL or JSON-LD? Should I implement OPTIONS? What role
+    should the API documentation play and what information should be described
+    inside the API itself? In this post, I'm asking for help.
+---
+
 # What the REST?
 
 ***TIP

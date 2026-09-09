@@ -1,3 +1,13 @@
+---
+published: 2015-05-02
+category: symfony
+preview: |-
+    Did you know you can inject a Doctrine repository into a service
+    without registering it as a service? How about injecting scalar
+    values are arguments that live in the database? If not, you may
+    have missed Symfony's Expression Language.
+---
+
 # Symfony Service Expressions: Do things you thought Impossible
 
 Did you know you can do this with Symfony's service container?

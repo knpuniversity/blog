@@ -1,3 +1,13 @@
+---
+published: 2024-01-31
+category: tech
+preview: |-
+    Live stream from Jan 31st where we talk about Twig attribute syntax
+    proposal, the new "URL" binding feature in LiveComponents and then
+    dive into building a "Tooltip" Twig component / recipe for a proposed
+    new section of the UX site.
+---
+
 # Live Stream #7: Let's build some Twig UI Components
 
 In this week's live stream, we talk about the latest release of Symfony UX,

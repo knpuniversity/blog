@@ -1,3 +1,12 @@
+---
+published: 2014-01-10
+category: symfony
+preview: |-
+    Inspired by an old StackOverflow post, we'll investigate why
+    it's so hard to get *all* of the errors of a form and unlock
+    some new tricks by understanding the form hierarchy.
+---
+
 # Accessing and Debugging Symfony Form Errors
 
 I recently saw an old post on StackOverflow called

@@ -1,3 +1,13 @@
+---
+published: 2024-07-16
+category: tech
+preview: |-
+    Oh snap! You've discovered what you suspect is a bug in Symfony.
+    Don't despair, Symfony is open source so there are many ways you can
+    help get it resolved. Let's look at how to create a reproducer to
+    help other contributors understand the issue and find a solution.
+---
+
 # Creating a Symfony Reproducer
 
 Oh, snap! You've discovered what you suspect is a bug in Symfony. Nooooooooooooo!

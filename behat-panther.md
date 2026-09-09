@@ -1,3 +1,11 @@
+---
+published: 2021-08-25
+category: tech
+preview: |-
+    You don't have to go to the Zoo to see the Panther in action. All
+    you need is Composer and some time to configure things properly!
+---
+
 # Wanna see some Panther?
 
 In [the previous blog post](https://symfonycasts.com/blog/behat-symfony), we successfully configured Behat with Symfony 5.

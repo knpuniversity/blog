@@ -1,3 +1,11 @@
+---
+published: 2016-02-23
+category: tech
+preview: |-
+    Say hello to KnpUOAuth2ClientBundle: Social connect, social authentication,
+    social registration - do it all, easily and without frustration.
+---
+
 # Introducing KnpUOAuth2ClientBundle: Making Social Easy
 
 **tl;dr** [KnpUOAuth2ClientBundle](https://github.com/knpuniversity/oauth2-client-bundle)

@@ -1,3 +1,11 @@
+---
+published: 2023-11-14
+category: tech
+preview: |-
+    Combining files to minimize requests is a relic to of the past. It's
+    time to stop.
+---
+
 # Stop Combining CSS & JS! + Performance Revisited
 
 > Read the entire series about LAST Stack:

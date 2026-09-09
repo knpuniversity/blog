@@ -1,3 +1,11 @@
+---
+published: 2020-06-10
+category: news
+preview: |-
+    We are motivated by the message and momentum of the Black Lives Matter
+    movement that is happening worldwide and in the US.
+---
+
 # SymfonyCasts is here to Listen
 
 We are inspired and motivated by the message and momentum of the Black Lives Matter movement

@@ -1,3 +1,11 @@
+---
+published: 2017-11-07
+category: tutorials
+preview: 'New Release: PHPUnit with a Bite & we hope to see you in Cluj!'
+---
+
+# New for November 2017
+
 <hr>
 <h3 style="font-weight: bold;">New Releases</h3>
 

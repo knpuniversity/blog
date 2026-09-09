@@ -1,3 +1,13 @@
+---
+published: 2018-08-14
+category: news
+preview: |-
+    We've been getting many requests lately from our users
+    about a bookmarking feature, and now it's ready!
+---
+
+# Bookmark your Favorite Courses and Videos
+
 It's now super easy to remember your favorite course or even video with
 our new bookmarking feature. Look for the bookmark icon on the course overview
 and video pages. Found something important and don't want to lose it?

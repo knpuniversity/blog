@@ -1,3 +1,13 @@
+---
+published: 2015-08-20
+category: symfony
+preview: |-
+    PhpStorm Live Templates: where you type a word, hit tab, and it expands
+    into a full code-block, saving you time on all the code you write
+    over and over again. We've published a few of our favorites, and are
+    hoping you'll share yours.
+---
+
 # Our favorite PhpStorm Live Templates + Share yours
 
 ***TIP

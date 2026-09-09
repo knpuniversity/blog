@@ -1,3 +1,14 @@
+---
+published: 2014-12-10
+category: symfony
+preview: |-
+    The new AppBundle in Symfony is controversial, but I'm not sure
+    it should be. In this post, I'll show you why it exists, why
+    bundles are just directories, and how close we are to having
+    *no* bundles at all. Sound crazy? It might just change the way
+    you think about your app.
+---
+
 # Bundles, No Bundles and AppBundle in 10 Steps
 
 Ah, the AppBundle: my **favorite** part of the Symfony best practices.

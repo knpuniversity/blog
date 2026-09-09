@@ -1,3 +1,11 @@
+---
+published: 2015-09-29
+category: symfony
+preview: |-
+    Symfony's Console component can be used in a single, standalone file
+    to add colors, build a table or add a progress bar with a beer icon.
+---
+
 # Fun with Symfony's Console Component
 
 One of the best parts of using Symfony's Console component is all the output

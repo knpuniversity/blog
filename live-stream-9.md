@@ -1,3 +1,12 @@
+---
+published: 2024-02-14
+category: tech
+preview: |-
+    Live stream from Feb 14th where we dive Turbo 8, view transitions,
+    and "morphing": the key tech behind LiveComponents & a new feature
+    in Turbo 8. We work on how to make our Stimulus controllers morph-ready.
+---
+
 # Live Stream #9: Turbo 8, Live Components & Challenges in Morphing
 
 In this week's live stream, we dive Turbo 8, view transitions,

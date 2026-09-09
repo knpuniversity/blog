@@ -1,4 +1,12 @@
-# How We Built Brontie
+---
+published: 2026-07-17
+category: tech
+preview: |-
+    Brontie is a new AI assistant for SymfonyCasts. Learn how we built it, how it works, and how you can get
+    involved.
+---
+
+# How We Built Brontie, your AI Assistant
 
 A few weeks ago, we
 introduced [Brontie, our AI assistant](https://symfonycasts.com/blog/brontie-your-ai-companion).

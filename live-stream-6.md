@@ -1,3 +1,12 @@
+---
+published: 2024-01-24
+category: tech
+preview: |-
+    Live stream from Jan 24th where we talk about HTTP caching, brainstorming
+    the "attributes" variable for Twig Component & some hacking on our
+    internal tutorial-building tool: TutsHero.
+---
+
 # Live Stream #6: Building v2 of our TutsHero Tutorial-building Tool
 
 In this week's live stream, I shared some good news (and some things we messed

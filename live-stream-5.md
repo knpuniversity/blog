@@ -1,4 +1,12 @@
-# Live Stream #5: A Day in the Life of Getting Live Components to stable
+---
+published: 2024-01-17
+category: tech
+preview: |-
+    Live stream from Jan 17th where we talk about the steps to getting live
+    components to a stable release and triage a few technical issues.
+---
+
+# Live Stream #5: A Day in the Life of Getting Live Components to Stable
 
 In case you missed it, I've started live streaming! These casual 1 hour (ish)
 streams give me a chance to hang out with all of you and experiment with something

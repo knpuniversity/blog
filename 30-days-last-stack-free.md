@@ -1,4 +1,13 @@
-# 30 Days of LAST Stack Tutorial Free until Jan 15th
+---
+published: 2023-11-30
+category: tech
+preview: |-
+    To celebrate the release of Symfony 7 & a stable AssetMapper, we're
+    releasing a 30 day LAST stack tutorial starting December 1st. And,
+    it's free until Jan 15th! Share the love.
+---
+
+# 30 Days of LAST Stack Tutorial (Free until Jan 15th)
 
 I haven't been this excited about the web in a long time. Layers of complexity
 that we learned to live with - Node, Webpack, Babel, combining files, giant

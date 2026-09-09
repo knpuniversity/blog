@@ -1,3 +1,11 @@
+---
+published: 2015-01-15
+category: news
+preview: |-
+    We're giving our code-blocks a face-lift to show the filename
+    and folded lines you can expand to see the entire file.
+---
+
 # Expanding Code Blocks
 
 We've always published the scripts for each screencast publicly in the page

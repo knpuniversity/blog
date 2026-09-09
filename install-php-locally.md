@@ -1,3 +1,13 @@
+---
+published: 2025-07-29
+category: tech
+preview: |-
+    The Symfony CLI makes local development a breeze - but it works best when PHP
+    is installed directly on your machine. Let's walk through setting up PHP (plus
+    common database extensions) and the Symfony CLI on macOS, Linux, or Windows
+    so you're ready to start building Symfony apps.
+---
+
 # Installing PHP and Symfony CLI Locally
 
 The [Symfony CLI](https://symfony.com/doc/current/setup/symfony_cli.html) is awesome for developing Symfony

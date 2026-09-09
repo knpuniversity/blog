@@ -1,4 +1,13 @@
-# Mailtrap Tutorial = (Free) Mailer + Webhook + Contributing back to Symfony  
+---
+published: 2025-03-01
+category: tech
+preview: |-
+    The free Mailtrap tutorial is here! It's all about the Mailer & Webhook
+    components with the joy of previewing emails in a sandbox. As a bonus,
+    this tutorial triggered several contributions back to Symfony!
+---
+
+# Mailtrap Tutorial (Free) = Mailer + Webhook + Contributing back to Symfony
 
 Good news Symfony peeps: we now have an updated Mailer tutorial that also covers the Webhook component *and* - thanks to a sponsorship from your friendly neighborhood [Mailtrap](https://mailtrap.io/) friends - is free!
 

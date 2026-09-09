@@ -1,4 +1,14 @@
-# Want to be a Drupal 8 Expert? Learn Symfony
+---
+published: 2014-03-06
+category: news
+preview: |-
+    Drupal 8 changes a lot under the hood and those will make you
+    a happier and more productive developer. But don't wait for its
+    release to kick butt in the new world. That's right, just learn
+    Symfony.
+---
+
+# Want to be a Drupal 8 Expert? Start with Symfony
 
 ***SEEALSO
 Drupal 8 is out! Check out [Drupal 8 Under the Hood](https://knpuniversity.com/screencast/drupal8-under-the-hood)

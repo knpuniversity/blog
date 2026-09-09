@@ -1,3 +1,12 @@
+---
+published: 2017-08-01
+category: tech
+preview: |-
+    Symfony 3.3 comes with some great new config in services.yml. But,
+    if you're coding along with our tutorials, this code may cause some
+    issues! Find out how to keep coding along happily.
+---
+
 # Changes to Symfony Tutorials for Symfony 3.3
 
 Symfony 3.3 comes with some pretty revolutionary changes to autowiring and how

@@ -1,3 +1,13 @@
+---
+published: 2024-02-20
+category: tech
+preview: |-
+    Live stream from Feb 20th where we do some open source maintenance
+    on Symfony UX, merge some PR's then finish the `data-live-action-args`
+    pull request that we first discussed several weeks ago. Good work
+    towards LiveComponents stable!
+---
+
 # Live Stream #10: Finishing the LiveComponents data-live-action-args Syntax Change
 
 In this week's live stream, we do some open source maintenance

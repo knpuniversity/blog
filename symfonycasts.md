@@ -1,3 +1,11 @@
+---
+published: 2018-09-17
+category: news
+preview: |-
+    We've got some big news! KnpUniversity is now SymfonyCasts! Find out
+    what this means, and why we're excited!
+---
+
 # KnpUniversity is now SymfonyCasts!
 
 If you look around the site today, you'll probably notice something different.

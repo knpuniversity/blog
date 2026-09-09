@@ -1,3 +1,14 @@
+---
+published: 2014-02-04
+category: news
+preview: |-
+    Collaboration on software is *huge*, and we all enjoy the benefits.
+    So why don't we see more with documentation? I'll tell you where
+    I think tutorials & collaboration are going and what prevents
+    us from getting there. But I also want to know what keeps *you*
+    from writing tutorials and collaborating.
+---
+
 # The Collaboration Machine of the Docs World
 
 We all love and depend on open source software.

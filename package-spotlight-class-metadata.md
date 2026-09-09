@@ -1,3 +1,12 @@
+---
+published: 2025-10-08
+category: tech
+preview: |-
+    Add extra context to your PHP classes with `zenstruck/class-metadata`. This
+    lightweight package lets you define short, readable identifiers for your
+    classes - known as aliases - and attach custom metadata directly to them.
+---
+
 # Package Spotlight: `zenstruck/class-metadata`
 
 Ever found yourself trying to explain how or why something happened in your app?

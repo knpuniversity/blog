@@ -1,4 +1,13 @@
-# Clean up your migrations!
+---
+published: 2022-04-19
+category: tech
+preview: |-
+    Does your giant migrations/ folder bother you? Let's do some spring cleaning!
+    A tip about how to get rid of a huge set of old migration files in your project,
+    without blowing up your database.
+---
+
+# Clean up your Migrations!
 
 Database migrations are a great way to safely update your database schema,
 and so it's very useful for production where you do not want to lose the data
