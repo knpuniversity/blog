@@ -248,9 +248,26 @@ jobs:
         with:
           require-lock-file: true
 
+      # Use a warm PHPStan result cache when possible to speedup analysis
+      - name: "Restore PHPStan result cache"
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: "phpstan/tmp"
+          key: "result-cache-v1-${{ env.PHP_VERSION }}-${{ github.run_id }}"
+          restore-keys: |
+            result-cache-v1-${{ env.PHP_VERSION }}-
+
       # Run static analysis using the project's PHPStan configuration.
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse --no-progress
+
+      # Persist the PHPStan cache for re-use on the next run
+      - name: "Save result cache"
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        if: ${{ !cancelled() }}
+        with:
+          path: "phpstan/tmp"
+          key: "result-cache-v1-${{ env.PHP_VERSION }}-${{ github.run_id }}"
 ```
 
 ***NOTE
