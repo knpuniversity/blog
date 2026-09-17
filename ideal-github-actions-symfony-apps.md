@@ -252,7 +252,7 @@ jobs:
       - name: "Restore PHPStan result cache"
         uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: "phpstan/tmp"
+          path: "/tmp/phpstan"
           key: "result-cache-v1-${{ env.PHP_VERSION }}-${{ github.run_id }}"
           restore-keys: |
             result-cache-v1-${{ env.PHP_VERSION }}-
@@ -266,7 +266,7 @@ jobs:
         uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         if: ${{ !cancelled() }}
         with:
-          path: "phpstan/tmp"
+          path: "/tmp/phpstan"
           key: "result-cache-v1-${{ env.PHP_VERSION }}-${{ github.run_id }}"
 ```
 
