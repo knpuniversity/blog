@@ -250,7 +250,7 @@ jobs:
 
       # Use a warm PHPStan result cache when possible to speedup analysis
       - name: "Restore PHPStan result cache"
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        uses: actions/cache/restore@v6
         with:
           path: "/tmp/phpstan"
           key: "result-cache-v1-${{ env.PHP_VERSION }}-${{ github.run_id }}"
@@ -263,7 +263,7 @@ jobs:
 
       # Persist the PHPStan cache for re-use on the next run
       - name: "Save result cache"
-        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        uses: actions/cache/save@v6
         if: ${{ !cancelled() }}
         with:
           path: "/tmp/phpstan"
