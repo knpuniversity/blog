@@ -248,31 +248,31 @@ jobs:
         with:
           require-lock-file: true
 
-      # Use a warm PHPStan result cache when possible to speedup analysis
-      - name: "Restore PHPStan result cache"
+      # Reuse the result cache from a previous run so PHPStan only re-analyzes what changed.
+      - name: Restore PHPStan result cache
         uses: actions/cache/restore@v6
         with:
-          path: "/tmp/phpstan"
-          key: "result-cache-v1-${{ env.PHP_VERSION }}-${{ github.run_id }}"
+          path: /tmp/phpstan
+          key: phpstan-result-cache-v1-${{ env.PHP_VERSION }}-${{ github.run_id }}
           restore-keys: |
-            result-cache-v1-${{ env.PHP_VERSION }}-
+            phpstan-result-cache-v1-${{ env.PHP_VERSION }}-
 
       # Run static analysis using the project's PHPStan configuration.
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse --no-progress
 
-      # Persist the PHPStan cache for re-use on the next run
-      - name: "Save result cache"
+      # Save the result cache, even when the analysis found errors.
+      - name: Save PHPStan result cache
         uses: actions/cache/save@v6
         if: ${{ !cancelled() }}
         with:
-          path: "/tmp/phpstan"
-          key: "result-cache-v1-${{ env.PHP_VERSION }}-${{ github.run_id }}"
+          path: /tmp/phpstan
+          key: phpstan-result-cache-v1-${{ env.PHP_VERSION }}-${{ github.run_id }}
 ```
 
 ***NOTE
-The `ramsey/composer-install` action handles Composer caching for us, so there's no separate
-`actions/cache` step.
+The `ramsey/composer-install` action handles Composer's own cache for us, so the PHPStan result
+cache is the only thing we need `actions/cache` for.
 ***
 
 There's nothing especially clever here - and that's kind of the point.
