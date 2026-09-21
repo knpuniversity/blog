@@ -9,8 +9,6 @@ preview: |-
 
 # Ideal GitHub Actions for Symfony Apps
 
-# The Ideal GitHub Actions Workflow for Symfony
-
 GitHub Actions workflows have a habit of growing into a pile of copied snippets, old workarounds and checks
 that may or may not still be useful.
 
