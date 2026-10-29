@@ -451,7 +451,9 @@ So, what's still missing? Nothing that changes *what* fails the build - the gaps
 the report.
 
 * **No deduplication.** Every data set and every test gets its own entry, with no "8x in
-  `testGreet`" summary and no limit. On a big test suite, a single deprecation can scroll right
+  `testGreet`" summary and no limit. That's a deliberate choice: PHPUnit reports deprecations per
+  test, consistent with how it reports everything else, while the bridge counted them across the
+  whole test suite. Consistent... but on a big test suite, a single deprecation can scroll right
   off your screen.
 * **No "count only" mode.** `quiet[]=indirect` showed a count and nothing else. PHPUnit gives you
   all the details or nothing at all.
