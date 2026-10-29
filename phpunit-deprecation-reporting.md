@@ -136,9 +136,11 @@ First, the easy part. PHPUnit 13 requires PHP 8.4, so make sure you're there, th
 composer require --dev phpunit/phpunit:^13.4 symfony/phpunit-bridge:^8.2 -W
 ```
 
+***TIP
 Moving from 9.6 to 13 comes with other chores too - annotations like `@dataProvider` are now
 attributes, for example. [Rector](https://getrector.com/) has PHPUnit rule sets that handle most of
 that, so I'll stay focused on deprecations.
+***
 
 Now, run the tests with the *old* `phpunit.xml.dist`:
 
@@ -175,10 +177,14 @@ composer recipes:update symfony/phpunit-bridge
 ```
 
 Expect a conflict or two in `phpunit.xml.dist` around the old `SYMFONY_*` variables - those can
-all go. And **review the diff carefully** before committing: there's an
+all go.
+
+***IMPORTANT
+**Review the diff carefully** before committing: there's an
 [open Flex bug](https://github.com/symfony/flex/issues/1108) where updating the
 `symfony/phpunit-bridge` recipe *deletes* files it shouldn't, like your entire `.gitignore`. It
 bit me while writing this post!
+***
 
 Once that's done, the deprecation-related parts of the new config look like this:
 
@@ -249,7 +255,9 @@ OK, but there were issues!
 Tests: 14, Assertions: 22, Deprecations: 6.
 ```
 
-*(I've trimmed the messages and the list of tests under each deprecation.)*
+***NOTE
+I've trimmed the messages and the list of tests under each deprecation.
+***
 
 Now *that's* more like it! The build fails, and these are the exact six deprecations the bridge
 reported as self and direct. Out of the box, the recipe gives us `max[self]=0&max[direct]=0`.
@@ -283,8 +291,12 @@ get classified as indirect - so they stop failing the build - and every deprecat
 `vendor/symfony/deprecation-contracts/function.php`.
 
 Listing `trigger_deprecation` here tells PHPUnit to look one step further up the call stack, at
-whoever *called* it. If you use Doctrine, the recipe also adds Doctrine's `Deprecation::trigger()`
-and `Deprecation::delegateTriggerToBackend()`.
+whoever *called* it.
+
+***TIP
+Using Doctrine? The recipe also adds Doctrine's `Deprecation::trigger()` and
+`Deprecation::delegateTriggerToBackend()` here.
+***
 
 ### `SymfonyExtension`
 
@@ -307,8 +319,11 @@ it as indirect. And with `ignoreIndirectDeprecations`, that means they vanish co
 
 PHPUnit 13.1 added a hook for exactly this: issue trigger resolvers. And the bridge has one:
 `DebugClassLoaderIssueTriggerResolver` works out which of *your* classes caused the deprecation, so
-it's correctly classified as self or direct. It's new in `symfony/phpunit-bridge` 8.2, and the
-bridge supports older Symfony versions, so you can use it on a Symfony 7.4 app too.
+it's correctly classified as self or direct. It's new in `symfony/phpunit-bridge` 8.2.
+
+***TIP
+The bridge supports older Symfony versions, so you can use bridge 8.2 on a Symfony 7.4 app too.
+***
 
 ## Bringing Back Indirect Deprecations
 
@@ -341,9 +356,11 @@ trigger-specific options:
 Self and direct deprecations still fail the build, and indirect ones are reported without failing
 it.
 
-One gotcha: you might be tempted to keep `failOnDeprecation="true"` and add
+***NOTE
+You might be tempted to keep `failOnDeprecation="true"` and add
 `failOnIndirectDeprecation="false"`. That doesn't work - PHPUnit ignores it and prints a warning
 telling you to use the `--do-not-fail-on-indirect-deprecation` CLI option instead.
+***
 
 This is as close as we can get to `quiet[]=indirect`. The bridge shrank indirect deprecations down
 to a count, but PHPUnit only has two options: show all the details, or hide them completely.
@@ -668,10 +685,11 @@ at all. With the bridge, `quiet[]` was hiding these from me for... who knows how
 least *see* them. So keep an eye on that indirect list: not everything in it is someone else's
 problem.
 
-One more thing about config deprecations: they're only triggered when the container is compiled.
-If your `var/cache/test` is already warm, they won't show up at all. That's true with the bridge
-too, and on CI you start with an empty cache anyway, but it's worth knowing when you run the tests
-locally.
+***TIP
+Config deprecations are only triggered when the container is compiled. If your `var/cache/test` is
+already warm, they won't show up at all. That's true with the bridge too, and on CI you start with
+an empty cache anyway, but it's worth knowing when you run the tests locally.
+***
 
 ## Bye Bye, 9.6
 
@@ -692,8 +710,10 @@ Here's the checklist:
 6. Clear your cache, run the tests and make sure they fail on the deprecations you expect - remember
    that sneaky green build!
 
-And once the build is green for the *right* reasons, check out the
+***SEEALSO
+Once the build is green for the *right* reasons, check out the
 [Symfony 8 Upgrade](https://symfonycasts.com/screencast/symfony8-upgrade) course to put all those
 deprecations to work.
+***
 
 Still on 9.6? Hit a gap I didn't mention? Let us know in the comments below!
