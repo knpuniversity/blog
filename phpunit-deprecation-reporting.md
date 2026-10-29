@@ -454,7 +454,8 @@ the report.
   `testGreet`" summary and no limit. That's a deliberate choice: PHPUnit reports deprecations per
   test, consistent with how it reports everything else, while the bridge counted them across the
   whole test suite. Consistent... but on a big test suite, a single deprecation can scroll right
-  off your screen.
+  off your screen. Then again, if an AI agent is the one fixing your deprecations, every test ID
+  and line number is exactly what it wants.
 * **No "count only" mode.** `quiet[]=indirect` showed a count and nothing else. PHPUnit gives you
   all the details or nothing at all.
 * **No groups.** Self, direct and indirect deprecations are all in one list, so you can't see at a
