@@ -180,39 +180,11 @@ bit me while writing this post!
 Let's run the tests again:
 
 ```
-DDDDDDDDDDD.DD                                                    14 / 14 (100%)
-
-1 test triggered 1 PHP deprecation:
-
-1) src/Greeter.php:7
-App\Greeter::greet(): Implicitly marking parameter $punctuation as nullable is deprecated, ...
-
-13 tests triggered 5 deprecations:
-
-1) vendor/symfony/error-handler/DebugClassLoader.php:363
-Method "Symfony\Component\Console\Command\Command::configure()" might add "void" as a native return type ...
-
-2) vendor/symfony/console/Application.php:559
-Since symfony/console 7.4: The "Symfony\Component\Console\Application::add()" method is deprecated ...
-
-3) vendor/symfony/error-handler/DebugClassLoader.php:363
-The "Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class is considered final. ...
-
-4) vendor/symfony/http-foundation/Request.php:775
-Since symfony/http-foundation 7.4: Request::get() is deprecated, ...
-
-5) src/Greeter.php:17
-Since app 1.1: Method "App\Greeter::hello()" is deprecated, use "greet()" instead.
-
 OK, but there were issues!
 Tests: 14, Assertions: 22, Deprecations: 6.
 ```
 
-***NOTE
-I've trimmed the messages and the list of tests under each deprecation.
-***
-
-Now *that's* more like it! The build fails, and these are the exact six deprecations the bridge
+Now *that's* more like it! The build fails, and those six deprecations are the exact six the bridge
 reported as self and direct. Out of the box, the recipe gives us `max[self]=0&max[direct]=0`.
 
 What's missing are the indirect deprecations: the bridge counted 11 indirect and 1 "other", and
@@ -373,27 +345,11 @@ Triggered by:
 * App\Tests\Controller\GreetControllerTest::testGreet#Jerry (2 times)
   tests/Controller/GreetControllerTest.php:14
 
-* App\Tests\Controller\GreetControllerTest::testGreet#Kevin (2 times)
-  tests/Controller/GreetControllerTest.php:14
-
-* App\Tests\Controller\GreetControllerTest::testGreet#Leannapelli (2 times)
-  tests/Controller/GreetControllerTest.php:14
-
-* App\Tests\Controller\GreetControllerTest::testGreet#Rachel (2 times)
-  tests/Controller/GreetControllerTest.php:14
-
-* App\Tests\Controller\GreetControllerTest::testGreet#Ryan (2 times)
-  tests/Controller/GreetControllerTest.php:14
-
-* App\Tests\Controller\GreetControllerTest::testGreet#Victor (2 times)
-  tests/Controller/GreetControllerTest.php:14
-
-* App\Tests\Controller\GreetControllerTest::testLocale (2 times)
-  tests/Controller/GreetControllerTest.php:30
+...
 ```
 
-Every data set gets its own entry. Now imagine a deprecation that's hit by 300 tests. The
-*behavior* is there, but the *report* is a lot noisier. That's the "almost" - more on it in a bit.
+That goes on for all 9 tests - every data set gets its own entry. Now imagine a deprecation that's
+hit by 300 tests. The *behavior* is there, but the *report* is a lot noisier. That's the "almost" - more on it in a bit.
 
 ## Translating the Rest of the Bridge
 
@@ -467,16 +423,11 @@ the report.
 
 ### Your Config Deprecations Are "Indirect"
 
-Here's one that isn't new, but surprised me while writing this post. My demo app loads an XML
-service file and uses fluent config builders, both deprecated in Symfony 7.4. Those are *my*
-fault - but PHPUnit files them as indirect (the bridge did too, or as "other"), so they never fail
-the build.
-
-Why? The deprecation is triggered while Symfony loads the config: Symfony code calling Symfony
-code. My config file is what's deprecated, but it isn't code in `src/` - an XML file isn't PHP code
-at all. With the bridge, `quiet[]` was hiding these from me for... who knows how long. With PHPUnit
-13 and indirect deprecations visible, I can at least *see* them. So keep an eye on that indirect
-list: not everything in it is someone else's problem.
+This one surprised me. My demo app uses an XML service file and fluent config builders, both
+deprecated in Symfony 7.4. That's *my* fault - but since it's Symfony code that loads the config,
+PHPUnit files these as indirect (the bridge did much the same), so they never fail the build. With
+`quiet[]`, I'd never even seen them! So keep an eye on that indirect list: not everything in it is
+someone else's problem.
 
 ***TIP
 Config deprecations are only triggered when the container is compiled. If your `var/cache/test` is
