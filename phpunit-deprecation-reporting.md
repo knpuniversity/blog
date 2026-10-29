@@ -9,9 +9,9 @@ preview: |-
 
 # Upgrading from PHPUnit 9.6: Keeping Symfony's Deprecation Reporting
 
-Confession time: a lot of my projects stayed on PHPUnit 9.6 far longer than they should have.
+Between you and me, a lot of my projects stayed on PHPUnit 9.6 far longer than they should have.
 PHPUnit 10 came out in early 2023, and every so often I'd try the upgrade, look at the test
-output... and quietly put it off for another day.
+output... and decide that's for future me to worry about.
 
 The reason wasn't PHPUnit itself. It was the deprecation report from Symfony's
 [PHPUnit Bridge](https://symfony.com/doc/current/components/phpunit_bridge.html). With a single
@@ -25,9 +25,9 @@ deprecation handling was still young: Symfony's silenced deprecations were invis
 way to tell *my* deprecations from a vendor's, and failing on deprecations was all or nothing.
 
 The good news? PHPUnit has been busy. Release by release, those gaps have been filled in, and as
-of PHPUnit 13.3, we have *almost* feature parity. We'll get to the "almost".
+of PHPUnit 13.3, we have *almost* feature parity. I'll get to the "almost".
 
-And the bridge isn't going anywhere - it just has a new job. Let's look at what my old setup did,
+And the bridge isn't going anywhere, it just has a new job. Let's look at what my old setup did,
 rebuild it on PHPUnit 13, and finally leave 9.6 behind.
 
 ## The Setup I Wanted to Keep
@@ -44,7 +44,7 @@ called it. This config sets a rule for each one:
 * `max[self]=0`: **self** deprecations are triggered by my own code - like a method in `src/`
   that I've marked as deprecated. Allow zero of them: fail the build.
 * `max[direct]=0`: **direct** deprecations happen when my code calls something deprecated in a
-  vendor package. These are mine to fix, so allow zero of them too.
+  vendor package. These are mine to fix, allow zero of them also.
 * `quiet[]=indirect`: **indirect** deprecations happen when vendor code calls *other* vendor code
   that's deprecated. Not my problem (yet) - I just need to wait for that package to update. They
   don't fail the build, and `quiet` shrinks them down to a single count.
