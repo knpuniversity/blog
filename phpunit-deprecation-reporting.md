@@ -104,29 +104,20 @@ That's the bar. Let's see how PHPUnit 13 measures up.
 
 ## How PHPUnit Caught Up
 
-Before we get to the config, it's worth seeing how we got here. PHPUnit didn't close the gap in
-one big release - it's been chipping away at it for three years:
+PHPUnit didn't close the gap in one big release - it's been chipping away at it for three years.
+The highlights:
 
-* **10.1**: `failOnDeprecation` - deprecations can fail the build.
-* **10.2**: `ignoreSuppressionOfDeprecations` - PHPUnit can finally *see* Symfony's deprecations
-  (more on why in a minute).
-* **10.4**: Baselines - record your existing deprecations and only fail on new ones.
-* **10.5**: `#[IgnoreDeprecations]` - the replacement for the bridge's `@group legacy`.
-* **11.0**: `expectUserDeprecationMessage()` - assert that a deprecation *is* triggered.
-* **11.1**: The self/direct/indirect distinction arrives! Plus `<deprecationTrigger>`, which we'll
-  need to make it work with Symfony.
-* **11.5**: `--stop-on-deprecation="some message"` - stop at a specific deprecation and print its
-  stack trace.
+* **10.2**: `ignoreSuppressionOfDeprecations` - PHPUnit can finally *see* Symfony's deprecations.
+* **11.1**: The self/direct/indirect distinction arrives, plus `<deprecationTrigger>` to make it
+  work with Symfony.
 * **13.1**: Custom "issue trigger resolvers" - a hook for tools like the bridge to help classify
   tricky deprecations.
-* **13.2**: Deprecations triggered *outside* of tests (like during bootstrap) are now reported.
 * **13.3**: The big one: `failOnSelfDeprecation`, `failOnDirectDeprecation` and friends - fail on
-  *my* deprecations while still showing the rest. Plus deprecation filters for ignoring
-  deprecations by message.
+  *my* deprecations while still showing the rest.
 
 That 13.3 release is the one that made me finally take the plunge. Interestingly, its
-[pull request](https://github.com/sebastianbergmann/phpunit/pull/6827) calls out projects "that follow the workflow of Symfony's PHPUnit Bridge" as the motivation. Thanks,
-Sebastian!
+[pull request](https://github.com/sebastianbergmann/phpunit/pull/6827) calls out projects "that
+follow the workflow of Symfony's PHPUnit Bridge" as the motivation. Thanks, Sebastian!
 
 ## Upgrading (and a Sneaky Trap)
 
@@ -186,44 +177,6 @@ all go.
 bit me while writing this post!
 ***
 
-Once that's done, the deprecation-related parts of the new config look like this:
-
-```xml
-<phpunit
-    failOnDeprecation="true"
-    failOnNotice="true"
-    failOnWarning="true"
-    ...
->
-    <!-- ... -->
-
-    <source ignoreSuppressionOfDeprecations="true"
-            ignoreIndirectDeprecations="true"
-            restrictNotices="true"
-            restrictWarnings="true"
-    >
-        <include>
-            <directory>src</directory>
-        </include>
-
-        <deprecationTrigger>
-            <function>trigger_deprecation</function>
-        </deprecationTrigger>
-
-        <issueTriggerResolvers>
-            <issueTriggerResolver className="Symfony\Bridge\PhpUnit\DebugClassLoaderIssueTriggerResolver" />
-        </issueTriggerResolvers>
-    </source>
-
-    <extensions>
-        <bootstrap class="Symfony\Bridge\PhpUnit\SymfonyExtension">
-            <parameter name="clock-mock-namespaces" value="App" />
-            <parameter name="dns-mock-namespaces" value="App" />
-        </bootstrap>
-    </extensions>
-</phpunit>
-```
-
 Let's run the tests again:
 
 ```
@@ -263,10 +216,49 @@ Now *that's* more like it! The build fails, and these are the exact six deprecat
 reported as self and direct. Out of the box, the recipe gives us `max[self]=0&max[direct]=0`.
 
 What's missing are the indirect deprecations: the bridge counted 11 indirect and 1 "other", and
-here... nothing. Not even a count. We'll fix that in a minute. But first, let's look at how this
-config works, because each piece is doing important work.
+here... nothing. Not even a count. That takes one small tweak.
 
-## How the New Config Works
+## The New Config
+
+Here are the deprecation-related parts of the config the recipe gave us:
+
+```xml
+<phpunit
+    failOnDeprecation="true"
+    failOnNotice="true"
+    failOnWarning="true"
+    ...
+>
+    <!-- ... -->
+
+    <source ignoreSuppressionOfDeprecations="true"
+            ignoreIndirectDeprecations="true"
+            restrictNotices="true"
+            restrictWarnings="true"
+    >
+        <include>
+            <directory>src</directory>
+        </include>
+
+        <deprecationTrigger>
+            <function>trigger_deprecation</function>
+        </deprecationTrigger>
+
+        <issueTriggerResolvers>
+            <issueTriggerResolver className="Symfony\Bridge\PhpUnit\DebugClassLoaderIssueTriggerResolver" />
+        </issueTriggerResolvers>
+    </source>
+
+    <extensions>
+        <bootstrap class="Symfony\Bridge\PhpUnit\SymfonyExtension">
+            <parameter name="clock-mock-namespaces" value="App" />
+            <parameter name="dns-mock-namespaces" value="App" />
+        </bootstrap>
+    </extensions>
+</phpunit>
+```
+
+Each piece is doing important work, so let's walk through it - then make the tweak.
 
 ### `<source>`
 
@@ -315,7 +307,7 @@ helpers.
 `DebugClassLoader` checks each class as it's autoloaded: if your class extends a `@final` class,
 or overrides a method without a return type the parent will soon require, it triggers a
 deprecation. But it triggers it from *inside the autoloader*, deep in vendor code, so PHPUnit files
-it as indirect. And with `ignoreIndirectDeprecations`, that means they vanish completely.
+it as indirect - and those never fail the build.
 
 PHPUnit 13.1 added a hook for exactly this: issue trigger resolvers. And the bridge has one:
 `DebugClassLoaderIssueTriggerResolver` works out which of *your* classes caused the deprecation, so
@@ -325,14 +317,13 @@ it's correctly classified as self or direct. It's new in `symfony/phpunit-bridge
 The bridge supports older Symfony versions, so you can use bridge 8.2 on a Symfony 7.4 app too.
 ***
 
-## Bringing Back Indirect Deprecations
+### The Tweak: `failOnSelfDeprecation` & `failOnDirectDeprecation`
 
-That leaves `quiet[]=indirect`. I *do* care about indirect deprecations, just not enough to fail
-the build. They're a heads-up that a package needs an update before I can move to the next major
-version.
+I *do* care about indirect deprecations, just not enough to fail the build. They're a heads-up that
+a package needs an update before I can move to the next major version.
 
-The recipe's `ignoreIndirectDeprecations="true"` hides them completely. To see them again, remove
-it. But now `failOnDeprecation="true"` would fail the build on them, so swap it for the 13.3
+The recipe's `ignoreIndirectDeprecations="true"` hides them completely, so I removed it. But then
+`failOnDeprecation="true"` would fail the build on them, so I swapped it for the 13.3
 trigger-specific options:
 
 ```diff
@@ -340,16 +331,11 @@ trigger-specific options:
 -    failOnDeprecation="true"
 +    failOnSelfDeprecation="true"
 +    failOnDirectDeprecation="true"
-     failOnNotice="true"
-     failOnWarning="true"
      ...
  >
-     <!-- ... -->
-
      <source ignoreSuppressionOfDeprecations="true"
 -            ignoreIndirectDeprecations="true"
-             restrictNotices="true"
-             restrictWarnings="true"
+             ...
      >
 ```
 
@@ -362,86 +348,17 @@ You might be tempted to keep `failOnDeprecation="true"` and add
 telling you to use the `--do-not-fail-on-indirect-deprecation` CLI option instead.
 ***
 
-This is as close as we can get to `quiet[]=indirect`. The bridge shrank indirect deprecations down
-to a count, but PHPUnit only has two options: show all the details, or hide them completely.
-More on that later.
-
 ## Side by Side
 
-So how does PHPUnit 13 compare to my old bridge setup? Here's the full output from the same app:
+So how does PHPUnit 13 compare to my old bridge setup? The good news first: the build fails on
+*exactly* the same deprecations as before. My own deprecations, my calls to deprecated code and the
+`DebugClassLoader` deprecations all fail the build, and the indirect ones are there without failing
+it. Behavior-wise, we have parity!
+
+But the report is a different story: it's 116 lines for 14 tests, compared to the bridge's 37.
+The bridge summed up `Request::get()` in 3 lines. Here's PHPUnit's version:
 
 ```
-PHPUnit 13.4.5 by Sebastian Bergmann and contributors.
-
-Runtime:       PHP 8.4.27
-Configuration: phpunit.dist.xml
-
-DDDDDDDDDDD.DD                                                    14 / 14 (100%)
-
-Time: 00:00.220, Memory: 46.50 MB
-
-1 test triggered 1 PHP deprecation:
-
-1) src/Greeter.php:7
-App\Greeter::greet(): Implicitly marking parameter $punctuation as nullable is deprecated, the explicit nullable type must be used instead
-
-Triggered by:
-
-* App\Tests\Command\GreetCommandTest::testExecute
-  tests/Command/GreetCommandTest.php:14
-
---
-
-13 tests triggered 8 deprecations:
-
-1) vendor/symfony/error-handler/DebugClassLoader.php:363
-Method "Symfony\Component\Console\Command\Command::configure()" might add "void" as a native return type declaration in the future. Do the same in child class "App\Command\GreetCommand" now to avoid errors or add an explicit @return annotation to suppress this message.
-
-Triggered by:
-
-* App\Tests\Command\GreetCommandTest::testExecute
-  tests/Command/GreetCommandTest.php:14
-
-2) vendor/symfony/console/Application.php:559
-Since symfony/console 7.4: The "Symfony\Component\Console\Application::add()" method is deprecated and will be removed in Symfony 8.0, use "Symfony\Component\Console\Application::addCommand()" instead.
-
-Triggered by:
-
-* App\Tests\Command\GreetCommandTest::testExecute
-  tests/Command/GreetCommandTest.php:14
-
-3) vendor/symfony/error-handler/DebugClassLoader.php:363
-The "Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class is considered final. It may change without further notice as of its next major version. You should not extend it from "App\Controller\HomepageRedirectController".
-
-Triggered by:
-
-* App\Tests\Command\GreetCommandTest::testRedirectControllerExists
-  tests/Command/GreetCommandTest.php:25
-
-4) vendor/symfony/dependency-injection/Loader/PhpFileLoader.php:251
-Since symfony/dependency-injection 7.4: Using fluent builders for semantic configuration is deprecated, instantiate the "Symfony\Config\FrameworkConfig" class with the config array as argument and return it instead in "config/packages/greeting.php".
-
-Triggered by:
-
-* App\Tests\Controller\GreetControllerTest::testGreet#Kevin
-  tests/Controller/GreetControllerTest.php:14
-
-5) var/cache/test/Symfony/Config/FrameworkConfig.php:1926
-Since symfony/config 7.4: Calling any fluent method on "Symfony\Config\FrameworkConfig" is deprecated; pass the configuration to the constructor instead.
-
-Triggered by:
-
-* App\Tests\Controller\GreetControllerTest::testGreet#Kevin
-  tests/Controller/GreetControllerTest.php:14
-
-6) vendor/symfony/dependency-injection/Loader/XmlFileLoader.php:48
-Since symfony/dependency-injection 7.4: XML configuration format is deprecated, use YAML or PHP instead.
-
-Triggered by:
-
-* App\Tests\Controller\GreetControllerTest::testGreet#Kevin
-  tests/Controller/GreetControllerTest.php:14
-
 7) vendor/symfony/http-foundation/Request.php:775
 Since symfony/http-foundation 7.4: Request::get() is deprecated, use properties ->attributes, query or request directly instead.
 
@@ -473,202 +390,75 @@ Triggered by:
 
 * App\Tests\Controller\GreetControllerTest::testLocale (2 times)
   tests/Controller/GreetControllerTest.php:30
-
-8) src/Greeter.php:17
-Since app 1.1: Method "App\Greeter::hello()" is deprecated, use "greet()" instead.
-
-Triggered by:
-
-* App\Tests\GreeterTest::testHello
-  tests/GreeterTest.php:15
-
-* App\Tests\GreeterTest::testHelloAgain
-  tests/GreeterTest.php:20
-
-OK, but there were issues!
-Tests: 14, Assertions: 22, Deprecations: 9.
 ```
 
-The good news first: the build fails on *exactly* the same deprecations as before. My own
-deprecations, my calls to deprecated code and the `DebugClassLoader` deprecations all fail the
-build, and the indirect ones are there without failing it. Behavior-wise, we have parity!
-
-But put the two reports next to each other and... well, that's 116 lines for 14 tests, compared to
-the bridge's 37. A few things jump out:
-
-* **Every test gets its own entry.** The bridge collapsed `Request::get()` into "8x in
-  `GreetControllerTest::testGreet`". PHPUnit lists all 8 data sets one by one. Now imagine a
-  deprecation that's hit by 300 tests.
-* **What's "(2 times)"?** My controller calls `Request::get()` (direct), and so does that
-  third-party bundle (indirect). PHPUnit groups deprecations by where they're triggered, so both
-  land in the same entry, and there's no way to tell which is which.
-* **No groups.** The bridge sorted everything under "self", "direct" and "indirect" headings. Here,
-  it's one list - which ones failed the build? You'll have to figure that out yourself.
-
-So: the *behavior* is there, but the *report* is a lot noisier. That's the "almost".
+Every data set gets its own entry. Now imagine a deprecation that's hit by 300 tests. The
+*behavior* is there, but the *report* is a lot noisier. That's the "almost" - more on it in a bit.
 
 ## Translating the Rest of the Bridge
 
 `SYMFONY_DEPRECATIONS_HELPER` wasn't the bridge's only deprecation tool. Here's where the rest of
-them went.
+them went:
 
-### `@group legacy` → `#[IgnoreDeprecations]`
+* **`@group legacy`** → `#[IgnoreDeprecations]` on a test method or class. Since PHPUnit 12.4, you
+  can pass a pattern to only ignore specific deprecations - with no regex delimiters:
+  `#[IgnoreDeprecations('Greeter::hello\(\)')]`.
+* **`expectDeprecation()`** → `$this->expectUserDeprecationMessage('...')`, or
+  `expectUserDeprecationMessageMatches()` for a regex. Just like the bridge needed `@group legacy`
+  here, you still need `#[IgnoreDeprecations]`: otherwise the expected deprecation is *also*
+  reported.
+* **`generateBaseline`** → `vendor/bin/phpunit --generate-baseline phpunit-baseline.xml`, then
+  `<source baseline="phpunit-baseline.xml">`. Existing deprecations are ignored, and only *new* ones
+  fail the build.
+* **`SYMFONY_DEPRECATIONS_HELPER=/regex/`** → `--stop-on-deprecation="RedirectController"`: stop at
+  the first deprecation containing that text and print its stack trace.
+* **`weak` & `disabled`** → `--do-not-fail-on-self-deprecation --do-not-fail-on-direct-deprecation`.
+  The shorter `--do-not-fail-on-deprecation` does *not* override the trigger-specific options in our
+  config, so the build would still fail.
+* **`ignoreFile`** → a deprecation filter (PHPUnit 13.3): a class that decides whether to ignore
+  each deprecation.
 
-Tests for deprecated code - the "make sure the old way still works" tests - can ignore their
-deprecations with an attribute:
-
-```php
-use PHPUnit\Framework\Attributes\IgnoreDeprecations;
-
-#[IgnoreDeprecations]
-public function testHello(): void
-{
-    $this->assertSame('Hello Kevin!', (new Greeter())->hello('Kevin'));
-}
-```
-
-It works on the class too. And since PHPUnit 12.4, you can pass a pattern to only ignore specific
-deprecations: `#[IgnoreDeprecations('Greeter::hello\(\)" is deprecated')]`. Note there are no
-regex delimiters - PHPUnit adds them for you.
-
-### `expectDeprecation()` → `expectUserDeprecationMessage()`
-
-Want to make sure a deprecation *is* triggered? The bridge's `ExpectDeprecationTrait` becomes a
-built-in method:
+That last one needs a bit of code. Implement `DeprecationFilter`:
 
 ```php
-#[IgnoreDeprecations]
-public function testHelloIsDeprecated(): void
-{
-    $this->expectUserDeprecationMessage('Since app 1.1: Method "App\Greeter::hello()" is deprecated, use "greet()" instead.');
-
-    (new Greeter())->hello('Kevin');
-}
-```
-
-If the deprecation isn't triggered, the test fails. There's also
-`expectUserDeprecationMessageMatches()` for a regex. Just like the bridge needed `@group legacy`
-here, you still need `#[IgnoreDeprecations]`: otherwise the test passes, but the expected
-deprecation is *also* reported.
-
-### `ignoreFile` → Deprecation Filters
-
-The bridge's `ignoreFile` option pointed at a file of regexes: any deprecation matching one was
-ignored. PHPUnit 13.3's deprecation filters can do the same thing. A filter is a class that answers
-one question: ignore this deprecation, yes or no?
-
-```php
-// tests/IgnoreFileDeprecationFilter.php
-namespace App\Tests;
-
 use PHPUnit\Event\Code\IssueTrigger\IssueTrigger;
 use PHPUnit\Runner\DeprecationFilter;
 
 final class IgnoreFileDeprecationFilter implements DeprecationFilter
 {
-    /** @var list<string> */
-    private array $patterns;
-
-    public function __construct()
-    {
-        $lines = array_map(trim(...), file(__DIR__.'/deprecations-ignore.txt'));
-
-        $this->patterns = array_values(array_filter($lines, static fn (string $line) => '' !== $line && !str_starts_with($line, '#')));
-    }
-
     public function ignores(string $message, string $file, int $line, IssueTrigger $trigger): bool
     {
-        foreach ($this->patterns as $pattern) {
-            if (preg_match($pattern, $message)) {
-                return true;
-            }
-        }
-
+        // e.g. return true if $message matches a regex from your old ignore file
         return false;
     }
 }
 ```
 
-This reads the same format as the bridge's ignore file - one regex per line, `#` for comments - so
-your existing file keeps working:
-
-```
-# we'll fix these after the 8.0 upgrade
-/Request::get\(\) is deprecated/
-/XML configuration format is deprecated/
-```
-
-Then register it inside `<source>`:
+And register it inside `<source>`:
 
 ```xml
-<source ...>
-    <!-- ... -->
-
-    <deprecationFilters>
-        <deprecationFilter className="App\Tests\IgnoreFileDeprecationFilter" />
-    </deprecationFilters>
-</source>
+<deprecationFilters>
+    <deprecationFilter className="App\Tests\IgnoreFileDeprecationFilter" />
+</deprecationFilters>
 ```
 
 Since the filter also receives the file, line and trigger type, you can get fancier than the
 bridge ever could: ignore deprecations from a specific package, for example.
-
-### `generateBaseline` → `--generate-baseline`
-
-Got a big app with a pile of existing deprecations? Instead of fixing them all before you can turn
-on `failOnSelfDeprecation`, record them in a baseline:
-
-```terminal
-vendor/bin/phpunit --generate-baseline phpunit-baseline.xml
-```
-
-Then point PHPUnit at it:
-
-```xml
-<source baseline="phpunit-baseline.xml" ...>
-```
-
-Existing deprecations are ignored (in my demo app: "27 issues were ignored by baseline"), and only
-*new* ones fail the build. Regenerate it as you fix things.
-
-### `SYMFONY_DEPRECATIONS_HELPER=/regex/` → `--stop-on-deprecation`
-
-Stuck on a deprecation and can't figure out where it's coming from? With the bridge, setting
-`SYMFONY_DEPRECATIONS_HELPER` to a regex stopped at the first matching deprecation and printed its
-stack trace. In PHPUnit, pass part of the message to `--stop-on-deprecation`:
-
-```terminal
-vendor/bin/phpunit --stop-on-deprecation="RedirectController"
-```
-
-PHPUnit stops at the first matching deprecation, and prints its full stack trace.
-
-### `weak` & `disabled` → `--do-not-fail-on-*-deprecation`
-
-Sometimes you want a CI job to *report* deprecations without failing - testing against lowest
-dependencies, for example. The bridge had `SYMFONY_DEPRECATIONS_HELPER=weak` or `disabled`.
-
-In PHPUnit, you'd reach for `--do-not-fail-on-deprecation`... but it doesn't override the
-`failOnSelfDeprecation` and `failOnDirectDeprecation` in our config, so the build still fails.
-Instead, turn off each one:
-
-```terminal
-vendor/bin/phpunit --do-not-fail-on-self-deprecation --do-not-fail-on-direct-deprecation
-```
 
 ## The "Almost"
 
 So, what's still missing? Nothing that changes *what* fails the build - the gaps are all about
 the report.
 
-* **No deduplication.** We saw this in the side-by-side: every data set and every test gets its
-  own line, with no "8x in `testGreet`" summary and no limit. On a big test suite, a single
-  deprecation can scroll right off your screen.
+* **No deduplication.** Every data set and every test gets its own entry, with no "8x in
+  `testGreet`" summary and no limit. On a big test suite, a single deprecation can scroll right
+  off your screen.
 * **No "count only" mode.** `quiet[]=indirect` showed a count and nothing else. PHPUnit gives you
   all the details or nothing at all.
 * **No groups.** Self, direct and indirect deprecations are all in one list, so you can't see at a
-  glance which ones broke the build. And when the same deprecation is hit both directly and
-  indirectly, it's merged into one entry.
+  glance which ones broke the build. Even worse: that "(2 times)" above is my controller calling
+  `Request::get()` (direct) *and* the third-party bundle calling it (indirect). PHPUnit groups
+  deprecations by where they're triggered, so both land in one entry.
 * **No thresholds.** The bridge let you allow *some* deprecations - like `max[indirect]=10`.
   PHPUnit's options are on or off. A baseline is the closest substitute.
 
@@ -681,9 +471,9 @@ the build.
 
 Why? The deprecation is triggered while Symfony loads the config: Symfony code calling Symfony
 code. My config file is what's deprecated, but it isn't code in `src/` - an XML file isn't PHP code
-at all. With the bridge, `quiet[]` was hiding these from me for... who knows how long. With PHPUnit 13 and indirect deprecations visible, I can at
-least *see* them. So keep an eye on that indirect list: not everything in it is someone else's
-problem.
+at all. With the bridge, `quiet[]` was hiding these from me for... who knows how long. With PHPUnit
+13 and indirect deprecations visible, I can at least *see* them. So keep an eye on that indirect
+list: not everything in it is someone else's problem.
 
 ***TIP
 Config deprecations are only triggered when the container is compiled. If your `var/cache/test` is
