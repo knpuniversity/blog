@@ -177,7 +177,7 @@ disabled-user sessions, and apply the new recent-authentication checks.
 This is a less visible part of our tutorial creation process. The time we spend
 building examples and questioning awkward steps leads to improvements in the
 Symfony developer experience. That's part of the hidden value of your
-SymfonyCasts subscription: helping support the research and collaboration that
-make improvements like these possible.
+[SymfonyCasts subscription](https://symfonycasts.com/pricing): helping support
+the research and collaboration that make improvements like these possible.
 
 And this time, part of the lesson is deleting code, a very satisfying outcome.
