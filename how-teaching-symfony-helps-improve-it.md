@@ -1,5 +1,5 @@
 ---
-published: YYYY-MM-DD
+published: 2026-11-24
 category: tech
 preview: |-
     Building our courses means researching features, questioning workarounds,
